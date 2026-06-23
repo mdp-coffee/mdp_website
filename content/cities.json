@@ -1,0 +1,19 @@
+{
+  "cities": [
+    { "name": "DELHI", "relX": 0.38, "relY": 0.20, "isKey": false },
+    { "name": "JAIPUR", "relX": 0.26, "relY": 0.27, "isKey": false },
+    { "name": "LUCKNOW", "relX": 0.50, "relY": 0.22, "isKey": false },
+    { "name": "AYODHYA", "relX": 0.50, "relY": 0.18, "isKey": false },
+    { "name": "KOLKATA", "relX": 0.73, "relY": 0.40, "isKey": false },
+    { "name": "MUMBAI", "relX": 0.12, "relY": 0.50, "isKey": true },
+    { "name": "PUNE", "relX": 0.15, "relY": 0.55, "isKey": false },
+    { "name": "HYDERABAD", "relX": 0.37, "relY": 0.60, "isKey": false },
+    { "name": "BENGALURU", "relX": 0.31, "relY": 0.70, "isKey": true },
+    { "name": "MYSURU", "relX": 0.27, "relY": 0.76, "isKey": true },
+    { "name": "CHENNAI", "relX": 0.48, "relY": 0.72, "isKey": false },
+    { "name": "KOCHI", "relX": 0.25, "relY": 0.83, "isKey": false },
+    { "name": "GOA", "relX": 0.16, "relY": 0.63, "isKey": false },
+    { "name": "BHOPAL", "relX": 0.34, "relY": 0.35, "isKey": false },
+    { "name": "AHMEDABAD", "relX": 0.17, "relY": 0.37, "isKey": false }
+  ]
+}

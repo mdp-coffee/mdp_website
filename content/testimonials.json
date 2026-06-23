@@ -1,0 +1,16 @@
+{
+  "testimonials": [
+    {
+      "quote": "Exceptional customer-centric service at the counter — more options for employees, and a very passionate management to work with. We are happy to work with the MDP team.",
+      "name": "Prashanth Rajashekhar",
+      "role": "Senior Manager",
+      "company": "Mu Sigma"
+    },
+    {
+      "quote": "Kerala, being a tea-drinking state, MDP has made a successful breakthrough. With MDP team support, we ensure smooth operations across our entire campus.",
+      "name": "Vinod",
+      "role": "Manager, Facilities",
+      "company": "Infosys"
+    }
+  ]
+}

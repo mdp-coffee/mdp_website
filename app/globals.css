@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --grain-opacity-light: 0.035;
+  --grain-opacity-dark: 0.055;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F9F0E1;
+  color: #411915;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Scroll-snap container (desktop only — see Scroller component) ── */
+.snap-container {
+  scroll-snap-type: y proximity;
+}
+
+.snap-slide {
+  scroll-snap-align: start;
+}
+
+@media (max-width: 767px) {
+  .snap-container {
+    scroll-snap-type: none;
+  }
+}
+
+/* ── Grain texture overlay — applied via .grainy utility ── */
+.grainy {
+  position: relative;
+}
+
+.grainy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+}
+
+.grainy-light::before {
+  opacity: var(--grain-opacity-light);
+}
+
+.grainy-dark::before {
+  opacity: var(--grain-opacity-dark);
+}
+
+.grainy > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Focus states — accessibility requirement ── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #FEC87F;
+  outline-offset: 2px;
+}
+
+/* ── Reduced motion support ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Ticker animation ── */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker-scroll 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker {
+    animation: none;
+  }
+}

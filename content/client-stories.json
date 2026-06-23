@@ -1,0 +1,20 @@
+{
+  "stories": [
+    {
+      "client": "Infosys",
+      "location": "Kerala",
+      "year": "2010",
+      "headline": "Infosys. Kerala. 2010.",
+      "body": "Kerala was a tea-drinking market. MDP entered anyway — and built one of its strongest operations.",
+      "ghostPhoto": "/images/nathan-dumlao-nBJHO6wmRWw-unsplash.jpg"
+    },
+    {
+      "client": "Accenture",
+      "location": "Mumbai",
+      "year": "2005",
+      "headline": "Accenture. Mumbai. 2005.",
+      "body": "The first kiosk. An unfamiliar city, an unfamiliar culture. The beginning of everything that followed.",
+      "ghostPhoto": "/images/kayleigh-harrington-yhn4okt6ci0-unsplash.jpg"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "narrative": [
+    "MDP Coffee House began in 2005 with a single kiosk inside Accenture's Vikhroli campus.",
+    "What started as a small operation grew through consistency, disciplined execution, and long-term client relationships.",
+    "Today, MDP serves workplaces, tech parks, cafeterias, restaurants, and campuses across India — maintaining the same standards that built the first kiosk."
+  ],
+  "mission": "To deliver dependable food and beverage experiences through disciplined operations, consistent quality, and long-term partnerships.",
+  "vision": "To become India's most trusted workplace food services company.",
+  "principles": [
+    { "title": "Consistency", "body": "Same standards across every location." },
+    { "title": "Reliability", "body": "We show up every day." },
+    { "title": "Partnership", "body": "Long-term relationships over transactions." },
+    { "title": "Craft", "body": "Respect for food, process, and people." }
+  ]
+}

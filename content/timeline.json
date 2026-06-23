@@ -1,0 +1,10 @@
+{
+  "events": [
+    { "year": "2005", "headline": "One kiosk.", "detail": "Accenture, Vikhroli, Mumbai." },
+    { "year": "2010", "headline": "50th outlet.", "detail": "Five years. No shortcuts." },
+    { "year": "2011", "headline": "PAN India. 400 people.", "detail": "AP, Kerala, Maharashtra, Delhi, Rajasthan, West Bengal." },
+    { "year": "2014", "headline": "100th outlet.", "detail": "Earned, not engineered." },
+    { "year": "2019", "headline": "Training Academy.", "detail": "Bengaluru. A school for the craft." },
+    { "year": "2024", "headline": "Ayodhya. PVR. Goa.", "detail": "From tech parks to everywhere." }
+  ]
+}

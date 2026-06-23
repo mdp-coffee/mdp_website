@@ -1,0 +1,32 @@
+{
+  "clients": [
+    { "name": "Amazon", "slug": "amazon", "logoSrc": null },
+    { "name": "Microsoft", "slug": "microsoft", "logoSrc": null },
+    { "name": "Infosys", "slug": "infosys", "logoSrc": null },
+    { "name": "TCS", "slug": "tcs", "logoSrc": null },
+    { "name": "IBM", "slug": "ibm", "logoSrc": null },
+    { "name": "Intel", "slug": "intel", "logoSrc": null },
+    { "name": "Wipro", "slug": "wipro", "logoSrc": null },
+    { "name": "HCL", "slug": "hcl", "logoSrc": null },
+    { "name": "Accenture", "slug": "accenture", "logoSrc": null },
+    { "name": "Cognizant", "slug": "cognizant", "logoSrc": null },
+    { "name": "Oracle", "slug": "oracle", "logoSrc": null },
+    { "name": "Deutsche Bank", "slug": "deutsche-bank", "logoSrc": null },
+    { "name": "Samsung", "slug": "samsung", "logoSrc": null },
+    { "name": "Qualcomm", "slug": "qualcomm", "logoSrc": null },
+    { "name": "HSBC", "slug": "hsbc", "logoSrc": null },
+    { "name": "Wells Fargo", "slug": "wells-fargo", "logoSrc": null },
+    { "name": "Philips", "slug": "philips", "logoSrc": null },
+    { "name": "Broadcom", "slug": "broadcom", "logoSrc": null },
+    { "name": "BNY Mellon", "slug": "bny-mellon", "logoSrc": null },
+    { "name": "Mu Sigma", "slug": "mu-sigma", "logoSrc": null },
+    { "name": "Kyndryl", "slug": "kyndryl", "logoSrc": null },
+    { "name": "Genpact", "slug": "genpact", "logoSrc": null },
+    { "name": "Optum", "slug": "optum", "logoSrc": null },
+    { "name": "ITC", "slug": "itc", "logoSrc": null },
+    { "name": "Thomson Reuters", "slug": "thomson-reuters", "logoSrc": null },
+    { "name": "American Express", "slug": "amex", "logoSrc": null },
+    { "name": "Cybage", "slug": "cybage", "logoSrc": null },
+    { "name": "Standard Chartered", "slug": "standard-chartered", "logoSrc": null }
+  ]
+}

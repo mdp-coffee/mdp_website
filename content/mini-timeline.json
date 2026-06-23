@@ -1,0 +1,8 @@
+{
+  "events": [
+    { "year": "2005", "label": "First kiosk" },
+    { "year": "2010", "label": "50 locations" },
+    { "year": "2014", "label": "100 locations" },
+    { "year": "2025", "label": "85+ nationwide" }
+  ]
+}
