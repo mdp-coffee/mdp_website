@@ -20,6 +20,10 @@ export interface ClientLogo {
   name: string;
   slug: string;
   logoSrc: string | null; // null until real SVG provided
+  city?: string;
+  category?: string;
+  outlets?: number;
+  active?: boolean;
 }
 
 export interface ClientStory {

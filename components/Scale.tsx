@@ -1,16 +1,48 @@
+"use client";
+
 import { SectionLabel } from "@/components/SectionLabel";
 import { CompactForm } from "@/components/CompactForm";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { useCountUp } from "@/hooks/useCountUp";
 import { siteConfig } from "@/content/site";
 
+function parseStatValue(val: string | number): { end: number; suffix: string } {
+  if (typeof val === "number") return { end: val, suffix: "" };
+  const m = /^(\d[\d,]*)(\+?)$/.exec(val);
+  return m ? { end: parseInt((m[1] ?? "0").replace(/,/g, ""), 10), suffix: m[2] ?? "" } : { end: 0, suffix: "" };
+}
+
+interface StatCounterProps {
+  end: number;
+  suffix: string;
+  label: string;
+  accent?: boolean;
+  locale?: string;
+}
+
+function StatCounter({ end, suffix, label, accent, locale }: StatCounterProps) {
+  const { ref, display } = useCountUp({ end, suffix, locale });
+  const isLong = display.length > 6;
+  return (
+    <div ref={ref}>
+      <span
+        className={`font-condensed font-black leading-[0.95] tracking-tightest ${
+          accent ? "text-gold" : "text-cream"
+        } ${isLong ? "text-[36px] sm:text-[44px]" : "text-[44px] sm:text-[56px]"}`}
+      >
+        {display}
+      </span>
+      <span className="ml-3 font-sans text-xl text-cream/40 sm:text-2xl">
+        {label}
+      </span>
+    </div>
+  );
+}
+
+const locStat = parseStatValue(siteConfig.locationsCount);
+const clientStat = parseStatValue(siteConfig.enterpriseClients);
+
 export function Scale() {
-  const formattedCups = siteConfig.cupsPerDay.toLocaleString("en-IN");
-
-  const stats = [
-    { value: siteConfig.locationsCount, label: "locations." },
-    { value: formattedCups, label: "cups. every day.", accent: true },
-    { value: siteConfig.enterpriseClients, label: "enterprise clients." },
-  ];
-
   return (
     <section
       id="scale"
@@ -19,52 +51,59 @@ export function Scale() {
     >
       <div className="grid w-full grid-cols-1 gap-12 lg:grid-cols-2">
         <div className="flex flex-col justify-center">
-          <SectionLabel tone="dark">Scale</SectionLabel>
+          <RevealOnScroll delay={0}>
+            <SectionLabel tone="dark">Scale</SectionLabel>
+          </RevealOnScroll>
 
           <div className="mt-8 flex flex-col gap-2">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <span
-                  className={`font-condensed font-black leading-[0.95] tracking-tightest ${
-                    stat.accent ? "text-gold" : "text-cream"
-                  } ${
-                    stat.value.length > 6
-                      ? "text-[44px] sm:text-[58px]"
-                      : "text-[56px] sm:text-[72px]"
-                  }`}
-                >
-                  {stat.value}
-                </span>
-                <span className="ml-3 font-serif text-xl text-cream/40 sm:text-2xl">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+            <RevealOnScroll delay={0.1}>
+              <StatCounter
+                end={locStat.end}
+                suffix={locStat.suffix}
+                label="locations."
+              />
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.2}>
+              <StatCounter
+                end={siteConfig.cupsPerDay}
+                suffix=""
+                label="cups. every day."
+                accent
+                locale="en-IN"
+              />
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.3}>
+              <StatCounter
+                end={clientStat.end}
+                suffix={clientStat.suffix}
+                label="enterprise clients."
+              />
+            </RevealOnScroll>
           </div>
 
-          <p className="mt-6 font-condensed text-sm font-bold tracking-wide text-gold/60">
-            Every single day.
-          </p>
+          <RevealOnScroll delay={0.4}>
+            <p className="mt-6 font-condensed text-sm font-bold tracking-wide text-gold/60">
+              Every single day.
+            </p>
+          </RevealOnScroll>
 
-          <div className="mt-10 max-w-sm border-t border-gold/15 pt-5">
-            <dl className="mt-3 flex flex-col gap-2">
-            </dl>
-
-          </div>
         </div>
 
         {/* Enquiry panel */}
-        <div className="flex flex-col justify-center">
-          <h3 className="font-condensed text-[32px] font-black leading-tight tracking-tightest text-cream sm:text-[40px]">
-            Bring MDP to
-            <br />
-            your office.
-          </h3>
-          <p className="mb-8 mt-3 font-serif text-cream/50">
-            Fill in your details and we&rsquo;ll call you back.
-          </p>
-          <CompactForm />
-        </div>
+        <RevealOnScroll delay={0.15} direction="left">
+          <div className="flex flex-col justify-center">
+            <h3 className="font-condensed text-[32px] font-black leading-tight tracking-tightest text-cream sm:text-[40px]">
+              Bring MDP to
+              <br />
+              your office.
+            </h3>
+            <p className="mb-8 mt-3 font-sans text-cream/50">
+              Fill in your details and we&rsquo;ll call you back.
+            </p>
+            <CompactForm />
+          </div>
+        </RevealOnScroll>
+
       </div>
     </section>
   );

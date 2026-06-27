@@ -46,10 +46,26 @@ Fonts:
 2. Scale — 85+ / 1,00,000 cups / 45+ clients + India map + compact enquiry form (right side)
 3. Origin — 2005 editorial story + full timeline
 4. ClientProof — logo ticker + 2 client stories side by side
-5. OperatingFormats — interactive tab explorer, 4 formats, horizontal Framer Motion slide
+5. OperatingFormats — interactive tab explorer, 5 formats (incl. ODC), horizontal Framer Motion slide
 6. TheGesture — Coffee Man engraving reveal, dark brown bg
-7. Bridge — "We've spent twenty years showing up for theirs. Ready to show up for yours?"
+7. Bridge — "For twenty years, we've been part of someone's morning. We'd love to be part of yours."
 8. Contact — full enquiry form + WhatsApp CTA (form appears here for the second time)
+
+## Additional Pages (app/*)
+- /about — company story, timeline, founding
+- /clients — enterprise clients, logos, stories
+- /gallery — photo gallery
+- /faq — FAQ accordion
+- /blog, /blog/[slug] — editorial blog
+- /locations/[city] — city-specific pages
+- /odc — Outdoor Catering (ODC) service page. Events: corporate events, conferences, weddings, birthdays, networking events, product launches, sports events, private gatherings. Content: content/odc-events.ts
+
+## Operating Formats (content/operating-formats.json)
+01 Corporate Kiosk — inside tech parks
+02 QSR Restaurant — sit-down, high-footfall
+03 Mobile Cart — flexible, no fixed location
+04 24/7 Tuck Shop — round-the-clock offices
+05 ODC (Outdoor Catering) — events and celebrations
 
 ## Components
 Each section = one file in /components/. Never put two sections in one file.
@@ -69,3 +85,38 @@ Both forms POST to /api/contact which already handles Zod validation + honeypot 
 - Never add new npm packages without asking first
 - Accessibility: aria-labels, focus-visible, semantic HTML always
 - No excessive animation — Framer Motion only for hero crossfade and OperatingFormats slider
+
+## Brand Constitution Rules (from official Brand Constitution v1.0)
+
+POSITIONING: "The coffee companion of India's workday."
+The customer is always the hero. MDP is simply there to support them.
+
+TONE: Human, warm, honest, understated, genuine.
+Feels like a conversation, not an advertisement.
+
+LANGUAGE TO NEVER USE:
+- India's best / India's biggest / Industry leader
+- Premium experience / Finest coffee / World-class
+- Revolutionary / Game-changing
+- Any self-congratulatory claim
+
+LANGUAGE TO PREFER:
+- Care, consistency, connection, daily rituals
+- Showing up, reliability, hospitality, community
+
+THE COFFEE MASTER (the brand character):
+- He is NOT a mascot. He is The Coffee Master.
+- His archetype is The Host — not the Hero, not the King.
+- He represents: care, hospitality, consistency, human connection.
+- He speaks rarely. When he does: simple, warm, observational.
+- Never position him as a symbol of MDP's excellence.
+- Position him as someone who makes YOUR morning better.
+
+CREATIVE FILTER — before approving any copy ask:
+1. Does this feel human?
+2. Does this feel warm?
+3. Does this communicate care?
+4. Does this feel authentic?
+5. Does this avoid arrogance?
+6. Would this still feel relevant 10 years from now?
+If any answer is no — revise it.

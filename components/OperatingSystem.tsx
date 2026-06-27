@@ -1,7 +1,19 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { SectionLabel } from "@/components/SectionLabel";
 import { operatingSystemCards } from "@/lib/content";
 import type { OperatingSystemCard } from "@/lib/types";
+
+const placeholderPhotos = [
+  "/images/nathan-dumlao-nBJHO6wmRWw-unsplash.jpg",
+  "/images/ante-samarzija-lsmu0rUhUOk-unsplash.jpg",
+  "/images/nathan-dumlao-V6WUpAOmioc-unsplash.jpg",
+  "/images/clifford-VobvKmG-StA-unsplash.jpg",
+  "/images/nathan-dumlao-XOhI_kW_TaM-unsplash.jpg",
+  "/images/kayleigh-harrington-yhn4okt6ci0-unsplash.jpg",
+  "/images/nathan-dumlao-Y3AqmbmtLQI-unsplash.jpg",
+  "/images/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg",
+];
 
 // Inline SVG icons — thin stroke, architectural line style.
 // Stroke color inherited from parent via currentColor; fill always none.
@@ -81,7 +93,7 @@ const icons: Record<string, ReactNode> = {
   ),
 };
 
-function Card({ card }: { card: OperatingSystemCard }) {
+function Card({ card, photoSrc }: { card: OperatingSystemCard; photoSrc: string }) {
   const icon = icons[card.iconKey];
 
   return (
@@ -98,17 +110,19 @@ function Card({ card }: { card: OperatingSystemCard }) {
         </span>
       </div>
 
-      <h3 className="mt-4 font-condensed text-[22px] font-black leading-tight text-brown">
+      <h3 className="mt-4 font-condensed text-xl not-italic leading-tight tracking-tight text-brown">
         {card.headline}
       </h3>
 
-      <p className="mt-3 font-serif text-[15px] italic leading-relaxed text-brown/65">
-        {card.body}
-      </p>
-
-      <p className="mt-4 border-t border-brown/10 pt-4 font-condensed text-[11px] uppercase tracking-wide text-rust/70">
-        {card.proof}
-      </p>
+      <div className="relative mt-4 h-40 w-full overflow-hidden">
+        <Image
+          src={photoSrc}
+          alt={card.headline}
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+        />
+      </div>
     </article>
   );
 }
@@ -122,15 +136,23 @@ export function OperatingSystem() {
     >
       <SectionLabel tone="light">How We Operate</SectionLabel>
 
-      <h2 className="mt-6 font-condensed text-[44px] font-black leading-[0.92] tracking-tightest text-brown sm:text-[56px]">
-        The MDP
-        <br />
-        Operating System.
+      <h2 className="mt-6 font-condensed text-[40px] leading-[0.95] tracking-tight text-brown sm:text-[52px]">
+        The MDP Operating System.
       </h2>
 
+      <p className="mt-5 max-w-lg font-sans text-base font-normal not-italic leading-relaxed text-brown/60">
+        Eight principles. Built over twenty years.
+        <br />
+        Delivered every morning.
+      </p>
+
       <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {operatingSystemCards.map((card) => (
-          <Card key={card.number} card={card} />
+        {operatingSystemCards.map((card, index) => (
+          <Card
+            key={card.number}
+            card={card}
+            photoSrc={placeholderPhotos[index % placeholderPhotos.length] ?? "/images/nathan-dumlao-nBJHO6wmRWw-unsplash.jpg"}
+          />
         ))}
       </div>
     </section>

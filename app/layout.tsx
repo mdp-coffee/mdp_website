@@ -1,39 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Bebas_Neue, Montserrat } from "next/font/google";
+
 import "./globals.css";
-import { OrganizationJsonLd, LocalBusinessJsonLd } from "@/components/JsonLd";
+import { OrganizationJsonLd, LocalBusinessJsonLd, TestimonialsJsonLd } from "@/components/JsonLd";
 import { Analytics } from "@/components/Analytics";
 import { siteConfig } from "@/content/site";
-
-const bebasNeue = Bebas_Neue({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
-  display: "swap",
-});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mdpcoffeehouse.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "MDP Coffee House — Since 2005, We've Shown Up Every Morning",
+    default: "MDP Coffee House — Corporate Coffee Service India Since 2005",
     template: "%s | MDP Coffee House",
   },
   description:
-    "MDP Coffee House powers the morning for 85+ corporate locations across India — serving Amazon, Microsoft, Infosys, Deutsche Bank and 40+ enterprise clients with authentic South Indian filter coffee since 2005.",
+    "MDP Coffee House powers the morning for 85+ corporate locations across India. Serving Amazon, Microsoft, Infosys, Deutsche Bank and 45+ enterprise clients with authentic South Indian filter coffee since 2005.",
   keywords: [
     "corporate coffee service India",
     "office coffee kiosk",
-    "corporate cafeteria management",
     "South Indian filter coffee corporate",
+    "corporate cafeteria management India",
     "MDP Coffee House",
   ],
   authors: [{ name: "MDP Coffee House" }],
@@ -87,17 +73,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${bebasNeue.variable} ${montserrat.variable}`}
-    >
+    <html lang="en">
       <head>
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
+        <TestimonialsJsonLd />
       </head>
       <body className="font-sans antialiased">
         {children}
-        <Analytics />
+<Analytics />
       </body>
     </html>
   );

@@ -39,6 +39,16 @@
       "example": "Running in offices with round-the-clock operations in Bengaluru and Hyderabad.",
       "photo": "/images/rizky-subagja-1k7TnX5GAww-unsplash.jpg",
       "theme": "light"
+    },
+    {
+      "num": "05",
+      "category": "ODC",
+      "name": "Outdoor Catering",
+      "description": "From intimate gatherings to large-scale events — MDP brings the same filter coffee experience to any venue, any occasion. Fully managed setup, service, and teardown.",
+      "details": "SETUP · SERVICE · TEARDOWN · EQUIPMENT · STAFF",
+      "example": "Corporate events, product launches, conferences and celebrations across India.",
+      "photo": null,
+      "theme": "light"
     }
   ]
 }

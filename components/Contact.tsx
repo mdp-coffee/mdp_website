@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import Image from "next/image";
 import { SectionLabel } from "@/components/SectionLabel";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { siteConfig, whatsappLink } from "@/content/site";
 import { trackEvent } from "@/components/Analytics";
 
@@ -23,6 +24,7 @@ export function Contact() {
       name: formData.get("name"),
       company: formData.get("company"),
       phone: formData.get("phone"),
+      email: formData.get("email"),
       message: formData.get("message"),
       website: formData.get("website"), // honeypot
     };
@@ -66,6 +68,7 @@ export function Contact() {
             className="object-contain object-bottom"
           />
         </div>
+        <RevealOnScroll direction="left" delay={0}>
         <div className="relative z-10">
           <SectionLabel tone="dark">Work With Us</SectionLabel>
           <h2 className="mt-6 font-condensed text-[44px] leading-[0.92] tracking-tightest text-cream sm:text-[56px]">
@@ -73,22 +76,21 @@ export function Contact() {
             <br />
             your office.
           </h2>
-          <p className="mt-8 max-w-sm font-serif text-lg leading-relaxed text-cream/55">
-            We&rsquo;ve been setting up in India&rsquo;s most demanding
-            offices since 2005.
+          <p className="mt-8 max-w-sm font-sans text-lg leading-relaxed text-cream/55">
+            For twenty years, we&rsquo;ve been part of India&rsquo;s workday.
             <br />
             <br />
-            Amazon trusted us. Deutsche Bank trusted us. Intel trusted us.
+            From the first kiosk in Mumbai to 85+ locations nationwide &mdash; one morning at a time.
           </p>
 
           <a
             href={whatsappLink(
-              "Hi, I'm interested in setting up MDP Coffee services for our office."
+              "Hi, I'd like to know more about MDP Coffee House. Could we connect?"
             )}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent("whatsapp_click", { location: "contact" })}
-            className="mt-10 inline-flex items-center gap-2 bg-[#25D366] px-6 py-3 font-condensed text-sm font-bold tracking-wide text-white transition-opacity hover:opacity-90"
+            className="mt-10 inline-flex items-center gap-2 bg-brown px-6 py-3 font-condensed text-sm font-bold tracking-wide text-cream transition-colors hover:bg-rust"
           >
             Talk to us on WhatsApp
           </a>
@@ -96,16 +98,18 @@ export function Contact() {
             {siteConfig.phone.join(" · ")}
           </p>
         </div>
+        </RevealOnScroll>
       </div>
 
       {/* Right — form */}
       <div className="flex flex-col justify-center bg-paper px-6 py-20 md:px-14">
+        <RevealOnScroll delay={0.2}>
         {state === "success" ? (
           <div role="status" className="max-w-md">
             <p className="font-condensed text-3xl font-black text-brown">
               Message sent.
             </p>
-            <p className="mt-3 font-serif text-brown/60">
+            <p className="mt-3 font-sans text-brown/60">
               We&rsquo;ll be in touch shortly. For a faster response, message
               us directly on WhatsApp.
             </p>
@@ -137,7 +141,7 @@ export function Contact() {
                 type="text"
                 required
                 minLength={2}
-                placeholder="Rahul Sharma"
+                placeholder="Your name"
                 className="mt-2 w-full border border-brown/15 bg-paper2 px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
               />
             </div>
@@ -147,15 +151,13 @@ export function Contact() {
                 htmlFor="company"
                 className="font-condensed text-[10px] uppercase tracking-[0.18em] text-brown/40"
               >
-                Company
+                Company<span className="normal-case opacity-60"> (optional)</span>
               </label>
               <input
                 id="company"
                 name="company"
                 type="text"
-                required
-                minLength={2}
-                placeholder="Acme Technologies"
+                placeholder="Company name"
                 className="mt-2 w-full border border-brown/15 bg-paper2 px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
               />
             </div>
@@ -172,7 +174,23 @@ export function Contact() {
                 name="phone"
                 type="tel"
                 required
-                placeholder="+91 98765 43210"
+                placeholder="Phone number"
+                className="mt-2 w-full border border-brown/15 bg-paper2 px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="email"
+                className="font-condensed text-[10px] uppercase tracking-[0.18em] text-brown/40"
+              >
+                Email<span className="normal-case opacity-60"> (optional)</span>
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Email address"
                 className="mt-2 w-full border border-brown/15 bg-paper2 px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
               />
             </div>
@@ -182,13 +200,13 @@ export function Contact() {
                 htmlFor="message"
                 className="font-condensed text-[10px] uppercase tracking-[0.18em] text-brown/40"
               >
-                Tell us about your office
+                Tell us about your office<span className="normal-case opacity-60"> (optional)</span>
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows={3}
-                placeholder="Number of employees, any specific requirements..."
+                placeholder="Tell us a bit about your office"
                 className="mt-2 w-full resize-none border border-brown/15 bg-paper2 px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
               />
             </div>
@@ -207,11 +225,12 @@ export function Contact() {
               {state === "submitting" ? "Sending…" : "Let's Talk →"}
             </button>
 
-            <p className="mt-4 font-serif text-sm text-brown/35">
+            <p className="mt-4 font-sans text-sm text-brown/35">
               No sales pitch. No obligation. Just a conversation.
             </p>
           </form>
         )}
+        </RevealOnScroll>
       </div>
     </section>
   );

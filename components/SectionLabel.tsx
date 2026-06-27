@@ -16,7 +16,7 @@ export function SectionLabel({
     <div className={`flex items-center gap-3 ${className}`}>
       <span className={`h-px w-7 ${ruleColor}`} aria-hidden="true" />
       <span
-        className={`font-condensed text-[11px] font-normal uppercase tracking-[0.22em] ${textColor}`}
+        className={`font-sans text-[11px] font-normal uppercase tracking-[0.22em] ${textColor}`}
       >
         {children}
       </span>

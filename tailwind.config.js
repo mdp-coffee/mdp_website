@@ -24,9 +24,8 @@ module.exports = {
         black: "#0C0C0C",
       },
       fontFamily: {
-        condensed: ["var(--font-display)", "sans-serif"],
-        serif: ["var(--font-body)", "sans-serif"],
-        sans: ["var(--font-body)", "sans-serif"],
+        condensed: ["'Arpona'", "sans-serif"],
+        sans: ["'Montserrat'", "sans-serif"],
       },
       letterSpacing: {
         tightest: "-0.04em",

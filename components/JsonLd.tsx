@@ -58,3 +58,40 @@ export function LocalBusinessJsonLd() {
     />
   );
 }
+
+export function TestimonialsJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "MDP Coffee House",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "2",
+    },
+    review: [
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "Prashanth Rajashekhar" },
+        reviewRating: { "@type": "Rating", ratingValue: 5 },
+        reviewBody:
+          "Exceptional customer-centric service at the counter — more options for employees, and a very passionate management to work with.",
+      },
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "Vinod" },
+        reviewRating: { "@type": "Rating", ratingValue: 5 },
+        reviewBody:
+          "Kerala, being a tea-drinking state, MDP has made a successful breakthrough. With MDP team support, we ensure smooth operations across our entire campus.",
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}

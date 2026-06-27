@@ -1,3 +1,69 @@
+/* ── Arpona — official MDP brand display font ── */
+@font-face {
+  font-family: 'Arpona';
+  src: url('/fonts/arpona-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arpona';
+  src: url('/fonts/arpona-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arpona';
+  src: url('/fonts/arpona-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arpona';
+  src: url('/fonts/arpona-semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arpona';
+  src: url('/fonts/arpona-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arpona';
+  src: url('/fonts/arpona-black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Montserrat — official MDP brand body font ── */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -103,4 +169,13 @@ select:focus-visible {
   .animate-ticker {
     animation: none;
   }
+}
+
+/* ── Hide scrollbar (used by product row) ── */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -1,10 +1,15 @@
 {
   "events": [
-    { "year": "2005", "headline": "One kiosk.", "detail": "Accenture, Vikhroli, Mumbai." },
-    { "year": "2010", "headline": "50th outlet.", "detail": "Five years. No shortcuts." },
-    { "year": "2011", "headline": "PAN India. 400 people.", "detail": "AP, Kerala, Maharashtra, Delhi, Rajasthan, West Bengal." },
-    { "year": "2014", "headline": "100th outlet.", "detail": "Earned, not engineered." },
-    { "year": "2019", "headline": "Training Academy.", "detail": "Bengaluru. A school for the craft." },
-    { "year": "2024", "headline": "Ayodhya. PVR. Goa.", "detail": "From tech parks to everywhere." }
+    { "year": "2005", "headline": "The First Kiosk.", "detail": "Accenture, Vikhroli, Mumbai. Far from home — a new city, a new culture, a new language. We showed up anyway. Same recipe. Same care." },
+    { "year": "2010", "headline": "Our 50th Outlet.", "detail": "Five years of showing up every morning, without exception." },
+    { "year": "2011", "headline": "PAN India.", "detail": "Andhra Pradesh, Kerala, Maharashtra, Delhi, Uttar Pradesh, Rajasthan, West Bengal. 400 people who believed in what we were building." },
+    { "year": "2012", "headline": "Expanding What We Serve.", "detail": "Cold coffee, cold badam with dry fruits and more. One more reason to show up every morning." },
+    { "year": "2013", "headline": "Five Major Corporations.", "detail": "A PAN India contract. The proof that consistency earns trust." },
+    { "year": "2014", "headline": "Our 100th Outlet.", "detail": "Earned one morning at a time." },
+    { "year": "2015", "headline": "Our First Commercial Presence.", "detail": "Stepping beyond corporate campuses into the places where India gathers." },
+    { "year": "2018", "headline": "South Indian Delicacies.", "detail": "Filter coffee was just the beginning. Snacks for the teams that trust us most." },
+    { "year": "2019", "headline": "The MDP Training Academy, Bengaluru.", "detail": "Because great service begins long before the first customer arrives." },
+    { "year": "2022", "headline": "Complete Beverage Solutions.", "detail": "One partner. Every need. Across every corporate client we serve." },
+    { "year": "2024", "headline": "Ayodhya. PVR. New Cities, New Formats.", "detail": "The same cup. Everywhere India gathers." }
   ]
 }

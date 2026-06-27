@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { SectionLabel } from "@/components/SectionLabel";
@@ -8,10 +8,22 @@ import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { operatingFormats } from "@/lib/content";
 import type { OperatingFormat } from "@/lib/types";
 import { trackEvent } from "@/components/Analytics";
+import { products } from "@/content/products";
 
 const themeStyles: Record<
   OperatingFormat["theme"],
-  { bg: string; text: string; muted: string; tabActive: string; tabIdle: string }
+  {
+    bg: string;
+    text: string;
+    muted: string;
+    tabActive: string;
+    tabIdle: string;
+    divider: string;
+    productLabel: string;
+    productCardBg: string;
+    productCardBorder: string;
+    productCardText: string;
+  }
 > = {
   light: {
     bg: "bg-paper",
@@ -19,6 +31,11 @@ const themeStyles: Record<
     muted: "text-brown/60",
     tabActive: "bg-brown text-cream",
     tabIdle: "border border-brown/15 text-brown/55",
+    divider: "bg-brown/10",
+    productLabel: "text-rust/60",
+    productCardBg: "bg-brown/5",
+    productCardBorder: "border-brown/12",
+    productCardText: "text-brown",
   },
   light2: {
     bg: "bg-paper2",
@@ -26,6 +43,11 @@ const themeStyles: Record<
     muted: "text-brown/60",
     tabActive: "bg-brown text-cream",
     tabIdle: "border border-brown/15 text-brown/55",
+    divider: "bg-brown/10",
+    productLabel: "text-rust/60",
+    productCardBg: "bg-brown/5",
+    productCardBorder: "border-brown/12",
+    productCardText: "text-brown",
   },
   parchment: {
     bg: "bg-parchment",
@@ -33,6 +55,11 @@ const themeStyles: Record<
     muted: "text-brown/60",
     tabActive: "bg-brown text-cream",
     tabIdle: "border border-brown/15 text-brown/55",
+    divider: "bg-brown/10",
+    productLabel: "text-rust/60",
+    productCardBg: "bg-brown/5",
+    productCardBorder: "border-brown/12",
+    productCardText: "text-brown",
   },
   dark: {
     bg: "bg-paper",
@@ -40,6 +67,11 @@ const themeStyles: Record<
     muted: "text-brown/60",
     tabActive: "bg-brown text-cream",
     tabIdle: "border border-brown/15 text-brown/55",
+    divider: "bg-cream/10",
+    productLabel: "text-gold/50",
+    productCardBg: "bg-cream/10",
+    productCardBorder: "border-cream/15",
+    productCardText: "text-cream",
   },
 };
 
@@ -64,6 +96,10 @@ const slideVariants = {
 export function OperatingFormats() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   const goTo = useCallback(
     (next: number) => {
@@ -85,6 +121,20 @@ export function OperatingFormats() {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [index, goTo]);
+
+  const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    setStartX(e.pageX - (scrollRef.current?.offsetLeft ?? 0));
+    setScrollLeft(scrollRef.current?.scrollLeft ?? 0);
+  };
+  const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - (scrollRef.current?.offsetLeft ?? 0);
+    const walk = (x - startX) * 1.5;
+    if (scrollRef.current) scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+  const onMouseUp = () => setIsDragging(false);
 
   const format = operatingFormats[index];
   if (!format) return null;
@@ -167,14 +217,14 @@ export function OperatingFormats() {
               </h2>
               <div className="mt-5 h-px w-12 bg-rust/35" aria-hidden="true" />
               <p
-                className={`mt-5 max-w-md font-serif text-lg leading-relaxed sm:text-xl ${theme.text} opacity-75`}
+                className={`mt-5 max-w-md font-sans text-lg leading-relaxed sm:text-xl ${theme.text} opacity-75`}
               >
                 {format.description}
               </p>
               <p className="mt-7 font-condensed text-[11px] uppercase tracking-wider text-gold/70">
                 {format.details}
               </p>
-              <p className={`mt-3 max-w-md font-serif ${theme.muted}`}>
+              <p className={`mt-3 max-w-md font-sans ${theme.muted}`}>
                 {format.example}
               </p>
             </div>
@@ -225,6 +275,48 @@ export function OperatingFormats() {
         >
           →
         </button>
+      </div>
+
+      {/* Products */}
+      <div className="pb-6">
+        <div className={`h-px ${theme.divider}`} aria-hidden="true" />
+        <p
+          className={`mb-3 mt-6 font-condensed text-[11px] uppercase tracking-widest ${theme.productLabel}`}
+        >
+          Our Products
+        </p>
+        <div
+          ref={scrollRef}
+          onMouseDown={onMouseDown}
+          onMouseMove={onMouseMove}
+          onMouseUp={onMouseUp}
+          onMouseLeave={onMouseUp}
+          className={`scrollbar-hide flex select-none snap-x snap-mandatory flex-row gap-4 overflow-x-auto pb-2 ${
+            isDragging ? "cursor-grabbing" : "cursor-grab"
+          }`}
+        >
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className={`h-[160px] w-[140px] flex-shrink-0 snap-start border transition-colors duration-200 hover:border-gold/40 ${theme.productCardBg} ${theme.productCardBorder}`}
+            >
+              <div
+                role="img"
+                aria-label={product.name}
+                className="flex h-[96px] w-full items-center justify-center bg-gold/5"
+              >
+                <span className="text-xl text-gold/40" aria-hidden="true">
+                  📷
+                </span>
+              </div>
+              <p
+                className={`px-3 py-2 font-condensed text-sm font-bold tracking-tight ${theme.productCardText}`}
+              >
+                {product.name}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

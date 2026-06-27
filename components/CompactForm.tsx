@@ -27,6 +27,7 @@ export function CompactForm({ variant = "dark" }: CompactFormProps) {
       name: formData.get("name"),
       company: formData.get("company"),
       phone: formData.get("phone"),
+      email: formData.get("email"),
       message: city ? `City: ${city}` : "",
       website: formData.get("website"), // honeypot
     };
@@ -65,7 +66,7 @@ export function CompactForm({ variant = "dark" }: CompactFormProps) {
         <p className={`font-condensed text-2xl font-black ${isDark ? "text-cream" : "text-brown"}`}>
           We&rsquo;ll be in touch.
         </p>
-        <p className={`mt-2 font-serif ${isDark ? "text-cream/50" : "text-brown/50"}`}>
+        <p className={`mt-2 font-sans ${isDark ? "text-cream/50" : "text-brown/50"}`}>
           Expect a call from us shortly.
         </p>
       </div>
@@ -96,22 +97,20 @@ export function CompactForm({ variant = "dark" }: CompactFormProps) {
           type="text"
           required
           minLength={2}
-          placeholder="Rahul Sharma"
+          placeholder="Your name"
           className={inputCls}
         />
       </div>
 
       <div className="mb-3">
         <label htmlFor="cf-company" className={labelCls}>
-          Company
+          Company<span className="normal-case opacity-60"> (optional)</span>
         </label>
         <input
           id="cf-company"
           name="company"
           type="text"
-          required
-          minLength={2}
-          placeholder="Acme Technologies"
+          placeholder="Company name"
           className={inputCls}
         />
       </div>
@@ -125,20 +124,32 @@ export function CompactForm({ variant = "dark" }: CompactFormProps) {
           name="phone"
           type="tel"
           required
-          placeholder="+91 98765 43210"
+          placeholder="Phone number"
+          className={inputCls}
+        />
+      </div>
+
+      <div className="mb-3">
+        <label htmlFor="cf-email" className={labelCls}>
+          Email<span className="normal-case opacity-60"> (optional)</span>
+        </label>
+        <input
+          id="cf-email"
+          name="email"
+          type="email"
+          placeholder="Email address"
           className={inputCls}
         />
       </div>
 
       <div className="mb-5">
         <label htmlFor="cf-city" className={labelCls}>
-          City
+          City<span className="normal-case opacity-60"> (optional)</span>
         </label>
         <input
           id="cf-city"
           name="city"
           type="text"
-          required
           placeholder="Bengaluru"
           className={inputCls}
         />
