@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { NavBar } from "@/components/NavBar";
 import { heroPhotos } from "@/lib/content";
 import { trackEvent } from "@/components/Analytics";
 
@@ -41,6 +40,19 @@ export function Hero() {
 
   const rotatingIndex = activeIndex % rotatingLines.length;
 
+  const isLightPhoto = activeIndex === 0 || activeIndex === 1;
+
+  const textTheme = {
+    headline: isLightPhoto ? "text-brown" : "text-cream",
+    eyebrow: isLightPhoto ? "text-brown/50" : "text-cream/50",
+    eyebrowLine: isLightPhoto ? "bg-brown/25" : "bg-cream/25",
+    subline: isLightPhoto ? "text-brown/60" : "text-cream/50",
+    storyBtn: isLightPhoto
+      ? "border-brown/30 text-brown/60 hover:border-brown hover:text-brown"
+      : "border-cream/30 text-cream/60 hover:border-cream hover:text-cream",
+    scrollCue: isLightPhoto ? "text-brown/30" : "text-cream/30",
+  };
+
   const fadeIn = (delay: number) =>
     shouldReduceMotion
       ? {}
@@ -72,7 +84,7 @@ export function Hero() {
                 src={photo.src}
                 alt={photo.alt}
                 fill
-                className="object-cover"
+                className={i === 0 || i === 1 ? "object-contain" : "object-cover"}
                 sizes="100vw"
                 priority={i === 0}
               />
@@ -88,23 +100,21 @@ export function Hero() {
       </div>
 
       {/* Dark overlay — flat colour for text legibility */}
-      <div className="absolute inset-0 bg-[#411915]/75" aria-hidden="true" />
-
-      <NavBar />
+      <div className="absolute inset-0 bg-[#411915]/0" aria-hidden="true" />
 
       {/* Static foreground — never moves regardless of photo state */}
-      <div className="relative z-10 px-6 pt-16 md:px-20">
+      <div className="relative z-10 px-6 md:px-20 transition-colors duration-[3000ms]">
         <motion.div
           className="mb-5 flex items-center gap-3"
           {...fadeIn(0.15)}
         >
-          <span className="h-px w-8 bg-cream/25" aria-hidden="true" />
-          <span className="font-condensed text-[11px] uppercase tracking-[0.3em] text-cream/50">
+          <span className={`h-px w-8 transition-colors duration-[3000ms] ${textTheme.eyebrowLine}`} aria-hidden="true" />
+          <span className={`font-condensed text-[11px] uppercase tracking-[0.3em] transition-colors duration-[3000ms] ${textTheme.eyebrow}`}>
             Since 2005 · India
           </span>
         </motion.div>
 
-        <h1 className="font-condensed text-[52px] leading-[0.88] tracking-tightest text-cream sm:text-[68px] md:text-[88px]">
+        <h1 className={`font-condensed text-[52px] leading-[0.88] tracking-tightest sm:text-[68px] md:text-[88px] transition-colors duration-[3000ms] ${textTheme.headline}`}>
           <motion.span className="block" {...fadeIn(0.3)}>
             Made with Care
           </motion.span>
@@ -121,7 +131,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10, transition: { duration: 0.35, ease: "easeIn" } }}
               transition={{ duration: 0.65, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="font-sans italic text-lg leading-relaxed text-cream/50 md:text-xl"
+              className={`font-sans italic text-lg leading-relaxed md:text-xl transition-colors duration-[3000ms] ${textTheme.subline}`}
             >
               {rotatingLines[rotatingIndex]}
             </motion.p>
@@ -138,7 +148,7 @@ export function Hero() {
           </a>
           <a
             href="#story"
-            className="border border-cream/30 px-7 py-4 font-condensed text-sm uppercase tracking-wider text-cream/60 transition-colors hover:border-cream hover:text-cream"
+            className={`border px-7 py-4 font-condensed text-sm uppercase tracking-wider transition-colors duration-[3000ms] ${textTheme.storyBtn}`}
           >
             Our Story
           </a>
@@ -146,7 +156,7 @@ export function Hero() {
       </div>
 
       {/* Scroll cue */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-cream/30">
+      <div className={`absolute bottom-10 left-1/2 -translate-x-1/2 transition-colors duration-[3000ms] ${textTheme.scrollCue}`}>
         <span className="font-condensed text-lg" aria-hidden="true">
           ↓
         </span>

@@ -150,83 +150,69 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* Section 3 — Stats, Company Description & Awards */}
+      {/* Section 3A — At Scale */}
       <section
-        className="bg-parchment px-6 py-20 md:px-20"
+        className="bg-[#411915] px-6 py-20 md:px-20"
         aria-label="MDP Coffee House at scale"
       >
-        {/* A — Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 mb-16">
+        <RevealOnScroll delay={0}>
+          <SectionLabel tone="dark">Twenty Years. At Scale.</SectionLabel>
+        </RevealOnScroll>
+        <div className="mt-12 flex flex-wrap justify-center gap-8">
           <RevealOnScroll delay={0}>
-            <div className="flex flex-col items-center text-center md:border-r md:border-brown/10 px-8">
-              <span className="font-sans font-black not-italic text-3xl md:text-4xl text-brown leading-none tracking-tight">
+            <div className="flex flex-col items-center text-center md:border-r md:border-cream/10 px-8">
+              <span className="font-condensed text-[56px] md:text-[72px] leading-none text-cream">
                 20+
               </span>
-              <span className="font-condensed not-italic text-xs text-brown/40 uppercase tracking-widest mt-3 leading-tight">
-                Years of<br />Operations
+              <span className="font-condensed text-[11px] uppercase tracking-widest text-cream/40 mt-3">
+                Years of Operations
               </span>
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={0.08}>
-            <div className="flex flex-col items-center text-center md:border-r md:border-brown/10 px-8">
-              <span className="font-sans font-black not-italic text-3xl md:text-4xl text-brown leading-none tracking-tight">
+            <div className="flex flex-col items-center text-center md:border-r md:border-cream/10 px-8">
+              <span className="font-condensed text-[56px] md:text-[72px] leading-none text-cream">
                 85+
               </span>
-              <span className="font-condensed not-italic text-xs text-brown/40 uppercase tracking-widest mt-3 leading-tight">
-                Active<br />Locations
+              <span className="font-condensed text-[11px] uppercase tracking-widest text-cream/40 mt-3">
+                Active Locations
               </span>
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={0.16}>
-            <div className="flex flex-col items-center text-center md:border-r md:border-brown/10 px-8">
-              <span className="font-sans font-black not-italic text-3xl md:text-4xl text-brown leading-none tracking-tight">
+            <div className="flex flex-col items-center text-center md:border-r md:border-cream/10 px-8">
+              <span className="font-condensed text-[56px] md:text-[72px] leading-none text-cream">
                 1,00,000+
               </span>
-              <span className="font-condensed not-italic text-xs text-brown/40 uppercase tracking-widest mt-3 leading-tight">
-                Cups<br />Daily
+              <span className="font-condensed text-[11px] uppercase tracking-widest text-cream/40 mt-3">
+                Cups Daily
               </span>
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={0.24}>
             <div className="flex flex-col items-center text-center px-8">
-              <span className="font-sans font-black not-italic text-3xl md:text-4xl text-brown leading-none tracking-tight">
+              <span className="font-condensed text-[56px] md:text-[72px] leading-none text-cream">
                 15+
               </span>
-              <span className="font-condensed not-italic text-xs text-brown/40 uppercase tracking-widest mt-3 leading-tight">
+              <span className="font-condensed text-[11px] uppercase tracking-widest text-cream/40 mt-3">
                 Cities
               </span>
             </div>
           </RevealOnScroll>
         </div>
+      </section>
 
-        {/* B — Company description */}
-        <RevealOnScroll delay={0.1}>
-          <div className="max-w-2xl mx-auto mb-16 px-6 md:px-0">
-            <p className="font-sans text-base not-italic text-brown/60 leading-relaxed text-left md:text-lg">
-              MDP Food &amp; Beverages Pvt. Ltd. operates MDP Coffee House —
-              India&rsquo;s proven South Indian filter coffee brand with 20+
-              years of operational experience. With 85+ active locations,
-              1,00,000+ cups served daily and a Fortune 500 client base
-              spanning IT, banking, consulting and retail, MDP is one of
-              India&rsquo;s most established managed beverage service providers.
-              Headquartered in Bengaluru, MDP operates corporate kiosks,
-              QSR restaurants, retail outlets and outdoor catering
-              across 15+ cities.
-            </p>
-          </div>
-        </RevealOnScroll>
-
-        {/* C — Awards */}
+      {/* Section 3B — Recognised */}
+      <section
+        className="bg-parchment px-6 py-20 md:px-20"
+        aria-label="Awards and recognition"
+      >
         <RevealOnScroll delay={0}>
           <div className="mx-auto mb-8 h-px w-16 bg-brown/20" aria-hidden="true" />
           <p className="mb-2 text-center font-condensed not-italic text-[11px] uppercase tracking-widest text-rust/60">
             Recognised by the Companies We Serve
           </p>
-          <p className="mb-10 text-center font-sans text-xs text-brown/45">
-            Not applied for. Not purchased.
-            <br />
-            Given by the clients we serve.
-          </p>
+          <p className="mb-10 text-center font-sans text-xs text-brown/45">Given by the clients we serve.</p>
         </RevealOnScroll>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">

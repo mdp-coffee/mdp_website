@@ -11,10 +11,12 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { LetsTalkFloat } from "@/components/LetsTalkFloat";
 import { ScrollContainer } from "@/components/ScrollContainer";
+import { NavBar } from "@/components/NavBar";
 
 export default function HomePage() {
   return (
     <>
+      <NavBar />
       <ScrollContainer>
         <Hero />
         <ClientTicker variant="dark" />

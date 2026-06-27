@@ -2,39 +2,27 @@
   "photos": [
     {
       "id": "01",
-      "src": "/images/ante-samarzija-lsmu0rUhUOk-unsplash.jpg",
-      "alt": "MDP outlet shutters opening before sunrise",
-      "caption": "Pre-dawn — outlet opening, shutters up, lights on"
+      "src": "/landing_page/Landing_page_1.jpg",
+      "alt": "MDP Coffee House — corporate coffee kiosk",
+      "caption": "Landing page photo 1"
     },
     {
       "id": "02",
-      "src": "/images/clifford-VobvKmG-StA-unsplash.jpg",
-      "alt": "South Indian filter coffee being poured from a height",
-      "caption": "The pour — filter coffee, arm raised, long arc"
+      "src": "/landing_page/Landing_page_2.jpg",
+      "alt": "MDP Coffee House — South Indian filter coffee",
+      "caption": "Landing page photo 2"
     },
     {
       "id": "03",
-      "src": "/images/kayleigh-harrington-yhn4okt6ci0-unsplash.jpg",
-      "alt": "Employees gathering at an MDP kiosk before work",
-      "caption": "Arrival — employees gathering before work"
+      "src": "/landing_page/Landing_page_3.jpg",
+      "alt": "MDP Coffee House — office coffee service",
+      "caption": "Landing page photo 3"
     },
     {
       "id": "04",
-      "src": "/images/nathan-dumlao-nBJHO6wmRWw-unsplash.jpg",
-      "alt": "A long queue forming at a corporate MDP kiosk",
-      "caption": "Queue — the morning line at a corporate kiosk"
-    },
-    {
-      "id": "05",
-      "src": "/images/nathan-dumlao-V6WUpAOmioc-unsplash.jpg",
-      "alt": "Busy MDP counter during the morning rush",
-      "caption": "Rush — busy counter, staff serving multiple people"
-    },
-    {
-      "id": "06",
-      "src": "/images/nathan-dumlao-XOhI_kW_TaM-unsplash.jpg",
-      "alt": "Coffee being handed across the MDP counter",
-      "caption": "Handoff — coffee exchanged across the counter"
+      "src": "/landing_page/Landing_page_4.jpg",
+      "alt": "MDP Coffee House — corporate coffee counter",
+      "caption": "Landing page photo 4"
     }
   ]
 }
