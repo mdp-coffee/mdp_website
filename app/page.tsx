@@ -19,7 +19,7 @@ export default function HomePage() {
       <NavBar />
       <ScrollContainer>
         <Hero />
-        <ClientTicker variant="dark" />
+        <ClientTicker variant="light" />
         <Scale />
         <OperatingFormats />
         <OperatingSystem />

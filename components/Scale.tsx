@@ -1,109 +1,198 @@
 "use client";
 
-import { SectionLabel } from "@/components/SectionLabel";
-import { CompactForm } from "@/components/CompactForm";
+import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { useCountUp } from "@/hooks/useCountUp";
-import { siteConfig } from "@/content/site";
+import { trackEvent } from "@/components/Analytics";
 
-function parseStatValue(val: string | number): { end: number; suffix: string } {
-  if (typeof val === "number") return { end: val, suffix: "" };
-  const m = /^(\d[\d,]*)(\+?)$/.exec(val);
-  return m ? { end: parseInt((m[1] ?? "0").replace(/,/g, ""), 10), suffix: m[2] ?? "" } : { end: 0, suffix: "" };
-}
-
-interface StatCounterProps {
-  end: number;
-  suffix: string;
-  label: string;
-  accent?: boolean;
-  locale?: string;
-}
-
-function StatCounter({ end, suffix, label, accent, locale }: StatCounterProps) {
-  const { ref, display } = useCountUp({ end, suffix, locale });
-  const isLong = display.length > 6;
-  return (
-    <div ref={ref}>
-      <span
-        className={`font-condensed font-black leading-[0.95] tracking-tightest ${
-          accent ? "text-gold" : "text-cream"
-        } ${isLong ? "text-[36px] sm:text-[44px]" : "text-[44px] sm:text-[56px]"}`}
-      >
-        {display}
-      </span>
-      <span className="ml-3 font-sans text-xl text-cream/40 sm:text-2xl">
-        {label}
-      </span>
-    </div>
-  );
-}
-
-const locStat = parseStatValue(siteConfig.locationsCount);
-const clientStat = parseStatValue(siteConfig.enterpriseClients);
+type SubmitState = "idle" | "submitting" | "success" | "error";
 
 export function Scale() {
+  const [state, setState] = useState<SubmitState>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setState("submitting");
+    setErrorMsg("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      name: formData.get("name"),
+      company: formData.get("company"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+      website: formData.get("website"), // honeypot
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = (await res.json()) as { error?: string };
+        throw new Error(data.error ?? "Something went wrong");
+      }
+
+      setState("success");
+      trackEvent("contact_form_submit", { location: "scale" });
+      form.reset();
+    } catch (err) {
+      setState("error");
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
+    }
+  }
+
+  const labelCls = "font-condensed text-[10px] uppercase tracking-[0.18em] text-brown/40";
+  const inputCls = "mt-2 w-full border border-brown/15 bg-paper2 px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none";
+
   return (
     <section
       id="scale"
-      className="snap-slide grainy grainy-dark relative flex min-h-[100svh] w-full items-center bg-[#411915] px-6 py-20 md:px-20"
-      aria-label="MDP Coffee House scale — 85+ locations, 1,00,000 cups daily, 45+ enterprise clients"
+      className="snap-slide grid min-h-[100svh] w-full grid-cols-1 md:grid-cols-2"
+      aria-label="MDP Coffee House — partner enquiry"
     >
-      <div className="grid w-full grid-cols-1 gap-12 lg:grid-cols-2">
-        <div className="flex flex-col justify-center">
-          <RevealOnScroll delay={0}>
-            <SectionLabel tone="dark">Scale</SectionLabel>
-          </RevealOnScroll>
-
-          <div className="mt-8 flex flex-col gap-2">
-            <RevealOnScroll delay={0.1}>
-              <StatCounter
-                end={locStat.end}
-                suffix={locStat.suffix}
-                label="locations."
-              />
-            </RevealOnScroll>
-            <RevealOnScroll delay={0.2}>
-              <StatCounter
-                end={siteConfig.cupsPerDay}
-                suffix=""
-                label="cups. every day."
-                accent
-                locale="en-IN"
-              />
-            </RevealOnScroll>
-            <RevealOnScroll delay={0.3}>
-              <StatCounter
-                end={clientStat.end}
-                suffix={clientStat.suffix}
-                label="enterprise clients."
-              />
-            </RevealOnScroll>
-          </div>
-
-          <RevealOnScroll delay={0.4}>
-            <p className="mt-6 font-condensed text-sm font-bold tracking-wide text-gold/60">
-              Every single day.
-            </p>
-          </RevealOnScroll>
-
+      {/* Left — dark panel */}
+      <div className="relative flex flex-col justify-center overflow-hidden bg-[#411915] px-6 py-20 md:px-14">
+        <div className="pointer-events-none absolute bottom-0 right-0 h-3/4 w-1/2 opacity-[0.15]" aria-hidden="true">
+          <Image
+            src="/images/MDP coffeee man Png1.png"
+            alt=""
+            fill
+            className="object-contain object-bottom"
+          />
         </div>
-
-        {/* Enquiry panel */}
-        <RevealOnScroll delay={0.15} direction="left">
-          <div className="flex flex-col justify-center">
-            <h3 className="font-condensed text-[32px] font-black leading-tight tracking-tightest text-cream sm:text-[40px]">
-              Bring MDP to
-              <br />
-              your office.
-            </h3>
-            <p className="mb-8 mt-3 font-sans text-cream/50">
-              Fill in your details and we&rsquo;ll call you back.
+        <RevealOnScroll direction="left" delay={0}>
+          <div className="relative z-10">
+            <h2 className="font-condensed text-[44px] leading-[0.92] tracking-tightest text-cream sm:text-[56px]">
+              Whether it&rsquo;s your office, your space, or your next venture &mdash; we&rsquo;d love to show up for you.
+            </h2>
+            <p className="mt-6 max-w-xs font-sans text-sm text-cream/35">
+              Trusted by Amazon, Deutsche Bank, Infosys and 40+ enterprise clients since 2005.
             </p>
-            <CompactForm />
           </div>
         </RevealOnScroll>
+      </div>
 
+      {/* Right — form panel */}
+      <div className="flex flex-col justify-center bg-paper px-6 py-20 md:px-14">
+        <RevealOnScroll delay={0.2}>
+          {state === "success" ? (
+            <div role="status" className="max-w-md">
+              <p className="font-condensed text-3xl font-black text-brown">
+                We&rsquo;ll be in touch.
+              </p>
+              <p className="mt-3 font-sans text-brown/60">
+                Expect a call shortly.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="max-w-md" noValidate>
+              {/* Honeypot — visually hidden, bots fill it, humans don't */}
+              <div className="absolute -left-[9999px]" aria-hidden="true">
+                <label htmlFor="sc-website">Leave this field empty</label>
+                <input
+                  type="text"
+                  id="sc-website"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label htmlFor="sc-name" className={labelCls}>
+                  Your name
+                </label>
+                <input
+                  id="sc-name"
+                  name="name"
+                  type="text"
+                  required
+                  minLength={2}
+                  placeholder="Your name"
+                  className={inputCls}
+                />
+              </div>
+
+              <div className="mb-4">
+                <label htmlFor="sc-company" className={labelCls}>
+                  Company<span className="normal-case opacity-60"> (optional)</span>
+                </label>
+                <input
+                  id="sc-company"
+                  name="company"
+                  type="text"
+                  placeholder="Company name"
+                  className={inputCls}
+                />
+              </div>
+
+              <div className="mb-4">
+                <label htmlFor="sc-phone" className={labelCls}>
+                  Phone number
+                </label>
+                <input
+                  id="sc-phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  placeholder="Phone number"
+                  className={inputCls}
+                />
+              </div>
+
+              <div className="mb-4">
+                <label htmlFor="sc-email" className={labelCls}>
+                  Email<span className="normal-case opacity-60"> (optional)</span>
+                </label>
+                <input
+                  id="sc-email"
+                  name="email"
+                  type="email"
+                  placeholder="Email address"
+                  className={inputCls}
+                />
+              </div>
+
+              <div className="mb-6">
+                <label htmlFor="sc-message" className={labelCls}>
+                  Why are you reaching out?<span className="normal-case opacity-60"> (optional)</span>
+                </label>
+                <textarea
+                  id="sc-message"
+                  name="message"
+                  rows={3}
+                  placeholder="Tell us a little about what you have in mind"
+                  className={inputCls}
+                />
+              </div>
+
+              {state === "error" ? (
+                <p role="alert" className="mb-4 text-sm text-rust">
+                  {errorMsg}
+                </p>
+              ) : null}
+
+              <button
+                type="submit"
+                disabled={state === "submitting"}
+                className="w-full bg-brown py-4 font-condensed text-sm font-bold uppercase tracking-[0.15em] text-cream transition-colors hover:bg-rust disabled:opacity-60"
+              >
+                {state === "submitting" ? "Sending…" : "GET A CALLBACK →"}
+              </button>
+
+              <p className="mt-4 font-sans text-sm text-brown/35">
+                No sales pitch. No obligation. Just a conversation.
+              </p>
+            </form>
+          )}
+        </RevealOnScroll>
       </div>
     </section>
   );

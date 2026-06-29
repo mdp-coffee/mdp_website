@@ -298,19 +298,19 @@ export function OperatingFormats() {
           {products.map((product) => (
             <div
               key={product.id}
-              className={`h-[160px] w-[140px] flex-shrink-0 snap-start border transition-colors duration-200 hover:border-gold/40 ${theme.productCardBg} ${theme.productCardBorder}`}
+              className={`w-[160px] flex-shrink-0 snap-start overflow-hidden border transition-colors duration-200 hover:border-gold/40 ${theme.productCardBorder}`}
             >
-              <div
-                role="img"
-                aria-label={product.name}
-                className="flex h-[96px] w-full items-center justify-center bg-gold/5"
-              >
-                <span className="text-xl text-gold/40" aria-hidden="true">
-                  📷
-                </span>
+              <div className="relative h-[120px] w-full overflow-hidden">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  sizes="160px"
+                />
               </div>
               <p
-                className={`px-3 py-2 font-condensed text-sm font-bold tracking-tight ${theme.productCardText}`}
+                className={`px-3 py-2.5 font-condensed text-sm font-bold tracking-tight ${theme.productCardText} ${theme.productCardBg}`}
               >
                 {product.name}
               </p>

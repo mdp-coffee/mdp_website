@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { SectionLabel } from "@/components/SectionLabel";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
@@ -153,6 +154,17 @@ export function Origin() {
         </RevealOnScroll>
 
       </div>
+
+      <RevealOnScroll delay={0.3}>
+        <div className="mt-10">
+          <Link
+            href="/about"
+            className="inline-block border border-brown/25 px-7 py-3 font-condensed text-sm uppercase tracking-wider text-brown/60 transition-colors hover:border-brown hover:text-brown"
+          >
+            Our Full Story →
+          </Link>
+        </div>
+      </RevealOnScroll>
 
     </section>
   );

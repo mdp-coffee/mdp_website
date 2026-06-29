@@ -66,10 +66,15 @@ function StatBlock({
   locale?: string;
 }) {
   const { ref, display } = useCountUp({ end, suffix, duration, locale });
+  const isLong = display.replace(/[^0-9]/g, "").length > 5;
   return (
-    <div ref={ref} className="border-l border-gold/20 pl-6">
-      <p className="font-condensed text-[48px] leading-none text-gold">{display}</p>
-      <p className="mt-2 font-sans text-sm uppercase tracking-widest text-cream/40">{label}</p>
+    <div ref={ref} className="border-l border-gold/20 pl-6 min-w-0">
+      <p className={`font-condensed leading-none text-gold ${isLong ? "text-[28px] md:text-[36px]" : "text-[40px] md:text-[52px]"}`}>
+        {display}
+      </p>
+      <p className="mt-3 font-sans text-[10px] uppercase tracking-widest text-cream/40">
+        {label}
+      </p>
     </div>
   );
 }
@@ -194,62 +199,21 @@ export function AboutContent() {
       </section>
 
       {/* Section 3A — At Scale */}
-      <section
-        className="bg-[#411915] px-6 py-20 md:px-20"
-        aria-label="MDP Coffee House at scale"
-      >
+      <section className="bg-[#411915] px-6 py-20 md:px-20" aria-label="MDP at scale">
         <RevealOnScroll delay={0}>
           <SectionLabel tone="dark">Twenty Years. At Scale.</SectionLabel>
         </RevealOnScroll>
-        <div className="mt-12 flex flex-wrap justify-center gap-8">
-          <RevealOnScroll delay={0}>
-            <div className="flex flex-col items-center text-center md:border-r md:border-cream/10 px-8">
-              <span className="font-condensed text-[56px] md:text-[72px] leading-none text-cream">
-                20+
-              </span>
-              <span className="font-condensed text-[11px] uppercase tracking-widest text-cream/40 mt-3">
-                Years of Operations
-              </span>
-            </div>
-          </RevealOnScroll>
-          <RevealOnScroll delay={0.08}>
-            <div className="flex flex-col items-center text-center md:border-r md:border-cream/10 px-8">
-              <span className="font-condensed text-[56px] md:text-[72px] leading-none text-cream">
-                85+
-              </span>
-              <span className="font-condensed text-[11px] uppercase tracking-widest text-cream/40 mt-3">
-                Active Locations
-              </span>
-            </div>
-          </RevealOnScroll>
-          <RevealOnScroll delay={0.16}>
-            <div className="flex flex-col items-center text-center md:border-r md:border-cream/10 px-8">
-              <span className="font-condensed text-[56px] md:text-[72px] leading-none text-cream">
-                1,00,000+
-              </span>
-              <span className="font-condensed text-[11px] uppercase tracking-widest text-cream/40 mt-3">
-                Cups Daily
-              </span>
-            </div>
-          </RevealOnScroll>
-          <RevealOnScroll delay={0.24}>
-            <div className="flex flex-col items-center text-center px-8">
-              <span className="font-condensed text-[56px] md:text-[72px] leading-none text-cream">
-                15+
-              </span>
-              <span className="font-condensed text-[11px] uppercase tracking-widest text-cream/40 mt-3">
-                Cities
-              </span>
-            </div>
-          </RevealOnScroll>
+        <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-5 md:gap-4">
+          <StatBlock end={20} suffix="+" label="Years of Operations" duration={1600} />
+          <StatBlock end={85} suffix="+" label="Active Locations" duration={1800} />
+          <StatBlock end={100000} suffix="+" label="Cups Daily" duration={2200} locale="en-IN" />
+          <StatBlock end={15} suffix="+" label="Cities" duration={1400} />
+          <StatBlock end={45} suffix="+" label="Corporate Clients" duration={1600} />
         </div>
       </section>
 
       {/* Section 3B — Recognised */}
-      <section
-        className="bg-parchment px-6 py-20 md:px-20"
-        aria-label="Awards and recognition"
-      >
+      <section className="bg-parchment px-6 py-20 md:px-20" aria-label="Awards">
         <RevealOnScroll delay={0}>
           <div className="mx-auto mb-8 h-px w-16 bg-brown/20" aria-hidden="true" />
           <p className="mb-2 text-center font-condensed not-italic text-[11px] uppercase tracking-widest text-rust/60">
@@ -353,15 +317,6 @@ export function AboutContent() {
         <p className="mt-6 font-sans text-sm text-brown/30">
           Real MDP team photos coming soon
         </p>
-      </section>
-
-      {/* Section 8 — Scale Numbers (useCountUp) */}
-      <section className="bg-[#411915] px-6 py-20 md:px-20" aria-label="MDP scale">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
-          <StatBlock end={85} suffix="+" label="Locations across India" duration={1800} />
-          <StatBlock end={100000} suffix="" label="Cups served every day" duration={2200} locale="en-IN" />
-          <StatBlock end={45} suffix="+" label="Enterprise clients" duration={1600} />
-        </div>
       </section>
 
       {/* Section 9 — CTA */}

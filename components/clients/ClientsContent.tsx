@@ -15,19 +15,21 @@ import { heroStats, clientStories, industries, citiesPresence } from "@/content/
 function ClientCard({ client }: { client: ClientLogo }) {
   const base = [
     "group border border-paper2 bg-paper p-6 transition-all duration-200 hover:border-gold",
-    client.active === false ? "opacity-60 hover:opacity-90" : "",
+    client.active === false ? "opacity-40 hover:opacity-70" : "",
   ].join(" ");
 
   if (client.logoSrc !== null) {
     return (
       <div id={client.slug} className={base}>
-        <Image
-          src={client.logoSrc}
-          alt={`${client.name} — MDP Coffee House corporate client India`}
-          width={120}
-          height={48}
-          className="object-contain opacity-70 grayscale"
-        />
+        <div className="flex h-14 items-center">
+          <Image
+            src={client.logoSrc}
+            alt={`${client.name} — MDP Coffee House corporate client India`}
+            width={140}
+            height={56}
+            className="max-h-12 w-auto object-contain"
+          />
+        </div>
         <h3 className="mt-3 font-condensed text-lg leading-tight text-brown">
           {client.name}
         </h3>
@@ -37,16 +39,9 @@ function ClientCard({ client }: { client: ClientLogo }) {
 
   return (
     <div id={client.slug} className={base}>
-      <p className="mb-2 font-condensed text-[11px] uppercase tracking-[0.2em] text-brown/30">
-        Enterprise Client
-      </p>
       <h3 className="font-condensed text-2xl leading-tight text-brown">
         {client.name}
       </h3>
-      <div className="mt-3 h-px w-8 bg-gold/40" />
-      <p className="mt-3 font-sans text-xs uppercase tracking-wider text-brown/40">
-        Since 2005
-      </p>
     </div>
   );
 }
@@ -157,7 +152,7 @@ export function ClientsContent() {
           </h2>
         </RevealOnScroll>
 
-        <div className="mt-8 grid grid-cols-2 gap-px bg-parchment sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-3 gap-px bg-parchment sm:grid-cols-4 lg:grid-cols-6">
           {clients.map((client, index) => (
             <RevealOnScroll key={client.slug} delay={Math.min(index * 0.04, 0.6)}>
               <ClientCard client={client} />

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { trackEvent } from "@/components/Analytics";
@@ -8,8 +9,25 @@ function G({ children }: { children: string }) {
   return <span className="font-black text-gold">{children}</span>;
 }
 
+const rotatingLines = [
+  <><G>M</G>y <G>D</G>aily <G>P</G>eace. In a paper cup.</>,
+  <><G>M</G>otivation <G>D</G>uring <G>P</G>ressure. We&apos;re here for that.</>,
+  <><G>M</G>ornings <G>D</G>eserve a <G>P</G>erfect start. We&apos;ve believed that since 2005.</>,
+  <><G>M</G>y <G>D</G>aily <G>P</G>ause. One cup at a time.</>,
+];
+
 export function Hero() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [rotatingIndex, setRotatingIndex] = useState(0);
   const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (shouldReduceMotion) return;
+    const interval = setInterval(() => {
+      setRotatingIndex((prev) => (prev + 1) % rotatingLines.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [shouldReduceMotion]);
 
   const fadeIn = (delay: number) =>
     shouldReduceMotion
@@ -29,7 +47,7 @@ export function Hero() {
       {/* Background image */}
       <div className="absolute inset-0" aria-hidden="true">
         <Image
-          src="/landing_page/Landing_page_2.jpg"
+          src="/landing_page/hero.jpg"
           alt="MDP Coffee House"
           fill
           className="object-cover object-center"

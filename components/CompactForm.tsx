@@ -21,14 +21,12 @@ export function CompactForm({ variant = "dark" }: CompactFormProps) {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const city = (formData.get("city") as string | null) ?? "";
 
     const payload = {
       name: formData.get("name"),
-      company: formData.get("company"),
       phone: formData.get("phone"),
       email: formData.get("email"),
-      message: city ? `City: ${city}` : "",
+      message: formData.get("reason") ?? "",
       website: formData.get("website"), // honeypot
     };
 
@@ -103,19 +101,6 @@ export function CompactForm({ variant = "dark" }: CompactFormProps) {
       </div>
 
       <div className="mb-3">
-        <label htmlFor="cf-company" className={labelCls}>
-          Company<span className="normal-case opacity-60"> (optional)</span>
-        </label>
-        <input
-          id="cf-company"
-          name="company"
-          type="text"
-          placeholder="Company name"
-          className={inputCls}
-        />
-      </div>
-
-      <div className="mb-3">
         <label htmlFor="cf-phone" className={labelCls}>
           Phone number
         </label>
@@ -143,14 +128,14 @@ export function CompactForm({ variant = "dark" }: CompactFormProps) {
       </div>
 
       <div className="mb-5">
-        <label htmlFor="cf-city" className={labelCls}>
-          City<span className="normal-case opacity-60"> (optional)</span>
+        <label htmlFor="cf-reason" className={labelCls}>
+          Why are you reaching out?<span className="normal-case opacity-60"> (optional)</span>
         </label>
-        <input
-          id="cf-city"
-          name="city"
-          type="text"
-          placeholder="Bengaluru"
+        <textarea
+          id="cf-reason"
+          name="reason"
+          rows={3}
+          placeholder="Tell us a little about what you have in mind"
           className={inputCls}
         />
       </div>

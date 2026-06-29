@@ -5,34 +5,13 @@ export interface Product {
 }
 
 export const products: Product[] = [
-  {
-    id: "filter-coffee",
-    name: "Filter Coffee",
-    image: "/images/products/filter-coffee.jpg",
-  },
-  {
-    id: "tea",
-    name: "Tea",
-    image: "/images/products/tea.jpg",
-  },
-  {
-    id: "cookies",
-    name: "Cookies",
-    image: "/images/products/cookies.jpg",
-  },
-  {
-    id: "biscuits",
-    name: "Biscuits",
-    image: "/images/products/biscuits.jpg",
-  },
-  {
-    id: "cold-coffee",
-    name: "Cold Coffee",
-    image: "/images/products/cold-coffee.jpg",
-  },
-  {
-    id: "snacks",
-    name: "Snacks",
-    image: "/images/products/snacks.jpg",
-  },
+  { id: "filter-coffee", name: "Filter Coffee", image: "/mdp_products/Filter_Coffee.jpg" },
+  { id: "ginger-tea", name: "Ginger Tea", image: "/mdp_products/ginger_tea.jpg" },
+  { id: "green-tea", name: "Green Tea", image: "/mdp_products/green_tea.jpg" },
+  { id: "lemon-tea", name: "Lemon Tea", image: "/mdp_products/lemon_tea.jpg" },
+  { id: "badam-milk", name: "Badam Milk", image: "/mdp_products/Badam_Milk.jpg" },
+  { id: "rose-milk", name: "Rose Milk", image: "/mdp_products/Rose_milk.jpg" },
+  { id: "milkshake", name: "Milkshake", image: "/mdp_products/milkshake.jpg" },
+  { id: "chocolate-milkshake", name: "Chocolate Milkshake", image: "/mdp_products/Chocolate_milk_shake.jpg" },
+  { id: "butter-milk", name: "Butter Milk", image: "/mdp_products/Butter_milk.jpg" },
 ];
