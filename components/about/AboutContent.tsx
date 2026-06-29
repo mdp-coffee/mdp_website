@@ -115,6 +115,49 @@ export function AboutContent() {
         </motion.p>
       </section>
 
+      {/* Section 1B — Bridge */}
+      <section className="bg-paper px-6 pt-24 pb-10 md:px-20" aria-label="About MDP Coffee House">
+        <div className="max-w-3xl">
+          <RevealOnScroll delay={0}>
+            <SectionLabel>Our Story</SectionLabel>
+          </RevealOnScroll>
+          <RevealOnScroll delay={0.05}>
+            <h2 className="mt-6 mb-10 font-condensed text-[40px] leading-[0.92] tracking-tightest text-brown sm:text-[52px]">
+              Our Story
+            </h2>
+          </RevealOnScroll>
+          <RevealOnScroll delay={0.1}>
+            <p className="font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
+              MDP Coffee House was built on a simple idea: that the people who build
+              India&rsquo;s workday deserve to be looked after. We started with one
+              kiosk, in an unfamiliar city, serving people who didn&rsquo;t know us
+              yet. Twenty years later, we are present across India — in the campuses
+              of Fortune 500 companies, in the corridors of banks and tech parks, in
+              the quiet moments between meetings, in the mornings that set the tone
+              for everything that follows.
+            </p>
+          </RevealOnScroll>
+          <RevealOnScroll delay={0.25}>
+            <p className="mt-8 font-sans text-lg leading-relaxed text-brown/50 md:text-xl">
+              What we have built is not just a coffee company. It is a presence —
+              quiet, consistent, and always there when the day begins. We show up in
+              the small moments: the first cup before a long meeting, the familiar
+              counter in an unfamiliar new office, the warmth of something made with
+              care in the middle of a hard day. Every outlet, every trained team
+              member, every morning we have shown up without exception — it all comes
+              from the same place. A genuine belief that the people whose mornings we
+              are part of deserve to feel that someone is looking out for them.
+            </p>
+          </RevealOnScroll>
+          <RevealOnScroll delay={0.35}>
+            <p className="mt-8 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
+              The scale changed. The care never did. That is the only reason we are
+              still here.
+            </p>
+          </RevealOnScroll>
+        </div>
+      </section>
+
       {/* Section 2 — Who We Are */}
       <section className="px-6 py-24 md:px-20" aria-label="Who we are">
         <RevealOnScroll delay={0}>
