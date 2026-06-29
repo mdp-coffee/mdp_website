@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { SectionLabel } from "@/components/SectionLabel";
-import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { MOTION } from "@/lib/motion";
 
@@ -96,14 +96,23 @@ export function Origin() {
         <div className="order-1 flex flex-col justify-center lg:order-2">
           <RevealOnScroll delay={0.3}>
             <div>
-              <PhotoPlaceholder
-                label="Archive photo — earliest available MDP image"
-                sublabel="Since 2005 · Bengaluru, India"
-                className="h-52 w-full border-0 bg-gold/5"
-              />
-              <p className="mt-2 font-condensed text-[11px] uppercase tracking-widest text-brown/35">
-                Since 2005 · Bengaluru, India
-              </p>
+              <div className="relative h-[420px] w-full overflow-hidden bg-paper">
+                <Image
+                  src="/images/first_outlet_accenturevirkholi.png"
+                  alt="MDP Coffee House first outlet at Accenture Vikhroli, Mumbai — 2005"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+              <div className="mt-3">
+                <p className="font-condensed text-[11px] uppercase tracking-widest text-rust/70">
+                  2005 · Our Very First Outlet
+                </p>
+                <p className="mt-1 font-condensed text-[11px] uppercase tracking-widest text-brown/40">
+                  Accenture Vikhroli, Mumbai
+                </p>
+              </div>
             </div>
           </RevealOnScroll>
         </div>

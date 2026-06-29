@@ -7,7 +7,7 @@
       "description": "Fully managed. We set up, staff, operate, and restock every day. The morning anchor for your workplace.",
       "details": "SETUP · DAILY OPS · STAFF TRAINING · QUALITY AUDITS · RESTOCKING",
       "example": "Operating at Amazon, Microsoft, Infosys, TCS, Deutsche Bank and 35+ others.",
-      "photo": "/images/nathan-dumlao-Y3AqmbmtLQI-unsplash.jpg",
+      "photo": "/operating_formats/Corporate_kiosk.png",
       "theme": "light"
     },
     {
@@ -17,7 +17,7 @@
       "description": "Full South Indian menu in a sit-down format. Filter coffee, dosas, thatte idli, chats — for high-footfall locations.",
       "details": "FULL MENU · DINE-IN · HIGH VOLUME · MALL & COMMERCIAL LOCATIONS",
       "example": "Bharatiya Mall Bengaluru, Mall of Mysore, ITPL, Koramangala, HSR and more.",
-      "photo": "/images/nathan-dumlao-zUNs99PGDg0-unsplash.jpg",
+      "photo": "/operating_formats/QSR.png",
       "theme": "light2"
     },
     {
@@ -27,7 +27,7 @@
       "description": "The kiosk comes to you. Same quality, same service — no fixed location needed. For campuses, events, and outdoor spaces.",
       "details": "EVENT DEPLOYMENT · CAMPUS COVERAGE · FLEXIBLE · NO INFRASTRUCTURE",
       "example": "Deployed across tech park campuses and corporate events across India.",
-      "photo": "/images/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg",
+      "photo": "/operating_formats/mobile_cart.png",
       "theme": "parchment"
     },
     {
@@ -37,17 +37,7 @@
       "description": "Stocked, managed, and restocked — always on, always available, for offices that never truly clock off.",
       "details": "24-HOUR AVAILABILITY · PACKAGED SNACKS & BEVERAGES · AUTO-RESTOCKING",
       "example": "Running in offices with round-the-clock operations in Bengaluru and Hyderabad.",
-      "photo": "/images/rizky-subagja-1k7TnX5GAww-unsplash.jpg",
-      "theme": "light"
-    },
-    {
-      "num": "05",
-      "category": "ODC",
-      "name": "Outdoor Catering",
-      "description": "From intimate gatherings to large-scale events — MDP brings the same filter coffee experience to any venue, any occasion. Fully managed setup, service, and teardown.",
-      "details": "SETUP · SERVICE · TEARDOWN · EQUIPMENT · STAFF",
-      "example": "Corporate events, product launches, conferences and celebrations across India.",
-      "photo": null,
+      "photo": "/operating_formats/tuck_shop.png",
       "theme": "light"
     }
   ]

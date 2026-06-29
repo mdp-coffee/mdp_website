@@ -1,19 +1,7 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
 import { SectionLabel } from "@/components/SectionLabel";
 import { operatingSystemCards } from "@/lib/content";
 import type { OperatingSystemCard } from "@/lib/types";
-
-const placeholderPhotos = [
-  "/images/nathan-dumlao-nBJHO6wmRWw-unsplash.jpg",
-  "/images/ante-samarzija-lsmu0rUhUOk-unsplash.jpg",
-  "/images/nathan-dumlao-V6WUpAOmioc-unsplash.jpg",
-  "/images/clifford-VobvKmG-StA-unsplash.jpg",
-  "/images/nathan-dumlao-XOhI_kW_TaM-unsplash.jpg",
-  "/images/kayleigh-harrington-yhn4okt6ci0-unsplash.jpg",
-  "/images/nathan-dumlao-Y3AqmbmtLQI-unsplash.jpg",
-  "/images/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg",
-];
 
 // Inline SVG icons — thin stroke, architectural line style.
 // Stroke color inherited from parent via currentColor; fill always none.
@@ -93,7 +81,7 @@ const icons: Record<string, ReactNode> = {
   ),
 };
 
-function Card({ card, photoSrc }: { card: OperatingSystemCard; photoSrc: string }) {
+function Card({ card }: { card: OperatingSystemCard }) {
   const icon = icons[card.iconKey];
 
   return (
@@ -113,16 +101,9 @@ function Card({ card, photoSrc }: { card: OperatingSystemCard; photoSrc: string 
       <h3 className="mt-4 font-condensed text-xl not-italic leading-tight tracking-tight text-brown">
         {card.headline}
       </h3>
-
-      <div className="relative mt-4 h-40 w-full overflow-hidden">
-        <Image
-          src={photoSrc}
-          alt={card.headline}
-          fill
-          className="object-cover"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-        />
-      </div>
+      <p className="mt-3 font-sans text-sm leading-relaxed text-brown/55">
+        {card.body}
+      </p>
     </article>
   );
 }
@@ -147,11 +128,10 @@ export function OperatingSystem() {
       </p>
 
       <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {operatingSystemCards.map((card, index) => (
+        {operatingSystemCards.map((card) => (
           <Card
             key={card.number}
             card={card}
-            photoSrc={placeholderPhotos[index % placeholderPhotos.length] ?? "/images/nathan-dumlao-nBJHO6wmRWw-unsplash.jpg"}
           />
         ))}
       </div>

@@ -142,6 +142,11 @@ export function ClientsContent() {
             celebrations across India.
           </p>
         </RevealOnScroll>
+        <RevealOnScroll delay={0.35}>
+          <p className="mt-5 font-sans text-base leading-relaxed text-brown/60">
+            Today, MDP serves some of India&rsquo;s most recognised workplaces — Amazon, Microsoft, Infosys, TCS, Deutsche Bank, Oracle, HCL, Cognizant, Samsung, Wells Fargo, American Express, Broadcom, Thomson Reuters, Mu Sigma, Kyndryl, Societe Generale, London Stock Exchange, LG Soft, Lowe&rsquo;s, Philips, British Telecom, IBM and more — across tech parks, campuses, banks and commercial spaces nationwide.
+          </p>
+        </RevealOnScroll>
       </section>
 
       {/* Section 3 — Client Grid */}
@@ -151,6 +156,12 @@ export function ClientsContent() {
             Companies that have trusted MDP Coffee House.
           </h2>
         </RevealOnScroll>
+
+        <ul className="sr-only" aria-label="Full list of MDP Coffee House enterprise clients">
+          {clients.map((client) => (
+            <li key={client.slug}>{client.name}</li>
+          ))}
+        </ul>
 
         <div className="mt-8 grid grid-cols-3 gap-px bg-parchment sm:grid-cols-4 lg:grid-cols-6">
           {clients.map((client, index) => (

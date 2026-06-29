@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "label": "Join The Team",
+    "headline": "Come work with us.",
+    "subtext": "MDP Coffee House has been built by people who show up — every morning, at every counter, in every city. If you think you have something to bring to this team, we'd love to hear from you."
+  },
+  "why": [
+    {
+      "num": "01",
+      "title": "Training Academy",
+      "body": "Every MDP team member goes through our in-house Training Academy in Bengaluru. We don't just hire people — we build Coffee Masters."
+    },
+    {
+      "num": "02",
+      "title": "Room to Grow",
+      "body": "From outlet staff to supervisors to area managers — most of our leadership started on the counter. We promote from within."
+    },
+    {
+      "num": "03",
+      "title": "400+ Strong",
+      "body": "Over four hundred people across India wake up every morning and come to work at MDP. You'd be joining a team that takes pride in what it does."
+    }
+  ],
+  "form": {
+    "headline": "Send us an open application.",
+    "subtext": "No roles listed right now — but if you feel like you belong here, reach out. We read every message.",
+    "cta": "SEND APPLICATION →"
+  }
+}

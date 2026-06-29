@@ -192,12 +192,13 @@ export function OperatingFormats() {
             className="grid h-full grid-cols-1 gap-8 md:grid-cols-2"
           >
             {format.photo ? (
-              <div className="relative min-h-[240px] overflow-hidden md:min-h-full">
+              <div className="relative min-h-[400px] overflow-hidden md:min-h-[500px]">
                 <Image
                   src={format.photo}
                   alt={format.name}
                   fill
                   className="object-cover"
+                  style={{ objectPosition: index === 0 ? "center 20%" : "center" }}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
