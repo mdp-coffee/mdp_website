@@ -67,12 +67,6 @@ export function ClientProof() {
         ))}
       </div>
 
-      {/* Case study slot — pending client approval per project notes */}
-      <div className="border-t border-brown/10 px-6 py-3 md:px-20">
-        <p className="font-condensed text-[11px] uppercase tracking-widest text-brown/25">
-          + Additional case studies become a 3rd / 4th column here once client-approved
-        </p>
-      </div>
     </section>
   );
 }

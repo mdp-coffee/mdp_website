@@ -25,7 +25,7 @@ export function WhatsAppFloat() {
      * md:flex-row: on desktop, bubble is left of button.
      * items-end keeps both right-aligned in column layout.
      */
-    <div className="fixed bottom-7 right-7 z-50 flex flex-col items-end gap-2.5 md:flex-row md:items-center">
+    <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2.5 md:bottom-7 md:right-7 md:flex-row md:items-center">
       {/* Speech bubble */}
       <AnimatePresence>
         {showBubble && (
@@ -87,7 +87,7 @@ export function WhatsAppFloat() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => trackEvent("whatsapp_click", { location: "floating_button" })}
-        className="flex h-13 w-13 flex-shrink-0 items-center justify-center rounded-full bg-brown p-3.5 shadow-lg transition-colors hover:bg-rust"
+        className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-brown p-3 shadow-lg transition-colors hover:bg-rust md:h-13 md:w-13 md:p-3.5"
         aria-label="Chat with MDP Coffee House on WhatsApp"
       >
         <svg

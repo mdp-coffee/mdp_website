@@ -9,6 +9,10 @@ function G({ children }: { children: string }) {
   return <span className="font-black text-gold">{children}</span>;
 }
 
+const heroPhotos = [
+  { src: "/landing_page/hero.jpg", alt: "MDP Coffee House" },
+];
+
 const rotatingLines = [
   <><G>M</G>y <G>D</G>aily <G>P</G>eace. In a paper cup.</>,
   <><G>M</G>otivation <G>D</G>uring <G>P</G>ressure. We&apos;re here for that.</>,
@@ -41,23 +45,28 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="snap-slide relative flex h-[100svh] min-h-[640px] w-full items-center overflow-hidden bg-[#F9F0E1]"
+      className="snap-slide relative flex min-h-[640px] w-full items-center overflow-hidden bg-[#411915] md:h-[100svh]"
       aria-label="MDP Coffee House — the coffee companion of India's workday"
     >
       {/* Background image */}
       <div className="absolute inset-0" aria-hidden="true">
-        <Image
-          src="/landing_page/hero.jpg"
-          alt="MDP Coffee House"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-          priority
-        />
+        {heroPhotos.map((photo, i) => (
+          <Image
+            key={photo.src}
+            src={photo.src}
+            alt={photo.alt}
+            fill
+            className={`object-cover object-center transition-opacity duration-1000 ${
+              i === activeIndex ? "opacity-100" : "opacity-0"
+            }`}
+            sizes="100vw"
+            priority={i === 0}
+          />
+        ))}
       </div>
 
-      {/* Static foreground */}
-      <div className="relative z-10 px-6 md:px-20">
+      {/* Foreground content */}
+      <div className="relative z-10 px-6 pt-24 md:px-20 md:pt-16">
         <motion.div className="mb-5 flex items-center gap-3" {...fadeIn(0.15)}>
           <span className="h-px w-8 bg-brown/25" aria-hidden="true" />
           <span className="font-condensed text-[11px] uppercase tracking-[0.3em] text-brown/50">
@@ -65,7 +74,7 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <h1 className="font-condensed text-[52px] leading-[0.88] tracking-tightest text-brown sm:text-[68px] md:text-[88px]">
+        <h1 className="font-condensed text-[40px] leading-[0.92] tracking-tightest text-brown sm:text-[68px] md:text-[88px]">
           <motion.span className="block" {...fadeIn(0.3)}>
             Made with Care
           </motion.span>
@@ -75,7 +84,7 @@ export function Hero() {
         </h1>
 
         <motion.p
-          className="mt-8 font-sans italic text-lg leading-relaxed text-brown/60 md:text-xl"
+          className="mt-8 font-sans italic text-base leading-relaxed text-brown/50 md:text-xl"
           {...fadeIn(0.7)}
         >
           <G>M</G>y <G>D</G>aily <G>P</G>eace. In a paper cup.

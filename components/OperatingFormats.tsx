@@ -153,7 +153,7 @@ export function OperatingFormats() {
 
       {/* Tabs */}
       <div
-        className="mt-6 flex flex-wrap gap-2"
+        className="mt-6 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap"
         role="tablist"
         aria-label="Operating formats"
       >
@@ -164,7 +164,7 @@ export function OperatingFormats() {
             role="tab"
             aria-selected={i === index}
             onClick={() => goTo(i)}
-            className={`px-5 py-3 text-left transition-colors ${
+            className={`px-4 py-3 text-left transition-colors sm:px-5 ${
               i === index ? theme.tabActive : theme.tabIdle
             }`}
           >
