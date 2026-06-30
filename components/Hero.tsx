@@ -9,10 +9,6 @@ function G({ children }: { children: string }) {
   return <span className="font-black text-gold">{children}</span>;
 }
 
-const heroPhotos = [
-  { src: "/landing_page/hero.jpg", alt: "MDP Coffee House" },
-];
-
 const rotatingLines = [
   <><G>M</G>y <G>D</G>aily <G>P</G>eace. In a paper cup.</>,
   <><G>M</G>otivation <G>D</G>uring <G>P</G>ressure. We&apos;re here for that.</>,
@@ -21,7 +17,6 @@ const rotatingLines = [
 ];
 
 export function Hero() {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [rotatingIndex, setRotatingIndex] = useState(0);
   const shouldReduceMotion = useReducedMotion();
 
@@ -45,24 +40,29 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="snap-slide relative flex min-h-[640px] w-full items-center overflow-hidden bg-[#411915] md:h-[100svh]"
+      className="snap-slide relative flex min-h-[640px] w-full items-start overflow-hidden bg-[#411915] md:h-[100svh] md:items-center"
       aria-label="MDP Coffee House — the coffee companion of India's workday"
     >
       {/* Background image */}
       <div className="absolute inset-0" aria-hidden="true">
-        {heroPhotos.map((photo, i) => (
-          <Image
-            key={photo.src}
-            src={photo.src}
-            alt={photo.alt}
-            fill
-            className={`object-cover object-center transition-opacity duration-1000 ${
-              i === activeIndex ? "opacity-100" : "opacity-0"
-            }`}
-            sizes="100vw"
-            priority={i === 0}
-          />
-        ))}
+        {/* Desktop background */}
+        <Image
+          src="/landing_page/hero.jpg"
+          alt="MDP Coffee House"
+          fill
+          className="hidden object-cover object-center md:block"
+          sizes="100vw"
+          priority
+        />
+        {/* Mobile background */}
+        <Image
+          src="/landing_page/hero_mobile1.jpg"
+          alt="MDP Coffee House"
+          fill
+          className="block object-cover object-top md:hidden"
+          sizes="100vw"
+          priority
+        />
       </div>
 
       {/* Foreground content */}
@@ -74,7 +74,7 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <h1 className="font-condensed text-[40px] leading-[0.92] tracking-tightest text-brown sm:text-[68px] md:text-[88px]">
+        <h1 className="font-condensed text-[32px] leading-[0.95] tracking-tightest text-brown sm:text-[68px] md:text-[88px]">
           <motion.span className="block" {...fadeIn(0.3)}>
             Made with Care
           </motion.span>
@@ -84,23 +84,23 @@ export function Hero() {
         </h1>
 
         <motion.p
-          className="mt-8 font-sans italic text-base leading-relaxed text-brown/50 md:text-xl"
+          className="mt-5 font-sans italic text-sm leading-relaxed text-brown/50 md:mt-8 md:text-xl"
           {...fadeIn(0.7)}
         >
           <G>M</G>y <G>D</G>aily <G>P</G>eace. In a paper cup.
         </motion.p>
 
-        <motion.div className="mt-10 flex flex-wrap gap-4" {...fadeIn(1.0)}>
+        <motion.div className="mt-6 flex flex-col gap-3 md:mt-10 md:flex-row md:flex-wrap md:gap-4" {...fadeIn(1.0)}>
           <a
             href="#contact"
             onClick={() => trackEvent("cta_click", { location: "hero" })}
-            className="bg-gold px-7 py-4 font-condensed text-sm font-bold uppercase tracking-wider text-brown transition-colors hover:bg-gold/90"
+            className="bg-gold px-5 py-3 text-center font-condensed text-xs font-bold uppercase tracking-wider text-brown transition-colors hover:bg-gold/90 md:px-7 md:py-4 md:text-sm"
           >
             Partner With Us
           </a>
           <a
             href="#story"
-            className="border border-brown/30 px-7 py-4 font-condensed text-sm uppercase tracking-wider text-brown/60 transition-colors hover:border-brown hover:text-brown"
+            className="border border-brown/30 bg-paper/80 px-5 py-3 text-center font-condensed text-xs uppercase tracking-wider text-brown/60 transition-colors hover:border-brown hover:text-brown md:bg-transparent md:px-7 md:py-4 md:text-sm"
           >
             Our Story
           </a>

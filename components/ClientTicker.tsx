@@ -35,14 +35,14 @@ export function ClientTicker({ variant = "light" }: ClientTickerProps) {
           onMouseLeave={() => setIsPaused(false)}
         >
           <div
-            className="flex w-max animate-ticker gap-9 py-7"
+            className="flex w-max animate-ticker gap-4 py-4 md:gap-9 md:py-7"
             aria-hidden="true"
             style={{ animationPlayState: isPaused ? "paused" : "running" }}
           >
             {tripled.map((client, i) => (
               <div
                 key={`${client.slug}-${i}`}
-                className={`flex h-14 w-44 flex-shrink-0 items-center justify-center px-4 ${
+                className={`flex h-9 w-24 flex-shrink-0 items-center justify-center px-2 md:h-14 md:w-44 md:px-4 ${
                   isDark
                     ? "bg-white/10"
                     : "border border-brown/10 bg-brown/[0.03]"
@@ -53,7 +53,7 @@ export function ClientTicker({ variant = "light" }: ClientTickerProps) {
                   <img
                     src={client.logoSrc}
                     alt={client.name}
-                    className={`max-h-8 max-w-full object-contain ${isDark ? "bg-white px-3 py-1.5" : ""}`}
+                    className={`max-h-5 max-w-full object-contain md:max-h-8 ${isDark ? "bg-white px-2 py-1 md:px-3 md:py-1.5" : ""}`}
                   />
                 ) : (
                   <span
