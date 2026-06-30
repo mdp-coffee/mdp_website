@@ -13,7 +13,7 @@ export function Origin() {
   return (
     <section
       id="story"
-      className="snap-slide relative w-full overflow-hidden bg-paper px-6 py-24 md:px-20"
+      className="snap-slide relative w-full overflow-hidden bg-paper px-6 py-14 md:px-20 md:py-24"
       aria-label="Our story — MDP Coffee House since 2005"
     >
       {/* Ghost year watermark — desktop only */}
@@ -32,14 +32,14 @@ export function Origin() {
       <div className="relative z-10 grid grid-cols-1 gap-16 lg:grid-cols-[2fr_3fr] lg:gap-12">
 
         {/* LEFT column */}
-        <div className="order-2 flex flex-col justify-center lg:order-1">
+        <div className="order-1 flex flex-col justify-center lg:order-1">
           <RevealOnScroll delay={0}>
             <SectionLabel tone="light">Our Story</SectionLabel>
           </RevealOnScroll>
 
           <h2 className="mt-8">
             <motion.span
-              className="block font-condensed text-[72px] leading-[0.95] tracking-tight text-brown sm:text-[88px]"
+              className="block font-condensed text-[44px] leading-[0.95] tracking-tight text-brown sm:text-[88px]"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={MOTION.viewport}
@@ -48,7 +48,7 @@ export function Origin() {
               One kiosk.
             </motion.span>
             <motion.span
-              className="block font-condensed text-[48px] leading-[0.92] tracking-tight text-brown/75 sm:text-[60px]"
+              className="block font-condensed text-[30px] leading-[0.92] tracking-tight text-brown/75 sm:text-[60px]"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={MOTION.viewport}
@@ -57,7 +57,7 @@ export function Origin() {
               Twenty years later,
             </motion.span>
             <motion.span
-              className="block font-condensed text-[48px] not-italic leading-[0.92] tracking-tight text-brown/55 md:text-[60px]"
+              className="block font-condensed text-[30px] not-italic leading-[0.92] tracking-tight text-brown/55 md:text-[60px]"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={MOTION.viewport}
@@ -93,10 +93,10 @@ export function Origin() {
         </div>
 
         {/* RIGHT column */}
-        <div className="order-1 flex flex-col justify-center lg:order-2">
+        <div className="order-2 flex flex-col justify-center lg:order-2">
           <RevealOnScroll delay={0.3}>
             <div>
-              <div className="relative h-[420px] w-full overflow-hidden bg-paper">
+              <div className="relative h-[260px] w-full overflow-hidden bg-paper lg:h-[420px]">
                 <Image
                   src="/images/first_outlet_accenturevirkholi.png"
                   alt="MDP Coffee House first outlet at Accenture Vikhroli, Mumbai — 2005"

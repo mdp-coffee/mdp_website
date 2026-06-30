@@ -71,7 +71,7 @@ export function Contact() {
         <RevealOnScroll direction="left" delay={0}>
         <div className="relative z-10">
           <SectionLabel tone="dark">Work With Us</SectionLabel>
-          <h2 className="mt-6 font-condensed text-[44px] leading-[0.92] tracking-tightest text-cream sm:text-[56px]">
+          <h2 className="mt-6 font-condensed text-[32px] leading-[0.95] tracking-tightest text-cream sm:text-[56px]">
             Let&rsquo;s talk about
             <br />
             your office.

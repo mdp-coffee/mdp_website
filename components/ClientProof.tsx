@@ -23,7 +23,7 @@ export function ClientProof() {
           <SectionLabel>Trust</SectionLabel>
         </RevealOnScroll>
         <RevealOnScroll delay={0.1}>
-          <h2 className="mt-6 font-condensed text-[44px] leading-[0.92] tracking-tightest text-brown sm:text-[58px]">
+          <h2 className="mt-6 font-condensed text-[32px] leading-[0.95] tracking-tightest text-brown sm:text-[58px]">
             They start their day with us.
           </h2>
         </RevealOnScroll>

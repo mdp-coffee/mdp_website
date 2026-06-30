@@ -153,7 +153,7 @@ export function OperatingFormats() {
 
       {/* Tabs */}
       <div
-        className="mt-6 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap"
+        className="mt-6 flex w-full gap-1 sm:flex sm:flex-wrap sm:gap-2"
         role="tablist"
         aria-label="Operating formats"
       >
@@ -164,14 +164,14 @@ export function OperatingFormats() {
             role="tab"
             aria-selected={i === index}
             onClick={() => goTo(i)}
-            className={`px-4 py-3 text-left transition-colors sm:px-5 ${
+            className={`min-w-0 flex-1 px-1 py-1.5 text-left transition-colors sm:flex-none sm:px-5 sm:py-3 ${
               i === index ? theme.tabActive : theme.tabIdle
             }`}
           >
-            <span className="block font-condensed text-[10px] tracking-widest opacity-70">
+            <span className="block font-condensed text-[7px] tracking-widest opacity-70 sm:text-[10px]">
               {fmt.num}
             </span>
-            <span className="block font-condensed text-sm font-bold tracking-tight">
+            <span className="block truncate font-condensed text-[8px] font-bold leading-tight tracking-tight sm:text-sm">
               {fmt.category}
             </span>
           </button>
@@ -192,7 +192,7 @@ export function OperatingFormats() {
             className="grid h-full grid-cols-1 gap-8 md:grid-cols-2"
           >
             {format.photo ? (
-              <div className="relative min-h-[400px] overflow-hidden md:min-h-[500px]">
+              <div className="relative min-h-[260px] overflow-hidden md:min-h-[500px]">
                 <Image
                   src={format.photo}
                   alt={format.name}
@@ -212,13 +212,13 @@ export function OperatingFormats() {
 
             <div className="flex flex-col justify-center pb-10">
               <h2
-                className={`font-condensed text-[40px] leading-[0.95] tracking-tight ${theme.text} sm:text-[52px]`}
+                className={`font-condensed text-[30px] leading-[0.98] tracking-tight ${theme.text} sm:text-[52px]`}
               >
                 {format.name}
               </h2>
               <div className="mt-5 h-px w-12 bg-rust/35" aria-hidden="true" />
               <p
-                className={`mt-5 max-w-md font-sans text-lg leading-relaxed sm:text-xl ${theme.text} opacity-75`}
+                className={`mt-5 max-w-md font-sans text-sm leading-relaxed sm:text-xl ${theme.text} opacity-75`}
               >
                 {format.description}
               </p>

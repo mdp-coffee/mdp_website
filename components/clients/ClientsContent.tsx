@@ -163,7 +163,7 @@ export function ClientsContent() {
           ))}
         </ul>
 
-        <div className="mt-8 grid grid-cols-3 gap-px bg-parchment sm:grid-cols-4 lg:grid-cols-6">
+        <div className="mt-8 grid grid-cols-2 gap-px bg-parchment sm:grid-cols-4 lg:grid-cols-6">
           {clients.map((client, index) => (
             <RevealOnScroll key={client.slug} delay={Math.min(index * 0.04, 0.6)}>
               <ClientCard client={client} />
@@ -264,7 +264,7 @@ export function ClientsContent() {
         aria-label="Partner with MDP Coffee House"
       >
         <RevealOnScroll delay={0}>
-          <h2 className="font-condensed text-[48px] leading-[0.92] tracking-tightest text-cream">
+          <h2 className="font-condensed text-[34px] leading-[0.92] tracking-tightest text-cream sm:text-[48px]">
             Bring MDP to your office.
           </h2>
         </RevealOnScroll>

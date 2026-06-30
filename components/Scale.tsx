@@ -48,8 +48,8 @@ export function Scale() {
     }
   }
 
-  const labelCls = "font-condensed text-[10px] uppercase tracking-[0.18em] text-brown/40";
-  const inputCls = "mt-2 w-full border border-brown/15 bg-paper2 px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none";
+  const labelCls = "font-condensed text-[9px] uppercase tracking-[0.15em] text-brown/40";
+  const inputCls = "mt-1.5 w-full border border-brown/15 bg-paper2 px-3 py-2 text-sm font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none md:mt-2 md:px-4 md:py-3 md:text-base";
 
   return (
     <section
@@ -69,7 +69,7 @@ export function Scale() {
         </div>
         <RevealOnScroll direction="left" delay={0}>
           <div className="relative z-10">
-            <h2 className="font-condensed text-[44px] leading-[0.92] tracking-tightest text-cream sm:text-[56px]">
+            <h2 className="font-condensed text-[30px] leading-[0.98] tracking-tightest text-cream sm:text-[56px]">
               Whether it&rsquo;s your office, your space, or your next venture &mdash; we&rsquo;d love to show up for you.
             </h2>
             <p className="mt-6 max-w-xs font-sans text-sm text-cream/35">
@@ -105,7 +105,7 @@ export function Scale() {
                 />
               </div>
 
-              <div className="mb-4">
+              <div className="mb-3 md:mb-4">
                 <label htmlFor="sc-name" className={labelCls}>
                   Your name
                 </label>
@@ -120,7 +120,7 @@ export function Scale() {
                 />
               </div>
 
-              <div className="mb-4">
+              <div className="mb-3 md:mb-4">
                 <label htmlFor="sc-company" className={labelCls}>
                   Company<span className="normal-case opacity-60"> (optional)</span>
                 </label>
@@ -133,7 +133,7 @@ export function Scale() {
                 />
               </div>
 
-              <div className="mb-4">
+              <div className="mb-3 md:mb-4">
                 <label htmlFor="sc-phone" className={labelCls}>
                   Phone number
                 </label>
@@ -147,7 +147,7 @@ export function Scale() {
                 />
               </div>
 
-              <div className="mb-4">
+              <div className="mb-3 md:mb-4">
                 <label htmlFor="sc-email" className={labelCls}>
                   Email<span className="normal-case opacity-60"> (optional)</span>
                 </label>
@@ -160,14 +160,14 @@ export function Scale() {
                 />
               </div>
 
-              <div className="mb-6">
+              <div className="mb-4 md:mb-6">
                 <label htmlFor="sc-message" className={labelCls}>
                   Why are you reaching out?<span className="normal-case opacity-60"> (optional)</span>
                 </label>
                 <textarea
                   id="sc-message"
                   name="message"
-                  rows={3}
+                  rows={2}
                   placeholder="Tell us a little about what you have in mind"
                   className={inputCls}
                 />
@@ -182,7 +182,7 @@ export function Scale() {
               <button
                 type="submit"
                 disabled={state === "submitting"}
-                className="w-full bg-brown py-4 font-condensed text-sm font-bold uppercase tracking-[0.15em] text-cream transition-colors hover:bg-rust disabled:opacity-60"
+                className="w-full bg-brown py-3 font-condensed text-xs font-bold uppercase tracking-[0.15em] text-cream transition-colors hover:bg-rust disabled:opacity-60 md:py-4 md:text-sm"
               >
                 {state === "submitting" ? "Sending…" : "GET A CALLBACK →"}
               </button>
