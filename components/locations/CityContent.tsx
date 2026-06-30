@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { NavBar } from "@/components/NavBar";
@@ -113,14 +114,26 @@ export function CityContent({ city }: { city: CityPageData }) {
           ))}
         </section>
 
-        {/* Photo placeholder */}
+        {/* City outlet photo */}
         <RevealOnScroll delay={0.4}>
           <section className="px-6 pb-16 md:px-20">
-            <PhotoPlaceholder
-              label={`${city.name} outlet photography`}
-              sublabel="Local kiosk or QSR photo for this city"
-              className="h-80 w-full max-w-3xl"
-            />
+            {city.photoSrc ? (
+              <div className="relative h-80 w-full max-w-3xl overflow-hidden">
+                <Image
+                  src={city.photoSrc}
+                  alt={city.photoAlt ?? `${city.name} outlet photography`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                />
+              </div>
+            ) : (
+              <PhotoPlaceholder
+                label={`${city.name} outlet photography`}
+                sublabel="Local kiosk or QSR photo for this city"
+                className="h-80 w-full max-w-3xl"
+              />
+            )}
           </section>
         </RevealOnScroll>
 

@@ -128,10 +128,10 @@ export function Contact() {
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-3 md:mb-4">
               <label
                 htmlFor="name"
-                className="font-condensed text-[10px] uppercase tracking-[0.18em] text-brown/40"
+                className="font-condensed text-[9px] uppercase tracking-[0.15em] text-brown/40"
               >
                 Your name
               </label>
@@ -142,14 +142,14 @@ export function Contact() {
                 required
                 minLength={2}
                 placeholder="Your name"
-                className="mt-2 w-full border border-brown/15 bg-paper2 px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
+                className="mt-1.5 w-full border border-brown/15 bg-paper2 px-3 py-2 text-sm font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none md:mt-2 md:px-4 md:py-3 md:text-base"
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-3 md:mb-4">
               <label
                 htmlFor="company"
-                className="font-condensed text-[10px] uppercase tracking-[0.18em] text-brown/40"
+                className="font-condensed text-[9px] uppercase tracking-[0.15em] text-brown/40"
               >
                 Company<span className="normal-case opacity-60"> (optional)</span>
               </label>
@@ -158,14 +158,14 @@ export function Contact() {
                 name="company"
                 type="text"
                 placeholder="Company name"
-                className="mt-2 w-full border border-brown/15 bg-paper2 px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
+                className="mt-1.5 w-full border border-brown/15 bg-paper2 px-3 py-2 text-sm font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none md:mt-2 md:px-4 md:py-3 md:text-base"
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-3 md:mb-4">
               <label
                 htmlFor="phone"
-                className="font-condensed text-[10px] uppercase tracking-[0.18em] text-brown/40"
+                className="font-condensed text-[9px] uppercase tracking-[0.15em] text-brown/40"
               >
                 Phone number
               </label>
@@ -175,14 +175,14 @@ export function Contact() {
                 type="tel"
                 required
                 placeholder="Phone number"
-                className="mt-2 w-full border border-brown/15 bg-paper2 px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
+                className="mt-1.5 w-full border border-brown/15 bg-paper2 px-3 py-2 text-sm font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none md:mt-2 md:px-4 md:py-3 md:text-base"
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-3 md:mb-4">
               <label
                 htmlFor="email"
-                className="font-condensed text-[10px] uppercase tracking-[0.18em] text-brown/40"
+                className="font-condensed text-[9px] uppercase tracking-[0.15em] text-brown/40"
               >
                 Email<span className="normal-case opacity-60"> (optional)</span>
               </label>
@@ -191,23 +191,23 @@ export function Contact() {
                 name="email"
                 type="email"
                 placeholder="Email address"
-                className="mt-2 w-full border border-brown/15 bg-paper2 px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
+                className="mt-1.5 w-full border border-brown/15 bg-paper2 px-3 py-2 text-sm font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none md:mt-2 md:px-4 md:py-3 md:text-base"
               />
             </div>
 
-            <div className="mb-6">
+            <div className="mb-4 md:mb-6">
               <label
                 htmlFor="message"
-                className="font-condensed text-[10px] uppercase tracking-[0.18em] text-brown/40"
+                className="font-condensed text-[9px] uppercase tracking-[0.15em] text-brown/40"
               >
                 Tell us about your office<span className="normal-case opacity-60"> (optional)</span>
               </label>
               <textarea
                 id="message"
                 name="message"
-                rows={3}
+                rows={2}
                 placeholder="Tell us a bit about your office"
-                className="mt-2 w-full resize-none border border-brown/15 bg-paper2 px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
+                className="mt-1.5 w-full resize-none border border-brown/15 bg-paper2 px-3 py-2 text-sm font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none md:mt-2 md:px-4 md:py-3 md:text-base"
               />
             </div>
 

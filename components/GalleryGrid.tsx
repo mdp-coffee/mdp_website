@@ -145,7 +145,7 @@ export function GalleryGrid() {
 
       {/* Photo grid */}
       <div className="px-6 py-12 md:px-20">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-4 md:grid-cols-3">
           {filtered.map((item, index) => (
             <button
               key={item.id}

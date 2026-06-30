@@ -129,15 +129,15 @@ export function Origin() {
       />
 
       {/* ── Part 2 — Vision & Mission ──────────────────────────────── */}
-      <div className="relative z-10 grid grid-cols-1 gap-8 md:grid-cols-[1fr_1px_1fr] md:gap-12">
+      <div className="relative z-10 grid grid-cols-1 gap-5 md:grid-cols-[1fr_1px_1fr] md:gap-12">
 
         {/* Vision */}
         <RevealOnScroll delay={0.1}>
           <div>
-            <p className="mb-4 font-condensed text-[20px] leading-[0.95] tracking-tight text-rust/60 sm:text-[20px]">
+            <p className="mb-2 font-condensed text-sm leading-[0.95] tracking-tight text-rust/60 sm:mb-4 sm:text-[20px]">
               Vision
             </p>
-            <h3 className="mb-4 font-sans text-xl not-italic leading-snug text-brown md:text-2xl">
+            <h3 className="mb-4 font-sans text-base not-italic leading-snug text-brown sm:text-xl md:text-2xl">
               To be India&rsquo;s most trusted South Indian beverage brand —
               present in every campus, transit hub, and community where people
               gather.
@@ -151,10 +151,10 @@ export function Origin() {
         {/* Mission */}
         <RevealOnScroll delay={0.2}>
           <div>
-            <p className="mb-4 font-condensed text-[20px] leading-[0.95] tracking-tight text-rust/60 sm:text-[20px]">
+            <p className="mb-2 font-condensed text-sm leading-[0.95] tracking-tight text-rust/60 sm:mb-4 sm:text-[20px]">
               Mission
             </p>
-            <h3 className="mb-4 font-sans text-xl not-italic leading-snug text-brown md:text-2xl">
+            <h3 className="mb-4 font-sans text-base not-italic leading-snug text-brown sm:text-xl md:text-2xl">
               To serve authentic South Indian filter coffee consistently,
               accessibly, and with genuine care — across every format we
               operate.

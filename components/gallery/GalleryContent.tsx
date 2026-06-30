@@ -15,14 +15,14 @@ export function GalleryContent() {
 
       {/* Hero */}
       <section
-        className="flex min-h-[40vh] w-full flex-col justify-end bg-[#411915] px-6 pb-16 pt-32 md:px-20"
+        className="flex min-h-[40vh] w-full flex-col justify-end bg-[#411915] px-6 pb-10 pt-24 md:px-20 md:pb-16 md:pt-32"
         aria-label="MDP Coffee House gallery"
       >
         <p className="mb-4 font-condensed text-[11px] uppercase tracking-[0.3em] text-gold/50">
           Gallery
         </p>
         <motion.h1
-          className="font-condensed text-[52px] leading-[0.9] tracking-tightest text-cream sm:text-[68px]"
+          className="font-condensed text-[36px] leading-[0.95] tracking-tightest text-cream sm:text-[68px]"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: MOTION.slow, delay: 0.3, ease: MOTION.ease }}
@@ -30,7 +30,7 @@ export function GalleryContent() {
           Twenty years of mornings.
         </motion.h1>
         <motion.p
-          className="mt-4 font-sans text-xl text-cream/50"
+          className="mt-3 font-sans text-sm text-cream/50 md:mt-4 md:text-xl"
           initial={shouldReduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: MOTION.base, delay: 0.5, ease: MOTION.ease }}

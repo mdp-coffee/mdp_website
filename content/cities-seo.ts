@@ -20,6 +20,8 @@ export interface CityPageData {
   paragraphs: string[];
   locationList?: CityLocation;
   paraSections?: CityParaSection[];
+  photoSrc?: string;
+  photoAlt?: string;
 }
 
 /**
@@ -55,6 +57,8 @@ export const cityPages: CityPageData[] = [
         "Manyata Tech Park area",
       ],
     },
+    photoSrc: "/gallery/ITPL.jpeg",
+    photoAlt: "MDP Coffee House outlet at International Tech Park, Bengaluru",
     paraSections: [
       {
         heading: "Enterprise clients in Bengaluru",
@@ -77,6 +81,8 @@ export const cityPages: CityPageData[] = [
       "Hyderabad's HITEC City and Gachibowli corridors are home to some of India's largest technology and financial services operations. MDP Coffee House serves corporate offices across this corridor — bringing authentic South Indian filter coffee to the employees of technology companies, consulting firms, and banks that call Hyderabad home.",
       "MDP serves enterprise clients in Hyderabad including Cognizant, Deutsche Bank, Genpact and others operating in the city's expanding technology and financial services sector.",
     ],
+    photoSrc: "/gallery/Infosys_Hyderabad.jpeg",
+    photoAlt: "MDP Coffee House outlet at Infosys, Hyderabad",
   },
   {
     slug: "mumbai",
@@ -99,6 +105,8 @@ export const cityPages: CityPageData[] = [
         text: "MDP Coffee House's first client was Accenture, Vikhroli — a relationship that began in 2005 and helped establish MDP as a trusted name in corporate coffee service across India. MDP also serves HSBC, Standard Chartered and other financial institutions with offices in Mumbai's commercial districts.",
       },
     ],
+    photoSrc: "/gallery/first_outlet_Accenture_Virkholi.jpeg",
+    photoAlt: "MDP Coffee House first outlet at Accenture, Vikhroli, Mumbai — 2005",
   },
   {
     slug: "pune",
@@ -114,6 +122,8 @@ export const cityPages: CityPageData[] = [
     paragraphs: [
       "Pune has become one of India's fastest-growing technology hubs, with a dense concentration of IT companies, consulting firms and global capability centres. MDP Coffee House serves corporate offices across Pune's expanding tech corridor with fully managed South Indian filter coffee kiosks — the same operational model that has served enterprise clients across India since 2005.",
     ],
+    photoSrc: "/gallery/Infosys_Pune.jpeg",
+    photoAlt: "MDP Coffee House outlet at Infosys, Pune",
   },
   {
     slug: "chennai",

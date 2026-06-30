@@ -58,7 +58,7 @@ export function ClientsContent() {
         className="flex min-h-[55vh] w-full items-center bg-[#411915] px-6 pt-16 md:px-20"
         aria-label="MDP Coffee House clients"
       >
-        <div className="grid w-full grid-cols-1 gap-12 py-20 md:grid-cols-2">
+        <div className="grid w-full grid-cols-1 gap-8 py-10 md:grid-cols-2 md:gap-12 md:py-20">
           <div>
             <motion.div
               initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
@@ -68,7 +68,7 @@ export function ClientsContent() {
               <SectionLabel tone="dark">Our Clients</SectionLabel>
             </motion.div>
             <motion.h1
-              className="mt-6 font-condensed text-[44px] leading-[0.92] tracking-tightest text-cream sm:text-[56px]"
+              className="mt-6 font-condensed text-[30px] leading-[0.95] tracking-tightest text-cream sm:text-[56px]"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: MOTION.slow, delay: 0.4, ease: MOTION.ease }}
@@ -102,7 +102,7 @@ export function ClientsContent() {
                   ease: MOTION.ease,
                 }}
               >
-                <p className="font-condensed text-[48px] leading-none text-gold">
+                <p className="font-condensed text-[32px] leading-none text-gold sm:text-[48px]">
                   {stat.value}
                 </p>
                 <p className="mt-1 font-sans text-sm uppercase tracking-widest text-cream/60">
@@ -116,11 +116,11 @@ export function ClientsContent() {
 
       {/* Section 2 — SEO text block */}
       <section
-        className="mx-auto max-w-[800px] px-6 py-20"
+        className="mx-auto max-w-[800px] px-6 py-10 sm:py-20"
         aria-label="About our enterprise clients"
       >
         <RevealOnScroll delay={0}>
-          <h2 className="font-condensed text-3xl text-brown">
+          <h2 className="font-condensed text-2xl text-brown sm:text-3xl">
             India&rsquo;s most trusted corporate coffee partner
           </h2>
         </RevealOnScroll>
@@ -150,9 +150,9 @@ export function ClientsContent() {
       </section>
 
       {/* Section 3 — Client Grid */}
-      <section className="px-6 pb-20 md:px-20" aria-label="Enterprise clients">
+      <section className="px-6 pb-10 md:px-20 md:pb-20" aria-label="Enterprise clients">
         <RevealOnScroll delay={0}>
-          <h2 className="font-condensed text-4xl text-brown">
+          <h2 className="font-condensed text-[26px] leading-[1.05] text-brown sm:text-4xl">
             Companies that have trusted MDP Coffee House.
           </h2>
         </RevealOnScroll>
@@ -238,16 +238,16 @@ export function ClientsContent() {
             <RevealOnScroll key={city.slug} delay={MOTION.stagger(index, 0.1)}>
               <Link
                 href={`/locations/${city.slug}`}
-                className="group block border border-brown/10 bg-paper px-6 py-6 transition-colors duration-300 hover:bg-brown"
+                className="group block border border-brown/10 bg-paper px-4 py-4 transition-colors duration-300 hover:bg-brown sm:px-6 sm:py-6"
               >
-                <h3 className="font-condensed text-2xl text-brown transition-colors group-hover:text-cream">
+                <h3 className="font-condensed text-lg text-brown transition-colors group-hover:text-cream sm:text-2xl">
                   {city.name}
                 </h3>
-                <p className="mt-1 font-sans text-sm text-brown/50 transition-colors group-hover:text-cream/50">
+                <p className="mt-1 font-sans text-xs text-brown/50 transition-colors group-hover:text-cream/50 sm:text-sm">
                   Corporate coffee service in {city.name}
                 </p>
                 <span
-                  className="mt-3 block font-condensed text-lg text-brown/30 transition-colors group-hover:text-gold"
+                  className="mt-2 block font-condensed text-base text-brown/30 transition-colors group-hover:text-gold sm:mt-3 sm:text-lg"
                   aria-hidden="true"
                 >
                   →
@@ -260,7 +260,7 @@ export function ClientsContent() {
 
       {/* Section 7 — CTA */}
       <section
-        className="flex flex-col items-center bg-[#411915] px-6 py-24 text-center md:px-20"
+        className="flex flex-col items-center bg-[#411915] px-6 py-14 text-center md:px-20 md:py-24"
         aria-label="Partner with MDP Coffee House"
       >
         <RevealOnScroll delay={0}>
@@ -269,16 +269,16 @@ export function ClientsContent() {
           </h2>
         </RevealOnScroll>
         <RevealOnScroll delay={0.15}>
-          <p className="mt-6 max-w-lg font-sans text-xl text-cream/55">
+          <p className="mt-4 max-w-lg font-sans text-sm text-cream/55 md:mt-6 md:text-xl">
             Join 45+ enterprises across India who trust MDP to show up every
             morning.
           </p>
         </RevealOnScroll>
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        <div className="mt-6 flex flex-col items-stretch gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 md:mt-10">
           <RevealOnScroll delay={0.3}>
             <Link
               href="/#contact"
-              className="bg-gold px-8 py-4 font-condensed text-sm font-bold uppercase tracking-wider text-brown transition-colors hover:bg-gold/90"
+              className="bg-gold px-6 py-3 text-center font-condensed text-xs font-bold uppercase tracking-wider text-brown transition-colors hover:bg-gold/90 sm:px-8 sm:py-4 sm:text-sm"
             >
               Partner With Us
             </Link>
@@ -286,7 +286,7 @@ export function ClientsContent() {
           <RevealOnScroll delay={0.4}>
             <Link
               href="/about"
-              className="border border-cream/25 px-8 py-4 font-condensed text-sm uppercase tracking-wider text-cream/70 transition-colors hover:border-cream hover:text-cream"
+              className="border border-cream/25 px-6 py-3 text-center font-condensed text-xs uppercase tracking-wider text-cream/70 transition-colors hover:border-cream hover:text-cream sm:px-8 sm:py-4 sm:text-sm"
             >
               Learn About Us
             </Link>

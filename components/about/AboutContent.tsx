@@ -88,7 +88,7 @@ export function AboutContent() {
 
       {/* Section 1 — Page Hero (on load, not whileInView) */}
       <section
-        className="flex min-h-[60vh] w-full flex-col justify-end bg-[#411915] px-6 pb-20 pt-32 md:px-20"
+        className="flex min-h-[60vh] w-full flex-col justify-end bg-[#411915] px-6 pb-12 pt-24 md:px-20 md:pb-20 md:pt-32"
         aria-label="About MDP Coffee House"
       >
         <motion.p
@@ -100,7 +100,7 @@ export function AboutContent() {
           About Us
         </motion.p>
         <motion.h1
-          className="font-condensed text-[52px] leading-[0.9] tracking-tightest text-cream sm:text-[68px] md:text-[88px]"
+          className="font-condensed text-[36px] leading-[0.95] tracking-tightest text-cream sm:text-[68px] md:text-[88px]"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: MOTION.slow, delay: 0.4, ease: MOTION.ease }}
@@ -110,7 +110,7 @@ export function AboutContent() {
           of India&rsquo;s workday.
         </motion.h1>
         <motion.p
-          className="mt-8 max-w-2xl font-sans text-xl leading-relaxed text-cream/55"
+          className="mt-5 max-w-2xl font-sans text-base leading-relaxed text-cream/55 md:mt-8 md:text-xl"
           initial={shouldReduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: MOTION.base, delay: 0.7, ease: MOTION.ease }}
@@ -121,13 +121,13 @@ export function AboutContent() {
       </section>
 
       {/* Section 1B — Bridge */}
-      <section className="bg-paper px-6 pt-24 pb-10 md:px-20" aria-label="About MDP Coffee House">
+      <section className="bg-paper px-6 pt-14 pb-10 md:px-20 md:pt-24" aria-label="About MDP Coffee House">
         <div className="max-w-3xl">
           <RevealOnScroll delay={0}>
             <SectionLabel>Our Story</SectionLabel>
           </RevealOnScroll>
           <RevealOnScroll delay={0.05}>
-            <h2 className="mt-6 mb-10 font-condensed text-[40px] leading-[0.92] tracking-tightest text-brown sm:text-[52px]">
+            <h2 className="mt-6 mb-6 font-condensed text-[30px] leading-[0.95] tracking-tightest text-brown sm:text-[52px] sm:mb-10">
               Our Story
             </h2>
           </RevealOnScroll>
@@ -164,12 +164,12 @@ export function AboutContent() {
       </section>
 
       {/* Section 2 — Who We Are */}
-      <section className="px-6 py-24 md:px-20" aria-label="Who we are">
+      <section className="px-6 py-12 md:px-20 md:py-24" aria-label="Who we are">
         <RevealOnScroll delay={0}>
           <SectionLabel>Our Purpose</SectionLabel>
         </RevealOnScroll>
         <RevealOnScroll delay={0.1}>
-          <h2 className="mt-6 font-condensed text-[40px] leading-[0.92] tracking-tightest text-brown sm:text-[52px]">
+          <h2 className="mt-6 font-condensed text-[28px] leading-[0.95] tracking-tightest text-brown sm:text-[52px]">
             We&rsquo;re not in the coffee business.
           </h2>
         </RevealOnScroll>
@@ -219,13 +219,13 @@ export function AboutContent() {
           <p className="mb-2 text-center font-condensed not-italic text-[11px] uppercase tracking-widest text-rust/60">
             Recognised by the Companies We Serve
           </p>
-          <p className="mb-10 text-center font-sans text-xs text-brown/45">Given by the clients we serve.</p>
+
         </RevealOnScroll>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+        <div className="scrollbar-hide flex snap-x snap-mandatory gap-3 overflow-x-auto md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:snap-none lg:grid-cols-5">
           {awards.map((award, index) => (
             <RevealOnScroll key={award.id} delay={index * 0.07}>
-              <div className="flex flex-col overflow-hidden border border-brown/10 bg-paper transition-colors duration-200 hover:border-gold/50">
+              <div className="flex w-[70vw] flex-shrink-0 flex-col overflow-hidden border border-brown/10 bg-paper transition-colors duration-200 hover:border-gold/50 md:w-auto md:flex-shrink">
                 <div className="relative h-40 w-full overflow-hidden bg-white">
                   <Image
                     src={award.image}
@@ -260,21 +260,21 @@ export function AboutContent() {
       <CompactTimeline />
 
       {/* Section 5 — Our Values */}
-      <section className="bg-parchment px-6 py-24 md:px-20" aria-label="Our values">
+      <section className="bg-parchment px-6 py-12 md:px-20 md:py-24" aria-label="Our values">
         <RevealOnScroll delay={0}>
           <SectionLabel>What We Believe</SectionLabel>
-          <h2 className="mt-6 font-condensed text-[40px] leading-[0.92] tracking-tightest text-brown sm:text-[52px]">
+          <h2 className="mt-4 font-condensed text-[26px] leading-[0.95] tracking-tightest text-brown sm:mt-6 sm:text-[52px]">
             Five things we don&rsquo;t compromise on.
           </h2>
         </RevealOnScroll>
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-6">
           {values.map((value, index) => (
             <RevealOnScroll key={value.name} delay={MOTION.stagger(index, 0.08)}>
-              <div className="border border-brown/10 bg-paper px-8 py-8 transition-colors duration-200 hover:border-gold/40">
-                <h3 className="font-condensed text-[22px] tracking-tight text-brown">
+              <div className="border border-brown/10 bg-paper px-3 py-3 transition-colors duration-200 hover:border-gold/40 sm:px-8 sm:py-8">
+                <h3 className="font-condensed text-sm tracking-tight text-brown sm:text-[22px]">
                   {value.name}
                 </h3>
-                <p className="mt-3 font-sans text-[15px] leading-relaxed text-brown/60">
+                <p className="mt-1.5 font-sans text-[11px] leading-relaxed text-brown/60 sm:mt-3 sm:text-[15px]">
                   {value.description}
                 </p>
               </div>
@@ -284,22 +284,22 @@ export function AboutContent() {
       </section>
 
       {/* Section 6 — The People */}
-      <section className="px-6 py-24 md:px-20" aria-label="Our people">
+      <section className="px-6 py-12 md:px-20 md:py-24" aria-label="Our people">
         <RevealOnScroll delay={0}>
           <SectionLabel>Our People</SectionLabel>
-          <h2 className="mt-6 font-condensed text-[40px] leading-[0.92] tracking-tightest text-brown sm:text-[52px]">
+          <h2 className="mt-6 font-condensed text-[28px] leading-[0.95] tracking-tightest text-brown sm:text-[52px]">
             400+ people who show up every morning.
           </h2>
         </RevealOnScroll>
         <RevealOnScroll delay={0.1}>
-          <p className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-brown/65">
+          <p className="mt-4 max-w-2xl font-sans text-sm leading-relaxed text-brown/65 md:mt-6 md:text-lg">
             Behind every cup is a person who chose to be there. Trained at the
             MDP Academy in Bengaluru. Guided by the same standards that have
             existed since 2005. Our people are not staff. They are the reason this
             works.
           </p>
         </RevealOnScroll>
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="mt-8 grid grid-cols-2 gap-2 sm:mt-12 sm:grid-cols-3 sm:gap-4">
           {peoplePhotos.map((photo, index) => (
             <RevealOnScroll key={photo.src} delay={MOTION.stagger(index, 0.06)}>
               <div className="relative aspect-[4/3] overflow-hidden">

@@ -86,22 +86,22 @@ function Card({ card }: { card: OperatingSystemCard }) {
 
   return (
     <article
-      className="group border border-brown/10 p-6 transition-colors duration-200 hover:border-gold/40"
+      className="group border border-brown/10 p-3 transition-colors duration-200 hover:border-gold/40 sm:p-6"
       aria-label={card.headline}
     >
       <div className="flex items-start justify-between">
-        <span className="font-condensed text-[11px] tracking-widest text-gold">
+        <span className="font-condensed text-[10px] tracking-widest text-gold sm:text-[11px]">
           {card.number}
         </span>
-        <span className="text-gold/60 transition-colors duration-200 group-hover:text-gold">
+        <span className="text-gold/60 transition-colors duration-200 group-hover:text-gold [&_svg]:h-5 [&_svg]:w-5 sm:[&_svg]:h-8 sm:[&_svg]:w-8">
           {icon}
         </span>
       </div>
 
-      <h3 className="mt-4 font-condensed text-xl not-italic leading-tight tracking-tight text-brown">
+      <h3 className="mt-2 font-condensed text-sm not-italic leading-tight tracking-tight text-brown sm:mt-4 sm:text-xl">
         {card.headline}
       </h3>
-      <p className="mt-3 font-sans text-sm leading-relaxed text-brown/55">
+      <p className="mt-1.5 font-sans text-xs leading-relaxed text-brown/55 sm:mt-3 sm:text-sm">
         {card.body}
       </p>
     </article>
@@ -112,22 +112,22 @@ export function OperatingSystem() {
   return (
     <section
       id="operating-system"
-      className="snap-slide w-full min-h-[100svh] bg-paper px-6 py-20 md:px-20"
+      className="snap-slide w-full min-h-[100svh] bg-paper px-6 py-10 md:px-20 md:py-20"
       aria-label="The MDP Operating System — how we operate"
     >
       <SectionLabel tone="light">How We Operate</SectionLabel>
 
-      <h2 className="mt-6 font-condensed text-[40px] leading-[0.95] tracking-tight text-brown sm:text-[52px]">
+      <h2 className="mt-4 font-condensed text-[26px] leading-[0.98] tracking-tight text-brown sm:mt-6 sm:text-[52px]">
         The MDP Operating System.
       </h2>
 
-      <p className="mt-5 max-w-lg font-sans text-base font-normal not-italic leading-relaxed text-brown/60">
+      <p className="mt-3 max-w-lg font-sans text-sm font-normal not-italic leading-relaxed text-brown/60 sm:mt-5 sm:text-base">
         Eight principles. Built over twenty years.
         <br />
         Delivered every morning.
       </p>
 
-      <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-6 grid grid-cols-2 gap-2 sm:mt-14 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
         {operatingSystemCards.map((card) => (
           <Card
             key={card.number}

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { SectionLabel } from "@/components/SectionLabel";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
@@ -5,12 +7,6 @@ import { ClientTicker } from "@/components/ClientTicker";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { clientStories } from "@/lib/content";
 
-/**
- * Client Proof: logo ticker on top, client stories laid out
- * side-by-side in a single viewport (not stacked vertically) so the
- * whole section fits in one scroll-snap slide. Designed to scale to
- * a 2x2 grid once a 3rd/4th client story is approved.
- */
 export function ClientProof() {
   return (
     <section
@@ -33,10 +29,13 @@ export function ClientProof() {
         <ClientTicker variant="light" />
       </div>
 
-      <div className="grid flex-1 grid-cols-1 divide-y divide-brown/10 md:grid-cols-2 md:divide-x md:divide-y-0">
+      <div
+        className="scrollbar-hide flex flex-1 snap-x snap-mandatory gap-px overflow-x-auto md:grid md:grid-cols-2 md:gap-0 md:overflow-visible md:snap-none md:divide-x md:divide-brown/10"
+        aria-label="Client success stories"
+      >
         {clientStories.map((story, index) => (
           <RevealOnScroll key={story.client} delay={0.1 * (index + 1)}>
-            <article className="relative flex min-h-[280px] items-center overflow-hidden px-6 py-12 md:px-12">
+            <article className="relative flex min-h-[280px] w-[72vw] flex-shrink-0 snap-start items-center overflow-hidden px-6 py-12 md:w-auto md:px-12">
               {story.ghostPhoto ? (
                 <div className="absolute inset-0 opacity-10" aria-hidden="true">
                   <Image
@@ -44,7 +43,7 @@ export function ClientProof() {
                     alt=""
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 72vw, 50vw"
                   />
                 </div>
               ) : (
@@ -66,7 +65,6 @@ export function ClientProof() {
           </RevealOnScroll>
         ))}
       </div>
-
     </section>
   );
 }

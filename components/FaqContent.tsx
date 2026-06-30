@@ -72,14 +72,14 @@ export function FaqContent() {
 
       {/* Hero */}
       <section
-        className="flex min-h-[40vh] w-full flex-col justify-end bg-[#411915] px-6 pb-16 pt-32 md:px-20"
+        className="flex min-h-[40vh] w-full flex-col justify-end bg-[#411915] px-6 pb-10 pt-24 md:px-20 md:pb-16 md:pt-32"
         aria-label="FAQ hero"
       >
         <p className="mb-4 font-condensed text-[11px] uppercase tracking-[0.3em] text-gold/50">
           FAQ
         </p>
         <motion.h1
-          className="font-condensed text-[48px] leading-[0.9] tracking-tightest text-cream sm:text-[64px]"
+          className="font-condensed text-[30px] leading-[0.95] tracking-tightest text-cream sm:text-[64px]"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: MOTION.slow, delay: 0.3, ease: MOTION.ease }}
@@ -89,7 +89,7 @@ export function FaqContent() {
           facilities managers.
         </motion.h1>
         <motion.p
-          className="mt-6 max-w-xl font-sans text-xl text-cream/55"
+          className="mt-4 max-w-xl font-sans text-sm text-cream/55 md:mt-6 md:text-xl"
           initial={shouldReduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: MOTION.base, delay: 0.5, ease: MOTION.ease }}
@@ -100,7 +100,7 @@ export function FaqContent() {
 
       {/* FAQ accordion */}
       <section
-        className="mx-auto max-w-3xl px-6 py-20"
+        className="mx-auto max-w-3xl px-6 py-10 md:py-20"
         aria-label="Frequently asked questions"
       >
         {faqItems.map((faq, i) => (
@@ -117,15 +117,15 @@ export function FaqContent() {
 
       {/* Bottom CTA */}
       <RevealOnScroll delay={0.1}>
-        <section className="bg-paper2 px-6 py-16 text-center md:px-20">
-          <p className="font-condensed text-2xl text-brown">
+        <section className="bg-paper2 px-6 py-10 text-center md:px-20 md:py-16">
+          <p className="font-condensed text-lg text-brown sm:text-2xl">
             Still have questions? Talk to us directly.
           </p>
           <a
             href={whatsappLink("Hi, I'd like to know more about MDP Coffee House. Could we connect?")}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 bg-brown px-6 py-3 font-condensed text-sm font-bold tracking-wide text-cream transition-colors hover:bg-rust"
+            className="mt-4 inline-flex items-center gap-2 bg-brown px-5 py-2.5 font-condensed text-xs font-bold tracking-wide text-cream transition-colors hover:bg-rust sm:mt-6 sm:px-6 sm:py-3 sm:text-sm"
           >
             WhatsApp Us
           </a>

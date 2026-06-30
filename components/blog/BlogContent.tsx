@@ -15,14 +15,14 @@ export function BlogContent() {
 
       {/* Hero */}
       <section
-        className="flex min-h-[40vh] w-full flex-col justify-end bg-[#411915] px-6 pb-16 pt-32 md:px-20"
+        className="flex min-h-[40vh] w-full flex-col justify-end bg-[#411915] px-6 pb-10 pt-24 md:px-20 md:pb-16 md:pt-32"
         aria-label="Blog hero"
       >
         <p className="mb-4 font-condensed text-[11px] uppercase tracking-[0.3em] text-gold/50">
           Insights
         </p>
         <motion.h1
-          className="font-condensed text-[48px] leading-[0.9] tracking-tightest text-cream sm:text-[64px]"
+          className="font-condensed text-[32px] leading-[0.95] tracking-tightest text-cream sm:text-[64px]"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: MOTION.slow, delay: 0.3, ease: MOTION.ease }}
@@ -32,7 +32,7 @@ export function BlogContent() {
           every morning.
         </motion.h1>
         <motion.p
-          className="mt-6 max-w-xl font-sans text-xl text-cream/55"
+          className="mt-4 max-w-xl font-sans text-sm text-cream/55 md:mt-6 md:text-xl"
           initial={shouldReduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: MOTION.base, delay: 0.5, ease: MOTION.ease }}
@@ -44,11 +44,11 @@ export function BlogContent() {
 
       {/* Empty state */}
       <RevealOnScroll delay={0.2}>
-        <section className="px-6 py-24 text-center md:px-20">
-          <p className="select-none font-condensed text-6xl font-black text-brown/10">
+        <section className="px-6 py-14 text-center md:px-20 md:py-24">
+          <p className="select-none font-condensed text-4xl font-black text-brown/10 sm:text-6xl">
             Coming Soon
           </p>
-          <h2 className="mt-[-12px] font-condensed text-3xl text-brown">
+          <h2 className="mt-[-8px] font-condensed text-xl text-brown sm:mt-[-12px] sm:text-3xl">
             First article drops soon.
           </h2>
           <p className="mx-auto mt-4 max-w-sm font-sans text-brown/55">
