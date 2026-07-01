@@ -6,6 +6,7 @@ import type {
   MiniTimelineEvent,
   OperatingFormat,
   OperatingSystemCard,
+  Outlet,
   StoryContent,
   Testimonial,
   TimelineEvent,
@@ -22,6 +23,7 @@ import miniTimelineData from "@/content/mini-timeline.json";
 import citiesData from "@/content/cities.json";
 import operatingFormatsData from "@/content/operating-formats.json";
 import heroPhotosData from "@/content/hero-photos.json";
+import { outlets as outletsList } from "@/content/outlets";
 
 export const benefits: string[] = benefitsData.items;
 export const storyContent: StoryContent = storyData as StoryContent;
@@ -36,3 +38,4 @@ export const cities: CityPin[] = citiesData.cities as CityPin[];
 export const operatingFormats: OperatingFormat[] =
   operatingFormatsData.formats as OperatingFormat[];
 export const heroPhotos: HeroPhoto[] = heroPhotosData.photos as HeroPhoto[];
+export const outlets: Outlet[] = outletsList;

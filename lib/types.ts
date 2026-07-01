@@ -92,3 +92,10 @@ export interface SiteConfig {
   locationsCount: string;
   enterpriseClients: string;
 }
+
+export interface Outlet {
+  client: string;
+  clientSlug: string;
+  branch: string | null;
+  city: string;
+}
