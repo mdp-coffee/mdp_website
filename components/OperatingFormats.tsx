@@ -164,7 +164,7 @@ export function OperatingFormats() {
             role="tab"
             aria-selected={i === index}
             onClick={() => goTo(i)}
-            className={`min-w-0 flex-1 px-1 py-1.5 text-left transition-colors sm:flex-none sm:px-5 sm:py-3 ${
+            className={`min-w-0 flex-1 px-1 py-1.5 text-left transition-colors sm:flex-1 sm:px-5 sm:py-3 ${
               i === index ? theme.tabActive : theme.tabIdle
             }`}
           >

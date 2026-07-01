@@ -8,20 +8,21 @@ import { Footer } from "@/components/Footer";
 import { SectionLabel } from "@/components/SectionLabel";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { MOTION } from "@/lib/motion";
-import { clients } from "@/lib/content";
+import { clients, outlets } from "@/lib/content";
 import type { ClientLogo } from "@/lib/types";
 import { heroStats, clientStories, industries, citiesPresence } from "@/content/clients-page";
 
 function ClientCard({ client }: { client: ClientLogo }) {
+  const outletCount = outlets.filter((o) => o.clientSlug === client.slug).length;
   const base = [
-    "group border border-paper2 bg-paper p-6 transition-all duration-200 hover:border-gold",
+    "group flex flex-col border border-paper2 bg-paper p-6 transition-all duration-200 hover:border-gold",
     client.active === false ? "opacity-40 hover:opacity-70" : "",
   ].join(" ");
 
-  if (client.logoSrc !== null) {
-    return (
-      <div id={client.slug} className={base}>
-        <div className="flex h-14 items-center">
+  return (
+    <div id={client.slug} className={base}>
+      <div className="flex h-14 items-center">
+        {client.logoSrc !== null && (
           <Image
             src={client.logoSrc}
             alt={`${client.name} — MDP Coffee House corporate client India`}
@@ -29,19 +30,14 @@ function ClientCard({ client }: { client: ClientLogo }) {
             height={56}
             className="max-h-12 w-auto object-contain"
           />
-        </div>
-        <h3 className="mt-3 font-condensed text-lg leading-tight text-brown">
-          {client.name}
-        </h3>
+        )}
       </div>
-    );
-  }
-
-  return (
-    <div id={client.slug} className={base}>
-      <h3 className="font-condensed text-2xl leading-tight text-brown">
+      <h3 className="mt-3 font-condensed text-lg leading-tight text-brown">
         {client.name}
       </h3>
+      <p className="mt-1 font-sans text-xs text-brown/45">
+        {outletCount > 1 ? `${outletCount} locations` : " "}
+      </p>
     </div>
   );
 }

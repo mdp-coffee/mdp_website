@@ -138,22 +138,24 @@ export function CityContent({ city }: { city: CityPageData }) {
         </RevealOnScroll>
 
         {/* Notable clients */}
-        <section className="bg-paper2 px-6 py-16 md:px-20" aria-label={`Clients in ${city.name}`}>
-          <RevealOnScroll delay={0}>
-            <h2 className="font-condensed text-[28px] font-black text-brown">
-              Trusted by teams at:
-            </h2>
-          </RevealOnScroll>
-          <ul className="mt-6 flex flex-wrap gap-3">
-            {city.notableClients.map((client, index) => (
-              <RevealOnScroll key={client} delay={MOTION.stagger(index, 0.06)}>
-                <li className="border border-brown/15 px-4 py-2 font-condensed text-sm text-brown/60">
-                  {client}
-                </li>
-              </RevealOnScroll>
-            ))}
-          </ul>
-        </section>
+        {city.notableClients.length > 0 && (
+          <section className="bg-paper2 px-6 py-16 md:px-20" aria-label={`Clients in ${city.name}`}>
+            <RevealOnScroll delay={0}>
+              <h2 className="font-condensed text-[28px] font-black text-brown">
+                Trusted by teams at:
+              </h2>
+            </RevealOnScroll>
+            <ul className="mt-6 flex flex-wrap gap-3">
+              {city.notableClients.map((client, index) => (
+                <RevealOnScroll key={client} delay={MOTION.stagger(index, 0.06)}>
+                  <li className="border border-brown/15 px-4 py-2 font-condensed text-sm text-brown/60">
+                    {client}
+                  </li>
+                </RevealOnScroll>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="flex flex-col items-center bg-[#411915] px-6 py-20 text-center md:px-20">

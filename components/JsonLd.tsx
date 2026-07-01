@@ -21,7 +21,12 @@ export function OrganizationJsonLd() {
       contactType: "customer service",
       email: siteConfig.email,
     },
-    sameAs: [],
+    sameAs: [
+      "https://www.linkedin.com/company/mdpcoffeehouse",
+      "https://www.instagram.com/mdpcoffeehouse",
+      "https://www.facebook.com/mdpcoffeehouse",
+      "https://www.youtube.com/@mdpcoffeehouse",
+    ],
   };
 
   return (

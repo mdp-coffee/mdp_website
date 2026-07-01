@@ -57,4 +57,5 @@ export const citiesPresence: CityPresence[] = [
   { name: "Mumbai", slug: "mumbai" },
   { name: "Pune", slug: "pune" },
   { name: "Chennai", slug: "chennai" },
+  { name: "Mysore", slug: "mysore" },
 ];

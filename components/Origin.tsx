@@ -57,7 +57,7 @@ export function Origin() {
               Twenty years later,
             </motion.span>
             <motion.span
-              className="block font-condensed text-[30px] not-italic leading-[0.92] tracking-tight text-brown/55 md:text-[60px]"
+              className="block font-condensed text-[30px] not-italic leading-[0.92] tracking-tight text-brown/55 sm:text-[60px]"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={MOTION.viewport}
@@ -87,7 +87,7 @@ export function Origin() {
               IT, banking, consulting and retail, MDP is one of India&rsquo;s
               most established managed beverage service providers.
               Headquartered in Bengaluru, MDP operates corporate kiosks, QSR
-              restaurants, retail outlets and outdoor catering across 15+ cities.
+              restaurants, retail outlets and outdoor catering nationwide.
             </p>
           </RevealOnScroll>
         </div>
@@ -96,12 +96,13 @@ export function Origin() {
         <div className="order-2 flex flex-col justify-center lg:order-2">
           <RevealOnScroll delay={0.3}>
             <div>
-              <div className="relative h-[260px] w-full overflow-hidden bg-paper lg:h-[420px]">
+              <div className="relative w-full overflow-hidden bg-paper">
                 <Image
                   src="/images/first_outlet_accenturevirkholi.png"
                   alt="MDP Coffee House first outlet at Accenture Vikhroli, Mumbai — 2005"
-                  fill
-                  className="object-contain"
+                  width={1456}
+                  height={1080}
+                  className="h-auto w-full object-contain"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
@@ -137,7 +138,7 @@ export function Origin() {
             <p className="mb-2 font-condensed text-sm leading-[0.95] tracking-tight text-rust/60 sm:mb-4 sm:text-[20px]">
               Vision
             </p>
-            <h3 className="mb-4 font-sans text-base not-italic leading-snug text-brown sm:text-xl md:text-2xl">
+            <h3 className="mb-4 font-sans text-base not-italic leading-snug text-brown sm:text-lg md:text-xl">
               To be India&rsquo;s most trusted South Indian beverage brand —
               present in every campus, transit hub, and community where people
               gather.
@@ -154,7 +155,7 @@ export function Origin() {
             <p className="mb-2 font-condensed text-sm leading-[0.95] tracking-tight text-rust/60 sm:mb-4 sm:text-[20px]">
               Mission
             </p>
-            <h3 className="mb-4 font-sans text-base not-italic leading-snug text-brown sm:text-xl md:text-2xl">
+            <h3 className="mb-4 font-sans text-base not-italic leading-snug text-brown sm:text-lg md:text-xl">
               To serve authentic South Indian filter coffee consistently,
               accessibly, and with genuine care — across every format we
               operate.

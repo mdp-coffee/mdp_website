@@ -49,7 +49,7 @@ const aboutStats = [
   { value: "20+", label: "Years of Operations" },
   { value: "85+", label: "Active Locations" },
   { value: "1,00,000+", label: "Cups Daily" },
-  { value: "15+", label: "Cities" },
+
 ];
 
 function StatBlock({
@@ -121,50 +121,36 @@ export function AboutContent() {
       </section>
 
       {/* Section 1B — Bridge */}
-      <section className="bg-paper px-6 pt-14 pb-10 md:px-20 md:pt-24" aria-label="About MDP Coffee House">
+      <section className="bg-paper px-6 pt-14 pb-4 md:px-20 md:pt-24" aria-label="About MDP Coffee House">
         <div className="max-w-3xl">
           <RevealOnScroll delay={0}>
             <SectionLabel>Our Story</SectionLabel>
           </RevealOnScroll>
           <RevealOnScroll delay={0.05}>
             <h2 className="mt-6 mb-6 font-condensed text-[30px] leading-[0.95] tracking-tightest text-brown sm:text-[52px] sm:mb-10">
-              Our Story
+              One kiosk. Twenty years later.
             </h2>
           </RevealOnScroll>
           <RevealOnScroll delay={0.1}>
             <p className="font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-              MDP Coffee House was built on a simple idea: that the people who build
-              India&rsquo;s workday deserve to be looked after. We started with one
-              kiosk, in an unfamiliar city, serving people who didn&rsquo;t know us
-              yet. Twenty years later, we are present across India — in the campuses
-              of Fortune 500 companies, in the corridors of banks and tech parks, in
-              the quiet moments between meetings, in the mornings that set the tone
-              for everything that follows.
+              MDP Coffee House began in 2005 with one kiosk, in an unfamiliar city, serving people who didn&rsquo;t know us yet.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.25}>
-            <p className="mt-8 font-sans text-lg leading-relaxed text-brown/50 md:text-xl">
-              What we have built is not just a coffee company. It is a presence —
-              quiet, consistent, and always there when the day begins. We show up in
-              the small moments: the first cup before a long meeting, the familiar
-              counter in an unfamiliar new office, the warmth of something made with
-              care in the middle of a hard day. Every outlet, every trained team
-              member, every morning we have shown up without exception — it all comes
-              from the same place. A genuine belief that the people whose mornings we
-              are part of deserve to feel that someone is looking out for them.
+            <p className="mt-8 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
+              Twenty years later, MDP operates across India — inside the campuses of Fortune 500 companies, the corridors of banks and tech parks, and commercial spaces in cities nationwide. What started as a single kiosk has grown into corporate kiosks, QSR restaurants, mobile carts, 24/7 tuck shops, and outdoor catering — the same recipe, delivered through whichever format the moment calls for.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.35}>
             <p className="mt-8 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-              The scale changed. The care never did. That is the only reason we are
-              still here.
+              Today, that same standard reaches 85+ locations nationwide, serving over 1,00,000 cups a day.
             </p>
           </RevealOnScroll>
         </div>
       </section>
 
       {/* Section 2 — Who We Are */}
-      <section className="px-6 py-12 md:px-20 md:py-24" aria-label="Who we are">
+      <section className="px-6 pt-6 pb-12 md:px-20 md:pt-10 md:pb-24" aria-label="Who we are">
         <RevealOnScroll delay={0}>
           <SectionLabel>Our Purpose</SectionLabel>
         </RevealOnScroll>
@@ -176,23 +162,17 @@ export function AboutContent() {
         <div className="mt-10 grid gap-8 md:grid-cols-3">
           <RevealOnScroll delay={0.2}>
             <p className="font-sans text-lg leading-relaxed text-brown/65">
-              MDP Coffee House is a company built on showing up. Since 2005, MDP
-              has been present in workplaces, campuses, malls, and communities
-              across India.
+              The scale changed. The care never did. MDP Coffee House is a company built on showing up.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.3}>
             <p className="font-sans text-lg leading-relaxed text-brown/65">
-              For nearly two decades, MDP has quietly been part of millions of
-              mornings, breaks, meetings, conversations, celebrations, deadlines,
-              and everyday moments.
+              We show up in the small moments — the first cup before a long meeting, the familiar counter in an unfamiliar new office, the warmth of something made with care in the middle of a hard day.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.4}>
             <p className="font-sans text-lg leading-relaxed text-brown/65">
-              We do not exist to sell coffee. We exist to make people&rsquo;s
-              days a little better through coffee. Coffee is our medium. People
-              are our purpose.
+              We do not exist to sell coffee. We exist to make people&rsquo;s days a little better through coffee. Coffee is our medium. People are our purpose.
             </p>
           </RevealOnScroll>
         </div>
@@ -203,11 +183,10 @@ export function AboutContent() {
         <RevealOnScroll delay={0}>
           <SectionLabel tone="dark">Twenty Years. At Scale.</SectionLabel>
         </RevealOnScroll>
-        <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-5 md:gap-4">
+        <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-4">
           <StatBlock end={20} suffix="+" label="Years of Operations" duration={1600} />
           <StatBlock end={85} suffix="+" label="Active Locations" duration={1800} />
           <StatBlock end={100000} suffix="+" label="Cups Daily" duration={2200} locale="en-IN" />
-          <StatBlock end={15} suffix="+" label="Cities" duration={1400} />
           <StatBlock end={45} suffix="+" label="Corporate Clients" duration={1600} />
         </div>
       </section>

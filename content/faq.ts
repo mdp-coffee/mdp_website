@@ -17,7 +17,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "Which cities does MDP Coffee House operate in?",
     answer:
-      "MDP Coffee House operates across 15+ cities in India including Bengaluru, Hyderabad, Mumbai, Pune, Chennai, Delhi, Kolkata, Jaipur, Kochi, Goa, Ayodhya and more. With 85+ locations nationwide, MDP is one of India's most widely distributed corporate coffee services.",
+      "MDP Coffee House currently operates corporate coffee kiosks and QSR outlets across Bengaluru, Hyderabad, Mysore and Pune — with Bengaluru as our largest and most established market.",
   },
   {
     question: "What types of coffee and beverages does MDP serve?",
@@ -37,7 +37,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "How long has MDP Coffee House been operating?",
     answer:
-      "MDP Coffee House was founded in 2005 with a single kiosk at Accenture's Vikhroli office in Mumbai. In twenty years, MDP has grown to 85+ locations across 15+ cities in India, serving over 1,00,000 cups every day.",
+      "MDP Coffee House was founded in 2005 with a single kiosk at Accenture's Vikhroli office in Mumbai. In twenty years, MDP has grown to 85+ locations in India, serving over 1,00,000 cups every day.",
   },
   {
     question: "What operating formats does MDP Coffee House offer?",

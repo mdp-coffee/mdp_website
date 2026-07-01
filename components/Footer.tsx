@@ -29,6 +29,7 @@ const locations = [
   { label: "Mumbai", href: "/locations/mumbai", isRoute: true },
   { label: "Pune", href: "/locations/pune", isRoute: true },
   { label: "Chennai", href: "/locations/chennai", isRoute: true },
+  { label: "Mysore", href: "/locations/mysore", isRoute: true },
 ];
 
 function FooterLink({

@@ -26,6 +26,9 @@
     { "name": "IISER Pune", "slug": "iiser-pune", "logoSrc": "/Client_Logos/iiser_pune.svg", "city": "Pune", "outlets": 1, "active": true },
     { "name": "ITPL", "slug": "itpl", "logoSrc": null, "city": "Bengaluru", "outlets": 1, "active": true },
     { "name": "Nexus Select Trust", "slug": "nexus-mall", "logoSrc": "/Client_Logos/nexusselecttrust.png", "city": "Bengaluru", "category": "Retail & Commercial", "outlets": 1, "active": true },
+    { "name": "MiQ Digital", "slug": "miq-digital", "logoSrc": "/Client_Logos/miq_digital.png", "city": "Bengaluru", "outlets": 1, "active": true },
+    { "name": "Mall of Mysore", "slug": "mall-of-mysore", "logoSrc": null, "city": "Mysore", "category": "Retail & Commercial", "outlets": 1, "active": true },
+    { "name": "PVR", "slug": "pvr", "logoSrc": "/Client_Logos/pvr.avif", "city": "Mysore", "category": "Retail & Commercial", "outlets": 1, "active": true },
     { "name": "Intel", "slug": "intel", "logoSrc": "/Client_Logos/Intel_idbKj2C6Xy_1.png", "city": "Pan India", "outlets": 1, "active": false },
     { "name": "Wipro", "slug": "wipro", "logoSrc": "/Client_Logos/Wipro.png", "city": "Bengaluru", "outlets": 1, "active": false },
     { "name": "Qualcomm", "slug": "qualcomm", "logoSrc": "/Client_Logos/Qualcomm.png", "city": "Bengaluru", "outlets": 1, "active": false },
@@ -36,6 +39,15 @@
     { "name": "Optum", "slug": "optum", "logoSrc": "/Client_Logos/Optum.png", "city": "Pan India", "outlets": 1, "active": false },
     { "name": "ITC", "slug": "itc", "logoSrc": "/Client_Logos/ITC.png", "city": "Bengaluru", "outlets": 1, "active": false },
     { "name": "Cybage", "slug": "cybage", "logoSrc": "/Client_Logos/Cybage.png", "city": "Pan India", "outlets": 1, "active": false },
-    { "name": "Standard Chartered", "slug": "standard-chartered", "logoSrc": "/Client_Logos/Standard_Chartered.png", "city": "Bengaluru", "outlets": 1, "active": false }
+    { "name": "Standard Chartered", "slug": "standard-chartered", "logoSrc": "/Client_Logos/Standard_Chartered.png", "city": "Bengaluru", "outlets": 1, "active": false },
+    { "name": "Northern Trust", "slug": "northern-trust", "logoSrc": "/Client_Logos/northern_trust.png", "active": false },
+    { "name": "WNS", "slug": "wns", "logoSrc": "/Client_Logos/wns.svg", "active": false },
+    { "name": "Bank of America", "slug": "bank-of-america", "logoSrc": "/Client_Logos/bank_of_america.jpg", "active": false },
+    { "name": "WSP", "slug": "wsp", "logoSrc": "/Client_Logos/wsp.jpg", "active": false },
+    { "name": "Airbus", "slug": "airbus", "logoSrc": "/Client_Logos/airbus.png", "active": false },
+    { "name": "Tech Mahindra", "slug": "tech-mahindra", "logoSrc": "/Client_Logos/tech_mahindra.jpg", "active": false },
+    { "name": "John Deere", "slug": "john-deere", "logoSrc": "/Client_Logos/john_derre.jpg", "active": false },
+    { "name": "L&T", "slug": "l-and-t", "logoSrc": "/Client_Logos/Lnt.svg", "active": false },
+    { "name": "Sonata", "slug": "sonata", "logoSrc": "/Client_Logos/sonata.png", "active": false }
   ]
 }
