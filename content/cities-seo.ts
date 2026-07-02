@@ -36,7 +36,7 @@ export const cityPages: CityPageData[] = [
     intro:
       "MDP Coffee House began its national journey from South India, and Bengaluru remains the operational heart of our corporate coffee service — powering tech parks, IT campuses, and commercial outlets across the city.",
     description:
-      "MDP Coffee House operates 30+ corporate coffee kiosks in Bengaluru — serving tech parks, IT campuses and enterprise offices in Whitefield, ITPL, Koramangala, HSR and more. Since 2005.",
+      "MDP Coffee House operates 50+ corporate coffee kiosks in Bengaluru — serving tech parks, IT campuses and enterprise offices across the city. Since 2005.",
     outletCount: "50+",
     notableClients: ["Amazon", "American Express", "British Telecom", "Broadcom", "Cognizant", "Deutsche Bank", "HCL", "Infosys", "International Tech Park (ITPL)", "Kyndryl", "LG Soft", "London Stock Exchange Group", "Lowe's", "Microsoft", "MiQ Digital", "Mu Sigma", "Nexus Select Trust", "Oracle", "Philips", "Samsung", "Smartworks", "Societe Generale", "TCS", "Tecnotree", "Tesco", "Thomson Reuters", "Wells Fargo"],
     h2: "Corporate coffee service across Bengaluru's tech corridor",

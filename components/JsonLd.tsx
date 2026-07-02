@@ -1,4 +1,5 @@
 import { siteConfig } from "@/content/site";
+import { outletAddresses } from "@/content/outlet-addresses";
 
 export function OrganizationJsonLd() {
   const data = {
@@ -90,6 +91,47 @@ export function TestimonialsJsonLd() {
           "Kerala, being a tea-drinking state, MDP has made a successful breakthrough. With MDP team support, we ensure smooth operations across our entire campus.",
       },
     ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+const regionByCity: Record<string, string> = {
+  Bengaluru: "Karnataka",
+  Mysore: "Karnataka",
+  Hyderabad: "Telangana",
+  Pune: "Maharashtra",
+};
+
+export function OutletLocationsJsonLd({ city }: { city: string }) {
+  const locations = outletAddresses.filter((o) => o.city === city);
+  if (locations.length === 0) return null;
+
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": locations.map((loc) => ({
+      "@type": "FoodEstablishment",
+      name: `MDP Coffee House at ${loc.client}, ${loc.city}`,
+      servesCuisine: "South Indian",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: loc.address,
+        addressLocality: loc.city,
+        addressRegion: regionByCity[loc.city] ?? "",
+        addressCountry: "IN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: loc.lat,
+        longitude: loc.lng,
+      },
+    })),
   };
 
   return (
