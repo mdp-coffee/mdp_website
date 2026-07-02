@@ -99,3 +99,15 @@ export interface Outlet {
   branch: string | null;
   city: string;
 }
+
+export interface FormatPageData {
+  slug: string;
+  category: string;
+  name: string;
+  intro: string;
+  description: string;
+  h2: string;
+  paragraphs: string[];
+  details: string;
+  photo: string;
+}
