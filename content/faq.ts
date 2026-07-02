@@ -22,7 +22,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "What types of coffee and beverages does MDP serve?",
     answer:
-      "MDP Coffee House specialises in authentic South Indian filter coffee — the same standardised recipe served across all 85+ locations since 2005. Depending on the format, MDP also serves tea, cold beverages, and South Indian snacks including dosas, thatte idli and more.",
+      "MDP Coffee House specialises in authentic South Indian filter coffee — the same standardised recipe served across all 85+ locations since 2005. Depending on the format, MDP also serves a range of hot and cold beverages including badam milk, ginger tea, green tea, lemon tea, and rose milk.",
   },
   {
     question: "Does MDP Coffee House handle staffing and operations?",
@@ -32,7 +32,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "Which companies does MDP Coffee House currently serve?",
     answer:
-      "MDP Coffee House serves 45+ enterprise clients across India including Amazon, Microsoft, Infosys, TCS, IBM, Intel, Wipro, HCL, Accenture, Cognizant, Oracle, Deutsche Bank, Samsung, Qualcomm, HSBC, Wells Fargo, Philips, Broadcom, BNY Mellon, Mu Sigma, Kyndryl, Genpact and more.",
+      "MDP Coffee House serves 45+ enterprise clients across India including Amazon, Microsoft, Infosys, TCS, IBM, HCL, Cognizant, Oracle, Deutsche Bank, Samsung, Wells Fargo, Philips, Broadcom, Mu Sigma, Kyndryl and more.",
   },
   {
     question: "How long has MDP Coffee House been operating?",
@@ -42,7 +42,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "What operating formats does MDP Coffee House offer?",
     answer:
-      "MDP Coffee House operates four formats: Corporate Kiosks (for offices and tech parks), QSR Restaurants (for high-footfall commercial locations), Mobile Carts (for campuses and events), and 24/7 Tuck Shops (for offices that never close).",
+      "MDP Coffee House operates four formats: Corporate Kiosks (for offices and tech parks), QSR Cafes (for high-footfall commercial locations), Mobile Carts (for campuses and events), and 24/7 Tuck Shops (for offices that never close).",
   },
   {
     question: "How do I get MDP Coffee House for my office?",

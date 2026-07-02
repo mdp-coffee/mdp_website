@@ -40,7 +40,7 @@ const faqJsonLd = {
       name: "What types of coffee and beverages does MDP serve?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "MDP Coffee House specialises in authentic South Indian filter coffee — the same standardised recipe served across all 85+ locations since 2005. Depending on the format, MDP also serves tea, cold beverages, and South Indian snacks including dosas, thatte idli and more.",
+        text: "MDP Coffee House specialises in authentic South Indian filter coffee — the same standardised recipe served across all 85+ locations since 2005. Depending on the format, MDP also serves a range of hot and cold beverages including badam milk, ginger tea, green tea, lemon tea, and rose milk.",
       },
     },
     {
@@ -56,7 +56,7 @@ const faqJsonLd = {
       name: "Which companies does MDP Coffee House currently serve?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "MDP Coffee House serves 45+ enterprise clients across India including Amazon, Microsoft, Infosys, TCS, IBM, Intel, Wipro, HCL, Accenture, Cognizant, Oracle, Deutsche Bank, Samsung, Qualcomm, HSBC, Wells Fargo, Philips, Broadcom, BNY Mellon, Mu Sigma, Kyndryl, Genpact and more.",
+        text: "MDP Coffee House serves 45+ enterprise clients across India including Amazon, Microsoft, Infosys, TCS, IBM, HCL, Cognizant, Oracle, Deutsche Bank, Samsung, Wells Fargo, Philips, Broadcom, Mu Sigma, Kyndryl and more.",
       },
     },
     {
@@ -72,7 +72,7 @@ const faqJsonLd = {
       name: "What operating formats does MDP Coffee House offer?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "MDP Coffee House operates four formats: Corporate Kiosks (for offices and tech parks), QSR Restaurants (for high-footfall commercial locations), Mobile Carts (for campuses and events), and 24/7 Tuck Shops (for offices that never close).",
+        text: "MDP Coffee House operates four formats: Corporate Kiosks (for offices and tech parks), QSR Cafes (for high-footfall commercial locations), Mobile Carts (for campuses and events), and 24/7 Tuck Shops (for offices that never close).",
       },
     },
     {
