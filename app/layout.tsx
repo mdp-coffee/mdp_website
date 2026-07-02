@@ -10,11 +10,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mdpcoffeehouse.com"
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "MDP Coffee House — Corporate Coffee Service India Since 2005",
+    default: "Corporate Coffee Service India — MDP Coffee House",
     template: "%s | MDP Coffee House",
   },
   description:
-    "MDP Coffee House powers the morning for 85+ corporate locations across India. Serving Amazon, Microsoft, Infosys, Deutsche Bank and 45+ enterprise clients with authentic South Indian filter coffee since 2005.",
+    "Fully managed corporate coffee service across India since 2005 — 85+ locations, 45+ enterprise clients. Authentic South Indian filter coffee, staffed end-to-end.",
   keywords: [
     "corporate coffee service India",
     "office coffee kiosk",

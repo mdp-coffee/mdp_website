@@ -12,10 +12,12 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { LetsTalkFloat } from "@/components/LetsTalkFloat";
 import { ScrollContainer } from "@/components/ScrollContainer";
 import { NavBar } from "@/components/NavBar";
+import { HomePageJsonLd } from "@/components/JsonLd";
 
 export default function HomePage() {
   return (
     <>
+      <HomePageJsonLd />
       <NavBar />
       <ScrollContainer>
         <Hero />

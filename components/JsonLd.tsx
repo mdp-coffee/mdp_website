@@ -142,3 +142,22 @@ export function OutletLocationsJsonLd({ city }: { city: string }) {
     />
   );
 }
+
+export function HomePageJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Corporate Coffee Service India — MDP Coffee House",
+    description:
+      "Fully managed corporate coffee service across India since 2005 — 85+ locations, 45+ enterprise clients. Authentic South Indian filter coffee, staffed end-to-end.",
+    url: "https://mdpcoffeehouse.com",
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
