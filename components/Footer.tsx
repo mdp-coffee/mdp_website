@@ -16,10 +16,10 @@ const company = [
 ];
 
 const services = [
-  { label: "Corporate Kiosks", href: "/#formats", isRoute: false },
-  { label: "QSR Restaurants", href: "/#formats", isRoute: false },
-  { label: "Mobile Carts", href: "/#formats", isRoute: false },
-  { label: "24/7 Tuck Shops", href: "/#formats", isRoute: false },
+  { label: "Corporate Kiosks", href: "/services/corporate-kiosk", isRoute: true },
+  { label: "QSR Cafes", href: "/services/qsr-cafe", isRoute: true },
+  { label: "Mobile Carts", href: "/services/mobile-cart", isRoute: true },
+  { label: "24/7 Tuck Shops", href: "/services/tuck-shop", isRoute: true },
   { label: "Partner With Us", href: "/#contact", isRoute: false },
 ];
 

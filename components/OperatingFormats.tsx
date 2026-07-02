@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { SectionLabel } from "@/components/SectionLabel";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
@@ -9,6 +10,7 @@ import { operatingFormats } from "@/lib/content";
 import type { OperatingFormat } from "@/lib/types";
 import { trackEvent } from "@/components/Analytics";
 import { products } from "@/content/products";
+import { formatPages } from "@/content/operating-formats-seo";
 
 const themeStyles: Record<
   OperatingFormat["theme"],
@@ -228,6 +230,14 @@ export function OperatingFormats() {
               <p className={`mt-3 max-w-md font-sans ${theme.muted}`}>
                 {format.example}
               </p>
+              {formatPages.find((f) => f.category === format.category) && (
+                <Link
+                  href={`/services/${formatPages.find((f) => f.category === format.category)?.slug}`}
+                  className={`mt-5 inline-block w-fit font-condensed text-xs uppercase tracking-wider underline underline-offset-4 ${theme.text} opacity-70 transition-opacity hover:opacity-100`}
+                >
+                  Learn more about this format →
+                </Link>
+              )}
             </div>
           </motion.div>
         </AnimatePresence>

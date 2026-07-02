@@ -111,3 +111,12 @@ export interface FormatPageData {
   details: string;
   photo: string;
 }
+
+export interface OutletAddress {
+  client: string;
+  clientSlug: string;
+  city: string;
+  address: string;
+  lat: number;
+  lng: number;
+}
