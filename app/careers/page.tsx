@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Careers — MDP Coffee House",
   description:
     "Join the MDP Coffee House team. We're always open to hearing from people who want to be part of something that shows up every day.",
+  alternates: { canonical: "/careers" },
 };
 
 export default function CareersPage() {

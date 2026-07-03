@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { ClientsContent } from "@/components/clients/ClientsContent";
 
 export const metadata: Metadata = {
-  title:
-    "Our Clients — Amazon, Microsoft, Infosys & 45+ Enterprises | MDP Coffee House",
+  title: "Our Clients — 45+ Enterprises | MDP Coffee House",
   description:
     "MDP Coffee House serves 45+ enterprise clients across India including Amazon, Microsoft, Infosys, TCS, Deutsche Bank, Oracle, Cognizant, HCL and more. Corporate coffee service since 2005.",
   keywords: [

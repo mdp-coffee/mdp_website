@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Team | MDP Coffee House",
   description:
     "The people behind MDP Coffee House — twenty years of showing up, every morning.",
+  alternates: { canonical: "/team" },
 };
 
 export default function TeamPage() {

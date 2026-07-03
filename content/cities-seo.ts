@@ -61,7 +61,7 @@ export const cityPages: CityPageData[] = [
     intro:
       "From Gachibowli to HITEC City, MDP Coffee House serves the morning routine of Hyderabad's technology workforce with the same South Indian filter coffee recipe used since 2005.",
     description:
-      "MDP Coffee House serves corporate offices in Hyderabad's HITEC City, Gachibowli and tech corridors. South Indian filter coffee for enterprise campuses across the city.",
+      "MDP Coffee House serves corporate offices in Hyderabad's HITEC City and Gachibowli tech corridors with South Indian filter coffee since 2005.",
     outletCount: "10+",
     notableClients: ["Infosys", "Microsoft", "Wells Fargo"],
     h2: "Corporate coffee service in Hyderabad's tech corridor",
@@ -79,7 +79,7 @@ export const cityPages: CityPageData[] = [
     intro:
       "Mumbai is where it all began — the first MDP kiosk opened inside Accenture, Vikhroli in 2005. Today MDP continues to serve corporate offices across the city.",
     description:
-      "MDP Coffee House started in Mumbai in 2005 — the first kiosk at Accenture Vikhroli. Now serving corporate offices across the city with authentic South Indian filter coffee.",
+      "MDP Coffee House started in Mumbai in 2005 at Accenture Vikhroli. Now serving corporate offices across the city with authentic South Indian filter coffee.",
     outletCount: "8+",
     notableClients: [],
     h2: "Corporate coffee service in Mumbai — where it all began",
@@ -103,7 +103,7 @@ export const cityPages: CityPageData[] = [
     intro:
       "MDP Coffee House operates across Pune's expanding IT corridor, bringing reliable, fully-managed corporate coffee service to offices throughout the city.",
     description:
-      "MDP Coffee House operates across Pune's IT corridor serving corporate offices and tech campuses with South Indian filter coffee. Fully managed kiosks since 2005.",
+      "MDP Coffee House operates across Pune's IT corridor, serving corporate offices with South Indian filter coffee. Fully managed kiosks since 2005.",
     outletCount: "5+",
     notableClients: ["Infosys", "IISER"],
     h2: "Corporate coffee service across Pune's IT corridor",
@@ -136,7 +136,7 @@ export const cityPages: CityPageData[] = [
     intro:
       "MDP Coffee House brings authentic South Indian filter coffee to Mysore's corporate and commercial spaces — from tech campuses to retail destinations across the city.",
     description:
-      "MDP Coffee House operates corporate coffee kiosks and QSR outlets in Mysore, serving Infosys campuses, IBM, and commercial destinations including Mall of Mysore and PVR. Since 2005.",
+      "MDP Coffee House operates corporate coffee kiosks and QSR outlets in Mysore, serving Infosys, IBM, Mall of Mysore and PVR. Since 2005.",
     outletCount: "7+",
     notableClients: ["IBM", "Infosys", "Mall of Mysore", "PVR"],
     h2: "Corporate coffee service across Mysore",
