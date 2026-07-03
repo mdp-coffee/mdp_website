@@ -102,6 +102,7 @@ export interface Outlet {
 
 export interface FormatPageData {
   slug: string;
+  seoTitle: string;
   category: string;
   name: string;
   intro: string;

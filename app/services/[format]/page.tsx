@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const format = formatPages.find((f) => f.slug === slug);
   if (!format) return {};
 
-  const title = `${format.name} | ${format.category} — MDP Coffee House`;
+  const title = format.seoTitle;
 
   return {
     title,
