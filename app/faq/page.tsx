@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "FAQ — Corporate Coffee Service India | MDP Coffee House",
   description:
     "Common questions about MDP Coffee House corporate coffee service — setup, pricing, locations, operations and more. Serving enterprise clients across India since 2005.",
+  alternates: { canonical: "/faq" },
 };
 
 const faqJsonLd = {
