@@ -10,7 +10,7 @@ import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { SectionLabel } from "@/components/SectionLabel";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { MOTION } from "@/lib/motion";
-import { OutletLocationsJsonLd } from "@/components/JsonLd";
+import { OutletLocationsJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import type { CityPageData } from "@/content/cities-seo";
 
 export function CityContent({ city }: { city: CityPageData }) {
@@ -20,6 +20,12 @@ export function CityContent({ city }: { city: CityPageData }) {
     <>
       <NavBar />
       <OutletLocationsJsonLd city={city.name} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://mdpcoffeehouse.com" },
+          { name: city.name },
+        ]}
+      />
       <div className="bg-paper pt-16">
         {/* Hero */}
         <section

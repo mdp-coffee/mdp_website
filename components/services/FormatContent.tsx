@@ -9,6 +9,7 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { SectionLabel } from "@/components/SectionLabel";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { MOTION } from "@/lib/motion";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { formatPages } from "@/content/operating-formats-seo";
 import type { FormatPageData } from "@/lib/types";
 
@@ -19,6 +20,12 @@ export function FormatContent({ format }: { format: FormatPageData }) {
   return (
     <>
       <NavBar />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://mdpcoffeehouse.com" },
+          { name: format.category },
+        ]}
+      />
       <div className="bg-paper pt-16">
         <section
           className="flex min-h-[45vh] w-full flex-col justify-end bg-[#411915] px-6 pb-16 pt-16 md:px-20"
