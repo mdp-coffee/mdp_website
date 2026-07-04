@@ -195,6 +195,71 @@ function ApplicationForm() {
   );
 }
 
+function OpeningsAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <div className="space-y-3">
+      {careersData.openings.map((item, index) => {
+        const isOpen = openIndex === index;
+        return (
+          <div key={item.num} className="border border-brown/15 bg-white">
+            <div className="flex w-full items-center justify-between gap-4 px-6 py-5">
+              <button
+                type="button"
+                onClick={() => setOpenIndex(isOpen ? null : index)}
+                aria-expanded={isOpen}
+                className="flex flex-1 items-start gap-4 text-left"
+              >
+                <svg
+                  className={`mt-1.5 h-4 w-4 flex-shrink-0 text-brown/40 transition-transform duration-200 ${
+                    isOpen ? "rotate-180" : ""
+                  }`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+                <div>
+                  <h3 className="font-sans text-lg font-black not-italic text-brown">
+                    {item.role}
+                  </h3>
+                  <p className="mt-1 font-sans text-sm font-bold text-rust">
+                    {item.experienceShort}
+                  </p>
+                </div>
+              </button>
+              <a
+                href="#apply"
+                className="flex-shrink-0 bg-brown px-5 py-2.5 font-condensed text-xs font-bold uppercase tracking-widest text-cream transition-colors hover:bg-rust"
+              >
+                Apply
+              </a>
+            </div>
+            {isOpen && (
+              <div className="space-y-2 border-t border-brown/10 px-6 py-5 pl-14">
+                <p className="font-sans text-sm text-brown/60">
+                  <span className="font-bold text-brown/80">Qualification: </span>
+                  {item.qualification}
+                </p>
+                <p className="font-sans text-sm leading-relaxed text-brown/60">
+                  <span className="font-bold text-brown/80">Skills: </span>
+                  {item.skills}
+                </p>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export function CareersContent() {
   return (
     <main>
@@ -244,8 +309,20 @@ export function CareersContent() {
         </div>
       </section>
 
+      {/* Section 2B — Current Openings */}
+      <section
+        className="bg-[#F9F0E1] px-8 py-24 md:px-16 lg:px-24"
+        aria-label="Current openings"
+      >
+        <p className="mb-10 font-condensed text-[11px] uppercase tracking-[0.25em] text-rust/70">
+          Current Openings
+        </p>
+        <OpeningsAccordion />
+      </section>
+
       {/* Section 3 — Open Application */}
       <section
+        id="apply"
         className="bg-white px-8 py-24 md:px-16 lg:px-24"
         aria-label="Open application"
       >

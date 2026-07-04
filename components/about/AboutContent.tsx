@@ -122,30 +122,92 @@ export function AboutContent() {
 
       {/* Section 1B — Bridge */}
       <section className="bg-paper px-6 pt-14 pb-4 md:px-20 md:pt-24" aria-label="About MDP Coffee House">
-        <div className="max-w-3xl">
-          <RevealOnScroll delay={0}>
-            <SectionLabel>Our Story</SectionLabel>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
+          <div>
+            <RevealOnScroll delay={0}>
+              <SectionLabel>Our Story</SectionLabel>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.05}>
+              <h2 className="mt-6 mb-6 font-condensed text-[30px] leading-[0.95] tracking-tightest text-brown sm:text-[52px] sm:mb-10">
+                One kiosk. Twenty years later.
+              </h2>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.1}>
+              <p className="font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
+                MDP Coffee House began in 2005 with one kiosk, in an unfamiliar city, serving people who didn&rsquo;t know us yet.
+              </p>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.25}>
+              <p className="mt-8 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
+                Twenty years later, MDP operates across India — inside the campuses of Fortune 500 companies, the corridors of banks and tech parks, and commercial spaces in cities nationwide. What started as a single kiosk has grown into corporate kiosks, QSR restaurants, mobile carts, 24/7 tuck shops, and outdoor catering — the same recipe, delivered through whichever format the moment calls for.
+              </p>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.35}>
+              <p className="mt-8 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
+                Today, that same standard reaches 85+ locations nationwide, serving over 1,00,000 cups a day.
+              </p>
+            </RevealOnScroll>
+          </div>
+          <RevealOnScroll delay={0.2}>
+            <div>
+              <div className="relative w-full overflow-hidden bg-paper">
+                <Image
+                  src="/images/first_outlet_accenturevirkholi.png"
+                  alt="MDP Coffee House first outlet at Accenture Vikhroli, Mumbai — 2005"
+                  width={1456}
+                  height={1080}
+                  className="h-auto w-full object-contain"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+              <div className="mt-3">
+                <p className="font-condensed text-[11px] uppercase tracking-widest text-rust/70">
+                  2005 · Our Very First Outlet
+                </p>
+                <p className="mt-1 font-condensed text-[11px] uppercase tracking-widest text-brown/40">
+                  Accenture Vikhroli, Mumbai
+                </p>
+              </div>
+            </div>
           </RevealOnScroll>
-          <RevealOnScroll delay={0.05}>
-            <h2 className="mt-6 mb-6 font-condensed text-[30px] leading-[0.95] tracking-tightest text-brown sm:text-[52px] sm:mb-10">
-              One kiosk. Twenty years later.
-            </h2>
-          </RevealOnScroll>
+        </div>
+      </section>
+
+      {/* Vision & Mission */}
+      <section className="bg-paper px-6 pt-10 pb-4 md:px-20 md:pt-16 md:pb-6" aria-label="Vision and mission">
+        <div className="relative z-10 grid grid-cols-1 items-start gap-5 md:grid-cols-[1fr_1px_1fr] md:gap-12">
+
+          {/* Vision */}
           <RevealOnScroll delay={0.1}>
-            <p className="font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-              MDP Coffee House began in 2005 with one kiosk, in an unfamiliar city, serving people who didn&rsquo;t know us yet.
-            </p>
+            <div>
+              <p className="mb-2 font-condensed text-sm leading-[0.95] tracking-tight text-rust/60 sm:mb-4 sm:text-[20px]">
+                Vision
+              </p>
+              <h3 className="mb-4 font-sans text-base not-italic leading-snug text-brown sm:text-lg md:text-xl">
+                To be India&rsquo;s most trusted South Indian beverage brand —
+                present in every campus, transit hub, and community where people
+                gather.
+              </h3>
+            </div>
           </RevealOnScroll>
-          <RevealOnScroll delay={0.25}>
-            <p className="mt-8 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-              Twenty years later, MDP operates across India — inside the campuses of Fortune 500 companies, the corridors of banks and tech parks, and commercial spaces in cities nationwide. What started as a single kiosk has grown into corporate kiosks, QSR restaurants, mobile carts, 24/7 tuck shops, and outdoor catering — the same recipe, delivered through whichever format the moment calls for.
-            </p>
+
+          {/* Vertical separator */}
+          <div className="hidden self-stretch bg-brown/10 md:block" aria-hidden="true" />
+
+          {/* Mission */}
+          <RevealOnScroll delay={0.2}>
+            <div>
+              <p className="mb-2 font-condensed text-sm leading-[0.95] tracking-tight text-rust/60 sm:mb-4 sm:text-[20px]">
+                Mission
+              </p>
+              <h3 className="mb-4 font-sans text-base not-italic leading-snug text-brown sm:text-lg md:text-xl">
+                To serve authentic South Indian filter coffee consistently,
+                accessibly, and with genuine care — across every format we
+                operate.
+              </h3>
+            </div>
           </RevealOnScroll>
-          <RevealOnScroll delay={0.35}>
-            <p className="mt-8 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-              Today, that same standard reaches 85+ locations nationwide, serving over 1,00,000 cups a day.
-            </p>
-          </RevealOnScroll>
+
         </div>
       </section>
 

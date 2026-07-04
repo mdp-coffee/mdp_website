@@ -1,7 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { ClientTicker } from "@/components/ClientTicker";
 import { Scale } from "@/components/Scale";
-import { Origin } from "@/components/Origin";
 import { ClientProof } from "@/components/ClientProof";
 import { OperatingFormats } from "@/components/OperatingFormats";
 import { Bridge } from "@/components/Bridge";
@@ -22,13 +21,12 @@ export default function HomePage() {
       <ScrollContainer>
         <Hero />
         <ClientTicker variant="light" />
-        <Scale />
+        <Contact />
         <OperatingFormats />
         <OperatingSystem />
-        <Origin />
         <ClientProof />
         <Bridge />
-        <Contact />
+        <Scale />
         <Footer />
       </ScrollContainer>
       <WhatsAppFloat />

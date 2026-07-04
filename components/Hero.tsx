@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { trackEvent } from "@/components/Analytics";
 
 function G({ children }: { children: string }) {
@@ -65,6 +65,18 @@ export function Hero() {
         />
       </div>
 
+      {/* Morning light sweep — plays once on load, skipped entirely for reduced motion */}
+      {!shouldReduceMotion && (
+        <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden" aria-hidden="true">
+          <motion.div
+            className="absolute inset-y-0 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-gold/25 to-transparent"
+            initial={{ x: "-150%" }}
+            animate={{ x: "350%" }}
+            transition={{ duration: 2.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </div>
+      )}
+
       {/* Foreground content */}
       <div className="relative z-10 px-6 pt-24 md:px-20 md:pt-16">
         <motion.div className="mb-5 flex items-center gap-3" {...fadeIn(0.15)}>
@@ -83,12 +95,20 @@ export function Hero() {
           </motion.span>
         </h1>
 
-        <motion.p
-          className="mt-5 font-sans italic text-sm leading-relaxed text-brown/50 md:mt-8 md:text-xl"
-          {...fadeIn(0.7)}
-        >
-          <G>M</G>y <G>D</G>aily <G>P</G>eace. In a paper cup.
-        </motion.p>
+        <motion.div className="mt-5 md:mt-8" {...fadeIn(0.7)}>
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={rotatingIndex}
+              className="font-sans italic text-sm leading-relaxed text-brown/50 md:text-xl"
+              initial={shouldReduceMotion ? {} : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={shouldReduceMotion ? {} : { opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            >
+              {rotatingLines[rotatingIndex]}
+            </motion.p>
+          </AnimatePresence>
+        </motion.div>
 
         <motion.div className="mt-6 flex flex-col gap-3 md:mt-10 md:flex-row md:flex-wrap md:gap-4" {...fadeIn(1.0)}>
           <a

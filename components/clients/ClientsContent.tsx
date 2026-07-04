@@ -15,13 +15,17 @@ import { heroStats, clientStories, industries, citiesPresence } from "@/content/
 function ClientCard({ client }: { client: ClientLogo }) {
   const outletCount = outlets.filter((o) => o.clientSlug === client.slug).length;
   const base = [
-    "group flex flex-col border border-paper2 bg-paper p-6 transition-all duration-200 hover:border-gold",
+    "group flex flex-col border border-brown/15 bg-paper p-6 transition-all duration-200 hover:border-gold",
     client.active === false ? "opacity-40 hover:opacity-70" : "",
   ].join(" ");
 
   return (
     <div id={client.slug} className={base}>
-      <div className="flex h-14 items-center">
+      <div
+        className={`flex h-16 items-center justify-center px-4 ${
+          client.logoSrc !== null ? "bg-white" : ""
+        }`}
+      >
         {client.logoSrc !== null && (
           <Image
             src={client.logoSrc}
@@ -32,7 +36,8 @@ function ClientCard({ client }: { client: ClientLogo }) {
           />
         )}
       </div>
-      <h3 className="mt-3 font-condensed text-lg leading-tight text-brown">
+      <div className="my-3 h-px bg-brown/10" aria-hidden="true" />
+      <h3 className="font-condensed text-lg leading-tight text-brown">
         {client.name}
       </h3>
       <p className="mt-1 font-sans text-xs text-brown/45">
@@ -159,7 +164,7 @@ export function ClientsContent() {
           ))}
         </ul>
 
-        <div className="mt-8 grid grid-cols-2 gap-px bg-parchment sm:grid-cols-4 lg:grid-cols-6">
+        <div className="mt-8 grid grid-cols-2 gap-3 md:gap-4 bg-parchment sm:grid-cols-4 lg:grid-cols-6">
           {clients.map((client, index) => (
             <RevealOnScroll key={client.slug} delay={Math.min(index * 0.04, 0.6)}>
               <ClientCard client={client} />

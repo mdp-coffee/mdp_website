@@ -97,22 +97,6 @@ export function Origin() {
           <RevealOnScroll delay={0.3}>
             <div>
               <div className="relative w-full overflow-hidden bg-paper">
-                <Image
-                  src="/images/first_outlet_accenturevirkholi.png"
-                  alt="MDP Coffee House first outlet at Accenture Vikhroli, Mumbai — 2005"
-                  width={1456}
-                  height={1080}
-                  className="h-auto w-full object-contain"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-              <div className="mt-3">
-                <p className="font-condensed text-[11px] uppercase tracking-widest text-rust/70">
-                  2005 · Our Very First Outlet
-                </p>
-                <p className="mt-1 font-condensed text-[11px] uppercase tracking-widest text-brown/40">
-                  Accenture Vikhroli, Mumbai
-                </p>
               </div>
             </div>
           </RevealOnScroll>
@@ -130,40 +114,6 @@ export function Origin() {
       />
 
       {/* ── Part 2 — Vision & Mission ──────────────────────────────── */}
-      <div className="relative z-10 grid grid-cols-1 gap-5 md:grid-cols-[1fr_1px_1fr] md:gap-12">
-
-        {/* Vision */}
-        <RevealOnScroll delay={0.1}>
-          <div>
-            <p className="mb-2 font-condensed text-sm leading-[0.95] tracking-tight text-rust/60 sm:mb-4 sm:text-[20px]">
-              Vision
-            </p>
-            <h3 className="mb-4 font-sans text-base not-italic leading-snug text-brown sm:text-lg md:text-xl">
-              To be India&rsquo;s most trusted South Indian beverage brand —
-              present in every campus, transit hub, and community where people
-              gather.
-            </h3>
-          </div>
-        </RevealOnScroll>
-
-        {/* Vertical separator */}
-        <div className="hidden self-stretch bg-brown/10 md:block" aria-hidden="true" />
-
-        {/* Mission */}
-        <RevealOnScroll delay={0.2}>
-          <div>
-            <p className="mb-2 font-condensed text-sm leading-[0.95] tracking-tight text-rust/60 sm:mb-4 sm:text-[20px]">
-              Mission
-            </p>
-            <h3 className="mb-4 font-sans text-base not-italic leading-snug text-brown sm:text-lg md:text-xl">
-              To serve authentic South Indian filter coffee consistently,
-              accessibly, and with genuine care — across every format we
-              operate.
-            </h3>
-          </div>
-        </RevealOnScroll>
-
-      </div>
 
       <RevealOnScroll delay={0.3}>
         <div className="mt-10">

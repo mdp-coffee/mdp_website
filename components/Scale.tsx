@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import Image from "next/image";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { trackEvent } from "@/components/Analytics";
+import { SectionLabel } from "@/components/SectionLabel";
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
@@ -20,11 +21,12 @@ export function Scale() {
     const formData = new FormData(form);
     const payload = {
       name: formData.get("name"),
-      company: formData.get("company"),
+      company: "",
       phone: formData.get("phone"),
       email: formData.get("email"),
       message: formData.get("message"),
       website: formData.get("website"), // honeypot
+      source: "franchise",
     };
 
     try {
@@ -40,7 +42,7 @@ export function Scale() {
       }
 
       setState("success");
-      trackEvent("contact_form_submit", { location: "scale" });
+      trackEvent("contact_form_submit", { location: "scale", source: "franchise" });
       form.reset();
     } catch (err) {
       setState("error");
@@ -55,7 +57,7 @@ export function Scale() {
     <section
       id="scale"
       className="snap-slide grid min-h-[100svh] w-full grid-cols-1 md:grid-cols-2"
-      aria-label="MDP Coffee House — partner enquiry"
+      aria-label="MDP Coffee House — franchise enquiry"
     >
       {/* Left — dark panel */}
       <div className="relative flex flex-col justify-center overflow-hidden bg-[#411915] px-6 py-20 md:px-14">
@@ -69,11 +71,18 @@ export function Scale() {
         </div>
         <RevealOnScroll direction="left" delay={0}>
           <div className="relative z-10">
-            <h2 className="font-condensed text-[30px] leading-[0.98] tracking-tightest text-cream sm:text-[56px]">
-              Whether it&rsquo;s your office, your space, or your next venture &mdash; we&rsquo;d love to show up for you.
+            <SectionLabel tone="dark">Franchise Opportunities</SectionLabel>
+            <h2 className="mt-6 font-condensed text-[30px] leading-[0.98] tracking-tightest text-cream sm:text-[56px]">
+              Bring MDP closer to home.
             </h2>
+            <p className="mt-6 max-w-md font-sans text-base leading-relaxed text-cream/55">
+              For twenty years, MDP has earned its place in India&rsquo;s workday — one outlet, one relationship, one morning at a time. We&rsquo;re inviting the right partners to bring that same standard somewhere new.
+            </p>
             <p className="mt-6 max-w-xs font-sans text-sm text-cream/35">
-              Trusted by Amazon, Deutsche Bank, Infosys and 40+ enterprise clients since 2005.
+              20+ years in operation · 85+ locations nationwide · 45+ enterprise clients.
+            </p>
+            <p className="mt-6 max-w-md font-sans text-sm leading-relaxed text-cream/45">
+              We partner with people who value consistency over shortcuts, understand hospitality, and want to build something real.
             </p>
           </div>
         </RevealOnScroll>
@@ -121,19 +130,6 @@ export function Scale() {
               </div>
 
               <div className="mb-3 md:mb-4">
-                <label htmlFor="sc-company" className={labelCls}>
-                  Company<span className="normal-case opacity-60"> (optional)</span>
-                </label>
-                <input
-                  id="sc-company"
-                  name="company"
-                  type="text"
-                  placeholder="Company name"
-                  className={inputCls}
-                />
-              </div>
-
-              <div className="mb-3 md:mb-4">
                 <label htmlFor="sc-phone" className={labelCls}>
                   Phone number
                 </label>
@@ -162,13 +158,13 @@ export function Scale() {
 
               <div className="mb-4 md:mb-6">
                 <label htmlFor="sc-message" className={labelCls}>
-                  Why are you reaching out?<span className="normal-case opacity-60"> (optional)</span>
+                  Tell us about your interest<span className="normal-case opacity-60"> (optional)</span>
                 </label>
                 <textarea
                   id="sc-message"
                   name="message"
                   rows={2}
-                  placeholder="Tell us a little about what you have in mind"
+                  placeholder="Your background, anything else worth knowing"
                   className={inputCls}
                 />
               </div>
@@ -184,7 +180,7 @@ export function Scale() {
                 disabled={state === "submitting"}
                 className="w-full bg-brown py-3 font-condensed text-xs font-bold uppercase tracking-[0.15em] text-cream transition-colors hover:bg-rust disabled:opacity-60 md:py-4 md:text-sm"
               >
-                {state === "submitting" ? "Sending…" : "GET A CALLBACK →"}
+                {state === "submitting" ? "Sending…" : "ENQUIRE ABOUT FRANCHISE →"}
               </button>
 
               <p className="mt-4 font-sans text-sm text-brown/35">

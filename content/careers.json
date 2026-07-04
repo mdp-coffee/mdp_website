@@ -21,9 +21,35 @@
       "body": "Over four hundred people across India wake up every morning and come to work at MDP. You'd be joining a team that takes pride in what it does."
     }
   ],
+  "openings": [
+    {
+      "num": "01",
+      "role": "Coffee / Tea Maker",
+      "experienceShort": "1–2 years",
+      "experience": "1–2 years preferred. Freshers considered for a trainee position.",
+      "qualification": "Minimum 7th Standard. Not a barrier for experienced candidates.",
+      "skills": "Knowledge of preparing coffee, tea, and other hot beverages."
+    },
+    {
+      "num": "02",
+      "role": "Team Lead / Supervisor",
+      "experienceShort": "4–6 years",
+      "experience": "4–6 years.",
+      "qualification": "SSLC. Not a barrier for experienced candidates.",
+      "skills": "Comprehensive knowledge of coffee and tea counter operations — preparing beverages, managing billing, leading the team, and maintaining a strong manpower network."
+    },
+    {
+      "num": "03",
+      "role": "Purchase Executive",
+      "experienceShort": "2–4 years",
+      "experience": "2–4 years.",
+      "qualification": "Bachelor's degree in any field.",
+      "skills": "Supplier evaluation, price negotiation, purchase orders and vendor tracking, food safety compliance, inventory monitoring, and coordination with warehouse and finance teams. Proficiency in ERP systems and advanced Excel."
+    }
+  ],
   "form": {
     "headline": "Send us an open application.",
-    "subtext": "No roles listed right now — but if you feel like you belong here, reach out. We read every message.",
+    "subtext": "Don't see the right fit above? If you think you have something else to bring to this team, we'd still love to hear from you. We read every message.",
     "cta": "SEND APPLICATION →"
   }
 }

@@ -66,6 +66,8 @@ export async function POST(request: Request) {
       attachments: attachments.length > 0 ? attachments : undefined,
       subject: source === "careers"
         ? `Career Application from ${name}`
+        : source === "franchise"
+        ? `Franchise Enquiry from ${name}`
         : `New enquiry from ${name}${company ? ` · ${company}` : ""}`,
       html: `
 <!DOCTYPE html>
@@ -77,7 +79,7 @@ export async function POST(request: Request) {
       <td style="background: #411915; padding: 32px 40px;">
         <p style="margin: 0; font-family: Arial, sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #FEC87F; opacity: 0.7;">MDP Coffee House</p>
         <h1 style="margin: 12px 0 0; font-family: Arial, sans-serif; font-size: 24px; color: #F9F0E1; font-weight: 900;">New Enquiry</h1>
-        ${source === "careers" ? `<p style="margin: 8px 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #FEC87F; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase;">Career Application</p>` : ""}
+        ${source === "careers" ? `<p style="margin: 8px 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #FEC87F; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase;">Career Application</p>` : source === "franchise" ? `<p style="margin: 8px 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #FEC87F; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase;">Franchise Enquiry</p>` : ""}
       </td>
     </tr>
     <tr>
@@ -92,7 +94,7 @@ export async function POST(request: Request) {
           ${company ? `
           <tr>
             <td style="padding: 20px 0; border-bottom: 1px solid #EDE0C8;">
-              <p style="margin: 0 0 4px; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #70120E;">Company</p>
+              <p style="margin: 0 0 4px; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #70120E;">${source === "franchise" ? "City / Area of Interest" : "Company"}</p>
               <p style="margin: 0; font-family: Georgia, serif; font-size: 18px; color: #411915;">${company}</p>
             </td>
           </tr>` : ""}

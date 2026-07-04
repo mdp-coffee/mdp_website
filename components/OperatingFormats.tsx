@@ -194,7 +194,7 @@ export function OperatingFormats() {
             className="grid h-full grid-cols-1 gap-8 md:grid-cols-2"
           >
             {format.photo ? (
-              <div className="relative min-h-[260px] overflow-hidden md:min-h-[500px]">
+              <div className="relative min-h-[220px] self-start overflow-hidden md:h-[340px] md:min-h-0">
                 <Image
                   src={format.photo}
                   alt={format.name}
