@@ -191,13 +191,10 @@ export function OperatingFormats() {
             animate="center"
             exit="exit"
             transition={{ duration: 0.45, ease: "easeInOut" }}
-            className="grid h-full grid-cols-1 gap-8 md:grid-cols-2"
+            className="grid h-full grid-cols-1 items-start gap-8 md:grid-cols-2"
           >
             {format.photo ? (
-              <div
-                className="relative overflow-hidden"
-                style={{ height: "340px", alignSelf: "flex-start" }}
-              >
+              <div className="relative h-[220px] overflow-hidden md:h-[340px]">
                 <Image
                   src={format.photo}
                   alt={format.name}
