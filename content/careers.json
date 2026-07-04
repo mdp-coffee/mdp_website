@@ -36,15 +36,29 @@
       "experienceShort": "4–6 years",
       "experience": "4–6 years.",
       "qualification": "SSLC. Not a barrier for experienced candidates.",
-      "skills": "Comprehensive knowledge of coffee and tea counter operations — preparing beverages, managing billing, leading the team, and maintaining a strong manpower network."
+      "responsibilities": [
+        "Comprehensive management of coffee and tea counter operations",
+        "Overseeing quality standards and consistency across all beverages served",
+        "Managing billing and daily counter transactions",
+        "Leading and supervising the on-site team",
+        "Maintaining a strong manpower resource network"
+      ]
     },
     {
       "num": "03",
       "role": "Purchase Executive",
       "experienceShort": "2–4 years",
       "experience": "2–4 years.",
-      "qualification": "Bachelor's degree in any field.",
-      "skills": "Supplier evaluation, price negotiation, purchase orders and vendor tracking, food safety compliance, inventory monitoring, and coordination with warehouse and finance teams. Proficiency in ERP systems and advanced Excel."
+      "education": "Bachelor's degree in any field.",
+      "software": "Proficiency in ERP systems and advanced Microsoft Excel.",
+      "responsibilities": [
+        "Identify and evaluate new suppliers for raw ingredients and packaging",
+        "Lead price negotiations with vendors",
+        "Issue purchase orders and track vendor deliveries",
+        "Ensure all received goods meet food safety and company standards",
+        "Monitor stock levels to optimize inventory and prevent shortages",
+        "Coordinate closely with warehouse and finance departments"
+      ]
     }
   ],
   "form": {

@@ -195,12 +195,25 @@ function ApplicationForm() {
   );
 }
 
+interface CareerOpening {
+  num: string;
+  role: string;
+  experienceShort: string;
+  experience: string;
+  qualification?: string;
+  skills?: string;
+  education?: string;
+  software?: string;
+  responsibilities?: string[];
+}
+
 function OpeningsAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const openings = careersData.openings as CareerOpening[];
 
   return (
     <div className="space-y-3">
-      {careersData.openings.map((item, index) => {
+      {openings.map((item, index) => {
         const isOpen = openIndex === index;
         return (
           <div key={item.num} className="border border-brown/15 bg-white">
@@ -242,15 +255,52 @@ function OpeningsAccordion() {
               </a>
             </div>
             {isOpen && (
-              <div className="space-y-2 border-t border-brown/10 px-6 py-5 pl-14">
-                <p className="font-sans text-sm text-brown/60">
-                  <span className="font-bold text-brown/80">Qualification: </span>
-                  {item.qualification}
-                </p>
-                <p className="font-sans text-sm leading-relaxed text-brown/60">
-                  <span className="font-bold text-brown/80">Skills: </span>
-                  {item.skills}
-                </p>
+              <div className="space-y-3 border-t border-brown/10 px-6 py-5 pl-14">
+                {item.qualification && (
+                  <p className="font-sans text-sm text-brown/60">
+                    <span className="font-bold text-brown/80">Qualification: </span>
+                    {item.qualification}
+                  </p>
+                )}
+                {item.education && (
+                  <p className="font-sans text-sm text-brown/60">
+                    <span className="font-bold text-brown/80">Education: </span>
+                    {item.education}
+                  </p>
+                )}
+                {item.software && (
+                  <p className="font-sans text-sm text-brown/60">
+                    <span className="font-bold text-brown/80">Software: </span>
+                    {item.software}
+                  </p>
+                )}
+                {item.skills && (
+                  <p className="font-sans text-sm leading-relaxed text-brown/60">
+                    <span className="font-bold text-brown/80">Skills: </span>
+                    {item.skills}
+                  </p>
+                )}
+                {item.responsibilities && (
+                  <div>
+                    <p className="font-sans text-sm font-bold text-brown/80">
+                      Key Responsibilities:
+                    </p>
+                    <ul className="mt-2 space-y-1.5">
+                      {item.responsibilities.map((responsibility, i) => (
+                        <li
+                          key={i}
+                          className="flex gap-2 font-sans text-sm leading-relaxed text-brown/60"
+                        >
+                          <span
+                            className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-rust/60"
+                            aria-hidden="true"
+                          />
+                          <span>{responsibility}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             )}
           </div>
