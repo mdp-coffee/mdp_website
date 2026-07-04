@@ -181,7 +181,7 @@ export function OperatingFormats() {
       </div>
 
       {/* Active panel */}
-      <div className="relative mt-8 flex-1 overflow-hidden">
+      <div className="relative mt-8 overflow-hidden">
         <AnimatePresence mode="wait" custom={direction} initial={false}>
           <motion.div
             key={format.num}
@@ -191,10 +191,13 @@ export function OperatingFormats() {
             animate="center"
             exit="exit"
             transition={{ duration: 0.45, ease: "easeInOut" }}
-            className="grid h-full grid-cols-1 items-start gap-8 md:grid-cols-2"
+            className="flex flex-col gap-8 md:flex-row md:items-start"
           >
             {format.photo ? (
-              <div className="relative h-[220px] overflow-hidden md:h-[340px]">
+              <div
+                className="relative w-full overflow-hidden md:w-1/2"
+                style={{ height: "220px" }}
+              >
                 <Image
                   src={format.photo}
                   alt={format.name}
@@ -212,7 +215,7 @@ export function OperatingFormats() {
               />
             )}
 
-            <div className="flex flex-col justify-center pb-10">
+            <div className="flex w-full flex-col justify-center pb-10 md:w-1/2">
               <h2
                 className={`font-condensed text-[30px] leading-[0.98] tracking-tight ${theme.text} sm:text-[52px]`}
               >
