@@ -194,7 +194,10 @@ export function OperatingFormats() {
             className="grid h-full grid-cols-1 gap-8 md:grid-cols-2"
           >
             {format.photo ? (
-              <div className="relative min-h-[220px] self-start overflow-hidden md:h-[340px] md:min-h-0">
+              <div
+                className="relative overflow-hidden"
+                style={{ height: "340px", alignSelf: "flex-start" }}
+              >
                 <Image
                   src={format.photo}
                   alt={format.name}
