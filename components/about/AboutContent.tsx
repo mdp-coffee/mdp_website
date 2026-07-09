@@ -367,7 +367,7 @@ export function AboutContent() {
       >
         <RevealOnScroll delay={0}>
           <h2 className="font-condensed text-[44px] leading-[0.92] tracking-tightest text-brown sm:text-[60px]">
-            Part of your morning too?
+            Your workplace deserves a morning like this.
           </h2>
         </RevealOnScroll>
         <RevealOnScroll delay={0.15}>

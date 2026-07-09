@@ -78,7 +78,7 @@ export function Hero() {
       )}
 
       {/* Foreground content */}
-      <div className="relative z-10 px-6 pt-24 md:px-20 md:pt-16">
+      <div className="relative z-10 w-full px-6 pt-24 md:w-auto md:px-20 md:pt-16">
         <motion.div className="mb-5 flex items-center gap-3" {...fadeIn(0.15)}>
           <span className="h-px w-8 bg-brown/25" aria-hidden="true" />
           <span className="font-condensed text-[11px] uppercase tracking-[0.3em] text-brown/50">
@@ -95,7 +95,7 @@ export function Hero() {
           </motion.span>
         </h1>
 
-        <motion.div className="mt-5 md:mt-8" {...fadeIn(0.7)}>
+        <motion.div className="mt-5 min-h-[46px] md:mt-8 md:min-h-0" {...fadeIn(0.7)}>
           <AnimatePresence mode="wait">
             <motion.p
               key={rotatingIndex}
@@ -114,13 +114,13 @@ export function Hero() {
           <a
             href="#contact"
             onClick={() => trackEvent("cta_click", { location: "hero" })}
-            className="bg-gold px-5 py-3 text-center font-condensed text-xs font-bold uppercase tracking-wider text-brown transition-colors hover:bg-gold/90 md:px-7 md:py-4 md:text-sm"
+            className="w-full bg-gold px-5 py-3 text-center font-condensed text-xs font-bold uppercase tracking-wider text-brown transition-colors hover:bg-gold/90 md:w-auto md:px-7 md:py-4 md:text-sm"
           >
             Partner With Us
           </a>
           <a
             href="#story"
-            className="border border-brown/30 bg-paper/80 px-5 py-3 text-center font-condensed text-xs uppercase tracking-wider text-brown/60 transition-colors hover:border-brown hover:text-brown md:bg-transparent md:px-7 md:py-4 md:text-sm"
+            className="w-full border border-brown/30 bg-paper/80 px-5 py-3 text-center font-condensed text-xs uppercase tracking-wider text-brown/60 transition-colors hover:border-brown hover:text-brown md:w-auto md:bg-transparent md:px-7 md:py-4 md:text-sm"
           >
             Our Story
           </a>

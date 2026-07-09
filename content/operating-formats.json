@@ -7,7 +7,7 @@
       "description": "Fully managed. We set up, staff, operate, and restock every day. The morning anchor for your workplace.",
       "details": "SETUP · DAILY OPS · STAFF TRAINING · QUALITY AUDITS · RESTOCKING",
       "example": "Operating at Amazon, Microsoft, Infosys, TCS, Deutsche Bank and 35+ others.",
-      "photo": "/operating_formats/Corporate_kiosk.png",
+      "photo": "/formats/corporate_kiosk.jpeg",
       "theme": "light"
     },
     {
@@ -16,8 +16,8 @@
       "name": "Where People Sit Down.",
       "description": "Full beverage menu in a sit-down format. Filter coffee, badam milk, ginger tea, rose milk — for high-footfall locations.",
       "details": "FULL MENU · DINE-IN · HIGH VOLUME · MALL & COMMERCIAL LOCATIONS",
-      "example": "Bharatiya Mall Bengaluru, Mall of Mysore, ITPL, Koramangala, HSR and more.",
-      "photo": "/operating_formats/QSR.png",
+      "example": "Mall of Mysore, ITPL, HSR, Gandhinagar and more.",
+      "photo": "/formats/qsr.png",
       "theme": "light2"
     },
     {
@@ -27,7 +27,7 @@
       "description": "The kiosk comes to you. Same quality, same service — no fixed location needed. For campuses, events, and outdoor spaces.",
       "details": "EVENT DEPLOYMENT · CAMPUS COVERAGE · FLEXIBLE · NO INFRASTRUCTURE",
       "example": "Deployed across tech park campuses and corporate events across India.",
-      "photo": "/operating_formats/mobile_cart.png",
+      "photo": "/formats/mobile_cart.png",
       "theme": "parchment"
     },
     {
@@ -37,7 +37,7 @@
       "description": "Stocked, managed, and restocked — always on, always available, for offices that never truly clock off.",
       "details": "24-HOUR AVAILABILITY · PACKAGED SNACKS & BEVERAGES · AUTO-RESTOCKING",
       "example": "Running in offices with round-the-clock operations in Bengaluru and Hyderabad.",
-      "photo": "/operating_formats/tuck_shop.png",
+      "photo": "/formats/tuckshop.png",
       "theme": "light"
     }
   ]
