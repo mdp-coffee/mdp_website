@@ -33,8 +33,8 @@ export function NavBar() {
           <Image
             src="/images/MDP Logo PNG.png"
             alt="MDP Coffee House"
-            width={72}
-            height={72}
+            width={90}
+            height={54}
             priority
             className="object-contain"
           />

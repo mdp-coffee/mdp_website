@@ -9,7 +9,7 @@ import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { operatingFormats } from "@/lib/content";
 import type { OperatingFormat } from "@/lib/types";
 import { trackEvent } from "@/components/Analytics";
-import { products } from "@/content/products";
+import { categories } from "@/content/products";
 import { formatPages } from "@/content/operating-formats-seo";
 
 const themeStyles: Record<
@@ -294,7 +294,7 @@ export function Formats() {
         <p
           className={`mb-3 mt-6 font-condensed text-[11px] uppercase tracking-widest ${theme.productLabel}`}
         >
-          Our Products
+          What We Can Prepare
         </p>
         <div
           ref={scrollRef}
@@ -306,15 +306,15 @@ export function Formats() {
             isDragging ? "cursor-grabbing" : "cursor-grab"
           }`}
         >
-          {products.map((product) => (
+          {categories.map((category) => (
             <div
-              key={product.id}
+              key={category.id}
               className={`w-[160px] flex-shrink-0 snap-start overflow-hidden border transition-colors duration-200 hover:border-gold/40 ${theme.productCardBorder}`}
             >
               <div className="relative h-[120px] w-full overflow-hidden">
                 <Image
-                  src={product.image}
-                  alt={product.name}
+                  src={category.image}
+                  alt={category.name}
                   fill
                   className="object-cover"
                   sizes="160px"
@@ -323,7 +323,7 @@ export function Formats() {
               <p
                 className={`px-3 py-2.5 font-condensed text-sm font-bold tracking-tight ${theme.productCardText} ${theme.productCardBg}`}
               >
-                {product.name}
+                {category.name}
               </p>
             </div>
           ))}

@@ -41,7 +41,7 @@ Fonts:
 Contrast: verified via WCAG calculation — every primary brand color pairing (brown-on-cream, cream-on-brown, gold-on-brown, rust-on-cream) scores 10:1–13.5:1, comfortably clearing AA's 4.5:1 requirement.
 
 ## Homepage Structure (app/page.tsx) — confirmed current, 10 sections
-1. **Hero** — locked headline "Since 2005, we've shown up every morning." (H1, do not change), rotating MDP acronym sublines
+1. **Hero** — locked headline "Made with Care." / "Served with Care." (H1, do not change), rotating MDP acronym sublines
 2. **ClientTicker** (light variant) — logo ticker linking to /clients
 3. **Scale** — dark left (one-liner + trust line) / paper right (contact form)
 4. **OperatingFormats** — interactive tab explorer, **4 formats** (Corporate Kiosk, QSR Cafe, Mobile Cart, 24/7 Tuck Shop). ODC is deliberately separate, not part of this system.

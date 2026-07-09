@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BlogContent } from "@/components/blog/BlogContent";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Insights — Corporate Coffee in India | MDP Coffee House",
@@ -9,5 +10,15 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  return <BlogContent />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://mdpcoffeehouse.com" },
+          { name: "Blog" },
+        ]}
+      />
+      <BlogContent />
+    </>
+  );
 }

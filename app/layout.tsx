@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | MDP Coffee House",
   },
   description:
-    "Fully managed corporate coffee service across India since 2005 — 85+ locations, 45+ enterprise clients. Authentic South Indian filter coffee, staffed end-to-end.",
+    "Fully managed corporate coffee service across India since 2005 — 85+ locations, 32+ enterprise clients, authentic South Indian filter coffee.",
   keywords: [
     "corporate coffee service India",
     "office coffee kiosk",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: siteUrl,
     siteName: "MDP Coffee House",
-    title: "MDP Coffee House — Since 2005, We've Shown Up Every Morning",
+    title: "MDP Coffee House — Made with Care. Served with Care.",
     description:
       "Operational infrastructure for India's workplaces. 1,00,000 cups served daily across 85+ corporate locations.",
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MDP Coffee House — Since 2005, We've Shown Up Every Morning",
+    title: "MDP Coffee House — Made with Care. Served with Care.",
     description:
       "Operational infrastructure for India's workplaces. 1,00,000 cups served daily.",
     images: ["/images/og-image.jpg"],

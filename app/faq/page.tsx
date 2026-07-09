@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { FaqContent } from "@/components/FaqContent";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "FAQ — Corporate Coffee Service India | MDP Coffee House",
@@ -93,6 +94,12 @@ export default function FaqPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://mdpcoffeehouse.com" },
+          { name: "FAQ" },
+        ]}
       />
       <FaqContent />
     </>

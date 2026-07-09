@@ -73,6 +73,7 @@ function Lightbox({ items, currentIndex, onClose, onPrev, onNext }: LightboxProp
           fill
           className="object-contain"
           sizes="90vw"
+          quality={90}
         />
       </div>
 
@@ -145,12 +146,14 @@ export function GalleryGrid() {
 
       {/* Photo grid */}
       <div className="px-6 py-12 md:px-20">
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[160px] sm:auto-rows-[200px] md:auto-rows-[220px] grid-flow-dense gap-1">
           {filtered.map((item, index) => (
             <button
               key={item.id}
               onClick={() => setLightboxIndex(index)}
-              className="group relative aspect-square overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown"
+              className={`group relative overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown ${
+                index % 7 === 6 ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
+              }`}
               aria-label={`View: ${item.alt}`}
             >
               <Image
@@ -159,8 +162,15 @@ export function GalleryGrid() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={90}
               />
-              <div className="absolute inset-0 bg-[#411915] opacity-0 transition-opacity duration-300 group-hover:opacity-25" />
+              {item.caption && (
+                <div className="absolute bottom-0 left-0 right-0 border-t-2 border-gold bg-[#411915]/85 px-3 py-2">
+                  <p className="font-condensed text-[11px] uppercase tracking-wide text-cream">
+                    {item.caption}
+                  </p>
+                </div>
+              )}
             </button>
           ))}
         </div>

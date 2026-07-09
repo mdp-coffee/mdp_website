@@ -9,7 +9,7 @@ import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { operatingFormats } from "@/lib/content";
 import type { OperatingFormat } from "@/lib/types";
 import { trackEvent } from "@/components/Analytics";
-import { products } from "@/content/products";
+import { categories as products } from "@/content/products";
 import { formatPages } from "@/content/operating-formats-seo";
 
 const themeStyles: Record<

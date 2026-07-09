@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AboutContent } from "@/components/about/AboutContent";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "About MDP Coffee House | Corporate Coffee Service India",
@@ -9,5 +10,15 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  return <AboutContent />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://mdpcoffeehouse.com" },
+          { name: "About Us" },
+        ]}
+      />
+      <AboutContent />
+    </>
+  );
 }

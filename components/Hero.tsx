@@ -88,7 +88,7 @@ export function Hero() {
 
         <h1 className="font-condensed text-[32px] leading-[0.95] tracking-tightest text-brown sm:text-[68px] md:text-[88px]">
           <motion.span className="block" {...fadeIn(0.3)}>
-            Made with Care
+            Made with Care.
           </motion.span>
           <motion.span className="block" {...fadeIn(0.5)}>
             Served with Care.

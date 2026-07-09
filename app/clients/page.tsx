@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ClientsContent } from "@/components/clients/ClientsContent";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Our Clients — 45+ Enterprises | MDP Coffee House",
@@ -37,6 +38,12 @@ export default function ClientsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://mdpcoffeehouse.com" },
+          { name: "Clients" },
+        ]}
       />
       <ClientsContent />
     </>

@@ -39,12 +39,6 @@ const values = [
   },
 ];
 
-const peoplePhotos = [
-  { src: "/images/clifford-VobvKmG-StA-unsplash.jpg", alt: "MDP team member" },
-  { src: "/images/ante-samarzija-lsmu0rUhUOk-unsplash.jpg", alt: "MDP outlet in action" },
-  { src: "/images/kayleigh-harrington-yhn4okt6ci0-unsplash.jpg", alt: "MDP coffee counter" },
-];
-
 const aboutStats = [
   { value: "20+", label: "Years of Operations" },
   { value: "85+", label: "Active Locations" },
@@ -183,11 +177,11 @@ export function AboutContent() {
               <p className="mb-2 font-condensed text-sm leading-[0.95] tracking-tight text-rust/60 sm:mb-4 sm:text-[20px]">
                 Vision
               </p>
-              <h3 className="mb-4 font-sans text-base not-italic leading-snug text-brown sm:text-lg md:text-xl">
+              <p className="mb-4 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
                 To be India&rsquo;s most trusted South Indian beverage brand —
                 present in every campus, transit hub, and community where people
                 gather.
-              </h3>
+              </p>
             </div>
           </RevealOnScroll>
 
@@ -200,11 +194,11 @@ export function AboutContent() {
               <p className="mb-2 font-condensed text-sm leading-[0.95] tracking-tight text-rust/60 sm:mb-4 sm:text-[20px]">
                 Mission
               </p>
-              <h3 className="mb-4 font-sans text-base not-italic leading-snug text-brown sm:text-lg md:text-xl">
+              <p className="mb-4 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
                 To serve authentic South Indian filter coffee consistently,
                 accessibly, and with genuine care — across every format we
                 operate.
-              </h3>
+              </p>
             </div>
           </RevealOnScroll>
 
@@ -223,17 +217,17 @@ export function AboutContent() {
         </RevealOnScroll>
         <div className="mt-10 grid gap-8 md:grid-cols-3">
           <RevealOnScroll delay={0.2}>
-            <p className="font-sans text-lg leading-relaxed text-brown/65">
+            <p className="font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
               The scale changed. The care never did. MDP Coffee House is a company built on showing up.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.3}>
-            <p className="font-sans text-lg leading-relaxed text-brown/65">
+            <p className="font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
               We show up in the small moments — the first cup before a long meeting, the familiar counter in an unfamiliar new office, the warmth of something made with care in the middle of a hard day.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.4}>
-            <p className="font-sans text-lg leading-relaxed text-brown/65">
+            <p className="font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
               We do not exist to sell coffee. We exist to make people&rsquo;s days a little better through coffee. Coffee is our medium. People are our purpose.
             </p>
           </RevealOnScroll>
@@ -322,42 +316,6 @@ export function AboutContent() {
             </RevealOnScroll>
           ))}
         </div>
-      </section>
-
-      {/* Section 6 — The People */}
-      <section className="px-6 py-12 md:px-20 md:py-24" aria-label="Our people">
-        <RevealOnScroll delay={0}>
-          <SectionLabel>Our People</SectionLabel>
-          <h2 className="mt-6 font-condensed text-[28px] leading-[0.95] tracking-tightest text-brown sm:text-[52px]">
-            400+ people who show up every morning.
-          </h2>
-        </RevealOnScroll>
-        <RevealOnScroll delay={0.1}>
-          <p className="mt-4 max-w-2xl font-sans text-sm leading-relaxed text-brown/65 md:mt-6 md:text-lg">
-            Behind every cup is a person who chose to be there. Trained at the
-            MDP Academy in Bengaluru. Guided by the same standards that have
-            existed since 2005. Our people are not staff. They are the reason this
-            works.
-          </p>
-        </RevealOnScroll>
-        <div className="mt-8 grid grid-cols-2 gap-2 sm:mt-12 sm:grid-cols-3 sm:gap-4">
-          {peoplePhotos.map((photo, index) => (
-            <RevealOnScroll key={photo.src} delay={MOTION.stagger(index, 0.06)}>
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-              </div>
-            </RevealOnScroll>
-          ))}
-        </div>
-        <p className="mt-6 font-sans text-sm text-brown/30">
-          Real MDP team photos coming soon
-        </p>
       </section>
 
       {/* Section 9 — CTA */}

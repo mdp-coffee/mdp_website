@@ -207,8 +207,200 @@ interface CareerOpening {
   responsibilities?: string[];
 }
 
+function RoleApplyForm({
+  role,
+  requireResume,
+  onClose,
+}: {
+  role: string;
+  requireResume: boolean;
+  onClose: () => void;
+}) {
+  const [state, setState] = useState<SubmitState>("idle");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [websiteHoneypot, setWebsiteHoneypot] = useState("");
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
+  const [resumeError, setResumeError] = useState("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setResumeError("");
+
+    if (requireResume && !resumeFile) {
+      setResumeError("A resume is required for this role.");
+      return;
+    }
+
+    setState("loading");
+
+    let resumeBase64: string | null = null;
+    let resumeFilename: string | null = null;
+    let resumeMimeType: string | null = null;
+
+    if (resumeFile) {
+      resumeBase64 = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const result = reader.result as string;
+          resolve(result.split(",")[1] ?? "");
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(resumeFile);
+      });
+      resumeFilename = resumeFile.name;
+      resumeMimeType = resumeFile.type;
+    }
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          company: role,
+          phone,
+          email,
+          message: "",
+          website: websiteHoneypot,
+          source: "job-application",
+          resumeBase64,
+          resumeFilename,
+          resumeMimeType,
+        }),
+      });
+
+      setState(res.ok ? "success" : "error");
+    } catch {
+      setState("error");
+    }
+  };
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#0C0C0C]/60 px-4"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-md border border-brown/20 bg-white p-8"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-5 top-5 font-condensed text-lg text-brown/40 hover:text-brown"
+        >
+          ✕
+        </button>
+
+        {state === "success" ? (
+          <>
+            <p className="font-condensed text-2xl font-black text-brown">
+              Application received.
+            </p>
+            <p className="mt-2 font-sans text-brown/60">
+              Thank you for applying for {role}. We&rsquo;ll be in touch.
+            </p>
+          </>
+        ) : (
+          <>
+            <p className="font-condensed text-[11px] uppercase tracking-widest text-rust/70">
+              Apply
+            </p>
+            <h3 className="mt-2 mb-6 font-condensed text-2xl font-black text-brown">
+              {role}
+            </h3>
+
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <div className="absolute -left-[9999px]" aria-hidden="true">
+                <label>
+                  Leave this field empty
+                  <input
+                    type="text"
+                    value={websiteHoneypot}
+                    onChange={(e) => setWebsiteHoneypot(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </label>
+              </div>
+
+              <input
+                type="text"
+                required
+                minLength={2}
+                placeholder="Your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full border border-brown/15 bg-[#F9F0E1] px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
+              />
+              <input
+                type="tel"
+                required
+                placeholder="Phone number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="w-full border border-brown/15 bg-[#F9F0E1] px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
+              />
+              <input
+                type="email"
+                required
+                placeholder="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full border border-brown/15 bg-[#F9F0E1] px-4 py-3 font-sans text-brown placeholder:text-brown/30 focus:border-gold focus:outline-none"
+              />
+
+              <div>
+                <label className="flex cursor-pointer items-center gap-3 border border-dashed border-brown/20 bg-[#F9F0E1] px-4 py-3 transition-colors hover:border-gold">
+                  <span className="font-sans text-sm text-brown/50">
+                    {resumeFile
+                      ? resumeFile.name
+                      : `Upload resume${requireResume ? "" : " (optional)"}`}
+                  </span>
+                  <input
+                    type="file"
+                    accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                    className="sr-only"
+                    onChange={(e) => {
+                      const file = e.target.files?.[0] ?? null;
+                      setResumeError("");
+                      if (file) {
+                        if (file.size > 4 * 1024 * 1024) {
+                          setResumeError("File is too large. Maximum size is 4MB.");
+                          setResumeFile(null);
+                          return;
+                        }
+                        setResumeFile(file);
+                      }
+                    }}
+                  />
+                </label>
+                {resumeError && (
+                  <p className="mt-1 font-sans text-xs text-rust">{resumeError}</p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                disabled={state === "loading"}
+                className="w-full bg-brown py-3 font-condensed text-xs font-bold uppercase tracking-widest text-cream transition-colors hover:bg-rust disabled:opacity-60"
+              >
+                {state === "loading" ? "Sending…" : "Submit Application"}
+              </button>
+            </form>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function OpeningsAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [applyOpenIndex, setApplyOpenIndex] = useState<number | null>(null);
   const openings = careersData.openings as CareerOpening[];
 
   return (
@@ -247,12 +439,13 @@ function OpeningsAccordion() {
                   </p>
                 </div>
               </button>
-              <a
-                href="#apply"
+              <button
+                type="button"
+                onClick={() => setApplyOpenIndex(index)}
                 className="flex-shrink-0 bg-brown px-5 py-2.5 font-condensed text-xs font-bold uppercase tracking-widest text-cream transition-colors hover:bg-rust"
               >
                 Apply
-              </a>
+              </button>
             </div>
             {isOpen && (
               <div className="space-y-3 border-t border-brown/10 px-6 py-5 pl-14">
@@ -306,6 +499,13 @@ function OpeningsAccordion() {
           </div>
         );
       })}
+      {applyOpenIndex !== null && openings[applyOpenIndex] && (
+        <RoleApplyForm
+          role={openings[applyOpenIndex].role}
+          requireResume={openings[applyOpenIndex].role !== "Coffee / Tea Maker"}
+          onClose={() => setApplyOpenIndex(null)}
+        />
+      )}
     </div>
   );
 }

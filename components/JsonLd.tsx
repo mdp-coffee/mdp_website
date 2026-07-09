@@ -8,6 +8,7 @@ export function OrganizationJsonLd() {
     name: siteConfig.name,
     url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mdpcoffeehouse.com",
     logo: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://mdpcoffeehouse.com"}/images/logo.png`,
+    description: "MDP Coffee House is a fully managed corporate coffee service operating since 2005, serving 85+ locations and 32+ enterprise clients across India with authentic South Indian filter coffee.",
     foundingDate: String(siteConfig.founded),
     address: {
       "@type": "PostalAddress",
@@ -73,7 +74,7 @@ export function TestimonialsJsonLd() {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5",
-      reviewCount: "2",
+      reviewCount: "3",
     },
     review: [
       {
@@ -89,6 +90,13 @@ export function TestimonialsJsonLd() {
         reviewRating: { "@type": "Rating", ratingValue: 5 },
         reviewBody:
           "Kerala, being a tea-drinking state, MDP has made a successful breakthrough. With MDP team support, we ensure smooth operations across our entire campus.",
+      },
+      {
+        "@type": "Review",
+        author: { "@type": "Organization", name: "Bhartiya Mall of Bengaluru" },
+        reviewRating: { "@type": "Rating", ratingValue: 5 },
+        reviewBody:
+          "Aromatic haven brewing delight in every cup, offering a culinary voyage into authentic South Indian vegetarian delicacies.",
       },
     ],
   };

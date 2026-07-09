@@ -29,6 +29,8 @@
     { "name": "MiQ Digital", "slug": "miq-digital", "logoSrc": "/Client_Logos/miq_digital.png", "city": "Bengaluru", "outlets": 1, "active": true },
     { "name": "Mall of Mysore", "slug": "mall-of-mysore", "logoSrc": null, "city": "Mysore", "category": "Retail & Commercial", "outlets": 1, "active": true },
     { "name": "PVR", "slug": "pvr", "logoSrc": "/Client_Logos/pvr.avif", "city": "Mysore", "category": "Retail & Commercial", "outlets": 1, "active": true },
+    { "name": "Tesco", "slug": "tesco", "logoSrc": "/Client_Logos/Tesco.png", "city": "Bengaluru", "outlets": 1, "active": true },
+    { "name": "Lowe's", "slug": "lowes", "logoSrc": "/Client_Logos/lowes.svg", "city": "Bengaluru", "outlets": 2, "active": true },
     { "name": "Intel", "slug": "intel", "logoSrc": "/Client_Logos/Intel_idbKj2C6Xy_1.png", "city": "Pan India", "outlets": 1, "active": false },
     { "name": "Wipro", "slug": "wipro", "logoSrc": "/Client_Logos/Wipro.png", "city": "Bengaluru", "outlets": 1, "active": false },
     { "name": "Qualcomm", "slug": "qualcomm", "logoSrc": "/Client_Logos/Qualcomm.png", "city": "Bengaluru", "outlets": 1, "active": false },

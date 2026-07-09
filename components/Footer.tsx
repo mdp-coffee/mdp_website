@@ -144,8 +144,8 @@ export function Footer() {
             <Image
               src="/images/MDP Logo PNG.png"
               alt="MDP Coffee House"
-              width={80}
-              height={80}
+              width={82}
+              height={49}
               className="object-contain"
             />
             <p className="mt-4 max-w-xs font-sans text-sm text-cream/60">

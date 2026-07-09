@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GalleryContent } from "@/components/gallery/GalleryContent";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Gallery — Twenty Years of Mornings | MDP Coffee House",
@@ -9,5 +10,15 @@ export const metadata: Metadata = {
 };
 
 export default function GalleryPage() {
-  return <GalleryContent />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://mdpcoffeehouse.com" },
+          { name: "Gallery" },
+        ]}
+      />
+      <GalleryContent />
+    </>
+  );
 }

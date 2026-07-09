@@ -77,7 +77,7 @@ export function Contact() {
             your office.
           </h2>
           <p className="mt-8 max-w-sm font-sans text-lg leading-relaxed text-cream/55">
-            For twenty years, we&rsquo;ve been part of India&rsquo;s workday.
+            For twenty years, we&rsquo;ve provided corporate coffee service across India&rsquo;s workday.
             <br />
             <br />
             From the first kiosk in Mumbai to 85+ locations nationwide &mdash; one morning at a time.

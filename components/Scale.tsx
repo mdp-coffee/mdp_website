@@ -76,7 +76,7 @@ export function Scale() {
               Bring MDP closer to home.
             </h2>
             <p className="mt-6 max-w-md font-sans text-base leading-relaxed text-cream/55">
-              For twenty years, MDP has earned its place in India&rsquo;s workday — one outlet, one relationship, one morning at a time. We&rsquo;re inviting the right partners to bring that same standard somewhere new.
+              For twenty years, MDP has earned its place in India&rsquo;s workday — one outlet, one relationship, one morning at a time. This is a franchise opportunity for the right partners to bring that same standard somewhere new.
             </p>
             <p className="mt-6 max-w-xs font-sans text-sm text-cream/35">
               20+ years in operation · 85+ locations nationwide · 45+ enterprise clients.
