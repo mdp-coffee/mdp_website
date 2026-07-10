@@ -14,7 +14,7 @@ export const formatPages: FormatPageData[] = [
       "This is the format used across the majority of MDP's enterprise partnerships — inside the campuses of technology companies, banks, and consulting firms nationwide. Each kiosk runs on the same standardised recipe and operating system MDP has used since 2005, regardless of city or client.",
     ],
     details: "SETUP · DAILY OPS · STAFF TRAINING · QUALITY AUDITS · RESTOCKING",
-    photo: "/formats/corporate_kiosk.jpeg",
+    photo: "/formats/corporatekiosk.png",
   },
   {
     slug: "qsr-cafe",
@@ -29,7 +29,7 @@ export const formatPages: FormatPageData[] = [
       "Unlike the Corporate Kiosk format, QSR Cafes are designed for public dine-in traffic rather than a single employer's workforce, making this the right format for malls, retail destinations, and mixed-use commercial spaces.",
     ],
     details: "FULL MENU · DINE-IN · HIGH VOLUME · MALL & COMMERCIAL LOCATIONS",
-    photo: "/formats/qsr.png",
+    photo: "/formats/qsr_cafe.png",
   },
   {
     slug: "mobile-cart",
@@ -44,7 +44,7 @@ export const formatPages: FormatPageData[] = [
       "This format is commonly deployed for one-off events and short-term campus coverage, complementing MDP's permanent kiosk and QSR locations rather than replacing them.",
     ],
     details: "EVENT DEPLOYMENT · CAMPUS COVERAGE · FLEXIBLE · NO INFRASTRUCTURE",
-    photo: "/formats/mobile_cart.png",
+    photo: "/formats/mobilecart.png",
   },
   {
     slug: "tuck-shop",

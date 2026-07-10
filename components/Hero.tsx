@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { trackEvent } from "@/components/Analytics";
 
@@ -118,12 +119,12 @@ export function Hero() {
           >
             Partner With Us
           </a>
-          <a
-            href="#story"
+          <Link
+            href="/about"
             className="w-full border border-brown/30 bg-paper/80 px-5 py-3 text-center font-condensed text-xs uppercase tracking-wider text-brown/60 transition-colors hover:border-brown hover:text-brown md:w-auto md:bg-transparent md:px-7 md:py-4 md:text-sm"
           >
             Our Story
-          </a>
+          </Link>
         </motion.div>
       </div>
 

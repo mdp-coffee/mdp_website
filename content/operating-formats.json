@@ -7,7 +7,7 @@
       "description": "Fully managed. We set up, staff, operate, and restock every day. The morning anchor for your workplace.",
       "details": "SETUP · DAILY OPS · STAFF TRAINING · QUALITY AUDITS · RESTOCKING",
       "example": "Operating at Amazon, Microsoft, Infosys, TCS, Deutsche Bank and 35+ others.",
-      "photo": "/formats/corporate_kiosk.jpeg",
+      "photo": "/formats/corporatekiosk.png",
       "theme": "light"
     },
     {
@@ -17,7 +17,7 @@
       "description": "Full beverage menu in a sit-down format. Filter coffee, badam milk, ginger tea, rose milk — for high-footfall locations.",
       "details": "FULL MENU · DINE-IN · HIGH VOLUME · MALL & COMMERCIAL LOCATIONS",
       "example": "Mall of Mysore, ITPL, HSR, Gandhinagar and more.",
-      "photo": "/formats/qsr.png",
+      "photo": "/formats/qsr_cafe.png",
       "theme": "light2"
     },
     {
@@ -27,7 +27,7 @@
       "description": "The kiosk comes to you. Same quality, same service — no fixed location needed. For campuses, events, and outdoor spaces.",
       "details": "EVENT DEPLOYMENT · CAMPUS COVERAGE · FLEXIBLE · NO INFRASTRUCTURE",
       "example": "Deployed across tech park campuses and corporate events across India.",
-      "photo": "/formats/mobile_cart.png",
+      "photo": "/formats/mobilecart.png",
       "theme": "parchment"
     },
     {
