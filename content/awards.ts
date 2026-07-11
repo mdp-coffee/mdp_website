@@ -25,7 +25,7 @@ export const awards: Award[] = [
     year: "2014",
     title: "Mysore DC Excellence Awards",
     category: "Best Vendor — Small Operations",
-    image: "/awards/Infosys_MysoreDC_2014-15.png",
+    image: "/awards/Infosys_MysoreDC_2014-15_.png",
     altText:
       "Infosys Mysore DC Excellence Award 2014 — Best Vendor Small Operations — MDP Coffee",
   },
@@ -35,7 +35,7 @@ export const awards: Award[] = [
     year: "2017–18",
     title: "Mysore DC Excellence Awards",
     category: "Best Food Court Vendor Partner",
-    image: "/awards/Infosys_MysoreDC_2017-18.png",
+    image: "/awards/Info_MysoreDC_2017-18.png",
     altText:
       "Infosys Mysore DC Excellence Award 2017-18 — Best Food Court Vendor Partner — MDP Coffee",
   },
