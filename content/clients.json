@@ -17,7 +17,7 @@
     { "name": "Mu Sigma", "slug": "mu-sigma", "logoSrc": "/Client_Logos/Mu_Sigma.png", "city": "Bengaluru", "outlets": 1, "active": true },
     { "name": "Kyndryl", "slug": "kyndryl", "logoSrc": "/Client_Logos/Kyndryl.png", "city": "Bengaluru", "outlets": 1, "active": true },
     { "name": "Broadcom", "slug": "broadcom", "logoSrc": "/Client_Logos/Broadcom.png", "city": "Bengaluru", "outlets": 1, "active": true },
-    { "name": "Smart Work", "slug": "smart-work", "logoSrc": "/Client_Logos/Smart_work", "city": "Bengaluru", "category": "Coworking", "outlets": 1, "active": true },
+    { "name": "Smart Work", "slug": "smart-work", "logoSrc": "/Client_Logos/Smart_work.webp", "city": "Bengaluru", "category": "Coworking", "outlets": 1, "active": true },
     { "name": "British Telecom", "slug": "british-telecom", "logoSrc": "/Client_Logos/British_Telecom.png", "city": "Bengaluru", "outlets": 2, "active": true },
     { "name": "Tecnotree", "slug": "tecnotree", "logoSrc": "/Client_Logos/Tecnotree.png", "city": "Bengaluru", "outlets": 1, "active": true },
     { "name": "London Stock Exchange", "slug": "lsg", "logoSrc": "/Client_Logos/lseg.svg", "city": "Bengaluru", "outlets": 1, "active": true },
@@ -49,7 +49,7 @@
     { "name": "Airbus", "slug": "airbus", "logoSrc": "/Client_Logos/airbus.png", "active": false },
     { "name": "Tech Mahindra", "slug": "tech-mahindra", "logoSrc": "/Client_Logos/tech_mahindra.jpg", "active": false },
     { "name": "John Deere", "slug": "john-deere", "logoSrc": "/Client_Logos/john_derre.jpg", "active": false },
-    { "name": "L&T", "slug": "l-and-t", "logoSrc": "/Client_Logos/Lnt.svg", "active": false },
+    { "name": "L&T", "slug": "l-and-t", "logoSrc": "/Client_Logos/lnt.svg", "active": false },
     { "name": "Sonata", "slug": "sonata", "logoSrc": "/Client_Logos/sonata.png", "active": false }
   ]
 }

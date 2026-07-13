@@ -16,7 +16,7 @@ export interface CityPresence {
 }
 
 export const heroStats: HeroStat[] = [
-  { value: "45+", label: "enterprise clients" },
+  { value: "32+", label: "enterprise clients" },
   { value: "85+", label: "locations nationwide" },
   { value: "Since 2005", label: "not one missed morning" },
 ];

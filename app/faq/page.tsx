@@ -58,7 +58,7 @@ const faqJsonLd = {
       name: "Which companies does MDP Coffee House currently serve?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "MDP Coffee House serves 45+ enterprise clients across India including Amazon, Microsoft, Infosys, TCS, IBM, HCL, Cognizant, Oracle, Deutsche Bank, Samsung, Wells Fargo, Philips, Broadcom, Mu Sigma, Kyndryl and more.",
+        text: "MDP Coffee House serves 32+ enterprise clients across India including Amazon, Microsoft, Infosys, TCS, IBM, HCL, Cognizant, Oracle, Deutsche Bank, Samsung, Wells Fargo, Philips, Broadcom, Mu Sigma, Kyndryl and more.",
       },
     },
     {

@@ -10,7 +10,7 @@ export const siteConfig: SiteConfig = {
   founded: 2005,
   cupsPerDay: 100000,
   locationsCount: "85+",
-  enterpriseClients: "45+",
+  enterpriseClients: "32+",
 };
 
 export const whatsappLink = (message: string): string => {

@@ -127,7 +127,7 @@ export function ClientsContent() {
         </RevealOnScroll>
         <RevealOnScroll delay={0.15}>
           <p className="mt-6 font-sans text-lg leading-relaxed text-brown/70">
-            MDP has served 45+ enterprise organisations across India since 2005.
+            MDP has served 32+ enterprise organisations across India since 2005.
             Outlets and locations evolve as companies grow and campuses change.
             The relationships endure.
           </p>
@@ -271,7 +271,7 @@ export function ClientsContent() {
         </RevealOnScroll>
         <RevealOnScroll delay={0.15}>
           <p className="mt-4 max-w-lg font-sans text-sm text-cream/55 md:mt-6 md:text-xl">
-            Join 45+ enterprises across India who trust MDP to show up every
+            Join 32+ enterprises across India who trust MDP to show up every
             morning.
           </p>
         </RevealOnScroll>

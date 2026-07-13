@@ -3,9 +3,9 @@ import { ClientsContent } from "@/components/clients/ClientsContent";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Our Clients — 45+ Enterprises | MDP Coffee House",
+  title: "Our Clients — 32+ Enterprises | MDP Coffee House",
   description:
-    "MDP Coffee House serves 45+ enterprise clients across India including Amazon, Microsoft, Infosys, TCS, Deutsche Bank, Oracle, Cognizant, HCL and more. Corporate coffee service since 2005.",
+    "MDP Coffee House serves 32+ enterprise clients across India including Amazon, Microsoft, Infosys, TCS, Deutsche Bank, Oracle, Cognizant, HCL and more. Corporate coffee service since 2005.",
   keywords: [
     "MDP Coffee House clients",
     "corporate coffee service India",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Trusted by India's Leading Enterprises | MDP Coffee House",
     description:
-      "45+ enterprise clients. 85+ locations. One consistent cup since 2005.",
+      "32+ enterprise clients. 85+ locations. One consistent cup since 2005.",
     images: [{ url: "/images/og-clients.jpg" }],
   },
   alternates: { canonical: "/clients" },

@@ -20,6 +20,7 @@ const services = [
   { label: "QSR Cafes", href: "/services/qsr-cafe", isRoute: true },
   { label: "Mobile Carts", href: "/services/mobile-cart", isRoute: true },
   { label: "24/7 Tuck Shops", href: "/services/tuck-shop", isRoute: true },
+  { label: "All Formats", href: "/formats", isRoute: true },
   { label: "Partner With Us", href: "/#contact", isRoute: false },
 ];
 

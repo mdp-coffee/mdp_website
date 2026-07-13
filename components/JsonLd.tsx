@@ -157,7 +157,7 @@ export function HomePageJsonLd() {
     "@type": "WebPage",
     name: "Corporate Coffee Service India — MDP Coffee House",
     description:
-      "Fully managed corporate coffee service across India since 2005 — 85+ locations, 45+ enterprise clients. Authentic South Indian filter coffee, staffed end-to-end.",
+      "Fully managed corporate coffee service across India since 2005 — 85+ locations, 32+ enterprise clients. Authentic South Indian filter coffee, staffed end-to-end.",
     url: "https://mdpcoffeehouse.com",
   };
 
