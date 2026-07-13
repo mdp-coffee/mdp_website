@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { OrganizationJsonLd, LocalBusinessJsonLd, TestimonialsJsonLd } from "@/components/JsonLd";
 import { Analytics } from "@/components/Analytics";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { siteConfig } from "@/content/site";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mdpcoffeehouse.com";
@@ -81,7 +82,8 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         {children}
-<Analytics />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
