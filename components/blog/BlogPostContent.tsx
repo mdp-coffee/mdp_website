@@ -43,7 +43,22 @@ export function BlogPostContent({ post }: { post: BlogPost }) {
           animate={{ opacity: 1 }}
           transition={{ duration: MOTION.base, delay: 0.7, ease: MOTION.ease }}
         >
-          {post.content ?? (
+          {post.content && post.content.length > 0 ? (
+            post.content.map((block, i) =>
+              block.type === "heading" ? (
+                <h2
+                  key={i}
+                  className="mt-10 mb-4 font-condensed text-[28px] tracking-tight text-brown first:mt-0"
+                >
+                  {block.text}
+                </h2>
+              ) : (
+                <p key={i} className="mt-6 first:mt-0">
+                  {block.text}
+                </p>
+              )
+            )
+          ) : (
             <p className="italic text-brown/40">Content coming soon.</p>
           )}
         </motion.div>

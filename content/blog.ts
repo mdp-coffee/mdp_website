@@ -6,7 +6,7 @@ export interface BlogPost {
   category: "operations" | "culture" | "coffee" | "industry";
   readTime: number;
   featured: boolean;
-  content?: string;
+  content?: Array<{ type: "paragraph" | "heading"; text: string }>;
 }
 
 export const blogPosts: BlogPost[] = [];
