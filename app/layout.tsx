@@ -24,6 +24,13 @@ export const metadata: Metadata = {
     "MDP Coffee House",
   ],
   authors: [{ name: "MDP Coffee House" }],
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico", sizes: "any" },
+      { url: "/favicon/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/favicon/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",

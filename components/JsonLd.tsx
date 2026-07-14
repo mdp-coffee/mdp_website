@@ -8,6 +8,7 @@ export function OrganizationJsonLd() {
     name: siteConfig.name,
     url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mdpcoffeehouse.com",
     logo: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://mdpcoffeehouse.com"}/images/logo.png`,
+    image: "https://mdpcoffeehouse.com/images/og-image.jpg",
     description: "MDP Coffee House is a fully managed corporate coffee service operating since 2005, serving 85+ locations and 32+ enterprise clients across India with authentic South Indian filter coffee.",
     foundingDate: String(siteConfig.founded),
     address: {
@@ -45,6 +46,7 @@ export function LocalBusinessJsonLd() {
     "@context": "https://schema.org",
     "@type": "FoodEstablishment",
     name: siteConfig.name,
+    image: "https://mdpcoffeehouse.com/images/og-image.jpg",
     servesCuisine: "South Indian",
     priceRange: "$$",
     address: {
