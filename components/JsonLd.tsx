@@ -26,7 +26,7 @@ export function OrganizationJsonLd() {
     },
     sameAs: [
       "https://www.linkedin.com/company/mdpcoffeehouse",
-      "https://www.instagram.com/mdpcoffeehouse",
+      "https://www.instagram.com/mdpcoffee",
       "https://www.facebook.com/mdpcoffeehouse",
       "https://www.youtube.com/@mdpcoffeehouse",
     ],
