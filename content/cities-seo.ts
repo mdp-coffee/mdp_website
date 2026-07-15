@@ -14,7 +14,7 @@ export interface CityPageData {
   region: string;
   intro: string;
   description: string;
-  outletCount: string;
+  outletCount?: string;
   notableClients: string[];
   h2: string;
   paragraphs: string[];
@@ -80,7 +80,6 @@ export const cityPages: CityPageData[] = [
       "Mumbai is where it all began — the first MDP kiosk opened inside Accenture, Vikhroli in 2005. Today MDP continues to serve corporate offices across the city.",
     description:
       "MDP Coffee House started in Mumbai in 2005 at Accenture Vikhroli. Now serving corporate offices across the city with authentic South Indian filter coffee.",
-    outletCount: "8+",
     notableClients: [],
     h2: "Corporate coffee service in Mumbai — where it all began",
     paragraphs: [
@@ -121,7 +120,6 @@ export const cityPages: CityPageData[] = [
       "South Indian filter coffee returns home in Chennai, where MDP Coffee House serves corporate campuses with the authentic recipe that built the brand.",
     description:
       "MDP Coffee House brings authentic South Indian filter coffee to corporate offices and tech campuses in Chennai. Enterprise coffee service since 2005.",
-    outletCount: "5+",
     notableClients: [],
     h2: "South Indian filter coffee comes home — corporate service in Chennai",
     paragraphs: [

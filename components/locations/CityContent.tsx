@@ -58,21 +58,23 @@ export function CityContent({ city }: { city: CityPageData }) {
             {city.intro}
           </motion.p>
 
-          <motion.dl
-            className="mt-10 flex gap-10"
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: MOTION.base, delay: 0.4, ease: MOTION.ease }}
-          >
-            <div>
-              <dt className="font-condensed text-[10px] uppercase tracking-wider text-cream/35">
-                Outlets in {city.name}
-              </dt>
-              <dd className="mt-1 font-condensed text-3xl font-black text-gold">
-                {city.outletCount}
-              </dd>
-            </div>
-          </motion.dl>
+          {city.outletCount && (
+            <motion.dl
+              className="mt-10 flex gap-10"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: MOTION.base, delay: 0.4, ease: MOTION.ease }}
+            >
+              <div>
+                <dt className="font-condensed text-[10px] uppercase tracking-wider text-cream/35">
+                  Outlets in {city.name}
+                </dt>
+                <dd className="mt-1 font-condensed text-3xl font-black text-gold">
+                  {city.outletCount}
+                </dd>
+              </div>
+            </motion.dl>
+          )}
         </section>
 
         {/* Rich body content */}
