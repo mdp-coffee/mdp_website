@@ -126,6 +126,8 @@ export const cityPages: CityPageData[] = [
       "Chennai is where South Indian filter coffee culture runs deepest — and MDP Coffee House brings that same tradition to the corporate campuses and tech parks where Chennai's workforce gathers every morning. From OMR's technology corridor to the city's established commercial districts, MDP serves enterprise offices with the authentic recipe and operational standards built over twenty years.",
       "MDP serves enterprise clients across Chennai's growing technology and consulting sector, following the same operational model that has served enterprise clients across India since 2005.",
     ],
+    photoSrc: "/products/hot-beverages.jpg",
+    photoAlt: "MDP Coffee House's South Indian filter coffee and hot beverage service",
   },
   {
     slug: "mysore",
