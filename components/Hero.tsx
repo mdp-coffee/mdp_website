@@ -48,7 +48,7 @@ export function Hero() {
       <div className="absolute inset-0" aria-hidden="true">
         {/* Desktop background */}
         <Image
-          src="/landing_page/hero_1.png"
+          src="/landing_page/hero_2.png"
           alt="MDP Coffee House"
           fill
           className="hidden object-cover object-center md:block"
