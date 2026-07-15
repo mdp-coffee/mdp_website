@@ -7,10 +7,16 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { formatPages } from "@/content/operating-formats-seo";
 
 export const metadata: Metadata = {
-  title: "Operating Formats | MDP Coffee House",
+  title: "Operating Formats",
   description:
     "Corporate Kiosks, QSR Cafes, Mobile Carts, and 24/7 Tuck Shops — the four ways MDP Coffee House brings South Indian filter coffee to your workplace.",
   alternates: { canonical: "/formats" },
+  openGraph: {
+    title: "Operating Formats | MDP Coffee House",
+    description:
+      "Corporate Kiosks, QSR Cafes, Mobile Carts, and 24/7 Tuck Shops — the four ways MDP Coffee House brings South Indian filter coffee to your workplace.",
+    url: "/formats",
+  },
 };
 
 export default function FormatsPage() {

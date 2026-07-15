@@ -16,13 +16,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const city = getCityBySlug(slug);
   if (!city) return {};
 
-  const title = `Corporate Coffee Service in ${city.name} | MDP Coffee House`;
+  const title = `Corporate Coffee Service in ${city.name}`;
+  const canonical = `/locations/${city.slug}`;
 
   return {
     title,
     description: city.description,
-    alternates: { canonical: `/locations/${city.slug}` },
-    openGraph: { title, description: city.description },
+    alternates: { canonical },
+    openGraph: {
+      title: `${title} | MDP Coffee House`,
+      description: city.description,
+      url: canonical,
+    },
   };
 }
 

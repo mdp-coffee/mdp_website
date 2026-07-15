@@ -3,7 +3,7 @@ import type { FormatPageData } from "@/lib/types";
 export const formatPages: FormatPageData[] = [
   {
     slug: "corporate-kiosk",
-    seoTitle: "Corporate Coffee Kiosk Service | MDP Coffee House",
+    seoTitle: "Corporate Coffee Kiosk Service",
     category: "CORPORATE KIOSK",
     name: "Inside Tech Parks.",
     intro: "A fully managed coffee kiosk inside your office — set up, staffed, and restocked by MDP, every single day.",
@@ -18,7 +18,7 @@ export const formatPages: FormatPageData[] = [
   },
   {
     slug: "qsr-cafe",
-    seoTitle: "QSR Cafe for Office Campuses | MDP Coffee House",
+    seoTitle: "QSR Cafe for Office Campuses",
     category: "QSR CAFE",
     name: "Where People Sit Down.",
     intro: "A full sit-down cafe experience for high-footfall commercial and campus locations.",
@@ -33,7 +33,7 @@ export const formatPages: FormatPageData[] = [
   },
   {
     slug: "mobile-cart",
-    seoTitle: "Mobile Coffee Cart for Corporate Events | MDP Coffee House",
+    seoTitle: "Mobile Coffee Cart for Corporate Events",
     category: "MOBILE CART",
     name: "Where a Kiosk Won't Fit.",
     intro: "A fully mobile version of the same MDP standard — no fixed location required.",
@@ -48,7 +48,7 @@ export const formatPages: FormatPageData[] = [
   },
   {
     slug: "tuck-shop",
-    seoTitle: "24/7 Office Tuck Shop Service | MDP Coffee House",
+    seoTitle: "24/7 Office Tuck Shop Service",
     category: "24/7 TUCK SHOP",
     name: "For Offices That Never Sleep.",
     intro: "Always-on beverage and snack availability for offices that operate around the clock.",

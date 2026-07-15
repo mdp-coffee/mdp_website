@@ -3,10 +3,16 @@ import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Team | MDP Coffee House",
+  title: "Team",
   description:
     "The people behind MDP Coffee House — twenty years of showing up, every morning.",
   alternates: { canonical: "/team" },
+  openGraph: {
+    title: "Team | MDP Coffee House",
+    description:
+      "The people behind MDP Coffee House — twenty years of showing up, every morning.",
+    url: "/team",
+  },
 };
 
 export default function TeamPage() {

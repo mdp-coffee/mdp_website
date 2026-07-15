@@ -17,12 +17,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!format) return {};
 
   const title = format.seoTitle;
+  const canonical = `/services/${format.slug}`;
 
   return {
     title,
     description: format.description,
-    alternates: { canonical: `/services/${format.slug}` },
-    openGraph: { title, description: format.description },
+    alternates: { canonical },
+    openGraph: {
+      title: `${title} | MDP Coffee House`,
+      description: format.description,
+      url: canonical,
+    },
   };
 }
 
