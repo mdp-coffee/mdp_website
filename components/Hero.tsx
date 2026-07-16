@@ -87,7 +87,7 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <h1 className="font-condensed text-[32px] leading-[0.95] tracking-tightest text-brown sm:text-[68px] md:text-[88px]">
+        <h1 className="font-condensed text-[32px] leading-[0.95] tracking-tightest text-brown sm:text-[68px] md:text-[44px] lg:text-[60px] min-[1440px]:text-[88px]">
           <motion.span className="block" {...fadeIn(0.3)}>
             Made with Care.
           </motion.span>
