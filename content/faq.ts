@@ -42,7 +42,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "What operating formats does MDP Coffee House offer?",
     answer:
-      "MDP Coffee House operates four formats: Corporate Kiosks (for offices and tech parks), QSR Cafes (for high-footfall commercial locations), Commercial Outlets (for offices that never close), and Event Catering (for events and campuses).",
+      "MDP Coffee House operates four formats: Corporate Kiosks (for offices and tech parks), QSR Cafes (for malls, food courts, and co-working spaces), Commercial Outlets (for high-street and commercial spaces), and Event Catering (for any and all types of events).",
   },
   {
     question: "How do I get MDP Coffee House for my office?",

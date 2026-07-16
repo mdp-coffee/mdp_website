@@ -100,6 +100,18 @@ export interface Outlet {
   city: string;
 }
 
+export interface FormatSolution {
+  title: string;
+  description: string;
+}
+
+export interface ExpansionCta {
+  headline: string;
+  body: string;
+  ctaLabel: string;
+  ctaHref: string;
+}
+
 export interface FormatPageData {
   slug: string;
   seoTitle: string;
@@ -111,6 +123,9 @@ export interface FormatPageData {
   paragraphs: string[];
   details: string;
   photo: string;
+  solutions?: FormatSolution[];
+  closingStatement?: string;
+  expansionCta?: ExpansionCta;
 }
 
 export interface OutletAddress {

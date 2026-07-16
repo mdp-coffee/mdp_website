@@ -79,9 +79,41 @@ export function FormatContent({ format }: { format: FormatPageData }) {
           </div>
         </section>
 
+        {format.solutions && (
+          <section className="bg-paper2 px-6 py-16 md:px-20" aria-label={`${format.category} modular solutions`}>
+            <RevealOnScroll delay={0}>
+              <h2 className="font-condensed text-[28px] font-black leading-tight text-brown sm:text-[32px]">
+                Modular solutions, one partner.
+              </h2>
+            </RevealOnScroll>
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {format.solutions.map((solution, index) => (
+                <RevealOnScroll key={solution.title} delay={MOTION.stagger(index, 0.08)}>
+                  <article className="h-full border border-brown/10 p-6 transition-colors duration-200 hover:border-gold/40">
+                    <h3 className="font-condensed text-lg not-italic leading-tight tracking-tight text-brown">
+                      {solution.title}
+                    </h3>
+                    <p className="mt-2 font-sans text-sm leading-relaxed text-brown/60">
+                      {solution.description}
+                    </p>
+                  </article>
+                </RevealOnScroll>
+              ))}
+            </div>
+
+            {format.closingStatement && (
+              <RevealOnScroll delay={0.2}>
+                <p className="mt-10 max-w-3xl border-l-4 border-rust bg-paper px-6 py-5 font-sans text-lg italic leading-relaxed text-brown/75">
+                  {format.closingStatement}
+                </p>
+              </RevealOnScroll>
+            )}
+          </section>
+        )}
+
         <RevealOnScroll delay={0.4}>
-          <section className="px-6 pb-16 md:px-20">
-            <div className="relative h-80 w-full max-w-3xl overflow-hidden">
+          <section className="w-full px-6 pb-16 md:px-20">
+            <div className="relative h-80 w-full max-w-3xl min-w-0 shrink-0 overflow-hidden">
               <Image
                 src={format.photo}
                 alt={`MDP Coffee House ${format.category} format`}
@@ -92,6 +124,29 @@ export function FormatContent({ format }: { format: FormatPageData }) {
             </div>
           </section>
         </RevealOnScroll>
+
+        {format.expansionCta && (
+          <section className="bg-paper2 px-6 py-16 md:px-20" aria-label={`${format.category} expansion enquiry`}>
+            <RevealOnScroll delay={0}>
+              <h2 className="font-condensed text-[28px] font-black leading-tight text-brown sm:text-[32px]">
+                {format.expansionCta.headline}
+              </h2>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.1}>
+              <p className="mt-4 max-w-2xl font-sans text-lg leading-relaxed text-brown/70">
+                {format.expansionCta.body}
+              </p>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.2}>
+              <Link
+                href={format.expansionCta.ctaHref}
+                className="mt-8 inline-block bg-gold px-8 py-4 font-condensed text-sm font-bold uppercase tracking-wider text-brown transition-colors duration-200 hover:bg-rust"
+              >
+                {format.expansionCta.ctaLabel} →
+              </Link>
+            </RevealOnScroll>
+          </section>
+        )}
 
         <section className="bg-paper2 px-6 py-16 md:px-20" aria-label="Other operating formats">
           <RevealOnScroll delay={0}>
@@ -115,26 +170,28 @@ export function FormatContent({ format }: { format: FormatPageData }) {
           </ul>
         </section>
 
-        <section className="flex flex-col items-center bg-[#411915] px-6 py-20 text-center md:px-20">
-          <RevealOnScroll delay={0}>
-            <h2 className="font-condensed text-[40px] font-black leading-[0.92] tracking-tightest text-cream">
-              Bring the {format.category} format to your office.
-            </h2>
-          </RevealOnScroll>
-          <RevealOnScroll delay={0.15}>
-            <p className="mt-4 font-sans text-lg text-cream/55">
-              Tell us about your office and we&rsquo;ll get back to you within 24 hours.
-            </p>
-          </RevealOnScroll>
-          <RevealOnScroll delay={0.3}>
-            <Link
-              href="/#contact"
-              className="mt-8 inline-block bg-gold px-8 py-4 font-condensed text-sm font-bold uppercase tracking-wider text-brown transition-colors duration-200 hover:bg-rust"
-            >
-              Partner With Us →
-            </Link>
-          </RevealOnScroll>
-        </section>
+        {!format.expansionCta && (
+          <section className="flex flex-col items-center bg-[#411915] px-6 py-20 text-center md:px-20">
+            <RevealOnScroll delay={0}>
+              <h2 className="font-condensed text-[40px] font-black leading-[0.92] tracking-tightest text-cream">
+                Bring the {format.category} format to your office.
+              </h2>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.15}>
+              <p className="mt-4 font-sans text-lg text-cream/55">
+                Tell us about your office and we&rsquo;ll get back to you within 24 hours.
+              </p>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.3}>
+              <Link
+                href="/#contact"
+                className="mt-8 inline-block bg-gold px-8 py-4 font-condensed text-sm font-bold uppercase tracking-wider text-brown transition-colors duration-200 hover:bg-rust"
+              >
+                Partner With Us →
+              </Link>
+            </RevealOnScroll>
+          </section>
+        )}
 
         <Footer />
       </div>
