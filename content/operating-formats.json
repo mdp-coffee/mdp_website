@@ -22,23 +22,23 @@
     },
     {
       "num": "03",
-      "category": "MOBILE CART",
-      "name": "Where a Kiosk Won't Fit.",
-      "description": "The kiosk comes to you. Same quality, same service — no fixed location needed. For campuses, events, and outdoor spaces.",
-      "details": "EVENT DEPLOYMENT · CAMPUS COVERAGE · FLEXIBLE · NO INFRASTRUCTURE",
-      "example": "Deployed across tech park campuses and corporate events across India.",
-      "photo": "/formats/mobilecart.png",
-      "theme": "parchment"
-    },
-    {
-      "num": "04",
-      "category": "24/7 TUCK SHOP",
+      "category": "COMMERCIAL OUTLET",
       "name": "For Offices That Never Sleep.",
       "description": "Stocked, managed, and restocked — always on, always available, for offices that never truly clock off.",
       "details": "24-HOUR AVAILABILITY · PACKAGED SNACKS & BEVERAGES · AUTO-RESTOCKING",
       "example": "Running in offices with round-the-clock operations in Bengaluru and Hyderabad.",
       "photo": "/formats/tuckshop.png",
       "theme": "light"
+    },
+    {
+      "num": "04",
+      "category": "EVENT CATERING",
+      "name": "Where a Kiosk Won't Fit.",
+      "description": "The kiosk comes to you. Same quality, same service — no fixed location needed. For campuses, events, and outdoor spaces.",
+      "details": "EVENT DEPLOYMENT · CAMPUS COVERAGE · FLEXIBLE · NO INFRASTRUCTURE",
+      "example": "Deployed across tech park campuses and corporate events across India.",
+      "photo": "/formats/mobilecart.png",
+      "theme": "parchment"
     }
   ]
 }

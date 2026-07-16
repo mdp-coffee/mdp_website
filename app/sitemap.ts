@@ -89,13 +89,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${siteUrl}/services/mobile-cart`,
+      url: `${siteUrl}/services/commercial-outlet`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${siteUrl}/services/tuck-shop`,
+      url: `${siteUrl}/services/event-catering`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,

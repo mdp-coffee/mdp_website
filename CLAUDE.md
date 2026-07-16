@@ -44,7 +44,7 @@ Contrast: verified via WCAG calculation — every primary brand color pairing (b
 1. **Hero** — locked headline "Made with Care." / "Served with Care." (H1, do not change), rotating MDP acronym sublines
 2. **ClientTicker** (light variant) — logo ticker linking to /clients
 3. **Scale** — dark left (one-liner + trust line) / paper right (contact form)
-4. **OperatingFormats** — interactive tab explorer, **4 formats** (Corporate Kiosk, QSR Cafe, Mobile Cart, 24/7 Tuck Shop). ODC is deliberately separate, not part of this system.
+4. **OperatingFormats** — interactive tab explorer, **4 formats** (Corporate Kiosk, QSR Cafe, Commercial Outlet — formerly "24/7 Tuck Shop", renamed 2026 — and Event Catering — formerly "Mobile Cart", renamed 2026). ODC does not exist as a built page (never more than a planning-doc mention, and is distinct from Event Catering) — deliberately kept separate/deferred, not part of this system.
 5. **OperatingSystem** — 8 operational pillar cards
 6. **Origin** — 2005 origin story ("One kiosk. / Twenty years later, / still showing up.") + Vision/Mission
 7. **ClientProof** — "They start their day with us." + logo ticker + 2 client stories
@@ -65,7 +65,7 @@ Plus floating: `WhatsAppFloat`, `LetsTalkFloat`.
 - `/careers` — open application, no job listings, resume upload via base64 to Resend
 - `/team` — placeholder "coming soon" page
 - `/locations/[city]` — 6 static pages (Bengaluru, Hyderabad, Mumbai, Pune, Chennai, Mysore). Content in `content/cities-seo.ts`. Mumbai and Chennai have zero entries in `outlets.ts` (thinner, less differentiated content as a direct consequence — known, not a bug). Each page carries its own `FoodEstablishment` `@graph` JSON-LD (`OutletLocationsJsonLd`) and `BreadcrumbList` schema.
-- `/services/[format]` — 4 static pages (corporate-kiosk, qsr-cafe, mobile-cart, tuck-shop). Content in `content/operating-formats-seo.ts` (richer than the homepage tab's `operating-formats.json`). Each has its own `seoTitle` field for the `<title>` tag (separate from the on-page H1, which stays brand-voice). Cross-links to the other 3 formats plus back to the homepage tab explorer.
+- `/services/[format]` — 4 static pages (corporate-kiosk, qsr-cafe, commercial-outlet, event-catering). Content in `content/operating-formats-seo.ts` (richer than the homepage tab's `operating-formats.json`). Each has its own `seoTitle` field for the `<title>` tag (separate from the on-page H1, which stays brand-voice). Cross-links to the other formats plus back to the homepage tab explorer. `/services/tuck-shop` and `/services/mobile-cart` both 301-redirect to their renamed equivalents (`commercial-outlet` and `event-catering` respectively, in next.config.js).
 
 ## SEO/AEO Infrastructure
 - `app/robots.ts`, `app/sitemap.ts` (18 URLs, kept in sync manually when new routes are added)

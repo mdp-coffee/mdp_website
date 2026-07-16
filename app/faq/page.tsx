@@ -80,7 +80,7 @@ const faqJsonLd = {
       name: "What operating formats does MDP Coffee House offer?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "MDP Coffee House operates four formats: Corporate Kiosks (for offices and tech parks), QSR Cafes (for high-footfall commercial locations), Mobile Carts (for campuses and events), and 24/7 Tuck Shops (for offices that never close).",
+        text: "MDP Coffee House operates four formats: Corporate Kiosks (for offices and tech parks), QSR Cafes (for high-footfall commercial locations), Commercial Outlets (for offices that never close), and Event Catering (for events and campuses).",
       },
     },
     {

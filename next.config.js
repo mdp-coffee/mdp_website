@@ -42,6 +42,20 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/services/tuck-shop",
+        destination: "/services/commercial-outlet",
+        permanent: true,
+      },
+      {
+        source: "/services/mobile-cart",
+        destination: "/services/event-catering",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
