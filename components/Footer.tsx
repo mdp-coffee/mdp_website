@@ -177,7 +177,7 @@ export function Footer() {
             <div className="mt-6">
               <p className="font-condensed text-[10px] uppercase tracking-widest text-gold/50">Follow Us</p>
               <div className="mt-3 flex gap-2">
-                <a href="https://www.linkedin.com/company/mdpcoffeehouse" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-8 w-8 items-center justify-center border border-cream/15 text-cream/60 transition-colors hover:border-gold hover:text-gold">
+                <a href="https://www.linkedin.com/company/mdp-coffee-house/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-8 w-8 items-center justify-center border border-cream/15 text-cream/60 transition-colors hover:border-gold hover:text-gold">
                   <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                 </a>
                 <a href="https://www.instagram.com/mdpcoffee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-8 w-8 items-center justify-center border border-cream/15 text-cream/60 transition-colors hover:border-gold hover:text-gold">

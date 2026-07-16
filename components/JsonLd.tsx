@@ -25,7 +25,7 @@ export function OrganizationJsonLd() {
       email: siteConfig.email,
     },
     sameAs: [
-      "https://www.linkedin.com/company/mdpcoffeehouse",
+      "https://www.linkedin.com/company/mdp-coffee-house/",
       "https://www.instagram.com/mdpcoffee/",
       "https://www.facebook.com/mdpcoffeehouse",
       "https://www.youtube.com/@mdpcoffeehouse",
