@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import fs from "fs";
+import path from "path";
 import { contactFormSchema } from "@/lib/validation";
 import { isRateLimited } from "@/lib/rate-limit";
 import { siteConfig } from "@/content/site";
@@ -135,6 +137,108 @@ export async function POST(request: Request) {
 </html>
 `,
     });
+
+    // ── Confirmation email back to the submitter ──────────────
+    // Skipped for careers/job-application flows, and silently skipped
+    // when no email was provided (phone-only submissions).
+    if (source !== "careers" && source !== "job-application" && email) {
+      let franchiseAttachments: { filename: string; content: string; type: string }[] = [];
+      if (source === "franchise") {
+        try {
+          const profilePdf = fs.readFileSync(
+            path.join(process.cwd(), "public/documents/company-profile.pdf")
+          );
+          franchiseAttachments = [
+            {
+              filename: "MDP Coffee House - Company Profile.pdf",
+              content: profilePdf.toString("base64"),
+              type: "application/pdf",
+            },
+          ];
+        } catch (error) {
+          console.error("Failed to read company profile PDF:", error);
+        }
+      }
+
+      try {
+        const resend = new Resend(apiKey);
+        await resend.emails.send({
+          from: "MDP Coffee House <noreply@mdpcoffeehouse.com>",
+          to: email,
+          attachments: franchiseAttachments.length > 0 ? franchiseAttachments : undefined,
+          subject:
+            source === "franchise"
+              ? "Thank you for your interest in an MDP Coffee House franchise"
+              : "Thank you for reaching out to MDP Coffee House",
+          html: `
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="font-family: Georgia, serif; background: #F9F0E1; margin: 0; padding: 40px 20px;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 560px; margin: 0 auto;">
+    <tr>
+      <td style="background: #411915; padding: 32px 40px;">
+        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #FEC87F; opacity: 0.7;">MDP Coffee House</p>
+        <h1 style="margin: 12px 0 0; font-family: Arial, sans-serif; font-size: 24px; color: #F9F0E1; font-weight: 900;">Thank You</h1>
+        ${source === "franchise" ? `<p style="margin: 8px 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #FEC87F; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase;">Franchise Enquiry Received</p>` : ""}
+      </td>
+    </tr>
+    <tr>
+      <td style="background: #ffffff; padding: 40px;">
+        <p style="margin: 0 0 16px; font-family: Georgia, serif; font-size: 16px; color: #411915; line-height: 1.6;">Hello,</p>
+        <p style="margin: 0 0 16px; font-family: Georgia, serif; font-size: 16px; color: #411915; line-height: 1.6;">Thank you for reaching out and for your interest in MDP Coffee House. We have received your enquiry, and a member of our team will get in touch with you shortly to discuss it further.</p>
+        ${source === "franchise" ? `<p style="margin: 0 0 16px; font-family: Georgia, serif; font-size: 16px; color: #411915; line-height: 1.6;">Your franchise enquiry has been received, and our team will follow up with more details shortly.</p>` : ""}
+        <p style="margin: 0 0 32px; font-family: Georgia, serif; font-size: 16px; color: #411915; line-height: 1.6;">We look forward to speaking with you.</p>
+        <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td style="padding-bottom: 20px; border-bottom: 1px solid #EDE0C8;">
+              <p style="margin: 0 0 4px; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #70120E;">Name</p>
+              <p style="margin: 0; font-family: Georgia, serif; font-size: 18px; color: #411915;">${name}</p>
+            </td>
+          </tr>
+          ${company ? `
+          <tr>
+            <td style="padding: 20px 0; border-bottom: 1px solid #EDE0C8;">
+              <p style="margin: 0 0 4px; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #70120E;">${source === "franchise" ? "City / Area of Interest" : "Company"}</p>
+              <p style="margin: 0; font-family: Georgia, serif; font-size: 18px; color: #411915;">${company}</p>
+            </td>
+          </tr>` : ""}
+          <tr>
+            <td style="padding: 20px 0; border-bottom: 1px solid #EDE0C8;">
+              <p style="margin: 0 0 4px; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #70120E;">Phone</p>
+              <p style="margin: 0; font-family: Georgia, serif; font-size: 18px; color: #411915;">${phone}</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 20px 0; border-bottom: 1px solid #EDE0C8;">
+              <p style="margin: 0 0 4px; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #70120E;">Email</p>
+              <p style="margin: 0; font-family: Georgia, serif; font-size: 18px; color: #411915;">${email}</p>
+            </td>
+          </tr>
+          ${message ? `
+          <tr>
+            <td style="padding: 20px 0;">
+              <p style="margin: 0 0 4px; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #70120E;">Message</p>
+              <p style="margin: 0; font-family: Georgia, serif; font-size: 16px; color: #411915; line-height: 1.6;">${message}</p>
+            </td>
+          </tr>` : ""}
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td style="background: #411915; padding: 20px 40px;">
+        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 11px; color: #F9F0E1; opacity: 0.35;">Sent from mdpcoffeehouse.com · ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} IST</p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`,
+        });
+      } catch (error) {
+        console.error("Confirmation email send failed:", error);
+      }
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
