@@ -240,6 +240,33 @@ export async function POST(request: Request) {
       }
     }
 
+    // ── Log to Google Sheet (best-effort, never blocks the response) ──
+    // Skipped for careers/job-application flows. Skipped silently if the
+    // webhook URL isn't configured.
+    if (source !== "careers" && source !== "job-application") {
+      const sheetsWebhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+      if (sheetsWebhookUrl) {
+        try {
+          await fetch(sheetsWebhookUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              secret: process.env.GOOGLE_SHEETS_WEBHOOK_SECRET,
+              source: source || "enquiry",
+              name,
+              company: company || "",
+              phone,
+              email: email || "",
+              message: message || "",
+            }),
+            signal: AbortSignal.timeout(5000),
+          });
+        } catch (error) {
+          console.error("Google Sheets webhook failed:", error);
+        }
+      }
+    }
+
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Resend send failed:", error);
