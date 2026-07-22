@@ -112,7 +112,7 @@ export function OperatingSystem() {
   return (
     <section
       id="operating-system"
-      className="snap-slide w-full min-h-[100svh] bg-paper px-6 py-10 md:px-20 md:py-20"
+      className="snap-slide w-full min-h-0 py-16 md:py-24 bg-paper px-6 md:px-20"
       aria-label="The MDP Operating System — how we operate"
     >
       <SectionLabel tone="light">How We Operate</SectionLabel>

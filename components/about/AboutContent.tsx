@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
+import { ScrollContainer } from "@/components/ScrollContainer";
 import { SectionLabel } from "@/components/SectionLabel";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { useCountUp } from "@/hooks/useCountUp";
@@ -80,9 +81,10 @@ export function AboutContent() {
     <div className="bg-paper">
       <NavBar />
 
+      <ScrollContainer>
       {/* Section 1 — Page Hero (on load, not whileInView) */}
       <section
-        className="flex min-h-[60vh] w-full flex-col justify-end bg-[#411915] px-6 pb-12 pt-24 md:px-20 md:pb-20 md:pt-32"
+        className="snap-slide flex min-h-[60vh] w-full flex-col justify-end bg-[#411915] px-6 pb-12 pt-24 md:px-20 md:pb-20 md:pt-32"
         aria-label="About MDP Coffee House"
       >
         <motion.p
@@ -206,7 +208,7 @@ export function AboutContent() {
       </section>
 
       {/* Section 2 — Who We Are */}
-      <section className="px-6 pt-6 pb-12 md:px-20 md:pt-10 md:pb-24" aria-label="Who we are">
+      <section className="snap-slide px-6 pt-6 pb-12 md:px-20 md:pt-10 md:pb-24" aria-label="Who we are">
         <RevealOnScroll delay={0}>
           <SectionLabel>Our Purpose</SectionLabel>
         </RevealOnScroll>
@@ -235,7 +237,7 @@ export function AboutContent() {
       </section>
 
       {/* Section 3A — At Scale */}
-      <section className="bg-[#411915] px-6 py-20 md:px-20" aria-label="MDP at scale">
+      <section className="snap-slide bg-[#411915] px-6 py-20 md:px-20" aria-label="MDP at scale">
         <RevealOnScroll delay={0}>
           <SectionLabel tone="dark">Twenty Years. At Scale.</SectionLabel>
         </RevealOnScroll>
@@ -248,7 +250,7 @@ export function AboutContent() {
       </section>
 
       {/* Section 3B — Recognised */}
-      <section className="bg-parchment px-6 py-20 md:px-20" aria-label="Awards">
+      <section className="snap-slide bg-parchment px-6 py-20 md:px-20" aria-label="Awards">
         <RevealOnScroll delay={0}>
           <div className="mx-auto mb-8 h-px w-16 bg-brown/20" aria-hidden="true" />
           <p className="mb-2 text-center font-condensed not-italic text-[11px] uppercase tracking-widest text-rust/60">
@@ -295,7 +297,7 @@ export function AboutContent() {
       <CompactTimeline />
 
       {/* Section 5 — Our Values */}
-      <section className="bg-parchment px-6 py-12 md:px-20 md:py-24" aria-label="Our values">
+      <section className="snap-slide bg-parchment px-6 py-12 md:px-20 md:py-24" aria-label="Our values">
         <RevealOnScroll delay={0}>
           <SectionLabel>What We Believe</SectionLabel>
           <h2 className="mt-4 font-condensed text-[26px] leading-[0.95] tracking-tightest text-brown sm:mt-6 sm:text-[52px]">
@@ -320,7 +322,7 @@ export function AboutContent() {
 
       {/* Section 9 — CTA */}
       <section
-        className="flex flex-col items-center px-6 py-28 text-center md:px-20"
+        className="snap-slide flex flex-col items-center px-6 py-28 text-center md:px-20"
         aria-label="Partner with MDP"
       >
         <RevealOnScroll delay={0}>
@@ -354,6 +356,7 @@ export function AboutContent() {
       </section>
 
       <Footer />
+      </ScrollContainer>
     </div>
   );
 }

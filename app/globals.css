@@ -85,9 +85,9 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* ── Scroll-snap container (desktop only — see Scroller component) ── */
+/* ── Scroll-snap container — mandatory on all screen sizes ── */
 .snap-container {
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
 }
 
 .snap-slide {
@@ -96,7 +96,7 @@ body {
 
 @media (max-width: 767px) {
   .snap-container {
-    scroll-snap-type: none;
+    scroll-snap-type: y mandatory;
   }
 }
 

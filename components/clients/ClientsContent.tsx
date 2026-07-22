@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
+import { ScrollContainer } from "@/components/ScrollContainer";
 import { SectionLabel } from "@/components/SectionLabel";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { MOTION } from "@/lib/motion";
@@ -54,9 +55,10 @@ export function ClientsContent() {
     <div className="bg-paper">
       <NavBar />
 
+      <ScrollContainer>
       {/* Section 1 — Hero */}
       <section
-        className="flex min-h-[55vh] w-full items-center bg-[#411915] px-6 pt-16 md:px-20"
+        className="snap-slide flex min-h-[55vh] w-full items-center bg-[#411915] px-6 pt-16 md:px-20"
         aria-label="MDP Coffee House clients"
       >
         <div className="grid w-full grid-cols-1 gap-8 py-10 md:grid-cols-2 md:gap-12 md:py-20">
@@ -117,7 +119,7 @@ export function ClientsContent() {
 
       {/* Section 2 — SEO text block */}
       <section
-        className="mx-auto max-w-[800px] px-6 py-10 sm:py-20"
+        className="snap-slide mx-auto max-w-[800px] px-6 py-10 sm:py-20"
         aria-label="About our enterprise clients"
       >
         <RevealOnScroll delay={0}>
@@ -151,7 +153,7 @@ export function ClientsContent() {
       </section>
 
       {/* Section 3 — Client Grid */}
-      <section className="px-6 pb-10 md:px-20 md:pb-20" aria-label="Enterprise clients">
+      <section className="snap-slide px-6 pb-10 md:px-20 md:pb-20" aria-label="Enterprise clients">
         <RevealOnScroll delay={0}>
           <h2 className="font-condensed text-[26px] leading-[1.05] text-brown sm:text-4xl">
             Companies that have trusted MDP Coffee House.
@@ -178,7 +180,7 @@ export function ClientsContent() {
       </section>
 
       {/* Section 4 — Featured Stories */}
-      <section className="bg-paper2 px-6 py-20 md:px-20" aria-label="Client stories">
+      <section className="snap-slide bg-paper2 px-6 py-20 md:px-20" aria-label="Client stories">
         <RevealOnScroll delay={0}>
           <h2 className="mb-12 text-center font-condensed text-[36px] text-brown">
             Two mornings worth remembering.
@@ -207,7 +209,7 @@ export function ClientsContent() {
       </section>
 
       {/* Section 5 — Industries */}
-      <section className="px-6 py-20 md:px-20" aria-label="Industries served">
+      <section className="snap-slide px-6 py-20 md:px-20" aria-label="Industries served">
         <RevealOnScroll delay={0}>
           <h2 className="font-condensed text-[28px] text-brown">
             Industries we serve.
@@ -228,7 +230,7 @@ export function ClientsContent() {
       </section>
 
       {/* Section 6 — City presence */}
-      <section className="bg-paper2 px-6 py-20 md:px-20" aria-label="Cities where MDP operates">
+      <section className="snap-slide bg-paper2 px-6 py-20 md:px-20" aria-label="Cities where MDP operates">
         <RevealOnScroll delay={0}>
           <h2 className="mb-8 font-condensed text-[28px] text-brown">
             Where we operate.
@@ -296,6 +298,7 @@ export function ClientsContent() {
       </section>
 
       <Footer />
+      </ScrollContainer>
     </div>
   );
 }

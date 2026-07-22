@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
+import { ScrollContainer } from "@/components/ScrollContainer";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { MOTION } from "@/lib/motion";
 import { whatsappLink } from "@/content/site";
@@ -70,9 +71,10 @@ export function FaqContent() {
     <div className="bg-paper">
       <NavBar />
 
+      <ScrollContainer>
       {/* Hero */}
       <section
-        className="flex min-h-[40vh] w-full flex-col justify-end bg-[#411915] px-6 pb-10 pt-24 md:px-20 md:pb-16 md:pt-32"
+        className="snap-slide flex min-h-[40vh] w-full flex-col justify-end bg-[#411915] px-6 pb-10 pt-24 md:px-20 md:pb-16 md:pt-32"
         aria-label="FAQ hero"
       >
         <p className="mb-4 font-condensed text-[11px] uppercase tracking-[0.3em] text-gold/50">
@@ -100,7 +102,7 @@ export function FaqContent() {
 
       {/* FAQ accordion */}
       <section
-        className="mx-auto max-w-3xl px-6 py-10 md:py-20"
+        className="snap-slide mx-auto max-w-3xl px-6 py-10 md:py-20"
         aria-label="Frequently asked questions"
       >
         {faqItems.map((faq, i) => (
@@ -117,7 +119,7 @@ export function FaqContent() {
 
       {/* Bottom CTA */}
       <RevealOnScroll delay={0.1}>
-        <section className="bg-paper2 px-6 py-10 text-center md:px-20 md:py-16">
+        <section className="snap-slide bg-paper2 px-6 py-10 text-center md:px-20 md:py-16">
           <p className="font-condensed text-lg text-brown sm:text-2xl">
             Still have questions? Talk to us directly.
           </p>
@@ -133,6 +135,7 @@ export function FaqContent() {
       </RevealOnScroll>
 
       <Footer />
+      </ScrollContainer>
     </div>
   );
 }

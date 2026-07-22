@@ -35,7 +35,7 @@ export function CompactTimeline() {
 
   return (
     <section
-      className="flex min-h-screen flex-col justify-center bg-paper py-16 px-6 md:px-20"
+      className="snap-slide flex min-h-0 py-16 md:py-24 flex-col justify-center bg-paper px-6 md:px-20"
       aria-label="MDP timeline"
     >
       <p className="mb-2 text-center font-condensed text-[11px] uppercase tracking-widest text-rust/60">

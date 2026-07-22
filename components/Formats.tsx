@@ -145,7 +145,7 @@ export function Formats() {
   return (
     <section
       id="formats"
-      className={`relative flex w-full flex-col overflow-hidden ${theme.bg} px-6 pt-20 md:px-16`}
+      className={`snap-slide relative flex min-h-[100svh] w-full flex-col overflow-hidden ${theme.bg} px-6 pt-20 md:px-16`}
       aria-label="MDP Coffee House operating formats — explore our service formats"
       aria-roledescription="carousel"
     >

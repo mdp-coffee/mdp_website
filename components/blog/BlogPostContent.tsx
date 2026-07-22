@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
+import { ScrollContainer } from "@/components/ScrollContainer";
 import { MOTION } from "@/lib/motion";
 import type { BlogPost } from "@/content/blog";
 
@@ -12,6 +13,7 @@ export function BlogPostContent({ post }: { post: BlogPost }) {
   return (
     <div className="bg-paper">
       <NavBar />
+      <ScrollContainer>
       <article className="mx-auto max-w-[680px] px-6 py-20">
         <motion.p
           className="font-condensed text-[11px] uppercase tracking-[0.2em] text-rust/70"
@@ -64,6 +66,7 @@ export function BlogPostContent({ post }: { post: BlogPost }) {
         </motion.div>
       </article>
       <Footer />
+      </ScrollContainer>
     </div>
   );
 }

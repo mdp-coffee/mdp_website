@@ -9,7 +9,7 @@ export function ClientProof() {
   return (
     <section
       id="clients"
-      className="snap-slide flex min-h-[100svh] w-full flex-col bg-parchment"
+      className="snap-slide flex min-h-0 py-24 md:py-28 w-full flex-col bg-parchment"
       aria-label="MDP Coffee House clients and case studies"
     >
       <div className="px-6 pt-24 md:px-20">

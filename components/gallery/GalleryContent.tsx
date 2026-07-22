@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { GalleryGrid } from "@/components/GalleryGrid";
+import { ScrollContainer } from "@/components/ScrollContainer";
 import { MOTION } from "@/lib/motion";
 
 export function GalleryContent() {
@@ -13,9 +14,10 @@ export function GalleryContent() {
     <div className="min-h-screen bg-paper">
       <NavBar />
 
+      <ScrollContainer>
       {/* Hero */}
       <section
-        className="flex min-h-[40vh] w-full flex-col justify-end bg-[#411915] px-6 pb-10 pt-24 md:px-20 md:pb-16 md:pt-32"
+        className="snap-slide flex min-h-[40vh] w-full flex-col justify-end bg-[#411915] px-6 pb-10 pt-24 md:px-20 md:pb-16 md:pt-32"
         aria-label="MDP Coffee House gallery"
       >
         <p className="mb-4 font-condensed text-[11px] uppercase tracking-[0.3em] text-gold/50">
@@ -40,9 +42,12 @@ export function GalleryContent() {
       </section>
 
       {/* Tabs + grid + lightbox */}
-      <GalleryGrid />
+      <section className="snap-slide" aria-label="Gallery">
+        <GalleryGrid />
+      </section>
 
       <Footer />
+      </ScrollContainer>
     </div>
   );
 }
