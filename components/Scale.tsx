@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { SectionLabel } from "@/components/SectionLabel";
 
 export function Scale() {
   return (
@@ -24,7 +23,6 @@ export function Scale() {
         </div>
         <RevealOnScroll direction="left" delay={0}>
           <div className="relative z-10">
-            <SectionLabel tone="dark">Franchise Opportunities</SectionLabel>
             <h2 className="mt-6 font-condensed text-[30px] leading-[0.98] tracking-tightest text-cream sm:text-[56px]">
               Bring MDP closer to home.
             </h2>

@@ -4,7 +4,6 @@ import React, { useEffect, useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { SectionLabel } from "@/components/SectionLabel";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { operatingFormats } from "@/lib/content";
 import type { OperatingFormat } from "@/lib/types";
@@ -149,10 +148,6 @@ export function OperatingFormats() {
       aria-label="MDP Coffee House operating formats — explore our service formats"
       aria-roledescription="carousel"
     >
-      <SectionLabel tone={format.theme === "dark" ? "dark" : "light"}>
-        What We Do
-      </SectionLabel>
-
       {/* Tabs */}
       <div
         className="mt-6 flex w-full gap-1 sm:flex sm:flex-wrap sm:gap-2"

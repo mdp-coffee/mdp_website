@@ -1,4 +1,3 @@
-import { SectionLabel } from "@/components/SectionLabel";
 import { cities } from "@/lib/content";
 
 export function Geography() {
@@ -10,7 +9,6 @@ export function Geography() {
     >
       <div className="grid w-full grid-cols-1 gap-12 lg:grid-cols-2">
         <div className="flex flex-col justify-center">
-          <SectionLabel tone="dark">Presence</SectionLabel>
           <h2 className="mt-6 font-condensed text-[64px] font-black leading-[0.88] tracking-tightest text-cream sm:text-[84px]">
             85+ locations.
             <br />

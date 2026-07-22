@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { SectionLabel } from "@/components/SectionLabel";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { MOTION } from "@/lib/motion";
 
@@ -33,10 +32,6 @@ export function Origin() {
 
         {/* LEFT column */}
         <div className="order-1 flex flex-col justify-center lg:order-1">
-          <RevealOnScroll delay={0}>
-            <SectionLabel tone="light">Our Story</SectionLabel>
-          </RevealOnScroll>
-
           <h2 className="mt-8">
             <motion.span
               className="block font-condensed text-[44px] leading-[0.95] tracking-tight text-brown sm:text-[88px]"

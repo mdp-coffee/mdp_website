@@ -6,7 +6,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { ScrollContainer } from "@/components/ScrollContainer";
-import { SectionLabel } from "@/components/SectionLabel";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { useCountUp } from "@/hooks/useCountUp";
 import { MOTION } from "@/lib/motion";
@@ -120,9 +119,6 @@ export function AboutContent() {
       <section className="bg-paper px-6 pt-14 pb-4 md:px-20 md:pt-24" aria-label="About MDP Coffee House">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
           <div>
-            <RevealOnScroll delay={0}>
-              <SectionLabel>Our Story</SectionLabel>
-            </RevealOnScroll>
             <RevealOnScroll delay={0.05}>
               <h2 className="mt-6 mb-6 font-condensed text-[30px] leading-[0.95] tracking-tightest text-brown sm:text-[52px] sm:mb-10">
                 One kiosk. Twenty years later.
@@ -209,9 +205,6 @@ export function AboutContent() {
 
       {/* Section 2 — Who We Are */}
       <section className="snap-slide px-6 pt-6 pb-12 md:px-20 md:pt-10 md:pb-24" aria-label="Who we are">
-        <RevealOnScroll delay={0}>
-          <SectionLabel>Our Purpose</SectionLabel>
-        </RevealOnScroll>
         <RevealOnScroll delay={0.1}>
           <h2 className="mt-6 font-condensed text-[28px] leading-[0.95] tracking-tightest text-brown sm:text-[52px]">
             We&rsquo;re not in the coffee business.
@@ -238,9 +231,6 @@ export function AboutContent() {
 
       {/* Section 3A — At Scale */}
       <section className="snap-slide bg-[#411915] px-6 py-20 md:px-20" aria-label="MDP at scale">
-        <RevealOnScroll delay={0}>
-          <SectionLabel tone="dark">Twenty Years. At Scale.</SectionLabel>
-        </RevealOnScroll>
         <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-4">
           <StatBlock end={20} suffix="+" label="Years of Operations" duration={1600} />
           <StatBlock end={85} suffix="+" label="Active Locations" duration={1800} />
@@ -299,7 +289,6 @@ export function AboutContent() {
       {/* Section 5 — Our Values */}
       <section className="snap-slide bg-parchment px-6 py-12 md:px-20 md:py-24" aria-label="Our values">
         <RevealOnScroll delay={0}>
-          <SectionLabel>What We Believe</SectionLabel>
           <h2 className="mt-4 font-condensed text-[26px] leading-[0.95] tracking-tightest text-brown sm:mt-6 sm:text-[52px]">
             Five things we don&rsquo;t compromise on.
           </h2>

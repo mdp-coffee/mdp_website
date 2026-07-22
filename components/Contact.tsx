@@ -2,7 +2,6 @@
 
 import { useState, type FormEvent } from "react";
 import Image from "next/image";
-import { SectionLabel } from "@/components/SectionLabel";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { siteConfig, whatsappLink } from "@/content/site";
 import { trackEvent } from "@/components/Analytics";
@@ -70,7 +69,6 @@ export function Contact() {
         </div>
         <RevealOnScroll direction="left" delay={0}>
         <div className="relative z-10">
-          <SectionLabel tone="dark">Work With Us</SectionLabel>
           <h2 className="mt-6 font-condensed text-[32px] leading-[0.95] tracking-tightest text-cream sm:text-[56px]">
             Let&rsquo;s talk about
             <br />

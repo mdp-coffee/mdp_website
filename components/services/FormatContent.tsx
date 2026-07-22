@@ -6,7 +6,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { SectionLabel } from "@/components/SectionLabel";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { MOTION } from "@/lib/motion";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
@@ -31,13 +30,6 @@ export function FormatContent({ format }: { format: FormatPageData }) {
           className="flex min-h-[45vh] w-full flex-col justify-end bg-[#411915] px-6 pb-16 pt-16 md:px-20"
           aria-label={`MDP Coffee House ${format.category} format`}
         >
-          <motion.div
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: MOTION.base, delay: 0.2, ease: MOTION.ease }}
-          >
-            <SectionLabel tone="dark">{format.category} · Operating Format</SectionLabel>
-          </motion.div>
           <motion.h1
             className="mt-6 font-condensed text-[48px] font-black leading-[0.92] tracking-tightest text-cream sm:text-[68px]"
             initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}

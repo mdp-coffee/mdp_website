@@ -1,4 +1,3 @@
-import { SectionLabel } from "@/components/SectionLabel";
 import { benefits } from "@/lib/content";
 
 export function Benefits() {
@@ -8,8 +7,6 @@ export function Benefits() {
       className="snap-slide flex min-h-[100svh] w-full flex-col justify-center bg-paper px-6 py-20 md:px-20"
       aria-label="What you get as an MDP partner"
     >
-      <SectionLabel tone="light">What You Get</SectionLabel>
-
       <ol className="mt-12 w-full max-w-4xl" aria-label="Partner benefits">
         {benefits.map((item, i) => (
           <li

@@ -1,6 +1,5 @@
 "use client";
 
-import { SectionLabel } from "@/components/SectionLabel";
 import { ClientTicker } from "@/components/ClientTicker";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { testimonials } from "@/lib/content";
@@ -9,13 +8,10 @@ export function ClientProof() {
   return (
     <section
       id="clients"
-      className="snap-slide flex min-h-0 py-24 md:py-28 w-full flex-col bg-parchment"
+      className="snap-slide flex min-h-0 w-full flex-col bg-parchment"
       aria-label="MDP Coffee House clients and case studies"
     >
       <div className="px-6 pt-24 md:px-20">
-        <RevealOnScroll delay={0}>
-          <SectionLabel>Trust</SectionLabel>
-        </RevealOnScroll>
         <RevealOnScroll delay={0.1}>
           <h2 className="mt-6 font-condensed text-[32px] leading-[0.95] tracking-tightest text-brown sm:text-[58px]">
             They start their day with us.

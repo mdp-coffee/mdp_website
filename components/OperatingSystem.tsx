@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { SectionLabel } from "@/components/SectionLabel";
 import { operatingSystemCards } from "@/lib/content";
 import type { OperatingSystemCard } from "@/lib/types";
 
@@ -115,8 +114,6 @@ export function OperatingSystem() {
       className="snap-slide w-full min-h-0 py-16 md:py-24 bg-paper px-6 md:px-20"
       aria-label="The MDP Operating System — how we operate"
     >
-      <SectionLabel tone="light">How We Operate</SectionLabel>
-
       <h2 className="mt-4 font-condensed text-[26px] leading-[0.98] tracking-tight text-brown sm:mt-6 sm:text-[52px]">
         The MDP Operating System.
       </h2>

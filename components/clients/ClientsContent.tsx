@@ -6,7 +6,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { ScrollContainer } from "@/components/ScrollContainer";
-import { SectionLabel } from "@/components/SectionLabel";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { MOTION } from "@/lib/motion";
 import { clients, outlets } from "@/lib/content";
@@ -63,13 +62,6 @@ export function ClientsContent() {
       >
         <div className="grid w-full grid-cols-1 gap-8 py-10 md:grid-cols-2 md:gap-12 md:py-20">
           <div>
-            <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: MOTION.base, delay: 0.2, ease: MOTION.ease }}
-            >
-              <SectionLabel tone="dark">Our Clients</SectionLabel>
-            </motion.div>
             <motion.h1
               className="mt-6 font-condensed text-[30px] leading-[0.95] tracking-tightest text-cream sm:text-[56px]"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
