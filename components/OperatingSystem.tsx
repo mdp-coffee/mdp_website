@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { operatingSystemCards } from "@/lib/content";
 import type { OperatingSystemCard } from "@/lib/types";
 
@@ -111,7 +112,7 @@ export function OperatingSystem() {
   return (
     <section
       id="operating-system"
-      className="snap-slide w-full min-h-0 py-16 md:py-24 bg-paper px-6 md:px-20"
+      className="relative snap-slide w-full min-h-0 py-16 md:py-24 bg-gold/15 px-6 md:px-20"
       aria-label="The MDP Operating System — how we operate"
     >
       <h2 className="mt-4 font-condensed text-[26px] leading-[0.98] tracking-tight text-brown sm:mt-6 sm:text-[52px]">
@@ -125,11 +126,10 @@ export function OperatingSystem() {
       </p>
 
       <div className="mt-6 grid grid-cols-2 gap-2 sm:mt-14 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
-        {operatingSystemCards.map((card) => (
-          <Card
-            key={card.number}
-            card={card}
-          />
+        {operatingSystemCards.map((card, index) => (
+          <RevealOnScroll key={card.number} delay={index * 0.08}>
+            <Card card={card} />
+          </RevealOnScroll>
         ))}
       </div>
     </section>

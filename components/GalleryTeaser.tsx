@@ -13,7 +13,7 @@ export function GalleryTeaser() {
   return (
     <section
       id="gallery-teaser"
-      className="snap-slide flex min-h-0 w-full flex-col justify-center bg-paper2 px-6 py-16 md:px-20 md:py-24"
+      className="relative snap-slide flex min-h-0 w-full flex-col justify-center bg-paper2 px-6 py-16 md:px-20 md:py-24"
       aria-label="A look inside MDP Coffee House"
     >
       <RevealOnScroll delay={0.1}>
@@ -40,7 +40,7 @@ export function GalleryTeaser() {
                 src={item.src}
                 alt={item.alt}
                 fill
-                className="object-contain transition-transform duration-500 group-hover:scale-105"
+                className="object-contain grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
                 sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 440px"
                 quality={90}
               />

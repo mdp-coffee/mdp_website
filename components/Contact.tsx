@@ -54,7 +54,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="snap-slide grid min-h-0 w-full grid-cols-1 md:grid-cols-2"
+      className="relative snap-slide grid min-h-0 w-full grid-cols-1 md:grid-cols-2"
       aria-label="Contact MDP Coffee House"
     >
       {/* Left — story panel */}

@@ -94,6 +94,10 @@ body {
   scroll-snap-align: start;
 }
 
+.snap-end {
+  scroll-snap-align: end;
+}
+
 @media (max-width: 767px) {
   .snap-container {
     scroll-snap-type: y mandatory;

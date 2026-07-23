@@ -4,7 +4,7 @@ export function Bridge() {
   return (
     <section
       id="bridge"
-      className="snap-slide flex min-h-0 py-24 md:py-32 w-full flex-col items-center justify-center bg-paper px-6 text-center"
+      className="relative snap-slide flex min-h-0 py-24 md:py-32 w-full flex-col items-center justify-center bg-paper px-6 text-center"
       aria-label="For twenty years, we've been part of someone's morning. We'd love to be part of yours."
     >
       <RevealOnScroll delay={0}>
