@@ -3,9 +3,9 @@ interface ScrollContainerProps {
 }
 
 /**
- * Applies CSS scroll-snap on all screen sizes (each section is a
- * "slide" the viewport rests on) — mandatory throughout, including
- * mobile. See .snap-container / .snap-slide in globals.css.
+ * Scroll-snap has been removed in favor of natural free scroll.
+ * See .snap-container / .snap-slide in globals.css — both are now
+ * inert (scroll-snap-type/align: none).
  */
 export function ScrollContainer({ children }: ScrollContainerProps) {
   return (

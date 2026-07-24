@@ -1,44 +1,52 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { galleryItems } from "@/content/gallery";
 import { useCountUp } from "@/hooks/useCountUp";
 
-const nonFormer = galleryItems.filter((item) => !item.caption?.includes("(Former)"));
-const supportingPhotos = (["outlets", "coffee", "people"] as const)
-  .map((cat) => nonFormer.find((item) => item.category === cat))
-  .filter((item): item is (typeof nonFormer)[number] => Boolean(item));
-
-const photos = [
+const polaroids = [
   {
-    id: "accenture",
+    id: "first-outlet",
     src: "/images/first_outlet_accenturevirkholi.png",
     alt: "MDP Coffee House's first outlet at Accenture Vikhroli, Mumbai — 2005",
-    line1: "2005 · Our Very First Outlet",
-    line2: "Accenture Vikhroli, Mumbai",
+    caption: "2005 · Accenture Vikhroli",
+    rotate: "-rotate-6",
+    className: "translate-y-2",
   },
-  ...supportingPhotos.map((item) => ({
-    id: item.id,
-    src: item.src,
-    alt: item.alt,
-    line1: item.caption ?? item.alt,
-    line2: null as string | null,
-  })),
+  {
+    id: "koramangala",
+    src: "/pictures/koramangala.jpeg",
+    alt: "MDP Coffee House outlet in Koramangala, Bengaluru",
+    caption: "Koramangala",
+    rotate: "rotate-3",
+    className: "-translate-y-3",
+  },
+  {
+    id: "tesco",
+    src: "/pictures/TESCO_Bengaluru.jpeg",
+    alt: "MDP Coffee House outlet at Tesco, Bengaluru",
+    caption: "Tesco, Bengaluru",
+    rotate: "rotate-6",
+    className: "translate-y-4",
+  },
+  {
+    id: "infosys-hyderabad",
+    src: "/pictures/Infosys_Hederabad2.jpeg",
+    alt: "MDP Coffee House outlet at Infosys, Hyderabad",
+    caption: "Infosys, Hyderabad",
+    rotate: "-rotate-3",
+    className: "-translate-y-1",
+  },
 ];
 
 export function WhoWeAre() {
-  const [active, setActive] = useState(0);
-
   const outlets = useCountUp({ end: 69 });
   const cities = useCountUp({ end: 4 });
   const years = useCountUp({ end: 20, suffix: "+" });
   const cups = useCountUp({ end: 100000 });
 
-  const stats = [
+  const statList = [
     { ...outlets, label: "Outlets" },
     { ...cities, label: "Cities" },
     { ...years, label: "Years" },
@@ -52,78 +60,37 @@ export function WhoWeAre() {
       aria-label="Who we are"
     >
       <div className="grid w-full grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
-        {/* Interactive photo collage */}
+        {/* Scattered polaroids */}
         <RevealOnScroll delay={0}>
-          <div className="relative aspect-[16/10] w-full overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={photos[active]?.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.35, ease: "easeInOut" }}
-                className="absolute inset-0"
-              >
-                <Image
-                  src={photos[active]!.src}
-                  alt={photos[active]!.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          <div className="mt-2 flex gap-2">
-            {photos.map((photo, i) => (
-              <button
+          <div className="grid grid-cols-2 gap-x-4 gap-y-8 px-2 py-4 sm:gap-x-8">
+            {polaroids.map((photo) => (
+              <div
                 key={photo.id}
-                onClick={() => setActive(i)}
-                className={`relative aspect-square w-16 flex-shrink-0 overflow-hidden transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-brown sm:w-20 ${
-                  i === active ? "opacity-100 ring-2 ring-gold" : "opacity-60 hover:opacity-90"
-                }`}
-                aria-label={`Show photo: ${photo.alt}`}
-                aria-pressed={i === active}
+                className={`group bg-white p-2 pb-6 shadow-md transition-transform duration-300 hover:z-10 hover:rotate-0 hover:scale-105 hover:shadow-xl sm:p-3 sm:pb-8 ${photo.rotate} ${photo.className}`}
               >
-                <Image
-                  src={photo.src}
-                  alt=""
-                  fill
-                  className={`object-cover transition-all duration-300 ${
-                    i === active ? "grayscale-0" : "grayscale hover:grayscale-0"
-                  }`}
-                  sizes="80px"
-                />
-              </button>
+                <div className="relative aspect-square w-full overflow-hidden">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 40vw, 20vw"
+                  />
+                </div>
+                <p className="mt-2 text-center font-condensed text-[11px] uppercase tracking-wide text-brown/60 sm:mt-3">
+                  {photo.caption}
+                </p>
+              </div>
             ))}
           </div>
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={photos[active]?.id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.25 }}
-              className="mt-3"
-            >
-              <p className="font-condensed text-[11px] uppercase tracking-widest text-rust/70">
-                {photos[active]!.line1}
-              </p>
-              {photos[active]!.line2 && (
-                <p className="mt-0.5 font-condensed text-[11px] uppercase tracking-widest text-brown/40">
-                  {photos[active]!.line2}
-                </p>
-              )}
-            </motion.div>
-          </AnimatePresence>
         </RevealOnScroll>
 
         {/* Text + animated stats */}
         <div>
           <RevealOnScroll delay={0.1}>
             <h2 className="font-condensed text-[30px] leading-[0.95] tracking-tightest text-brown sm:text-[54px]">
-              Quietly powering corporate India through the day.
+              Quietly powering corporate India{" "}
+              <span className="text-gold">through the day.</span>
             </h2>
           </RevealOnScroll>
           <RevealOnScroll delay={0.2}>
@@ -139,15 +106,13 @@ export function WhoWeAre() {
             </p>
           </RevealOnScroll>
 
+          <div className="mt-6 border-t border-brown/15" aria-hidden="true" />
+
           <RevealOnScroll delay={0.3}>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-              {stats.map((stat, i) => (
-                <div
-                  key={stat.label}
-                  ref={stat.ref}
-                  className={i > 0 ? "border-l border-brown/15 pl-6" : ""}
-                >
-                  <p className="font-condensed text-3xl font-black tabular-nums text-gold sm:text-4xl">
+            <div className="mt-6 flex flex-wrap gap-x-12 gap-y-4">
+              {statList.map((stat) => (
+                <div key={stat.label} ref={stat.ref}>
+                  <p className="font-condensed text-3xl font-black tabular-nums text-rust sm:text-4xl">
                     {stat.display}
                   </p>
                   <p className="font-condensed text-xs uppercase tracking-wide text-brown/50">

@@ -86,22 +86,27 @@ function Card({ card }: { card: OperatingSystemCard }) {
 
   return (
     <article
-      className="group border border-brown/10 p-3 transition-colors duration-200 hover:border-gold/40 sm:p-6"
+      className="group relative overflow-hidden border border-brown/10 p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/40 hover:shadow-xl sm:p-8"
       aria-label={card.headline}
     >
-      <div className="flex items-start justify-between">
+      <div
+        className="absolute inset-0 z-0 translate-y-full bg-[#411915] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 flex items-start justify-between">
         <span className="font-condensed text-[10px] tracking-widest text-gold sm:text-[11px]">
           {card.number}
         </span>
-        <span className="text-gold/60 transition-colors duration-200 group-hover:text-gold [&_svg]:h-5 [&_svg]:w-5 sm:[&_svg]:h-8 sm:[&_svg]:w-8">
+        <span className="text-gold/60 transition-all duration-300 group-hover:scale-110 group-hover:text-cream [&_svg]:h-5 [&_svg]:w-5 sm:[&_svg]:h-8 sm:[&_svg]:w-8">
           {icon}
         </span>
       </div>
 
-      <h3 className="mt-2 font-condensed text-sm not-italic leading-tight tracking-tight text-brown sm:mt-4 sm:text-xl">
+      <h3 className="relative z-10 mt-4 font-condensed text-sm not-italic leading-tight tracking-tight text-brown transition-colors duration-300 group-hover:text-cream sm:mt-6 sm:text-2xl">
         {card.headline}
       </h3>
-      <p className="mt-1.5 font-sans text-xs leading-relaxed text-brown/55 sm:mt-3 sm:text-sm">
+      <p className="relative z-10 mt-2 font-sans text-xs leading-relaxed text-brown/55 transition-colors duration-300 group-hover:text-cream/70 sm:mt-4 sm:text-base">
         {card.body}
       </p>
     </article>
@@ -120,12 +125,10 @@ export function OperatingSystem() {
       </h2>
 
       <p className="mt-3 max-w-lg font-sans text-sm font-normal not-italic leading-relaxed text-brown/60 sm:mt-5 sm:text-base">
-        Eight principles. Built over twenty years.
-        <br />
-        Delivered every morning.
+        Eight reasons enterprises choose MDP over anything else.
       </p>
 
-      <div className="mt-6 grid grid-cols-2 gap-2 sm:mt-14 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+      <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
         {operatingSystemCards.map((card, index) => (
           <RevealOnScroll key={card.number} delay={index * 0.08}>
             <Card card={card} />

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { operatingFormats } from "@/lib/content";
 import type { OperatingFormat } from "@/lib/types";
 import { trackEvent } from "@/components/Analytics";
@@ -148,32 +149,40 @@ export function Formats() {
       aria-label="MDP Coffee House operating formats — explore our service formats"
       aria-roledescription="carousel"
     >
+      <RevealOnScroll delay={0}>
+        <h2 className={`font-condensed text-[26px] leading-[0.98] tracking-tight sm:text-[52px] ${theme.text}`}>
+          The MDP Formats.
+        </h2>
+      </RevealOnScroll>
+
       {/* Tabs */}
-      <div
-        className="mt-6 flex w-full gap-1 sm:flex sm:flex-wrap sm:gap-2"
-        role="tablist"
-        aria-label="Operating formats"
-      >
-        {operatingFormats.map((fmt, i) => (
-          <button
-            key={fmt.num}
-            type="button"
-            role="tab"
-            aria-selected={i === index}
-            onClick={() => goTo(i)}
-            className={`min-w-0 flex-1 px-1 py-1.5 text-left transition-colors sm:flex-1 sm:px-5 sm:py-3 ${
-              i === index ? theme.tabActive : theme.tabIdle
-            }`}
-          >
-            <span className="block font-condensed text-[7px] tracking-widest opacity-70 sm:text-[10px]">
-              {fmt.num}
-            </span>
-            <span className="block truncate font-condensed text-[8px] font-bold leading-tight tracking-tight sm:text-sm">
-              {fmt.category}
-            </span>
-          </button>
-        ))}
-      </div>
+      <RevealOnScroll delay={0.1}>
+        <div
+          className="mt-6 flex w-full gap-1 sm:flex sm:flex-wrap sm:gap-2"
+          role="tablist"
+          aria-label="Operating formats"
+        >
+          {operatingFormats.map((fmt, i) => (
+            <button
+              key={fmt.num}
+              type="button"
+              role="tab"
+              aria-selected={i === index}
+              onClick={() => goTo(i)}
+              className={`min-w-0 flex-1 px-1 py-1.5 text-left transition-colors sm:flex-1 sm:px-5 sm:py-3 ${
+                i === index ? theme.tabActive : theme.tabIdle
+              }`}
+            >
+              <span className="block font-condensed text-[7px] tracking-widest opacity-70 sm:text-[10px]">
+                {fmt.num}
+              </span>
+              <span className="block truncate font-condensed text-[8px] font-bold leading-tight tracking-tight sm:text-sm">
+                {fmt.category}
+              </span>
+            </button>
+          ))}
+        </div>
+      </RevealOnScroll>
 
       {/* Active panel */}
       <div className="relative mt-8 overflow-hidden">

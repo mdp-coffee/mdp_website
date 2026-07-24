@@ -87,21 +87,15 @@ body {
 
 /* ── Scroll-snap container — mandatory on all screen sizes ── */
 .snap-container {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: none;
 }
 
 .snap-slide {
-  scroll-snap-align: start;
+  scroll-snap-align: none;
 }
 
 .snap-end {
   scroll-snap-align: end;
-}
-
-@media (max-width: 767px) {
-  .snap-container {
-    scroll-snap-type: y mandatory;
-  }
 }
 
 /* ── Grain texture overlay — applied via .grainy utility ── */

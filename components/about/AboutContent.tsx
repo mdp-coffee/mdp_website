@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
@@ -24,11 +25,6 @@ const values = [
       "People trust consistency. People return to consistency. The quality of care matters more than moments of brilliance.",
   },
   {
-    name: "Hospitality",
-    description:
-      "We welcome everyone. A fresher. A manager. A founder. A student. Everyone deserves the same warmth.",
-  },
-  {
     name: "Craftsmanship",
     description:
       "We take pride in doing things properly. Not because it is impressive. Because people deserve it.",
@@ -38,6 +34,99 @@ const values = [
     description: "Coffee is often the excuse. Connection is the outcome.",
   },
 ];
+
+const valueIcons: Record<string, ReactNode> = {
+  Care: (
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8" aria-hidden="true">
+      <path d="M16 27 C8 21 4 16 4 11 C4 7 7 4 11 4 C13.5 4 15.2 5.3 16 7 C16.8 5.3 18.5 4 21 4 C25 4 28 7 28 11 C28 16 24 21 16 27 Z" />
+    </svg>
+  ),
+  Consistency: (
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8" aria-hidden="true">
+      <path d="M25 10 A11 11 0 1 0 26 16" />
+      <path d="M25 4 V10 H19" />
+    </svg>
+  ),
+  Craftsmanship: (
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8" aria-hidden="true">
+      <path d="M19 13 L26 6 C27 5 29 5 29 7 C29 9 28 10 27 11 L20 18" />
+      <path d="M20 18 L8 30 L4 26 L16 14" />
+      <path d="M14 12 L11 9 L13 5 L17 7 L18 11 Z" />
+    </svg>
+  ),
+  Connection: (
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8" aria-hidden="true">
+      <circle cx="11" cy="16" r="7" />
+      <circle cx="21" cy="16" r="7" />
+    </svg>
+  ),
+};
+
+const philosophyIcons: Record<string, ReactNode> = {
+  vision: (
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7" aria-hidden="true">
+      <path d="M2 16 C7 8 13 5 16 5 C19 5 25 8 30 16 C25 24 19 27 16 27 C13 27 7 24 2 16 Z" />
+      <circle cx="16" cy="16" r="5" />
+    </svg>
+  ),
+  mission: (
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-7 w-7" aria-hidden="true">
+      <circle cx="16" cy="16" r="12" />
+      <circle cx="16" cy="16" r="7" />
+      <circle cx="16" cy="16" r="2" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+  story: (
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7" aria-hidden="true">
+      <path d="M4 26 L4 18 L12 10 L18 16 L28 6" />
+      <path d="M20 6 L28 6 L28 14" />
+    </svg>
+  ),
+  presence: (
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7" aria-hidden="true">
+      <circle cx="16" cy="18" r="8" />
+      <path d="M16 2 V6" />
+      <path d="M6 8 L8.5 10.5" />
+      <path d="M26 8 L23.5 10.5" />
+    </svg>
+  ),
+  purpose: (
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7" aria-hidden="true">
+      <path d="M16 27 C8 21 4 16 4 11 C4 7 7 4 11 4 C13.5 4 15.2 5.3 16 7 C16.8 5.3 18.5 4 21 4 C25 4 28 7 28 11 C28 16 24 21 16 27 Z" />
+    </svg>
+  ),
+};
+
+const philosophyCards = [
+  {
+    id: "vision",
+    label: "Our Vision",
+    body: "To be India's most trusted South Indian beverage brand — present in every campus, transit hub, and community where people gather.",
+  },
+  {
+    id: "mission",
+    label: "Our Mission",
+    body: "To serve authentic South Indian filter coffee consistently, accessibly, and with genuine care — across every format we operate.",
+  },
+  {
+    id: "story",
+    label: "Our Story",
+    body: "The scale changed. The care never did. MDP Coffee House is a company built on showing up.",
+  },
+  {
+    id: "presence",
+    label: "Our Presence",
+    body: "We show up in the small moments — the first cup before a long meeting, the familiar counter in an unfamiliar new office, the warmth of something made with care in the middle of a hard day.",
+  },
+  {
+    id: "purpose",
+    label: "Our Purpose",
+    body: "We do not exist to sell coffee. We exist to make people's days a little better through coffee. Coffee is our medium. People are our purpose.",
+  },
+];
+
+const beliefCards = philosophyCards.filter((c) => c.id === "vision" || c.id === "mission");
+const storyCards = philosophyCards.filter((c) => c.id === "story" || c.id === "presence" || c.id === "purpose");
 
 const aboutStats = [
   { value: "20+", label: "Years of Operations" },
@@ -54,7 +143,7 @@ function StatBlock({
   locale,
 }: {
   end: number;
-  suffix: string;
+  suffix?: string;
   label: string;
   duration: number;
   locale?: string;
@@ -62,11 +151,11 @@ function StatBlock({
   const { ref, display } = useCountUp({ end, suffix, duration, locale });
   const isLong = display.replace(/[^0-9]/g, "").length > 5;
   return (
-    <div ref={ref} className="border-l border-gold/20 pl-6 min-w-0">
-      <p className={`font-condensed leading-none text-gold ${isLong ? "text-[28px] md:text-[36px]" : "text-[40px] md:text-[52px]"}`}>
+    <div ref={ref} className="border-l border-brown/20 pl-6 min-w-0">
+      <p className={`font-condensed leading-none text-rust ${isLong ? "text-[28px] md:text-[36px]" : "text-[40px] md:text-[52px]"}`}>
         {display}
       </p>
-      <p className="mt-3 font-sans text-[10px] uppercase tracking-widest text-cream/40">
+      <p className="mt-3 font-sans text-[10px] uppercase tracking-widest text-brown/50">
         {label}
       </p>
     </div>
@@ -116,27 +205,22 @@ export function AboutContent() {
       </section>
 
       {/* Section 1B — Bridge */}
-      <section className="bg-paper px-6 pt-14 pb-4 md:px-20 md:pt-24" aria-label="About MDP Coffee House">
+      <section className="bg-paper px-6 pt-14 pb-10 md:px-20 md:pt-24 md:pb-16" aria-label="About MDP Coffee House">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
           <div>
             <RevealOnScroll delay={0.05}>
               <h2 className="mt-6 mb-6 font-condensed text-[30px] leading-[0.95] tracking-tightest text-brown sm:text-[52px] sm:mb-10">
-                One kiosk. Twenty years later.
+                Twenty years of operations across India.
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={0.1}>
               <p className="font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-                MDP Coffee House began in 2005 with one kiosk, in an unfamiliar city, serving people who didn&rsquo;t know us yet.
+                MDP Coffee House began in 2005 in an unfamiliar city, serving people who didn&rsquo;t know us yet. Twenty years later, we operate across India — inside the campuses of Fortune 500 companies, the corridors of banks and tech parks, and commercial spaces in cities nationwide.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.25}>
               <p className="mt-8 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-                Twenty years later, MDP operates across India — inside the campuses of Fortune 500 companies, the corridors of banks and tech parks, and commercial spaces in cities nationwide. What started as a single kiosk has grown into corporate kiosks, QSR restaurants, mobile carts, 24/7 tuck shops, and outdoor catering — the same recipe, delivered through whichever format the moment calls for.
-              </p>
-            </RevealOnScroll>
-            <RevealOnScroll delay={0.35}>
-              <p className="mt-8 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-                Today, that same standard reaches 85+ locations nationwide, serving over 1,00,000 cups a day.
+                What started as a single counter has grown into corporate kiosks, QSR cafés, commercial outlets, and event catering — the same recipe, delivered through whichever format the moment calls for. Today, that standard reaches 69 outlets across four cities, serving over 1,00,000 cups a day.
               </p>
             </RevealOnScroll>
           </div>
@@ -163,102 +247,99 @@ export function AboutContent() {
             </div>
           </RevealOnScroll>
         </div>
+        <div className="mx-auto mt-14 h-px w-24 bg-gold/40 md:mt-20" aria-hidden="true" />
       </section>
 
-      {/* Vision & Mission */}
-      <section className="bg-paper px-6 pt-10 pb-4 md:px-20 md:pt-16 md:pb-6" aria-label="Vision and mission">
-        <div className="relative z-10 grid grid-cols-1 items-start gap-5 md:grid-cols-[1fr_1px_1fr] md:gap-12">
-
-          {/* Vision */}
-          <RevealOnScroll delay={0.1}>
-            <div>
-              <p className="mb-2 font-condensed text-sm leading-[0.95] tracking-tight text-rust/60 sm:mb-4 sm:text-[20px]">
-                Vision
-              </p>
-              <p className="mb-4 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-                To be India&rsquo;s most trusted South Indian beverage brand —
-                present in every campus, transit hub, and community where people
-                gather.
-              </p>
-            </div>
-          </RevealOnScroll>
-
-          {/* Vertical separator */}
-          <div className="hidden self-stretch bg-brown/10 md:block" aria-hidden="true" />
-
-          {/* Mission */}
-          <RevealOnScroll delay={0.2}>
-            <div>
-              <p className="mb-2 font-condensed text-sm leading-[0.95] tracking-tight text-rust/60 sm:mb-4 sm:text-[20px]">
-                Mission
-              </p>
-              <p className="mb-4 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-                To serve authentic South Indian filter coffee consistently,
-                accessibly, and with genuine care — across every format we
-                operate.
-              </p>
-            </div>
-          </RevealOnScroll>
-
-        </div>
-      </section>
-
-      {/* Section 2 — Who We Are */}
-      <section className="snap-slide px-6 pt-6 pb-12 md:px-20 md:pt-10 md:pb-24" aria-label="Who we are">
-        <RevealOnScroll delay={0.1}>
-          <h2 className="mt-6 font-condensed text-[28px] leading-[0.95] tracking-tightest text-brown sm:text-[52px]">
-            We&rsquo;re not in the coffee business.
+      {/* Section 2 — What We Believe In (merged Vision/Mission + Who We Are) */}
+      <section
+        className="snap-slide bg-[#411915] px-6 py-16 md:px-20 md:py-24"
+        aria-label="What we believe in"
+      >
+        <RevealOnScroll delay={0}>
+          <h2 className="font-condensed text-[28px] leading-[0.95] tracking-tightest text-cream sm:text-[52px]">
+            What We <span className="text-gold">Believe In.</span>
           </h2>
         </RevealOnScroll>
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
-          <RevealOnScroll delay={0.2}>
-            <p className="font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-              The scale changed. The care never did. MDP Coffee House is a company built on showing up.
-            </p>
-          </RevealOnScroll>
-          <RevealOnScroll delay={0.3}>
-            <p className="font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-              We show up in the small moments — the first cup before a long meeting, the familiar counter in an unfamiliar new office, the warmth of something made with care in the middle of a hard day.
-            </p>
-          </RevealOnScroll>
-          <RevealOnScroll delay={0.4}>
-            <p className="font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-              We do not exist to sell coffee. We exist to make people&rsquo;s days a little better through coffee. Coffee is our medium. People are our purpose.
-            </p>
-          </RevealOnScroll>
+
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
+          {beliefCards.map((card, i) => (
+            <RevealOnScroll key={card.id} delay={i * 0.08}>
+              <div className="group relative overflow-hidden border border-cream/[0.08] bg-cream/[0.06] p-8 transition-all duration-500 ease-in-out hover:-translate-y-1 hover:border-gold/40 lg:p-10">
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
+                  style={{ background: "rgba(212,165,116,0.08)" }}
+                  aria-hidden="true"
+                />
+                <span className="relative z-10 inline-flex h-14 w-14 items-center justify-center border border-gold/25 bg-gold/10 text-gold transition-all duration-150 ease-in-out group-hover:scale-110 group-hover:bg-gold group-hover:text-brown">
+                  {philosophyIcons[card.id]}
+                </span>
+                <p className="relative z-10 mt-6 font-condensed text-xs uppercase tracking-widest text-gold/70">
+                  {card.label}
+                </p>
+                <p className="relative z-10 mt-3 font-sans text-base leading-relaxed text-cream/70">
+                  {card.body}
+                </p>
+              </div>
+            </RevealOnScroll>
+          ))}
+        </div>
+
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3 md:mt-6 md:gap-6">
+          {storyCards.map((card, i) => (
+            <RevealOnScroll key={card.id} delay={0.16 + i * 0.08}>
+              <div className="group relative h-full overflow-hidden border border-cream/[0.08] bg-cream/[0.06] p-8 transition-all duration-500 ease-in-out hover:-translate-y-1 hover:border-gold/40 lg:p-10">
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
+                  style={{ background: "rgba(212,165,116,0.08)" }}
+                  aria-hidden="true"
+                />
+                <span className="relative z-10 inline-flex h-14 w-14 items-center justify-center border border-gold/25 bg-gold/10 text-gold transition-all duration-150 ease-in-out group-hover:scale-110 group-hover:bg-gold group-hover:text-brown">
+                  {philosophyIcons[card.id]}
+                </span>
+                <p className="relative z-10 mt-6 font-condensed text-xs uppercase tracking-widest text-gold/70">
+                  {card.label}
+                </p>
+                <p className="relative z-10 mt-3 font-sans text-base leading-relaxed text-cream/70">
+                  {card.body}
+                </p>
+              </div>
+            </RevealOnScroll>
+          ))}
         </div>
       </section>
 
-      {/* Section 3A — At Scale */}
-      <section className="snap-slide bg-[#411915] px-6 py-20 md:px-20" aria-label="MDP at scale">
-        <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-4">
+      {/* Section 3 — Track Record (merged At Scale + Recognised) */}
+      <section className="snap-slide bg-parchment px-6 py-20 md:px-20" aria-label="Track record">
+        <RevealOnScroll delay={0}>
+          <h2 className="font-condensed text-[26px] leading-[0.98] tracking-tight text-brown sm:text-[52px]">
+            The Numbers Behind the Standard.
+          </h2>
+        </RevealOnScroll>
+
+        <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-4">
           <StatBlock end={20} suffix="+" label="Years of Operations" duration={1600} />
-          <StatBlock end={85} suffix="+" label="Active Locations" duration={1800} />
+          <StatBlock end={69} label="Outlets" duration={1800} />
           <StatBlock end={100000} suffix="+" label="Cups Daily" duration={2200} locale="en-IN" />
           <StatBlock end={45} suffix="+" label="Corporate Clients" duration={1600} />
         </div>
-      </section>
 
-      {/* Section 3B — Recognised */}
-      <section className="snap-slide bg-parchment px-6 py-20 md:px-20" aria-label="Awards">
-        <RevealOnScroll delay={0}>
-          <div className="mx-auto mb-8 h-px w-16 bg-brown/20" aria-hidden="true" />
+        <RevealOnScroll delay={0.1}>
+          <div className="mx-auto mb-8 mt-16 h-px w-16 bg-brown/20 md:mt-20" aria-hidden="true" />
           <p className="mb-2 text-center font-condensed not-italic text-[11px] uppercase tracking-widest text-rust/60">
             Recognised by the Companies We Serve
           </p>
-
         </RevealOnScroll>
 
         <div className="scrollbar-hide flex snap-x snap-mandatory gap-3 overflow-x-auto md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:snap-none lg:grid-cols-5">
           {awards.map((award, index) => (
             <RevealOnScroll key={award.id} delay={index * 0.07}>
-              <div className="flex w-[70vw] flex-shrink-0 flex-col overflow-hidden border border-brown/10 bg-paper transition-colors duration-200 hover:border-gold/50 md:w-auto md:flex-shrink">
+              <div className="group flex w-[70vw] flex-shrink-0 flex-col overflow-hidden border border-brown/10 bg-paper transition-all duration-300 ease-out hover:-translate-y-2 hover:border-gold hover:shadow-[0_0_35px_rgba(212,165,116,0.45)] md:w-auto md:flex-shrink">
                 <div className="relative h-40 w-full overflow-hidden bg-white">
                   <Image
                     src={award.image}
                     alt={award.altText}
                     fill
-                    className="object-contain p-4"
+                    className="object-contain p-4 transition-transform duration-300 ease-out group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
                   />
                 </div>
@@ -290,14 +371,23 @@ export function AboutContent() {
       <section className="snap-slide bg-parchment px-6 py-12 md:px-20 md:py-24" aria-label="Our values">
         <RevealOnScroll delay={0}>
           <h2 className="mt-4 font-condensed text-[26px] leading-[0.95] tracking-tightest text-brown sm:mt-6 sm:text-[52px]">
-            Five things we don&rsquo;t compromise on.
+            Four things we don&rsquo;t compromise on.
           </h2>
         </RevealOnScroll>
         <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-6">
           {values.map((value, index) => (
             <RevealOnScroll key={value.name} delay={MOTION.stagger(index, 0.08)}>
-              <div className="border border-brown/10 bg-paper px-3 py-3 transition-colors duration-200 hover:border-gold/40 sm:px-8 sm:py-8">
-                <h3 className="font-condensed text-sm tracking-tight text-brown sm:text-[22px]">
+              <div className="group relative overflow-hidden border border-brown/10 bg-paper px-3 py-3 transition-all duration-500 ease-in-out hover:-translate-y-1.5 hover:border-gold/30 hover:shadow-xl sm:px-8 sm:py-8">
+                <div
+                  className="absolute left-0 top-0 h-0.5 w-full origin-left scale-x-0 bg-gold transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.32,1)] group-hover:scale-x-100"
+                  aria-hidden="true"
+                />
+                <span
+                  className="inline-flex h-14 w-14 items-center justify-center border border-gold/20 bg-gold/10 text-gold transition-all duration-150 ease-in-out group-hover:scale-110 group-hover:border-transparent group-hover:bg-gold group-hover:text-brown [&_svg]:h-6 [&_svg]:w-6"
+                >
+                  {valueIcons[value.name]}
+                </span>
+                <h3 className="mt-4 font-condensed text-sm tracking-tight text-brown sm:mt-6 sm:text-[22px]">
                   {value.name}
                 </h3>
                 <p className="mt-1.5 font-sans text-[11px] leading-relaxed text-brown/60 sm:mt-3 sm:text-[15px]">
@@ -311,16 +401,16 @@ export function AboutContent() {
 
       {/* Section 9 — CTA */}
       <section
-        className="snap-slide flex flex-col items-center px-6 py-28 text-center md:px-20"
+        className="snap-slide flex flex-col items-center bg-[#411915] px-6 py-28 text-center md:px-20"
         aria-label="Partner with MDP"
       >
         <RevealOnScroll delay={0}>
-          <h2 className="font-condensed text-[44px] leading-[0.92] tracking-tightest text-brown sm:text-[60px]">
+          <h2 className="font-condensed text-[44px] leading-[0.92] tracking-tightest text-cream sm:text-[60px]">
             Your workplace deserves a morning like this.
           </h2>
         </RevealOnScroll>
         <RevealOnScroll delay={0.15}>
-          <p className="mt-6 max-w-lg font-sans text-xl text-brown/55">
+          <p className="mt-6 max-w-lg font-sans text-xl text-cream/60">
             We&rsquo;d love to show up for your office.
           </p>
         </RevealOnScroll>
@@ -328,7 +418,7 @@ export function AboutContent() {
           <RevealOnScroll delay={0.3}>
             <Link
               href="/#contact"
-              className="bg-brown px-8 py-4 font-condensed text-sm font-bold uppercase tracking-wider text-cream transition-colors hover:bg-rust"
+              className="bg-gold px-8 py-4 font-condensed text-sm font-bold uppercase tracking-wider text-brown transition-colors hover:bg-gold/90"
             >
               Partner With Us
             </Link>
@@ -336,7 +426,7 @@ export function AboutContent() {
           <RevealOnScroll delay={0.4}>
             <Link
               href="/gallery"
-              className="border border-brown/25 px-8 py-4 font-condensed text-sm uppercase tracking-wider text-brown/60 transition-colors hover:border-brown hover:text-brown"
+              className="border border-cream/25 px-8 py-4 font-condensed text-sm uppercase tracking-wider text-cream/70 transition-colors hover:border-cream hover:text-cream"
             >
               See Our Story
             </Link>
