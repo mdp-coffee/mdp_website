@@ -8,7 +8,6 @@ import { motion, useReducedMotion } from "framer-motion";
 const navLinks = [
   { href: "/about", label: "About Us", isRoute: true },
   { href: "/clients", label: "Clients", isRoute: true },
-  { href: "/franchise", label: "Franchise", isRoute: true },
   { href: "/gallery", label: "Gallery", isRoute: true },
   { href: "/blog", label: "Blog", isRoute: true },
   { href: "/faq", label: "FAQ", isRoute: true },
