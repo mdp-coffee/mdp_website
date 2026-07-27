@@ -142,13 +142,13 @@ export async function POST(request: Request) {
     // Skipped for careers/job-application flows, and silently skipped
     // when no email was provided (phone-only submissions).
     if (source !== "careers" && source !== "job-application" && email) {
-      let franchiseAttachments: { filename: string; content: string; type: string }[] = [];
-      if (source === "franchise") {
+      let profileAttachments: { filename: string; content: string; type: string }[] = [];
+      if (source === "franchise" || source === "") {
         try {
           const profilePdf = fs.readFileSync(
             path.join(process.cwd(), "public/documents/company-profile.pdf")
           );
-          franchiseAttachments = [
+          profileAttachments = [
             {
               filename: "MDP Coffee House - Company Profile.pdf",
               content: profilePdf.toString("base64"),
@@ -165,7 +165,7 @@ export async function POST(request: Request) {
         await resend.emails.send({
           from: "MDP Coffee House <noreply@mdpcoffeehouse.com>",
           to: email,
-          attachments: franchiseAttachments.length > 0 ? franchiseAttachments : undefined,
+          attachments: profileAttachments.length > 0 ? profileAttachments : undefined,
           subject:
             source === "franchise"
               ? "Thank you for your interest in an MDP Coffee House franchise"
