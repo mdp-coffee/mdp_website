@@ -41,7 +41,7 @@ const polaroids = [
 ];
 
 export function WhoWeAre() {
-  const outlets = useCountUp({ end: 69 });
+  const outlets = useCountUp({ end: 85, suffix: "+" });
   const cities = useCountUp({ end: 4 });
   const years = useCountUp({ end: 20, suffix: "+" });
   const cups = useCountUp({ end: 100000 });
@@ -100,7 +100,7 @@ export function WhoWeAre() {
               inside the campuses of some of India&rsquo;s largest employers,
               not as an outside vendor, but as part of how the workday
               actually runs. What started as one staffed counter in Mumbai
-              has quietly grown into 69 outlets across four cities, pouring
+              has quietly grown into 85+ outlets across four cities, pouring
               close to a lakh cups a day for teams who&rsquo;ve simply never
               had to think twice about their coffee.
             </p>

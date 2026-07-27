@@ -220,7 +220,7 @@ export function AboutContent() {
             </RevealOnScroll>
             <RevealOnScroll delay={0.25}>
               <p className="mt-8 font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-                What started as a single counter has grown into corporate kiosks, QSR cafés, commercial outlets, and event catering — the same recipe, delivered through whichever format the moment calls for. Today, that standard reaches 69 outlets across four cities, serving over 1,00,000 cups a day.
+                What started as a single counter has grown into corporate kiosks, QSR cafés, commercial outlets, and event catering — the same recipe, delivered through whichever format the moment calls for. Today, that standard reaches 85+ outlets across four cities, serving over 1,00,000 cups a day.
               </p>
             </RevealOnScroll>
           </div>
@@ -318,7 +318,7 @@ export function AboutContent() {
 
         <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-4">
           <StatBlock end={20} suffix="+" label="Years of Operations" duration={1600} />
-          <StatBlock end={69} label="Outlets" duration={1800} />
+          <StatBlock end={85} suffix="+" label="Outlets" duration={1800} />
           <StatBlock end={100000} suffix="+" label="Cups Daily" duration={2200} locale="en-IN" />
           <StatBlock end={45} suffix="+" label="Corporate Clients" duration={1600} />
         </div>
