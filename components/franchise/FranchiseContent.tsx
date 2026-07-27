@@ -293,28 +293,61 @@ export function FranchiseContent() {
       <section className="bg-paper px-6 py-16 md:px-20 md:py-24">
         <RevealOnScroll delay={0}>
           <h2 className="font-condensed text-[26px] leading-[0.98] tracking-tight text-brown sm:text-[52px]">
-            The Concept.
+            The MDP Coffee House Franchise Model
           </h2>
+          <p className="mt-3 font-condensed text-sm italic text-rust/70 sm:text-base">
+            Built for Entrepreneurs. Designed for Scale.
+          </p>
         </RevealOnScroll>
         <RevealOnScroll delay={0.1}>
           <p className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-            MDP Coffee House franchises operate on a franchise-owned,
-            franchise-operated (FOFO) model. You own and run the outlet; we
-            provide the brand, training, systems, and supply chain behind it.
-            Outlets require as little as 100&ndash;200 sq&nbsp;ft, with a 5-year
-            or 10-year term to choose from.
+            MDP Coffee House follows a Franchise-Owned, Franchise-Operated
+            (FOFO) model, giving you the opportunity to own and manage your
+            own outlet while leveraging a trusted and established brand.
           </p>
         </RevealOnScroll>
-        <RevealOnScroll delay={0.2}>
+        <RevealOnScroll delay={0.18}>
           <p className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-            The format is built for simplicity, not specialisation. Every
-            process &mdash; from brewing to service &mdash; follows a standard
-            developed over twenty years, so a new team can be trained and an
-            outlet opened within weeks. One recipe, one standard, wherever
-            it&rsquo;s built.
+            From day one, we provide everything you need to succeed &mdash;
+            our proven operating systems, comprehensive training, standardised
+            recipes, branding, and a reliable supply chain &mdash; allowing
+            you to focus on delivering exceptional customer experiences and
+            growing your business.
           </p>
         </RevealOnScroll>
-        <RevealOnScroll delay={0.3}>
+        <RevealOnScroll delay={0.26}>
+          <p className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
+            Our compact outlet format requires only 100&ndash;200 sq. ft.,
+            making it ideal for corporate campuses, commercial spaces,
+            transport hubs, hospitals, educational institutions, and
+            high-footfall locations. Choose a 5-year or 10-year franchise
+            term based on your business goals.
+          </p>
+        </RevealOnScroll>
+
+        <RevealOnScroll delay={0.36}>
+          <h3 className="mt-14 font-condensed text-xl tracking-tight text-brown sm:text-2xl">
+            A Business That&rsquo;s Simple to Operate
+          </h3>
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.44}>
+          <p className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
+            You don&rsquo;t need prior experience in food service. Every
+            aspect of the business has been refined through over two decades
+            of operational expertise. From brewing the perfect cup of coffee
+            to customer service and daily operations, every process is
+            standardised, documented, and easy to replicate.
+          </p>
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.52}>
+          <p className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
+            With structured training and operational support, your team can
+            be ready to launch an outlet in just a few weeks &mdash; ensuring
+            every MDP Coffee House delivers the same quality, consistency,
+            and customer experience.
+          </p>
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.6}>
           <p className="mt-6 font-condensed text-xs uppercase tracking-widest text-rust/60">
             Minimal Staffing &middot; Standardised Process &middot; Fast Turnaround &middot; Built to Replicate
           </p>
@@ -353,12 +386,6 @@ export function FranchiseContent() {
             ))}
           </div>
 
-          <RevealOnScroll delay={0.3}>
-            <p className="mt-6 max-w-2xl font-sans text-sm text-cream/40">
-              All setup, marketing, and working capital costs are non-refundable.
-            </p>
-          </RevealOnScroll>
-
           <RevealOnScroll delay={0.35}>
             <div className="mt-10 border-l-4 border-gold bg-cream/[0.04] p-6 sm:p-8">
               <p className="font-condensed text-xs uppercase tracking-widest text-gold/70">
@@ -369,6 +396,33 @@ export function FranchiseContent() {
               </p>
             </div>
           </RevealOnScroll>
+        </div>
+      </section>
+
+      {/* Track Record */}
+      <section className="bg-parchment px-6 py-16 md:px-20 md:py-24">
+        <RevealOnScroll delay={0}>
+          <h2 className="font-condensed text-[26px] leading-[0.98] tracking-tight text-brown sm:text-[52px]">
+            A Track Record, Not a Pitch Deck.
+          </h2>
+        </RevealOnScroll>
+
+        <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
+          {[
+            { ...years, label: "Years of Operation" },
+            { ...outlets, label: "Locations" },
+            { ...cities, label: "Cities" },
+            { ...cups, label: "Cups Daily" },
+          ].map((stat) => (
+            <div key={stat.label} ref={stat.ref} className="border-l border-brown/20 pl-4">
+              <p className="font-condensed text-3xl font-black text-rust sm:text-4xl">
+                {stat.display}
+              </p>
+              <p className="mt-1 font-sans text-xs uppercase tracking-wide text-brown/50">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -430,33 +484,6 @@ export function FranchiseContent() {
                 </p>
               </div>
             </RevealOnScroll>
-          ))}
-        </div>
-      </section>
-
-      {/* Track Record */}
-      <section className="bg-[#411915] px-6 py-16 md:px-20 md:py-24">
-        <RevealOnScroll delay={0}>
-          <h2 className="font-condensed text-[26px] leading-[0.98] tracking-tight text-cream sm:text-[52px]">
-            A Track Record, Not a Pitch Deck.
-          </h2>
-        </RevealOnScroll>
-
-        <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
-          {[
-            { ...years, label: "Years of Operation" },
-            { ...outlets, label: "Locations" },
-            { ...cities, label: "Cities" },
-            { ...cups, label: "Cups Daily" },
-          ].map((stat) => (
-            <div key={stat.label} ref={stat.ref} className="border-l border-gold/20 pl-4">
-              <p className="font-condensed text-3xl font-black text-gold sm:text-4xl">
-                {stat.display}
-              </p>
-              <p className="mt-1 font-sans text-xs uppercase tracking-wide text-cream/40">
-                {stat.label}
-              </p>
-            </div>
           ))}
         </div>
       </section>

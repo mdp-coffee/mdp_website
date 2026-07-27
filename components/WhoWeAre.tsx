@@ -97,14 +97,11 @@ export function WhoWeAre() {
           </RevealOnScroll>
           <RevealOnScroll delay={0.2}>
             <p className="mt-6 max-w-lg font-sans text-lg leading-relaxed text-brown/70 md:text-xl">
-              Long before &ldquo;employee experience&rdquo; became a phrase
-              companies used, MDP Coffee House was already showing up &mdash;
-              inside the campuses of some of India&rsquo;s largest employers,
-              not as an outside vendor, but as part of how the workday
-              actually runs. What started as one staffed counter in Mumbai
-              has quietly grown into 85+ outlets across four cities, pouring
-              close to a lakh cups a day for teams who&rsquo;ve simply never
-              had to think twice about their coffee.
+              MDP isn&rsquo;t a vendor a company brings in &mdash; it&rsquo;s part
+              of how the workday runs. We&rsquo;re the quiet constant in a
+              fast-moving office: the same counter, the same face, the same cup,
+              no matter what the day throws at you. Twenty years in, that&rsquo;s
+              still the only thing we&rsquo;re trying to get right.
             </p>
           </RevealOnScroll>
 
