@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { useCountUp } from "@/hooks/useCountUp";
+import { CornerAccents } from "@/components/CornerAccents";
 
 const polaroids = [
   {
@@ -56,9 +57,10 @@ export function WhoWeAre() {
   return (
     <section
       id="who-we-are"
-      className="snap-slide flex min-h-0 w-full items-center bg-paper px-6 py-16 md:px-20 md:py-24"
+      className="relative snap-slide flex min-h-0 w-full items-center bg-paper px-6 py-16 md:px-20 md:py-24"
       aria-label="Who we are"
     >
+      <CornerAccents />
       <div className="grid w-full grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
         {/* Scattered polaroids */}
         <RevealOnScroll delay={0}>

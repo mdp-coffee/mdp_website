@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import careersData from "@/content/careers.json";
 
 type SubmitState = "idle" | "loading" | "success" | "error";
@@ -515,10 +516,18 @@ export function CareersContent() {
     <main>
       {/* Section 1 — Hero */}
       <section
-        className="flex min-h-[40vh] items-end bg-[#411915] px-8 pb-16 pt-32 md:px-16 lg:px-24"
+        className="relative overflow-hidden flex min-h-[50vh] items-end bg-[#411915] px-8 pb-16 pt-32 md:px-16 lg:px-24"
         aria-label="Careers at MDP Coffee House"
       >
-        <div>
+        <div className="pointer-events-none absolute bottom-0 -right-6 md:-right-20 hidden h-3/4 w-1/2 opacity-[0.25] md:block" aria-hidden="true">
+          <Image
+            src="/images/MDP coffeee man Png1.png"
+            alt=""
+            fill
+            className="object-contain object-bottom [filter:invert(1)_brightness(1.4)]"
+          />
+        </div>
+        <div className="relative z-10">
           <div className="flex items-center gap-4">
             <div className="h-px w-8 bg-gold" aria-hidden="true" />
             <p className="font-condensed text-[11px] uppercase tracking-[0.25em] text-gold/60">

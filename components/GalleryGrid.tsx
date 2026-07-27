@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { galleryItems, type GalleryItem } from "@/content/gallery";
 
 type Category = "all" | "outlets" | "coffee" | "people" | "clients";
@@ -126,52 +127,57 @@ export function GalleryGrid() {
   return (
     <>
       {/* Category tabs — sticky below NavBar */}
-      <div className="sticky top-16 z-40 border-b border-brown/10 bg-paper">
-        <div className="flex overflow-x-auto px-6 md:px-20">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => handleCategoryChange(tab.id)}
-              className={`flex-shrink-0 border-b-2 px-5 py-4 font-condensed text-[13px] tracking-wide transition-colors ${
-                activeCategory === tab.id
-                  ? "border-brown bg-brown text-cream"
-                  : "border-transparent text-brown/50 hover:text-brown"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+      <RevealOnScroll delay={0}>
+        <div className="sticky top-16 z-40 border-b border-brown/10 bg-paper">
+          <div className="flex overflow-x-auto px-6 md:px-20">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => handleCategoryChange(tab.id)}
+                className={`flex-shrink-0 border-b-2 px-5 py-4 font-condensed text-[13px] tracking-wide transition-colors ${
+                  activeCategory === tab.id
+                    ? "border-brown bg-brown text-cream"
+                    : "border-transparent text-brown/50 hover:text-brown"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      </RevealOnScroll>
 
       {/* Photo grid */}
       <div className="px-6 py-12 md:px-20">
         <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[160px] sm:auto-rows-[200px] md:auto-rows-[220px] grid-flow-dense gap-1">
           {filtered.map((item, index) => (
-            <button
+            <RevealOnScroll
               key={item.id}
-              onClick={() => setLightboxIndex(index)}
-              className={`group relative overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown ${
-                index % 7 === 6 ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
-              }`}
-              aria-label={`View: ${item.alt}`}
+              delay={index * 0.05}
+              className={index % 7 === 6 ? "col-span-2 row-span-2" : "col-span-1 row-span-1"}
             >
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                quality={90}
-              />
-              {item.caption && (
-                <div className="absolute bottom-0 left-0 right-0 border-t-2 border-gold bg-[#411915]/85 px-3 py-2">
-                  <p className="font-condensed text-[11px] uppercase tracking-wide text-cream">
-                    {item.caption}
-                  </p>
-                </div>
-              )}
-            </button>
+              <button
+                onClick={() => setLightboxIndex(index)}
+                className="group relative h-full w-full overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown"
+                aria-label={`View: ${item.alt}`}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={90}
+                />
+                {item.caption && (
+                  <div className="absolute bottom-0 left-0 right-0 border-t-2 border-gold bg-[#411915]/85 px-3 py-2">
+                    <p className="font-condensed text-[11px] uppercase tracking-wide text-cream">
+                      {item.caption}
+                    </p>
+                  </div>
+                )}
+              </button>
+            </RevealOnScroll>
           ))}
         </div>
 

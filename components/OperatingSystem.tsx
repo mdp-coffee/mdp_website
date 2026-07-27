@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { operatingSystemCards } from "@/lib/content";
 import type { OperatingSystemCard } from "@/lib/types";
+import { CornerAccents } from "@/components/CornerAccents";
 
 // Inline SVG icons — thin stroke, architectural line style.
 // Stroke color inherited from parent via currentColor; fill always none.
@@ -120,6 +121,7 @@ export function OperatingSystem() {
       className="relative snap-slide w-full min-h-0 py-16 md:py-24 bg-gold/15 px-6 md:px-20"
       aria-label="The MDP Operating System — how we operate"
     >
+      <CornerAccents />
       <h2 className="mt-4 font-condensed text-[26px] leading-[0.98] tracking-tight text-brown sm:mt-6 sm:text-[52px]">
         The MDP Operating System.
       </h2>

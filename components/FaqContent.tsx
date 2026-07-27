@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { ScrollContainer } from "@/components/ScrollContainer";
@@ -74,30 +75,40 @@ export function FaqContent() {
       <ScrollContainer>
       {/* Hero */}
       <section
-        className="snap-slide flex min-h-[40vh] w-full flex-col justify-end bg-[#411915] px-6 pb-10 pt-24 md:px-20 md:pb-16 md:pt-32"
+        className="relative overflow-hidden snap-slide flex min-h-[50vh] w-full flex-col justify-end bg-[#411915] px-6 pb-10 pt-24 md:px-20 md:pb-16 md:pt-32"
         aria-label="FAQ hero"
       >
-        <p className="mb-4 font-condensed text-[11px] uppercase tracking-[0.3em] text-gold/50">
-          FAQ
-        </p>
-        <motion.h1
-          className="font-condensed text-[30px] leading-[0.95] tracking-tightest text-cream sm:text-[64px]"
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: MOTION.slow, delay: 0.3, ease: MOTION.ease }}
-        >
-          Questions we hear from
-          <br />
-          facilities managers.
-        </motion.h1>
-        <motion.p
-          className="mt-4 max-w-xl font-sans text-sm text-cream/55 md:mt-6 md:text-xl"
-          initial={shouldReduceMotion ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: MOTION.base, delay: 0.5, ease: MOTION.ease }}
-        >
-          Everything you need to know before bringing MDP to your office.
-        </motion.p>
+        <div className="pointer-events-none absolute bottom-0 -right-6 md:-right-20 hidden h-3/4 w-1/2 opacity-[0.25] md:block" aria-hidden="true">
+          <Image
+            src="/images/MDP coffeee man Png1.png"
+            alt=""
+            fill
+            className="object-contain object-bottom [filter:invert(1)_brightness(1.4)]"
+          />
+        </div>
+        <div className="relative z-10">
+          <p className="mb-4 font-condensed text-[11px] uppercase tracking-[0.3em] text-gold/50">
+            FAQ
+          </p>
+          <motion.h1
+            className="font-condensed text-[30px] leading-[0.95] tracking-tightest text-cream sm:text-[64px]"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: MOTION.slow, delay: 0.3, ease: MOTION.ease }}
+          >
+            Questions we hear from
+            <br />
+            facilities managers.
+          </motion.h1>
+          <motion.p
+            className="mt-4 max-w-xl font-sans text-sm text-cream/55 md:mt-6 md:text-xl"
+            initial={shouldReduceMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: MOTION.base, delay: 0.5, ease: MOTION.ease }}
+          >
+            Everything you need to know before bringing MDP to your office.
+          </motion.p>
+        </div>
       </section>
 
       {/* FAQ accordion */}

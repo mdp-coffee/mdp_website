@@ -265,12 +265,11 @@ export function Footer() {
       </div>
 
       <RevealOnScroll delay={0.4}>
-        <div className="flex flex-col items-start justify-between gap-4 pt-8 text-xs text-cream/40 md:flex-row md:items-center">
+        <div className="pt-8 text-xs text-cream/40">
           <span>
             © {new Date().getFullYear()} MDP Coffee House · Bengaluru, India ·
             Since {siteConfig.founded}
           </span>
-          <span>{siteConfig.locationsCount} locations · {siteConfig.cupsPerDay.toLocaleString("en-IN")} cups daily · {siteConfig.enterpriseClients} enterprise clients</span>
         </div>
       </RevealOnScroll>
     </footer>

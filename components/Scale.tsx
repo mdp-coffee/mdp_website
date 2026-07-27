@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { CornerAccents } from "@/components/CornerAccents";
 
 export function Scale() {
   return (
@@ -11,16 +12,22 @@ export function Scale() {
       className="relative snap-slide grid min-h-0 w-full grid-cols-1 md:grid-cols-2"
       aria-label="MDP Coffee House — franchise enquiry"
     >
+      <CornerAccents />
       {/* Left — dark panel */}
       <div className="relative flex flex-col justify-center overflow-hidden bg-[#411915] px-6 py-20 md:px-14">
-        <div className="pointer-events-none absolute bottom-0 right-0 h-3/4 w-1/2 opacity-[0.15]" aria-hidden="true">
-          <Image
-            src="/images/MDP coffeee man Png1.png"
-            alt=""
-            fill
-            className="object-contain object-bottom"
-          />
-        </div>
+        <RevealOnScroll
+          delay={0}
+          className="pointer-events-none absolute bottom-0 -right-6 md:-right-14 hidden h-3/4 w-1/2 opacity-[0.25] md:block"
+        >
+          <div aria-hidden="true">
+            <Image
+              src="/images/MDP coffeee man Png1.png"
+              alt=""
+              fill
+              className="object-contain object-bottom [filter:invert(1)_brightness(1.4)]"
+            />
+          </div>
+        </RevealOnScroll>
         <RevealOnScroll direction="left" delay={0}>
           <div className="relative z-10">
             <h2 className="mt-6 font-condensed text-[30px] leading-[0.98] tracking-tightest text-cream sm:text-[56px]">

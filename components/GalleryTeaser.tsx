@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { galleryItems } from "@/content/gallery";
+import { CornerAccents } from "@/components/CornerAccents";
 
 const featured = galleryItems
   .filter((item) => !item.caption?.includes("(Former)"))
@@ -16,6 +17,7 @@ export function GalleryTeaser() {
       className="relative snap-slide flex min-h-0 w-full flex-col justify-center bg-[#411915] px-6 py-16 md:px-20 md:py-24"
       aria-label="A look inside MDP Coffee House"
     >
+      <CornerAccents />
       <RevealOnScroll delay={0.1}>
         <h2 className="mt-6 font-condensed text-[26px] leading-[0.98] tracking-tight text-cream sm:text-[52px]">
           The MDP Standard.

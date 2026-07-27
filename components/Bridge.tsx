@@ -1,4 +1,5 @@
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { CornerAccents } from "@/components/CornerAccents";
 
 export function Bridge() {
   return (
@@ -7,6 +8,7 @@ export function Bridge() {
       className="relative snap-slide flex min-h-0 py-24 md:py-32 w-full flex-col items-center justify-center bg-paper px-6 text-center"
       aria-label="For twenty years, we've been part of someone's morning. We'd love to be part of yours."
     >
+      <CornerAccents />
       <RevealOnScroll delay={0}>
         <h2 className="font-condensed text-[34px] leading-[0.95] tracking-tightest text-brown sm:text-[60px] md:text-[80px]">
           For twenty years,

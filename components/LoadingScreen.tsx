@@ -40,10 +40,10 @@ export function LoadingScreen() {
             <Image
               src="/images/coffee-man.png"
               alt="MDP Coffee House"
-              width={160}
-              height={160}
+              width={220}
+              height={220}
               priority
-              className="h-auto w-[140px] md:w-[160px]"
+              className="h-auto w-[190px] md:w-[220px]"
             />
           </motion.div>
 
@@ -58,7 +58,7 @@ export function LoadingScreen() {
             }}
           >
             <p className="font-condensed text-[22px] uppercase tracking-[0.15em] text-cream">
-              MDP Coffee House
+              MDP Food and Beverages Pvt Ltd
             </p>
             <div className="mt-3 h-px w-12 bg-gold/50" aria-hidden="true" />
             <p className="mt-3 font-condensed text-[11px] uppercase tracking-[0.3em] text-gold/50">

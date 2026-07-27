@@ -27,33 +27,43 @@ export function FormatContent({ format }: { format: FormatPageData }) {
       />
       <div className="bg-paper pt-16">
         <section
-          className="flex min-h-[45vh] w-full flex-col justify-end bg-[#411915] px-6 pb-16 pt-16 md:px-20"
+          className="relative overflow-hidden flex min-h-[50vh] w-full flex-col justify-end bg-[#411915] px-6 pb-16 pt-16 md:px-20"
           aria-label={`MDP Coffee House ${format.category} format`}
         >
-          <motion.h1
-            className="mt-6 font-condensed text-[48px] font-black leading-[0.92] tracking-tightest text-cream sm:text-[68px]"
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: MOTION.slow, delay: 0.35, ease: MOTION.ease }}
-          >
-            {format.name}
-          </motion.h1>
-          <motion.p
-            className="mt-6 max-w-2xl font-sans text-xl italic leading-relaxed text-cream/60"
-            initial={shouldReduceMotion ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: MOTION.base, delay: 0.55, ease: MOTION.ease }}
-          >
-            {format.intro}
-          </motion.p>
-          <motion.p
-            className="mt-10 font-condensed text-[10px] uppercase tracking-widest text-gold"
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: MOTION.base, delay: 0.4, ease: MOTION.ease }}
-          >
-            {format.details}
-          </motion.p>
+          <div className="pointer-events-none absolute bottom-0 -right-6 md:-right-20 hidden h-3/4 w-1/2 opacity-[0.25] md:block" aria-hidden="true">
+            <Image
+              src="/images/MDP coffeee man Png1.png"
+              alt=""
+              fill
+              className="object-contain object-bottom [filter:invert(1)_brightness(1.4)]"
+            />
+          </div>
+          <div className="relative z-10">
+            <motion.h1
+              className="mt-6 font-condensed text-[48px] font-black leading-[0.92] tracking-tightest text-cream sm:text-[68px]"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: MOTION.slow, delay: 0.35, ease: MOTION.ease }}
+            >
+              {format.name}
+            </motion.h1>
+            <motion.p
+              className="mt-6 max-w-2xl font-sans text-xl italic leading-relaxed text-cream/60"
+              initial={shouldReduceMotion ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: MOTION.base, delay: 0.55, ease: MOTION.ease }}
+            >
+              {format.intro}
+            </motion.p>
+            <motion.p
+              className="mt-10 font-condensed text-[10px] uppercase tracking-widest text-gold"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: MOTION.base, delay: 0.4, ease: MOTION.ease }}
+            >
+              {format.details}
+            </motion.p>
+          </div>
         </section>
 
         <section className="px-6 py-20 md:px-20" aria-label={`About the ${format.category} format`}>

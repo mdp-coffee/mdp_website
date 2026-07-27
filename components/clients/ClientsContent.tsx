@@ -57,10 +57,18 @@ export function ClientsContent() {
       <ScrollContainer>
       {/* Section 1 — Hero */}
       <section
-        className="snap-slide flex min-h-[55vh] w-full items-center bg-[#411915] px-6 pt-16 md:px-20"
+        className="relative overflow-hidden snap-slide flex min-h-[50vh] w-full items-center bg-[#411915] px-6 pt-16 md:px-20"
         aria-label="MDP Coffee House clients"
       >
-        <div className="grid w-full grid-cols-1 gap-8 py-10 md:grid-cols-2 md:gap-12 md:py-20">
+        <div className="pointer-events-none absolute bottom-0 -right-6 md:-right-20 hidden h-3/4 w-1/2 opacity-[0.25] md:block" aria-hidden="true">
+          <Image
+            src="/images/MDP coffeee man Png1.png"
+            alt=""
+            fill
+            className="object-contain object-bottom [filter:invert(1)_brightness(1.4)]"
+          />
+        </div>
+        <div className="relative z-10 grid w-full grid-cols-1 gap-8 py-10 md:grid-cols-2 md:gap-12 md:py-20">
           <div>
             <motion.h1
               className="mt-6 font-condensed text-[30px] leading-[0.95] tracking-tightest text-cream sm:text-[56px]"

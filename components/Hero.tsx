@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { trackEvent } from "@/components/Analytics";
+import { CornerAccents } from "@/components/CornerAccents";
 
 function G({ children }: { children: string }) {
   return <span className="font-black text-gold">{children}</span>;
@@ -44,6 +45,7 @@ export function Hero() {
       className="snap-slide relative flex min-h-[640px] w-full items-start overflow-hidden bg-[#411915] md:h-[100svh] md:items-center"
       aria-label="MDP Coffee House — the coffee companion of India's workday"
     >
+      <CornerAccents />
       {/* Background image */}
       <div className="absolute inset-0" aria-hidden="true">
         {/* Desktop background */}

@@ -11,6 +11,7 @@ import type { OperatingFormat } from "@/lib/types";
 import { trackEvent } from "@/components/Analytics";
 import { categories } from "@/content/products";
 import { formatPages } from "@/content/operating-formats-seo";
+import { CornerAccents } from "@/components/CornerAccents";
 
 const themeStyles: Record<
   OperatingFormat["theme"],
@@ -145,10 +146,11 @@ export function Formats() {
   return (
     <section
       id="formats"
-      className={`snap-slide relative flex min-h-[100svh] w-full flex-col overflow-hidden ${theme.bg} px-6 pt-20 md:px-16`}
+      className={`snap-slide relative flex min-h-[100svh] w-full flex-col overflow-hidden ${theme.bg} px-6 pt-28 md:px-16`}
       aria-label="MDP Coffee House operating formats — explore our service formats"
       aria-roledescription="carousel"
     >
+      <CornerAccents />
       <RevealOnScroll delay={0}>
         <h2 className={`font-condensed text-[26px] leading-[0.98] tracking-tight sm:text-[52px] ${theme.text}`}>
           The MDP Formats.
@@ -310,9 +312,10 @@ export function Formats() {
             isDragging ? "cursor-grabbing" : "cursor-grab"
           }`}
         >
-          {categories.map((category) => (
-            <div
+          {categories.map((category, index) => (
+            <RevealOnScroll
               key={category.id}
+              delay={index * 0.04}
               className={`w-[160px] flex-shrink-0 snap-start overflow-hidden border transition-colors duration-200 hover:border-gold/40 ${theme.productCardBorder}`}
             >
               <div className="relative h-[120px] w-full overflow-hidden">
@@ -329,7 +332,7 @@ export function Formats() {
               >
                 {category.name}
               </p>
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
       </div>

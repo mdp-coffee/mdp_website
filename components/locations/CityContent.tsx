@@ -28,45 +28,55 @@ export function CityContent({ city }: { city: CityPageData }) {
       <div className="bg-paper pt-16">
         {/* Hero */}
         <section
-          className="flex min-h-[45vh] w-full flex-col justify-end bg-[#411915] px-6 pb-16 pt-16 md:px-20"
+          className="relative overflow-hidden flex min-h-[50vh] w-full flex-col justify-end bg-[#411915] px-6 pb-16 pt-16 md:px-20"
           aria-label={`MDP Coffee House in ${city.name}`}
         >
-          <motion.h1
-            className="mt-6 font-condensed text-[48px] font-black leading-[0.92] tracking-tightest text-cream sm:text-[68px]"
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: MOTION.slow, delay: 0.35, ease: MOTION.ease }}
-          >
-            Corporate coffee service
-            <br />
-            in {city.name}.
-          </motion.h1>
-          <motion.p
-            className="mt-6 max-w-2xl font-sans text-xl italic leading-relaxed text-cream/60"
-            initial={shouldReduceMotion ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: MOTION.base, delay: 0.55, ease: MOTION.ease }}
-          >
-            {city.intro}
-          </motion.p>
-
-          {city.outletCount && (
-            <motion.dl
-              className="mt-10 flex gap-10"
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          <div className="pointer-events-none absolute bottom-0 -right-6 md:-right-20 hidden h-3/4 w-1/2 opacity-[0.25] md:block" aria-hidden="true">
+            <Image
+              src="/images/MDP coffeee man Png1.png"
+              alt=""
+              fill
+              className="object-contain object-bottom [filter:invert(1)_brightness(1.4)]"
+            />
+          </div>
+          <div className="relative z-10">
+            <motion.h1
+              className="mt-6 font-condensed text-[48px] font-black leading-[0.92] tracking-tightest text-cream sm:text-[68px]"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: MOTION.base, delay: 0.4, ease: MOTION.ease }}
+              transition={{ duration: MOTION.slow, delay: 0.35, ease: MOTION.ease }}
             >
-              <div>
-                <dt className="font-condensed text-[10px] uppercase tracking-wider text-cream/35">
-                  Outlets in {city.name}
-                </dt>
-                <dd className="mt-1 font-condensed text-3xl font-black text-gold">
-                  {city.outletCount}
-                </dd>
-              </div>
-            </motion.dl>
-          )}
+              Corporate coffee service
+              <br />
+              in {city.name}.
+            </motion.h1>
+            <motion.p
+              className="mt-6 max-w-2xl font-sans text-xl italic leading-relaxed text-cream/60"
+              initial={shouldReduceMotion ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: MOTION.base, delay: 0.55, ease: MOTION.ease }}
+            >
+              {city.intro}
+            </motion.p>
+
+            {city.outletCount && (
+              <motion.dl
+                className="mt-10 flex gap-10"
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: MOTION.base, delay: 0.4, ease: MOTION.ease }}
+              >
+                <div>
+                  <dt className="font-condensed text-[10px] uppercase tracking-wider text-cream/35">
+                    Outlets in {city.name}
+                  </dt>
+                  <dd className="mt-1 font-condensed text-3xl font-black text-gold">
+                    {city.outletCount}
+                  </dd>
+                </div>
+              </motion.dl>
+            )}
+          </div>
         </section>
 
         {/* Rich body content */}

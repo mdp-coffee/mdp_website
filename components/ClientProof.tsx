@@ -3,6 +3,7 @@
 import { ClientTicker } from "@/components/ClientTicker";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { testimonials } from "@/lib/content";
+import { CornerAccents } from "@/components/CornerAccents";
 
 export function ClientProof() {
   return (
@@ -11,6 +12,7 @@ export function ClientProof() {
       className="relative snap-slide flex min-h-0 w-full flex-col bg-parchment"
       aria-label="MDP Coffee House clients and case studies"
     >
+      <CornerAccents />
       <div className="px-6 pt-24 md:px-20">
         <RevealOnScroll delay={0.1}>
           <h2 className="mt-6 font-condensed text-[26px] leading-[0.98] tracking-tight text-brown sm:text-[52px]">
