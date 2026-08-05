@@ -6,11 +6,13 @@ import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
 const navLinks = [
+  { href: "/corporate", label: "Corporate", isRoute: true },
   { href: "/about", label: "About Us", isRoute: true },
   { href: "/clients", label: "Clients", isRoute: true },
   { href: "/gallery", label: "Gallery", isRoute: true },
   { href: "/blog", label: "Blog", isRoute: true },
   { href: "/faq", label: "FAQ", isRoute: true },
+  { href: "/contact", label: "Contact", isRoute: true },
 ] as const;
 
 const linkCls =

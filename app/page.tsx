@@ -1,7 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { ClientTicker } from "@/components/ClientTicker";
 import { ClientProof } from "@/components/ClientProof";
-import { Formats } from "@/components/Formats";
+import { WhatWeDo } from "@/components/WhatWeDo";
 import { Bridge } from "@/components/Bridge";
 import { OperatingSystem } from "@/components/OperatingSystem";
 import { GalleryTeaser } from "@/components/GalleryTeaser";
@@ -26,7 +26,7 @@ export default function HomePage() {
         <ClientTicker variant="light" />
         <Contact />
         <WhoWeAre />
-        <Formats />
+        <WhatWeDo />
         <OperatingSystem />
         <GalleryTeaser />
         <ClientProof />

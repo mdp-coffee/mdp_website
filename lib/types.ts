@@ -128,6 +128,13 @@ export interface FormatPageData {
   expansionCta?: ExpansionCta;
 }
 
+export interface MapPin {
+  name: string;
+  address: string;
+  lat: number;
+  lng: number;
+}
+
 export interface OutletAddress {
   client: string;
   clientSlug: string;
@@ -135,4 +142,102 @@ export interface OutletAddress {
   address: string;
   lat: number;
   lng: number;
+}
+
+export interface CorporateStat {
+  value: string;
+  label: string;
+}
+
+export interface HowWeWorkCard {
+  title: string;
+  body: string;
+}
+
+export interface CorporateTier {
+  number: string;
+  name: string; // e.g. "Kiosk" — keep as-is, do not rename
+  tagline: string; // e.g. "Full-Service Coffee Counter"
+  description: string;
+  href?: string;
+}
+
+export interface TrustPoint {
+  title: string;
+  body: string;
+}
+
+export interface DeploymentStep {
+  step: string;
+  title: string;
+  body: string;
+}
+
+export interface CorporateFaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface WhatWeDoTab {
+  num: string;
+  category: string;
+  imageGalleryId: string;
+  headline: string;
+  description: string;
+  details: string;
+  proofLine: string;
+  ctaLabel: string;
+  ctaHref: string;
+}
+
+export interface RetailProduct {
+  title: string;
+  description: string;
+  image: string;
+  isNew?: boolean;
+}
+
+export interface WhatWeDoSectionData {
+  h2: string;
+  subhead: string;
+  tabs: WhatWeDoTab[];
+  productsKicker: string;
+  productsH2: string;
+  products: RetailProduct[];
+}
+
+export interface CorporatePageData {
+  seoTitle: string;
+  metaDescription: string;
+  heroH1: string;
+  heroSubhead: string;
+  trustedByCaption: string;
+  introH2: string;
+  introKicker: string;
+  introParagraphs: string[];
+  introStats: CorporateStat[];
+  howWeWorkCards: HowWeWorkCard[];
+  tiersH2: string;
+  tiers: CorporateTier[];
+  menuH2: string;
+  menuSubhead: string;
+  flexibleH2: string;
+  flexibleBody: string;
+  flexibleCards: HowWeWorkCard[];
+  deploymentsH2: string;
+  deploymentsSubhead: string;
+  standardKicker: string;
+  standardH2: string;
+  standardBody: string;
+  trustH2: string;
+  trustPoints: TrustPoint[];
+  deploymentH2: string;
+  deploymentSteps: DeploymentStep[];
+  faqH2: string;
+  faqItems: CorporateFaqItem[];
+  ctaHeading: string;
+  ctaBody: string;
+  ctaPrimaryLabel: string;
+  ctaSecondaryLabel: string;
+  ctaHref: string;
 }

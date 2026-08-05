@@ -39,3 +39,10 @@ export const operatingFormats: OperatingFormat[] =
   operatingFormatsData.formats as OperatingFormat[];
 export const heroPhotos: HeroPhoto[] = heroPhotosData.photos as HeroPhoto[];
 export const outlets: Outlet[] = outletsList;
+
+export function getCorporateClients(): ClientLogo[] {
+  const excludedCategories = new Set(["Retail & Commercial", "Coworking"]);
+  return clients
+    .filter((client) => client.active && !(client.category && excludedCategories.has(client.category)))
+    .sort((a, b) => (b.outlets ?? 0) - (a.outlets ?? 0));
+}

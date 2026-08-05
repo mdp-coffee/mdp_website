@@ -9,6 +9,7 @@ export const outletAddresses: OutletAddress[] = [
   { client: "Cognizant", clientSlug: "cognizant", city: "Bengaluru", address: "Manyata Tech Park, Nagavara, Bengaluru, Karnataka 560045", lat: 13.049492, lng: 77.6230089 },
   { client: "Cognizant", clientSlug: "cognizant", city: "Bengaluru", address: "Kundalahalli Colony, Brookefield, Bengaluru, Karnataka 560037 (2nd Bengaluru office)", lat: 12.9726508, lng: 77.7084883 },
   { client: "Deutsche Bank", clientSlug: "deutsche-bank", city: "Bengaluru", address: "No. 26-27, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001", lat: 12.9730981, lng: 77.6140184 },
+  { client: "Gandhinagar", clientSlug: "gandinagar", city: "Bengaluru", address: "Gandhi Nagar, Bengaluru, Karnataka", lat: 12.9762691, lng: 77.5781862 },
   { client: "HCL", clientSlug: "hcl", city: "Bengaluru", address: "Karle Town SEZ, Nagavara, Veerannapalya, Bengaluru, Karnataka 560045", lat: 13.0437631, lng: 77.6165672 },
   { client: "Infosys", clientSlug: "infosys", city: "Bengaluru", address: "Plot No. 44, Hosur Rd, Electronic City, Bengaluru, Karnataka 560100 (main campus)", lat: 12.8502542, lng: 77.6640689 },
   { client: "International Tech Park (ITPL)", clientSlug: "itpl", city: "Bengaluru", address: "ITPL Main Rd, Pattandur Agrahara, Whitefield, Bengaluru, Karnataka 560066", lat: 12.9858421, lng: 77.7355549 },
