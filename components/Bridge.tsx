@@ -30,9 +30,9 @@ export function Bridge() {
       </RevealOnScroll>
       <RevealOnScroll delay={0.7}>
         <a
-          href="#contact"
+          href="/contact"
           className="mt-12 text-brown/25 transition-colors hover:text-brown/50"
-          aria-label="Scroll to contact form"
+          aria-label="Go to the contact page"
         >
           ↓
         </a>

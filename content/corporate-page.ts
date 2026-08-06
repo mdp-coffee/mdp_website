@@ -114,5 +114,5 @@ export const corporatePage: CorporatePageData = {
     "For organisations planning a new office, expanding an existing campus, or reviewing current vendor arrangements, our team will recommend an appropriate operating model for the workplace.",
   ctaPrimaryLabel: "Request Proposal",
   ctaSecondaryLabel: "Schedule a Site Visit",
-  ctaHref: "/#contact",
+  ctaHref: "/contact",
 };

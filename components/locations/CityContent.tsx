@@ -183,7 +183,7 @@ export function CityContent({ city }: { city: CityPageData }) {
           </RevealOnScroll>
           <RevealOnScroll delay={0.3}>
             <Link
-              href="/#contact"
+              href="/contact"
               className="mt-8 inline-block bg-gold px-8 py-4 font-condensed text-sm font-bold uppercase tracking-wider text-brown transition-colors duration-200 hover:bg-rust"
             >
               Partner With Us →

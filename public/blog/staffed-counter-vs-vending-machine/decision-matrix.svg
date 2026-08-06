@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" font-family="'Montserrat', sans-serif">
+  <rect x="0" y="0" width="1600" height="1000" fill="#F9F0E1"/>
+
+  <!-- header -->
+  <rect x="670" y="44" width="260" height="26" rx="13" fill="none" stroke="#41191533" stroke-width="1"/>
+  <text x="800" y="61" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="0.08" fill="#411915">THE DECISION MATRIX</text>
+  <text x="800" y="112" text-anchor="middle" font-size="38" font-weight="700" fill="#411915">Seven Rounds, Tallied</text>
+  <text x="800" y="140" text-anchor="middle" font-size="16" fill="#411915" opacity="0.68">Score each round, then see which jar fills up.</text>
+
+  <!-- Vending jar (neutral = problem side) -->
+  <rect x="200" y="198" width="110" height="26" rx="10" fill="#D6C9BA"/>
+  <path d="M100,224 H410 V698 Q410,744 364,744 H146 Q100,744 100,698 Z" fill="#F3EFEA" stroke="#D6C9BA" stroke-width="2"/>
+  <circle cx="258" cy="694" r="26" fill="#7C6A56"/>
+  <text x="255" y="838" text-anchor="middle" font-size="64" font-weight="700" fill="#5E4F3F">1</text>
+  <text x="255" y="866" text-anchor="middle" font-size="16" font-weight="700" fill="#411915">Vending Machine</text>
+
+  <!-- Staffed jar (gold = solution side) -->
+  <rect x="1290" y="198" width="110" height="26" rx="10" fill="#FDD489"/>
+  <path d="M1190,224 H1500 V698 Q1500,744 1454,744 H1236 Q1190,744 1190,698 Z" fill="#FFF3DC" stroke="#FDD489" stroke-width="2"/>
+  <circle cx="1427" cy="695" r="25" fill="#D98E2E"/>
+  <circle cx="1479" cy="695" r="25" fill="#D98E2E"/>
+  <circle cx="1375" cy="695" r="25" fill="#D98E2E"/>
+  <circle cx="1401" cy="639" r="25" fill="#B06F1E"/>
+  <circle cx="1453" cy="639" r="25" fill="#B06F1E"/>
+  <circle cx="1427" cy="583" r="25" fill="#8A5416"/>
+  <text x="1345" y="838" text-anchor="middle" font-size="64" font-weight="700" fill="#8A5416">6</text>
+  <text x="1345" y="866" text-anchor="middle" font-size="16" font-weight="700" fill="#411915">Staffed Counter</text>
+
+  <!-- criteria rounds -->
+  <g font-size="17" font-weight="600" fill="#411915">
+    <text x="470" y="266">Consistent coffee quality</text>
+    <rect x="1000" y="245" width="130" height="32" rx="16" fill="#FFF3DC"/>
+    <text x="1065" y="266" text-anchor="middle" font-size="14" font-weight="700" fill="#8A5416">Staffed &#8594;</text>
+
+    <text x="470" y="344">Clear ownership when something breaks</text>
+    <rect x="1000" y="323" width="130" height="32" rx="16" fill="#FFF3DC"/>
+    <text x="1065" y="344" text-anchor="middle" font-size="14" font-weight="700" fill="#8A5416">Staffed &#8594;</text>
+
+    <text x="470" y="422">Fast during the morning rush</text>
+    <rect x="1000" y="401" width="130" height="32" rx="16" fill="#FFF3DC"/>
+    <text x="1065" y="422" text-anchor="middle" font-size="14" font-weight="700" fill="#8A5416">Staffed &#8594;</text>
+
+    <text x="470" y="500">No hidden downtime costs</text>
+    <rect x="1000" y="479" width="130" height="32" rx="16" fill="#FFF3DC"/>
+    <text x="1065" y="500" text-anchor="middle" font-size="14" font-weight="700" fill="#8A5416">Staffed &#8594;</text>
+
+    <rect x="470" y="557" width="130" height="32" rx="16" fill="#F3EFEA"/>
+    <text x="535" y="578" text-anchor="middle" font-size="14" font-weight="700" fill="#5E4F3F">&#8592; Vending</text>
+    <text x="1130" y="578" text-anchor="end">Lower sticker price</text>
+
+    <text x="470" y="656">Scales without adding headcount</text>
+    <rect x="1000" y="635" width="130" height="32" rx="16" fill="#FFF3DC"/>
+    <text x="1065" y="656" text-anchor="middle" font-size="14" font-weight="700" fill="#8A5416">Staffed &#8594;</text>
+
+    <text x="470" y="734">Feels like a real perk to employees</text>
+    <rect x="1000" y="713" width="130" height="32" rx="16" fill="#FFF3DC"/>
+    <text x="1065" y="734" text-anchor="middle" font-size="14" font-weight="700" fill="#8A5416">Staffed &#8594;</text>
+  </g>
+
+  <text x="800" y="945" text-anchor="middle" font-size="18" fill="#411915" opacity="0.7">One jar fills on price alone. The other fills on everything else.</text>
+</svg>

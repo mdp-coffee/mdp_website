@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'Montserrat', sans-serif">
+  <rect x="0" y="0" width="1600" height="900" fill="#F9F0E1"/>
+
+  <!-- LEFT: vending machine model -->
+  <rect x="0" y="0" width="800" height="900" fill="#E5DDD3"/>
+
+  <!-- notification bubble -->
+  <rect x="470" y="120" width="190" height="56" rx="18" fill="#F3EFEA" stroke="#B8A794" stroke-width="2"/>
+  <path d="M500 176 L490 196 L522 176 Z" fill="#F3EFEA" stroke="#B8A794" stroke-width="2"/>
+  <text x="565" y="153" text-anchor="middle" dominant-baseline="middle" font-size="13" font-weight="700" fill="#5E4F3F">Ticket #482 opened</text>
+
+  <!-- vending machine -->
+  <rect x="300" y="270" width="210" height="400" rx="22" fill="#7C6A56"/>
+  <rect x="300" y="270" width="210" height="400" rx="22" fill="none" stroke="#5E4F3F" stroke-width="3"/>
+  <rect x="322" y="296" width="166" height="150" rx="10" fill="#453A2E"/>
+  <text x="405" y="321" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="0.06" fill="#F3EFEA">OUT OF SERVICE</text>
+  <g fill="#7C6A56" opacity="0.55">
+    <rect x="332" y="306" width="30" height="60" rx="4"/>
+    <rect x="368" y="306" width="30" height="60" rx="4"/>
+    <rect x="404" y="306" width="30" height="60" rx="4"/>
+    <rect x="440" y="306" width="30" height="60" rx="4"/>
+  </g>
+  <g fill="#B8A794">
+    <circle cx="340" cy="470" r="7"/><circle cx="366" cy="470" r="7"/><circle cx="392" cy="470" r="7"/>
+    <circle cx="340" cy="494" r="7"/><circle cx="366" cy="494" r="7"/><circle cx="392" cy="494" r="7"/>
+  </g>
+  <rect x="322" y="600" width="166" height="34" rx="8" fill="#453A2E"/>
+  <rect x="312" y="668" width="16" height="16" rx="3" fill="#5E4F3F"/>
+  <rect x="482" y="668" width="16" height="16" rx="3" fill="#5E4F3F"/>
+
+  <!-- queue of three, fading toward back -->
+  <g>
+    <circle cx="588" cy="560" r="20" fill="#9C8873"/>
+    <rect x="562" y="580" width="52" height="88" rx="20" fill="#9C8873"/>
+  </g>
+  <g opacity="0.8">
+    <circle cx="640" cy="566" r="19" fill="#9C8873"/>
+    <rect x="615" y="585" width="50" height="84" rx="20" fill="#B8A794"/>
+  </g>
+  <g opacity="0.6">
+    <circle cx="690" cy="572" r="18" fill="#D6C9BA"/>
+    <rect x="666" y="590" width="48" height="80" rx="20" fill="#D6C9BA"/>
+  </g>
+
+  <!-- facilities manager with clipboard -->
+  <circle cx="160" cy="470" r="22" fill="#5E4F3F"/>
+  <rect x="130" y="492" width="60" height="98" rx="22" fill="#5E4F3F"/>
+  <rect x="176" y="510" width="34" height="46" rx="4" fill="#F3EFEA" stroke="#9C8873" stroke-width="2" transform="rotate(8 193 533)"/>
+  <line x1="184" y1="522" x2="200" y2="519" stroke="#B8A794" stroke-width="2" transform="rotate(8 193 533)"/>
+  <line x1="184" y1="532" x2="200" y2="529" stroke="#B8A794" stroke-width="2" transform="rotate(8 193 533)"/>
+  <text x="167" y="606" text-anchor="middle" font-size="13" fill="#5E4F3F">
+    <tspan x="167">Facilities</tspan>
+    <tspan x="167" dy="16">Manager</tspan>
+  </text>
+
+  <!-- empty milk carton -->
+  <path d="M232 700 h44 v58 h-44 z M232 700 l22 -18 l22 18" fill="#F3EFEA" stroke="#9C8873" stroke-width="2"/>
+  <line x1="242" y1="722" x2="260" y2="740" stroke="#B8A794" stroke-width="2"/>
+  <text x="206" y="775" font-size="13" font-weight="600" fill="#5E4F3F">Milk: empty</text>
+
+  <rect x="60" y="812" width="196" height="30" rx="15" fill="#D6C9BA"/>
+  <text x="158" y="831" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="0.04" fill="#453A2E">VENDING MACHINE</text>
+
+  <!-- RIGHT: staffed counter model -->
+  <rect x="800" y="0" width="800" height="900" fill="#FFF3DC"/>
+  <circle cx="1130" cy="330" r="180" fill="#FEE3B0" opacity="0.55"/>
+
+  <!-- counter -->
+  <rect x="940" y="470" width="530" height="150" rx="26" fill="#FDD489"/>
+  <rect x="928" y="446" width="554" height="34" rx="17" fill="#FEC87F"/>
+
+  <!-- espresso machine -->
+  <rect x="990" y="350" width="120" height="120" rx="16" fill="#D98E2E"/>
+  <rect x="1012" y="330" width="26" height="26" rx="6" fill="#B06F1E"/>
+  <rect x="1060" y="330" width="26" height="26" rx="6" fill="#B06F1E"/>
+  <path d="M1022 470 q0 30 0 46" stroke="#8A5416" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M1070 470 q0 30 0 46" stroke="#8A5416" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- steam -->
+  <path d="M1040 300 q10 -16 0 -32 q-10 -16 0 -32" stroke="#B06F1E" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M1080 300 q10 -16 0 -32 q-10 -16 0 -32" stroke="#B06F1E" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- barista behind counter -->
+  <circle cx="1160" cy="330" r="24" fill="#B06F1E"/>
+  <rect x="1126" y="354" width="68" height="110" rx="24" fill="#B06F1E"/>
+  <rect x="1130" y="380" width="60" height="60" rx="12" fill="#FEE3B0"/>
+  <path d="M1194 400 q40 10 56 34" stroke="#B06F1E" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <rect x="1240" y="418" width="34" height="38" rx="8" fill="#F3EFEA" stroke="#B06F1E" stroke-width="2"/>
+
+  <!-- organized supplies -->
+  <g>
+    <rect x="1310" y="410" width="26" height="46" rx="6" fill="#FEE3B0" stroke="#F0AD52" stroke-width="2"/>
+    <rect x="1344" y="410" width="26" height="46" rx="6" fill="#FEE3B0" stroke="#F0AD52" stroke-width="2"/>
+    <rect x="1378" y="410" width="26" height="46" rx="6" fill="#FEE3B0" stroke="#F0AD52" stroke-width="2"/>
+  </g>
+  <text x="1304" y="392" font-size="12" font-weight="600" fill="#8A5416">Fresh &amp; stocked</text>
+
+  <!-- employee walking away with coffee, no queue -->
+  <circle cx="1500" cy="560" r="21" fill="#8C1F16"/>
+  <rect x="1474" y="581" width="52" height="92" rx="22" fill="#8C1F16"/>
+  <rect x="1512" y="596" width="22" height="26" rx="6" fill="#F3EFEA" stroke="#70120E" stroke-width="2"/>
+  <path d="M1432 600 h20 M1428 618 h20 M1436 636 h16" stroke="#A83428" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+  <text x="1472" y="700" text-anchor="middle" font-size="13" font-weight="600" fill="#8A5416">No queue</text>
+
+  <rect x="1344" y="812" width="196" height="30" rx="15" fill="#FDD489"/>
+  <text x="1442" y="831" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="0.04" fill="#8A5416">STAFFED COUNTER</text>
+
+  <!-- center divider -->
+  <line x1="800" y1="0" x2="800" y2="900" stroke="#41191533" stroke-width="1"/>
+
+  <!-- center title card -->
+  <rect x="460" y="330" width="680" height="168" rx="16" fill="#FFFDF8"/>
+  <rect x="700" y="352" width="200" height="26" rx="13" fill="none" stroke="#41191533" stroke-width="1"/>
+  <text x="800" y="369" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="0.08" fill="#411915">TWO OPERATING MODELS</text>
+  <text x="800" y="418" text-anchor="middle" font-size="44" font-weight="700" fill="#411915">
+    <tspan x="800">Staffed Counter vs.</tspan>
+    <tspan x="800" dy="50">Vending Machine</tspan>
+  </text>
+  <text x="800" y="486" text-anchor="middle" font-size="17" fill="#411915" opacity="0.72">What actually changes for an office</text>
+</svg>

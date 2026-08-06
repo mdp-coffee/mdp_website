@@ -21,7 +21,7 @@ const services = [
   { label: "Commercial Outlets", href: "/services/commercial-outlet", isRoute: true },
   { label: "Event Catering", href: "/services/event-catering", isRoute: true },
   { label: "All Formats", href: "/formats", isRoute: true },
-  { label: "Partner With Us", href: "/#contact", isRoute: false },
+  { label: "Partner With Us", href: "/contact", isRoute: false },
 ];
 
 const locations = [

@@ -2,11 +2,13 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { ScrollContainer } from "@/components/ScrollContainer";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { MOTION } from "@/lib/motion";
+import { blogPosts } from "@/content/blog";
 
 export function BlogContent() {
   const shouldReduceMotion = useReducedMotion();
@@ -55,21 +57,58 @@ export function BlogContent() {
         </div>
       </section>
 
-      {/* Empty state */}
-      <RevealOnScroll delay={0.2}>
-        <section className="snap-slide px-6 py-14 text-center md:px-20 md:py-24">
-          <p className="select-none font-condensed text-4xl font-black text-brown/10 sm:text-6xl">
-            Coming Soon
-          </p>
-          <h2 className="mt-[-8px] font-condensed text-xl text-brown sm:mt-[-12px] sm:text-3xl">
-            First article drops soon.
-          </h2>
-          <p className="mx-auto mt-4 max-w-sm font-sans text-brown/55">
-            We are putting together perspectives worth reading. Check back soon
-            — or follow us on LinkedIn for updates.
-          </p>
+      {blogPosts.length > 0 ? (
+        <section className="snap-slide px-6 py-14 md:px-20 md:py-24">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-3">
+            {blogPosts.map((post, i) => (
+              <RevealOnScroll
+                key={post.slug}
+                delay={0.1 + i * 0.06}
+                className="h-full overflow-hidden border border-brown/10 bg-paper transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:border-gold/40 hover:shadow-xl"
+              >
+                <Link href={`/blog/${post.slug}`} className="block h-full">
+                  <div className="relative aspect-[16/9] w-full overflow-hidden">
+                    <Image
+                      src={post.coverImage}
+                      alt={post.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6 sm:p-8">
+                    <p className="font-condensed text-[11px] uppercase tracking-widest text-rust/70">
+                      {post.category} · {post.readTime} min read
+                    </p>
+                    <h3 className="mt-3 font-condensed text-xl font-black tracking-tight text-brown">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 font-sans text-sm leading-relaxed text-brown/60">
+                      {post.description}
+                    </p>
+                  </div>
+                </Link>
+              </RevealOnScroll>
+            ))}
+          </div>
         </section>
-      </RevealOnScroll>
+      ) : (
+        /* Empty state */
+        <RevealOnScroll delay={0.2}>
+          <section className="snap-slide px-6 py-14 text-center md:px-20 md:py-24">
+            <p className="select-none font-condensed text-4xl font-black text-brown/10 sm:text-6xl">
+              Coming Soon
+            </p>
+            <h2 className="mt-[-8px] font-condensed text-xl text-brown sm:mt-[-12px] sm:text-3xl">
+              First article drops soon.
+            </h2>
+            <p className="mx-auto mt-4 max-w-sm font-sans text-brown/55">
+              We are putting together perspectives worth reading. Check back soon
+              — or follow us on LinkedIn for updates.
+            </p>
+          </section>
+        </RevealOnScroll>
+      )}
 
       <Footer />
       </ScrollContainer>

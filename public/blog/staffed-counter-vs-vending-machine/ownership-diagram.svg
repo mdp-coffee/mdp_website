@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 860" font-family="'Montserrat', sans-serif">
+  <rect x="0" y="0" width="1600" height="860" fill="#F9F0E1"/>
+
+  <!-- header -->
+  <rect x="720" y="56" width="160" height="26" rx="13" fill="none" stroke="#41191533" stroke-width="1"/>
+  <text x="800" y="73" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="0.08" fill="#411915">ACCOUNTABILITY</text>
+  <text x="800" y="126" text-anchor="middle" font-size="40" font-weight="700" fill="#411915">Who Owns the Experience?</text>
+  <text x="800" y="154" text-anchor="middle" font-size="16" fill="#411915" opacity="0.68">The farther a request travels from the person who wants coffee, the harder it is to say who owns it.</text>
+
+  <!-- divider -->
+  <line x1="800" y1="220" x2="800" y2="780" stroke="#41191533" stroke-width="1"/>
+
+  <!-- LEFT: machine model, diffuse orbit -->
+  <rect x="330" y="250" width="200" height="26" rx="13" fill="#D6C9BA"/>
+  <text x="430" y="268" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="0.04" fill="#453A2E">MACHINE MODEL</text>
+
+  <circle cx="330" cy="560" r="295" fill="none" stroke="#9C8873" stroke-width="2" stroke-dasharray="2 14" opacity="0.7"/>
+  <circle cx="330" cy="560" r="225" fill="none" stroke="#9C8873" stroke-width="2" stroke-dasharray="2 10" opacity="0.75"/>
+  <circle cx="330" cy="560" r="155" fill="none" stroke="#9C8873" stroke-width="2" stroke-dasharray="4 6" opacity="0.85"/>
+  <circle cx="330" cy="560" r="90" fill="none" stroke="#7C6A56" stroke-width="2.5"/>
+  <circle cx="330" cy="560" r="34" fill="#453A2E"/>
+  <circle cx="330" cy="470" r="7" fill="#7C6A56"/>
+  <circle cx="485" cy="560" r="7" fill="#9C8873"/>
+  <circle cx="485" cy="715" r="7" fill="#9C8873"/>
+  <text x="330" y="564" text-anchor="middle" font-size="13" font-weight="700" fill="#F3EFEA">Employee</text>
+
+  <g font-size="14">
+    <circle cx="528" cy="348" r="8" fill="#453A2E"/>
+    <text x="546" y="352" font-size="15" font-weight="700" fill="#411915">Employee <tspan opacity="0.6" font-weight="400">— wants coffee</tspan></text>
+    <circle cx="528" cy="388" r="8" fill="#7C6A56"/>
+    <text x="546" y="392" font-size="15" font-weight="700" fill="#411915">Machine <tspan opacity="0.6" font-weight="400">— fails silently</tspan></text>
+    <circle cx="528" cy="428" r="8" fill="#9C8873" opacity="0.85"/>
+    <text x="546" y="432" font-size="15" font-weight="700" fill="#411915">Facilities <tspan opacity="0.6" font-weight="400">— gets the ticket</tspan></text>
+    <circle cx="528" cy="468" r="8" fill="#9C8873" opacity="0.75"/>
+    <text x="546" y="472" font-size="15" font-weight="700" fill="#411915">Vendor <tspan opacity="0.6" font-weight="400">— is contacted</tspan></text>
+    <circle cx="528" cy="508" r="8" fill="#9C8873" opacity="0.6"/>
+    <text x="546" y="512" font-size="15" font-weight="700" fill="#411915">Technician <tspan opacity="0.6" font-weight="400">— eventually responds</tspan></text>
+  </g>
+
+  <!-- RIGHT: staffed model, tight orbit -->
+  <rect x="1070" y="250" width="180" height="26" rx="13" fill="#FDD489"/>
+  <text x="1160" y="268" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="0.04" fill="#8A5416">STAFFED MODEL</text>
+
+  <circle cx="1070" cy="560" r="150" fill="none" stroke="#F0AD52" stroke-width="2.5"/>
+  <circle cx="1070" cy="560" r="34" fill="#8A5416"/>
+  <circle cx="1220" cy="560" r="7" fill="#D98E2E"/>
+  <circle cx="1220" cy="560" r="30" fill="#8C1F16"/>
+  <path d="M1207 560 l9 9 l18 -20" stroke="#F9F0E1" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1070" y="564" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF3DC">Employee</text>
+
+  <g font-size="15" font-weight="700" fill="#411915">
+    <circle cx="1268" cy="428" r="8" fill="#8A5416"/>
+    <text x="1286" y="432">Employee</text>
+    <circle cx="1268" cy="468" r="8" fill="#F0AD52"/>
+    <text x="1286" y="472">Coffee staff</text>
+    <circle cx="1268" cy="508" r="8" fill="#8C1F16"/>
+    <text x="1286" y="512">Resolved</text>
+  </g>
+
+  <!-- closing line -->
+  <text x="800" y="800" text-anchor="middle" font-size="20" font-weight="400" fill="#411915">One model spreads accountability outward. The other keeps it close.</text>
+</svg>

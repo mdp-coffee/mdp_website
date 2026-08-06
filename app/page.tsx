@@ -5,7 +5,8 @@ import { WhatWeDo } from "@/components/WhatWeDo";
 import { Bridge } from "@/components/Bridge";
 import { OperatingSystem } from "@/components/OperatingSystem";
 import { GalleryTeaser } from "@/components/GalleryTeaser";
-import { Contact } from "@/components/Contact";
+import { NewsUpdates } from "@/components/NewsUpdates";
+import { BlogTeaser } from "@/components/BlogTeaser";
 import { WhoWeAre } from "@/components/WhoWeAre";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -24,11 +25,12 @@ export default function HomePage() {
       <ScrollContainer>
         <Hero />
         <ClientTicker variant="light" />
-        <Contact />
         <WhoWeAre />
         <WhatWeDo />
         <OperatingSystem />
         <GalleryTeaser />
+        <NewsUpdates />
+        <BlogTeaser />
         <ClientProof />
         <Bridge />
         <Footer />

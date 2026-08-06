@@ -10,8 +10,6 @@ const navLinks = [
   { href: "/about", label: "About Us", isRoute: true },
   { href: "/clients", label: "Clients", isRoute: true },
   { href: "/gallery", label: "Gallery", isRoute: true },
-  { href: "/blog", label: "Blog", isRoute: true },
-  { href: "/faq", label: "FAQ", isRoute: true },
   { href: "/contact", label: "Contact", isRoute: true },
 ] as const;
 
@@ -53,7 +51,7 @@ export function NavBar() {
           ))}
           <li>
             <Link
-              href="/#contact"
+              href="/contact"
               className="bg-brown px-4 py-2 font-condensed text-[13px] font-bold tracking-wide text-cream transition-colors hover:bg-rust"
             >
               Partner With Us →
@@ -64,7 +62,7 @@ export function NavBar() {
         {/* Mobile: CTA + hamburger */}
         <div className="flex items-center gap-3 md:hidden">
           <Link
-            href="/#contact"
+            href="/contact"
             className="bg-brown px-4 py-2 font-condensed text-[13px] font-bold tracking-wide text-cream transition-colors hover:bg-rust"
           >
             Partner →

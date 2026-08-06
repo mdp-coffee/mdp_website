@@ -115,7 +115,7 @@ export function Hero() {
 
         <motion.div className="mt-6 flex flex-col gap-3 md:mt-10 md:flex-row md:flex-wrap md:gap-4" {...fadeIn(1.0)}>
           <a
-            href="#contact"
+            href="/contact"
             onClick={() => trackEvent("cta_click", { location: "hero" })}
             className="w-full bg-gold px-5 py-3 text-center font-condensed text-xs font-bold uppercase tracking-wider text-brown transition-colors hover:bg-gold/90 md:w-auto md:px-7 md:py-4 md:text-sm"
           >

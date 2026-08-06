@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" font-family="'Montserrat', sans-serif">
+  <rect x="0" y="0" width="1600" height="1000" fill="#F9F0E1"/>
+
+  <!-- header -->
+  <rect x="660" y="40" width="280" height="26" rx="13" fill="none" stroke="#41191533" stroke-width="1"/>
+  <text x="800" y="57" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="0.08" fill="#411915">THE FINAL SUMMARY</text>
+  <text x="800" y="108" text-anchor="middle" font-size="38" font-weight="700" fill="#411915">Two Models, Side by Side</text>
+  <text x="800" y="136" text-anchor="middle" font-size="16" fill="#411915" opacity="0.68">Everything this piece has shown, in one place.</text>
+
+  <!-- Vending Machine card (neutral) -->
+  <rect x="120" y="210" width="680" height="410" rx="16" fill="#F9F0E1" stroke="#D6C9BA" stroke-width="2"/>
+  <path d="M120,226 H800 V300 H120 Z" fill="#7C6A56"/>
+  <text x="152" y="258" font-size="22" font-weight="700" fill="#F9F0E1">Vending Machine</text>
+  <text x="152" y="282" font-size="14" fill="#F9F0E1" opacity="0.85">cheaper on paper</text>
+
+  <line x1="120" y1="300" x2="800" y2="300" stroke="#F3EFEA" stroke-width="1.5"/>
+  <text x="152" y="342" font-size="28" font-weight="700" fill="#5E4F3F">7</text>
+  <text x="238" y="336" font-size="17" font-weight="600" fill="#411915">steps to resolve a single breakdown</text>
+
+  <line x1="120" y1="364" x2="800" y2="364" stroke="#F3EFEA" stroke-width="1.5"/>
+  <text x="152" y="406" font-size="28" font-weight="700" fill="#5E4F3F">5</text>
+  <text x="238" y="400" font-size="17" font-weight="600" fill="#411915">people touch the problem, none of them own it</text>
+
+  <line x1="120" y1="428" x2="800" y2="428" stroke="#F3EFEA" stroke-width="1.5"/>
+  <text x="152" y="470" font-size="28" font-weight="700" fill="#5E4F3F">&#8211;</text>
+  <text x="238" y="464" font-size="17" font-weight="600" fill="#411915">downtime and labor costs stay off the invoice</text>
+
+  <line x1="120" y1="492" x2="800" y2="492" stroke="#F3EFEA" stroke-width="1.5"/>
+  <text x="152" y="534" font-size="28" font-weight="700" fill="#5E4F3F">1/7</text>
+  <text x="238" y="528" font-size="17" font-weight="600" fill="#411915">decision criteria won, and only on price</text>
+
+  <line x1="120" y1="556" x2="800" y2="556" stroke="#F3EFEA" stroke-width="1.5"/>
+  <text x="152" y="598" font-size="28" font-weight="700" fill="#5E4F3F">+4m</text>
+  <text x="238" y="592" font-size="17" font-weight="600" fill="#411915">late to the next meeting, every time it jams</text>
+
+  <!-- Staffed Counter card (gold) -->
+  <rect x="800" y="210" width="680" height="410" rx="16" fill="#F9F0E1" stroke="#FDD489" stroke-width="2"/>
+  <path d="M800,226 H1480 V300 H800 Z" fill="#D98E2E"/>
+  <text x="832" y="258" font-size="22" font-weight="700" fill="#F9F0E1">Staffed Counter</text>
+  <text x="832" y="282" font-size="14" fill="#F9F0E1" opacity="0.85">costs more, works better</text>
+
+  <line x1="800" y1="300" x2="1480" y2="300" stroke="#FFF3DC" stroke-width="1.5"/>
+  <text x="832" y="342" font-size="28" font-weight="700" fill="#8A5416">3</text>
+  <text x="918" y="336" font-size="17" font-weight="600" fill="#411915">steps to resolve almost any issue</text>
+
+  <line x1="800" y1="364" x2="1480" y2="364" stroke="#FFF3DC" stroke-width="1.5"/>
+  <text x="832" y="406" font-size="28" font-weight="700" fill="#8A5416">1</text>
+  <text x="918" y="400" font-size="17" font-weight="600" fill="#411915">clear owner, every single time</text>
+
+  <line x1="800" y1="428" x2="1480" y2="428" stroke="#FFF3DC" stroke-width="1.5"/>
+  <text x="832" y="470" font-size="28" font-weight="700" fill="#8A5416">&#10003;</text>
+  <text x="918" y="464" font-size="17" font-weight="600" fill="#411915">costs are visible and accounted for upfront</text>
+
+  <line x1="800" y1="492" x2="1480" y2="492" stroke="#FFF3DC" stroke-width="1.5"/>
+  <text x="832" y="534" font-size="28" font-weight="700" fill="#8A5416">6/7</text>
+  <text x="918" y="528" font-size="17" font-weight="600" fill="#411915">decision criteria won, on everything but price</text>
+
+  <line x1="800" y1="556" x2="1480" y2="556" stroke="#FFF3DC" stroke-width="1.5"/>
+  <text x="832" y="598" font-size="28" font-weight="700" fill="#8A5416">0m</text>
+  <text x="918" y="592" font-size="17" font-weight="600" fill="#411915">late — coffee never holds up the calendar</text>
+
+  <text x="800" y="920" text-anchor="middle" font-size="20" font-weight="400" fill="#411915">Cheaper to install. More expensive to live with.</text>
+</svg>

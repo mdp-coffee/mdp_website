@@ -42,7 +42,7 @@ export const formatPages: FormatPageData[] = [
       headline: "Know a Space That's Right for MDP?",
       body: "We're actively looking for new locations across India's malls, food courts, and co-working spaces. If you know a space that fits, or you're interested in franchising an MDP QSR Cafe, we'd like to hear from you.",
       ctaLabel: "Get in Touch",
-      ctaHref: "/#contact",
+      ctaHref: "/contact",
     },
   },
   {
@@ -63,7 +63,7 @@ export const formatPages: FormatPageData[] = [
       headline: "Know a Space That's Right for MDP?",
       body: "We're actively looking for new commercial spaces across India — high-street locations, retail complexes, and the busy public spaces where people gather. If you have a space in mind, or you're interested in franchising an MDP Commercial Outlet, we'd like to hear from you.",
       ctaLabel: "Get in Touch",
-      ctaHref: "/#contact",
+      ctaHref: "/contact",
     },
   },
   {

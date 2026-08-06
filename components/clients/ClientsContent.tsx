@@ -280,7 +280,7 @@ export function ClientsContent() {
         <div className="mt-6 flex flex-col items-stretch gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 md:mt-10">
           <RevealOnScroll delay={0.3}>
             <Link
-              href="/#contact"
+              href="/contact"
               className="bg-gold px-6 py-3 text-center font-condensed text-xs font-bold uppercase tracking-wider text-brown transition-colors hover:bg-gold/90 sm:px-8 sm:py-4 sm:text-sm"
             >
               Partner With Us

@@ -436,7 +436,7 @@ export function AboutContent() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <RevealOnScroll delay={0.3}>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="bg-gold px-8 py-4 font-condensed text-sm font-bold uppercase tracking-wider text-brown transition-colors hover:bg-gold/90"
               >
                 Partner With Us

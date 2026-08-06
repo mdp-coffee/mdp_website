@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" font-family="'Montserrat', sans-serif">
+  <defs>
+    <linearGradient id="tipGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF3DC"/>
+      <stop offset="1" stop-color="#FDD489"/>
+    </linearGradient>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D98E2E"/>
+      <stop offset="1" stop-color="#5C380E"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="1000" fill="#F9F0E1"/>
+
+  <!-- header -->
+  <rect x="690" y="44" width="220" height="26" rx="13" fill="none" stroke="#41191533" stroke-width="1"/>
+  <text x="800" y="61" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="0.08" fill="#411915">THE HIDDEN COSTS</text>
+  <text x="800" y="112" text-anchor="middle" font-size="38" font-weight="700" fill="#411915">The Cost Iceberg</text>
+  <text x="800" y="140" text-anchor="middle" font-size="16" fill="#411915" opacity="0.68">What&#8217;s on the invoice is only the tip. The mass that sinks budgets sits below the surface.</text>
+
+  <!-- water -->
+  <rect x="0" y="440" width="1600" height="450" fill="#F7DCDA" opacity="0.55"/>
+  <path d="M0,440 Q100,422 200,440 T400,440 T600,440 T800,440 T1000,440 T1200,440 T1400,440 T1600,440" fill="none" stroke="#A83428" stroke-width="3" opacity="0.7"/>
+
+  <!-- submerged mass (hidden costs) -->
+  <path d="M280,440 L440,440 Q480,480 505,530 Q535,590 515,660 Q500,730 455,770 Q405,810 335,815 Q265,818 210,785 Q160,750 148,680 Q138,610 158,545 Q178,485 225,452 Z" fill="url(#bodyGrad)"/>
+
+  <!-- visible tip -->
+  <path d="M250,440 L288,368 Q335,300 385,368 L422,440 Z" fill="url(#tipGrad)" stroke="#F0AD52" stroke-width="1.5"/>
+
+  <!-- labels -->
+  <text x="60" y="310" font-size="15" font-weight="700" letter-spacing="0.06" fill="#B06F1E">ABOVE THE SURFACE</text>
+  <text x="60" y="335" font-size="14" fill="#411915" opacity="0.6">what&#8217;s on the invoice</text>
+  <text x="60" y="810" font-size="15" font-weight="700" letter-spacing="0.06" fill="#560D0A">BELOW THE SURFACE</text>
+  <text x="60" y="835" font-size="14" fill="#411915" opacity="0.6">what never gets billed</text>
+
+  <!-- leader lines: visible -->
+  <line x1="400" y1="395" x2="920" y2="250" stroke="#D98E2E" stroke-width="2"/>
+  <line x1="415" y1="425" x2="920" y2="330" stroke="#D98E2E" stroke-width="2"/>
+  <line x1="400" y1="440" x2="920" y2="410" stroke="#D98E2E" stroke-width="2"/>
+
+  <!-- leader lines: hidden -->
+  <line x1="500" y1="535" x2="920" y2="520" stroke="#8A5416" stroke-width="2"/>
+  <line x1="510" y1="640" x2="920" y2="610" stroke="#8A5416" stroke-width="2"/>
+  <line x1="460" y1="750" x2="920" y2="700" stroke="#8A5416" stroke-width="2"/>
+  <line x1="330" y1="810" x2="920" y2="790" stroke="#8A5416" stroke-width="2"/>
+
+  <!-- visible cost cards -->
+  <g>
+    <rect x="930" y="225" width="520" height="64" rx="14" fill="#FFF3DC"/>
+    <circle cx="964" cy="257" r="15" fill="#FDD489"/>
+    <text x="964" y="257" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="700" fill="#5C380E">1</text>
+    <text x="994" y="250" font-size="17" font-weight="700" fill="#411915">Machine lease / rental</text>
+    <text x="994" y="270" font-size="14" fill="#411915" opacity="0.7">Fixed monthly fee — easy to budget.</text>
+  </g>
+  <g>
+    <rect x="930" y="305" width="520" height="64" rx="14" fill="#FFF3DC"/>
+    <circle cx="964" cy="337" r="15" fill="#FDD489"/>
+    <text x="964" y="337" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="700" fill="#5C380E">2</text>
+    <text x="994" y="330" font-size="17" font-weight="700" fill="#411915">Coffee, cups &amp; supplies</text>
+    <text x="994" y="350" font-size="14" fill="#411915" opacity="0.7">Per-unit, tracked on a supplier invoice.</text>
+  </g>
+  <g>
+    <rect x="930" y="385" width="520" height="64" rx="14" fill="#FFF3DC"/>
+    <circle cx="964" cy="417" r="15" fill="#FDD489"/>
+    <text x="964" y="417" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="700" fill="#5C380E">3</text>
+    <text x="994" y="410" font-size="17" font-weight="700" fill="#411915">Electricity &amp; water</text>
+    <text x="994" y="430" font-size="14" fill="#411915" opacity="0.7">Small, predictable utility draw.</text>
+  </g>
+
+  <!-- hidden cost cards -->
+  <g>
+    <rect x="930" y="495" width="520" height="64" rx="14" fill="#F7DCDA"/>
+    <circle cx="964" cy="527" r="15" fill="#8C1F16"/>
+    <text x="964" y="527" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="700" fill="#F9F0E1">4</text>
+    <text x="994" y="520" font-size="17" font-weight="700" fill="#411915">Breakdowns &amp; downtime</text>
+    <text x="994" y="540" font-size="14" fill="#411915" opacity="0.7">No coffee until someone notices and calls it in.</text>
+  </g>
+  <g>
+    <rect x="930" y="585" width="520" height="64" rx="14" fill="#F7DCDA"/>
+    <circle cx="964" cy="617" r="15" fill="#8C1F16"/>
+    <text x="964" y="617" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="700" fill="#F9F0E1">5</text>
+    <text x="994" y="610" font-size="17" font-weight="700" fill="#411915">Employee time lost queuing</text>
+    <text x="994" y="630" font-size="14" fill="#411915" opacity="0.7">Minutes per person, multiplied across a team.</text>
+  </g>
+  <g>
+    <rect x="930" y="675" width="520" height="64" rx="14" fill="#F7DCDA"/>
+    <circle cx="964" cy="707" r="15" fill="#8C1F16"/>
+    <text x="964" y="707" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="700" fill="#F9F0E1">6</text>
+    <text x="994" y="700" font-size="17" font-weight="700" fill="#411915">Complaints with no owner</text>
+    <text x="994" y="720" font-size="14" fill="#411915" opacity="0.7">Frustration circulates instead of resolving.</text>
+  </g>
+  <g>
+    <rect x="930" y="765" width="520" height="64" rx="14" fill="#F7DCDA"/>
+    <circle cx="964" cy="797" r="15" fill="#8C1F16"/>
+    <text x="964" y="797" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="700" fill="#F9F0E1">7</text>
+    <text x="994" y="790" font-size="17" font-weight="700" fill="#411915">Ad-hoc maintenance labor</text>
+    <text x="994" y="810" font-size="14" fill="#411915" opacity="0.7">Whoever&#8217;s nearest ends up fixing it.</text>
+  </g>
+
+  <text x="800" y="950" text-anchor="middle" font-size="18" fill="#411915" opacity="0.7">Vending doesn&#8217;t remove the cost — it just moves it out of view.</text>
+</svg>

@@ -8,7 +8,18 @@ import { CornerAccents } from "@/components/CornerAccents";
 
 const featured = galleryItems
   .filter((item) => !item.caption?.includes("(Former)"))
-  .slice(0, 10);
+  .filter((item) => item.id !== "9")
+  .slice(0, 7);
+
+const featuredSpans = [
+  "md:col-span-2 md:row-span-2",
+  "md:col-span-2 md:row-span-1",
+  "md:col-span-1 md:row-span-1",
+  "md:col-span-1 md:row-span-1",
+  "md:col-span-1 md:row-span-1",
+  "md:col-span-1 md:row-span-1",
+  "md:col-span-2 md:row-span-1",
+];
 
 export function GalleryTeaser() {
   return (
@@ -29,21 +40,45 @@ export function GalleryTeaser() {
         </p>
       </RevealOnScroll>
 
+      {/* Desktop: asymmetric masonry-style grid */}
       <div
-        className="scrollbar-hide mt-10 flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2"
+        className="mt-10 hidden md:grid md:grid-cols-4 md:auto-rows-[180px] md:gap-3 lg:auto-rows-[210px]"
         aria-label="MDP Coffee House outlet photos"
       >
         {featured.map((item, index) => (
-          <RevealOnScroll key={item.id} delay={0.2 + index * 0.05}>
-            <div
-              className="group relative flex h-[220px] w-[300px] flex-shrink-0 snap-start items-center justify-center overflow-hidden bg-cream/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown sm:h-[260px] sm:w-[360px] md:h-[320px] md:w-[440px]"
-            >
+          <RevealOnScroll key={item.id} delay={0.2 + index * 0.05} className={featuredSpans[index]}>
+            <div className="group relative flex h-full w-full items-center justify-center overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown">
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                className="object-contain transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 440px"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                quality={90}
+              />
+              {item.caption && (
+                <div className="absolute bottom-0 left-0 right-0 border-t-2 border-gold bg-cream/90 px-3 py-2">
+                  <p className="font-condensed text-[11px] uppercase tracking-wide text-brown">
+                    {item.caption}
+                  </p>
+                </div>
+              )}
+            </div>
+          </RevealOnScroll>
+        ))}
+      </div>
+
+      {/* Mobile: stacked single column */}
+      <div className="mt-10 space-y-4 md:hidden" aria-label="MDP Coffee House outlet photos">
+        {featured.map((item, index) => (
+          <RevealOnScroll key={item.id} delay={0.2 + index * 0.05}>
+            <div className="group relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown">
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="100vw"
                 quality={90}
               />
               {item.caption && (

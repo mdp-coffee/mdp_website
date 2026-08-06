@@ -206,6 +206,15 @@ export interface WhatWeDoSectionData {
   products: RetailProduct[];
 }
 
+export interface NewsItem {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  tag?: string;
+  image?: string;
+}
+
 export interface CorporatePageData {
   seoTitle: string;
   metaDescription: string;

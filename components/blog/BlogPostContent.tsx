@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { ScrollContainer } from "@/components/ScrollContainer";
@@ -46,20 +47,39 @@ export function BlogPostContent({ post }: { post: BlogPost }) {
           transition={{ duration: MOTION.base, delay: 0.7, ease: MOTION.ease }}
         >
           {post.content && post.content.length > 0 ? (
-            post.content.map((block, i) =>
-              block.type === "heading" ? (
-                <h2
-                  key={i}
-                  className="mt-10 mb-4 font-condensed text-[28px] tracking-tight text-brown first:mt-0"
-                >
-                  {block.text}
-                </h2>
-              ) : (
+            post.content.map((block, i) => {
+              if (block.type === "heading") {
+                return (
+                  <h2
+                    key={i}
+                    className="mt-10 mb-4 font-condensed text-[28px] tracking-tight text-brown first:mt-0"
+                  >
+                    {block.text}
+                  </h2>
+                );
+              }
+              if (block.type === "image") {
+                return (
+                  <div
+                    key={i}
+                    className="relative mt-8 aspect-[16/9] w-full overflow-hidden first:mt-0"
+                  >
+                    <Image
+                      src={block.src}
+                      alt={block.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 680px) 100vw, 680px"
+                    />
+                  </div>
+                );
+              }
+              return (
                 <p key={i} className="mt-6 first:mt-0">
                   {block.text}
                 </p>
-              )
-            )
+              );
+            })
           ) : (
             <p className="italic text-brown/40">Content coming soon.</p>
           )}

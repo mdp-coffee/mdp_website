@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { newsItems } from "@/content/news-updates";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mdpcoffeehouse.com";
 
@@ -118,5 +119,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    ...newsItems.map((item) => ({
+      url: `${siteUrl}/news/${item.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    })),
   ];
 }
