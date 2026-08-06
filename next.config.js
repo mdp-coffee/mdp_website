@@ -59,6 +59,16 @@ const nextConfig = {
         destination: "/services/event-catering",
         permanent: true,
       },
+      {
+        source: "/news/madhu-bt-recognition",
+        destination: "/news/bt",
+        permanent: true,
+      },
+      {
+        source: "/news/basha-tesco-award",
+        destination: "/news/tesco",
+        permanent: true,
+      },
     ];
   },
 };

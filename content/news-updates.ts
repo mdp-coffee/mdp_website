@@ -2,7 +2,7 @@ import type { NewsItem } from "@/lib/types";
 
 export const newsItems: NewsItem[] = [
   {
-    slug: "madhu-bt-recognition",
+    slug: "bt",
     title: "Our Employee, Warmly Recognized",
     date: "August 2026",
     description:
@@ -11,7 +11,7 @@ export const newsItems: NewsItem[] = [
     image: "/news_updates/BT_Madhu_Appreciation.jpeg",
   },
   {
-    slug: "basha-tesco-award",
+    slug: "tesco",
     title: "Our Employee, Honoured for Excellence",
     date: "August 2026",
     description:
