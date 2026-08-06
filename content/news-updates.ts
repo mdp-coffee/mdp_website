@@ -6,7 +6,7 @@ export const newsItems: NewsItem[] = [
     title: "Our Employee, Warmly Recognized",
     date: "August 2026",
     description:
-      "During a visit to the British Telecom campus in Bengaluru, MDP counter staff member Madhu was personally thanked by Peter Leukert of the company's senior management — recognized by employees as the person who helps make Monday mornings a little easier.",
+      "During a visit to the British Telecom campus in Bengaluru, MDP counter staff member Madhu was personally thanked by Peter Leukert, Chief Digital Officer of BT Group — recognized by employees as the person who helps make Monday mornings a little easier.",
     tag: "Team Spotlight",
     image: "/news_updates/BT_Madhu_Appreciation.jpeg",
   },
