@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
@@ -22,40 +22,50 @@ function AccordionItem({
   isOpen: boolean;
   onToggle: () => void;
 }) {
+  const shouldReduceMotion = useReducedMotion();
+
+  // framer-motion's and React's DOM types don't know about `inert` yet
+  // (React 18.3 / @types/react 18.3 predate it), so it's spread in via a
+  // loosely-typed object rather than passed as a direct prop. Must be a
+  // real boolean, not "" — React treats inert as a boolean attribute and
+  // "" is falsy, which would omit it.
+  const inertProps = { inert: !isOpen } as object;
+
   return (
     <div className="border-b border-brown/10">
-      <button
-        onClick={onToggle}
-        className="flex w-full items-center justify-between py-6 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-brown"
-        aria-expanded={isOpen}
-      >
-        <span className="font-condensed text-[20px] leading-tight text-brown">
-          {question}
-        </span>
-        <span
-          className="ml-6 flex-shrink-0 font-condensed text-lg text-brown/40 transition-transform duration-200"
-          style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
-          aria-hidden="true"
+      <h3 className="m-0">
+        <button
+          onClick={onToggle}
+          className="flex w-full items-center justify-between py-6 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-brown"
+          aria-expanded={isOpen}
         >
-          ▼
-        </span>
-      </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            key="answer"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            style={{ overflow: "hidden" }}
+          <span className="font-condensed text-[20px] leading-tight text-brown">
+            {question}
+          </span>
+          <span
+            className="ml-6 flex-shrink-0 font-condensed text-lg text-brown/40 transition-transform duration-200"
+            style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+            aria-hidden="true"
           >
-            <p className="pb-6 font-sans text-[15px] leading-relaxed text-brown/65">
-              {answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ▼
+          </span>
+        </button>
+      </h3>
+      <motion.div
+        {...inertProps}
+        initial={false}
+        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+        transition={
+          shouldReduceMotion
+            ? { duration: 0 }
+            : { duration: 0.3, ease: "easeInOut" }
+        }
+        style={{ overflow: "hidden" }}
+      >
+        <p className="pb-6 font-sans text-[15px] leading-relaxed text-brown/65">
+          {answer}
+        </p>
+      </motion.div>
     </div>
   );
 }
