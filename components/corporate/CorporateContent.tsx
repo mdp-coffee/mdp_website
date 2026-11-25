@@ -7,6 +7,7 @@ import Link from "next/link";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { Contact } from "@/components/Contact";
 import { ClientProof } from "@/components/ClientProof";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { corporatePage } from "@/content/corporate-page";
@@ -127,6 +128,9 @@ export function CorporateContent() {
           </RevealOnScroll>
         </div>
       </section>
+
+      {/* Contact form — reused as-is from /contact */}
+      <Contact />
 
       {/* Trusted By */}
       <section className="bg-paper px-6 py-16 md:px-20 md:py-24">
