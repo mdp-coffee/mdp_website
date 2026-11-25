@@ -1,11 +1,23 @@
 import Script from "next/script";
 
+const GOOGLE_TAG_ID = "GTM-NDP2KVWS";
+
 export function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
 
   return (
     <>
+      <Script id="google-tag-init" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());`}
+      </Script>
+      <Script
+        src={`https://www.googletagmanager.com/gtm.js?id=${GOOGLE_TAG_ID}`}
+        strategy="afterInteractive"
+      />
+
       {gaId ? (
         <>
           <Script

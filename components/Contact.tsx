@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { siteConfig, whatsappLink } from "@/content/site";
@@ -12,6 +13,7 @@ type SubmitState = "idle" | "submitting" | "success" | "error";
 export function Contact() {
   const [state, setState] = useState<SubmitState>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const router = useRouter();
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -44,6 +46,7 @@ export function Contact() {
       setState("success");
       trackEvent("contact_form_submit", { location: "invitation" });
       form.reset();
+      router.push("/thank-you");
     } catch (err) {
       setState("error");
       setErrorMsg(
